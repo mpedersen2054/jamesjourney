@@ -16,9 +16,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.route('/', function(req, res) {
- res.send('hello there!')
-})
+var coverRouter   = express.Router();
+var blogRouter    = express.Router();
+var messageRouter = express.Router();
+var galleryRouter = express.Router();
+
+
+blogRouter.route('/')
+  .get(function(req, res) {
+    res.send('hello blog!!')
+  })
+
+messageRouter.route('/')
+  .get(function(req, res) {
+    res.send('hello messages!')
+  })
+
+galleryRouter.route('/')
+  .get(function(req, res) {
+    res.send('hello gallery!')
+  })
+
+app.get('/', function(req, res) {
+  res.send('hello index');
+});
+
+app.use('/blog',     blogRouter);
+app.use('/messages', messageRouter);
+app.use('/gallery',  galleryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
