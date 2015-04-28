@@ -47,33 +47,59 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 
+var pagesRouter   = express.Router();
 var coverRouter   = express.Router();
 var blogRouter    = express.Router();
 var galleryRouter = express.Router();
 var messageRouter = express.Router();
 
+
+pagesRouter.route('/')
+  .get(function(req, res) {
+    res.render('index');
+  })
+
+pagesRouter.route('/about')
+  .get(function(req, res) {
+    res.render('about');
+  })
+
+pagesRouter.route('/blog')
+  .get(function(req, res) {
+    res.render('blog');
+  })
+
+pagesRouter.route('/gallery')
+  .get(function(req, res) {
+    res.render('gallery');
+  })
+
+pagesRouter.route('/messages')
+  .get(function(req, res) {
+    res.render('messages');
+  })
+
+
 blogRouter.route('/')
   .get(function(req, res) {
-    res.send('hello blog!!')
+    res.send('hello blog api!')
   })
 
 messageRouter.route('/')
   .get(function(req, res) {
-    res.send('hello messages!')
+    res.send('hello messages api!')
   })
 
 galleryRouter.route('/')
   .get(function(req, res) {
-    res.send('hello gallery!')
+    res.send('hello gallery api!')
   })
 
-app.get('/', function(req, res) {
-  res.send('hello index');
-});
 
-app.use('/blog',     blogRouter);
-app.use('/gallery',  galleryRouter);
-app.use('/messages', messageRouter);
+app.use('/',             pagesRouter);
+app.use('/api/blog',     blogRouter);
+app.use('/api/gallery',  galleryRouter);
+app.use('/api/messages', messageRouter);
 
 
 // ERROR HANDLERS
