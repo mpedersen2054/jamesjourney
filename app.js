@@ -4,10 +4,38 @@ var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
+var mongoose     = require('mongoose');
 
-var app          = express();
 
-// view engine setup
+// DATABASE
+
+mongoose.connect('mongodb://localhost/james');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() { console.log('~~ connected to mongodb ~~') });
+
+var BlogSchema = new mongoose.Schema({
+  title: { type: String },
+  content: { type: String }
+});
+
+var GallerySchema = new mongoose.Schema({
+  title: { type: String },
+  image: { type: String }
+});
+
+var MessageSchema = new mongoose.Schema({
+  content: { type: String }
+});
+
+var Blog = mongoose.model('Blog', BlogSchema);
+var Gallery = mongoose.model('Gallery', GallerySchema);
+var Message = mongoose.model('Message', MessageSchema);
+
+
+// CONFIG
+
+var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(logger('dev'));
@@ -16,11 +44,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// ROUTES
+
 var coverRouter   = express.Router();
 var blogRouter    = express.Router();
-var messageRouter = express.Router();
 var galleryRouter = express.Router();
-
+var messageRouter = express.Router();
 
 blogRouter.route('/')
   .get(function(req, res) {
@@ -42,11 +72,12 @@ app.get('/', function(req, res) {
 });
 
 app.use('/blog',     blogRouter);
-app.use('/messages', messageRouter);
 app.use('/gallery',  galleryRouter);
+app.use('/messages', messageRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
+
+// ERROR HANDLERS
+app.use(function(req, res, next) { // catch 404
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
