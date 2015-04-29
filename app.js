@@ -14,24 +14,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() { console.log('~~ connected to mongodb ~~') });
 
-var BlogSchema = new mongoose.Schema({
-  title: { type: String },
-  content: { type: String }
-});
-
-var GallerySchema = new mongoose.Schema({
-  title: { type: String },
-  image: { type: String }
-});
-
-var MessageSchema = new mongoose.Schema({
-  content: { type: String }
-});
-
-var Blog = mongoose.model('Blog', BlogSchema);
-var Gallery = mongoose.model('Gallery', GallerySchema);
-var Message = mongoose.model('Message', MessageSchema);
-
 
 // CONFIG
 
@@ -47,62 +29,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 
-var pagesRouter   = express.Router();
-var coverRouter   = express.Router();
-var blogRouter    = express.Router();
-var galleryRouter = express.Router();
-var messageRouter = express.Router();
+var staticRouter  = require('./routes/staticRouter.js');
+var blogRouter    = require('./routes/blogRouter.js');
+var galleryRouter = require('./routes/galleryRouter.js');
+var messageRouter = require('./routes/messageRouter.js');
 
 
-pagesRouter.route('/')
-  .get(function(req, res) {
-    res.render('index');
-  })
 
-pagesRouter.route('/about')
-  .get(function(req, res) {
-    res.render('about');
-  })
+app.use('/', staticRouter);
 
-pagesRouter.route('/blog')
-  .get(function(req, res) {
-    res.render('blog');
-  })
-
-pagesRouter.route('/gallery')
-  .get(function(req, res) {
-    res.render('gallery');
-  })
-
-pagesRouter.route('/messages')
-  .get(function(req, res) {
-    res.render('messages');
-  })
+app.use('/blog',     blogRouter);
+app.use('/gallery',  galleryRouter);
+app.use('/messages', messageRouter);
 
 
-blogRouter.route('/')
-  .get(function(req, res) {
-    res.send('hello blog api!')
-  })
 
-messageRouter.route('/')
-  .get(function(req, res) {
-    res.send('hello messages api!')
-  })
-
-galleryRouter.route('/')
-  .get(function(req, res) {
-    res.send('hello gallery api!')
-  })
-
-
-app.use('/',             pagesRouter);
-app.use('/api/blog',     blogRouter);
-app.use('/api/gallery',  galleryRouter);
-app.use('/api/messages', messageRouter);
-
-
-// ERROR HANDLERS
 app.use(function(req, res, next) { // catch 404
   var err = new Error('Not Found');
   err.status = 404;

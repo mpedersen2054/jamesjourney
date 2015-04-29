@@ -1,0 +1,37 @@
+
+// BLOGS
+
+[
+  {
+    "title": "the first blog post title!",
+    "content": "the first blog post content section!"
+  },
+  {
+    "title": "the second blog post title!",
+    "content": "the second blog post content section!"
+  }
+]
+
+// GALLERIES
+
+[
+  {
+    "title": "the first image!",
+    "image": "fake.png"
+  },
+  {
+    "title": "the second image!",
+    "image": "fake.png"
+  }
+]
+
+// MESSAGES
+
+[
+  {
+    "content": "the first message!"
+  },
+  {
+    "content": "the second message!"
+  }
+]
