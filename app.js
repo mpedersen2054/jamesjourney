@@ -43,6 +43,7 @@ app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
 
 
+// ERROR HANDLING
 
 app.use(function(req, res, next) { // catch 404
   var err = new Error('Not Found');

@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
+var slugify = require('../lib/slugify.js');
 
 var BlogSchema = new mongoose.Schema({
   title: { type: String },
-  content: { type: String }
+  content: { type: String },
+  slug: { type: String }
 });
 
 var GallerySchema = new mongoose.Schema({
@@ -12,6 +14,12 @@ var GallerySchema = new mongoose.Schema({
 
 var MessageSchema = new mongoose.Schema({
   content: { type: String }
+});
+
+BlogSchema.pre('save', function(next) {
+  var blog = this;
+  blog.slug = slugify(blog.title);
+  next();
 });
 
 

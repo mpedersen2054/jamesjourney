@@ -1,0 +1,21 @@
+body {
+  background-color: #E0FFF2;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.blog-container {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 1em;
+  padding: 1em 0em;
+}
+
+.blog-container h3 {
+  margin-top: 0.4em;
+}
+
+#blog-form {
+  width: 40em;
+}

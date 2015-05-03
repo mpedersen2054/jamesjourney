@@ -19,8 +19,14 @@ staticRouter.route('/')
 
     ], function(err, results) {
       if (err) console.log(err);
-      res.json(results)
+      var blogs = results[0], gals = results[1];
+      res.render('index', { blogs: blogs, gals: gals });
     })
+  })
+
+staticRouter.route('/login')
+  .get(function(req, res) {
+    res.render('login')
   })
 
 module.exports = staticRouter;
