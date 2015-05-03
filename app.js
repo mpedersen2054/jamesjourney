@@ -1,10 +1,14 @@
-var express      = require('express');
-var path         = require('path');
-var favicon      = require('serve-favicon');
-var logger       = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var mongoose     = require('mongoose');
+var express        = require('express');
+var path           = require('path');
+var favicon        = require('serve-favicon');
+var logger         = require('morgan');
+var cookieParser   = require('cookie-parser');
+var bodyParser     = require('body-parser');
+var expressSession = require('express-session');
+var mongoose       = require('mongoose');
+var passport       = require('passport');
+var passportLocal  = require('passport-local');
+
 
 
 // DATABASE
@@ -25,6 +29,37 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession({ 
+  secret: process.env.SESSION_SECRET || 'secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+var User = require('./db/schemas').User;
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new passportLocal.Strategy(function(username, password, done) {
+  User.findOne({ username: username }, function(err, user) {
+    if(err) return done(err);
+    if (!user) {
+      return done(null, false, { message: 'Incorreect username' });
+    }
+    // if (!user.validPassword(password)) {
+    //   return done(null, false, { message: 'Incorrect password' })
+    // }
+    return done(null, user)
+  });
+}));
+
+passport.serializeUser(function(user, done) {
+  done(null, user._id);
+});
+
+passport.deserializeUser(function(_id, done) {
+  User.findById(_id, function(err, user) {
+    done(err, user)
+  })
+})
 
 
 // ROUTES
@@ -33,7 +68,6 @@ var staticRouter  = require('./routes/staticRouter.js');
 var blogRouter    = require('./routes/blogRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
 var messageRouter = require('./routes/messageRouter.js');
-
 
 
 app.use('/', staticRouter);

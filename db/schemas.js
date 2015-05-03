@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
 var slugify = require('../lib/slugify.js');
 
+var UserSchema = new mongoose.Schema({
+  username: { type: String },
+  password: { type: String }
+});
+
 var BlogSchema = new mongoose.Schema({
   title: { type: String },
   content: { type: String },
@@ -22,7 +27,7 @@ BlogSchema.pre('save', function(next) {
   next();
 });
 
-
+exports.User = mongoose.model('User', UserSchema);
 exports.Blog = mongoose.model('Blog', BlogSchema);
 exports.Gallery = mongoose.model('Gallery', GallerySchema);
 exports.Message = mongoose.model('Message', MessageSchema);
