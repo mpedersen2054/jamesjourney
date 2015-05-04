@@ -1,34 +1,41 @@
-var passport = require('passport');
+var passport     = require('passport');
 var staticRouter = require('express').Router();
-var async = require('async');
-var schema = require('../db/schemas.js');
+var async        = require('async');
+var flash        = require('connect-flash');
+var schema       = require('../db/schemas.js');
+
 var Blog = schema.Blog, Gallery = schema.Gallery, Message = schema.Message;
 
 var authPassport = passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login'
+  successRedirect: '/admin-page',
+  failureRedirect: '/login',
+  failureFlash: 'Invalid username or password'
 });
+
+// make async query to Blog.all and Gallery.all, render the page
+var getDbs = function(page, req, res) {
+  async.parallel([
+    function(cb) {
+      Blog.find(function(err, blogs) { cb(null, blogs) });
+    },
+    function(cb) {
+      Gallery.find(function(err, gals) { cb(null, gals) });
+    }
+  ], function(err, results) {
+    if (err) console.log(err);
+    var blogs = results[0], gals = results[1];
+    res.render(page, { 
+      blogs: blogs,
+      gals: gals,
+      isAuthenticated: req.isAuthenticated(),
+      user: req.user
+    });
+  })
+}
 
 staticRouter.route('/')
   .get(function(req, res) {
-    // make queries async, returning the callbck when all are complete
-    async.parallel([
-      function(cb) {
-        Blog.find(function(err, blogs) { cb(null, blogs) });
-      },
-      function(cb) {
-        Gallery.find(function(err, gals) { cb(null, gals) });
-      }
-    ], function(err, results) {
-      if (err) console.log(err);
-      var blogs = results[0], gals = results[1];
-      res.render('index', { 
-        blogs: blogs,
-        gals: gals,
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user
-      });
-    })
+    getDbs('index', req, res)
   })
 
 staticRouter.route('/login')
@@ -36,7 +43,17 @@ staticRouter.route('/login')
     res.render('login')
   })
   .post(authPassport, function(req, res) {
-    res.redirect('/')
+    res.redirect('/admin-page')
+  })
+
+staticRouter.route('/admin-page')
+  .get(function(req, res) {
+    if (!req.isAuthenticated()) {
+      res.redirect('/login');
+    }
+    else {
+      getDbs('admin_page', req, res);
+    }
   })
 
 module.exports = staticRouter;

@@ -1,4 +1,10 @@
 <div id="login-form">
+
+  {{#if message}}
+    <div class="message">
+      <h2>{{message}}</h2>
+    </div>
+  {{/if}}
   
   <form action="" method="post">
     <input type="text" name="username" placeholder="Username...">

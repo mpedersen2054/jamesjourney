@@ -1,0 +1,34 @@
+<div id="admin-page">
+
+  <div class="container">
+    
+    {{#if user}}
+      <h2>Welcome, {{user.username}}</h2>
+    {{/if}}
+
+    {{#if blogs}}
+      <h3 class="pull-left">Blog Posts</h3>
+      <br>
+      <a href="/blog/new"><i> + new</i></a>
+      <table class="table blog-table">
+        <tr>
+          <th></th>
+          <th>title</th>
+          <th></th>
+        </tr>
+        {{#each blogs}}
+        <tr>
+          <td>{{@index}}</td>
+          <td><a href="/blog/{{_id}}">{{title}}</a></td>
+          <td class="options">
+            <a href="/blog/{{_id}}/delete">delete</a>
+            <a href="/blog/{{_id}}/edit">edit</a>
+          </td>
+        </tr>
+        {{/each}}
+      </table>
+    {{/if}}
+
+  </div>
+
+</div>

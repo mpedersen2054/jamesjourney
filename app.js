@@ -2,17 +2,17 @@ var express        = require('express');
 var path           = require('path');
 var favicon        = require('serve-favicon');
 var logger         = require('morgan');
+var methodOverride = require('method-override');
 var cookieParser   = require('cookie-parser');
 var bodyParser     = require('body-parser');
-var expressSession = require('express-session');
+var session        = require('express-session');
 var mongoose       = require('mongoose');
 var passport       = require('passport');
 var passportLocal  = require('passport-local');
 
 
-
 // DATABASE
-
+////////////////////
 mongoose.connect('mongodb://localhost/james');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -20,20 +20,22 @@ db.once('open', function() { console.log('~~ connected to mongodb ~~') });
 
 
 // CONFIG
-
+////////////////////
 var app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(logger('dev'));
+app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressSession({ 
+app.use(session({ 
   secret: process.env.SESSION_SECRET || 'secret',
   resave: false,
   saveUninitialized: false
 }));
+
 
 var User = require('./db/schemas').User;
 app.use(passport.initialize());
@@ -42,7 +44,7 @@ passport.use(new passportLocal.Strategy(function(username, password, done) {
   User.findOne({ username: username }, function(err, user) {
     if(err) return done(err);
     if (!user) {
-      return done(null, false, { message: 'Incorreect username' });
+      return done(null, false, { message: 'Incorrect username' });
     }
     // if (!user.validPassword(password)) {
     //   return done(null, false, { message: 'Incorrect password' })
@@ -57,13 +59,13 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(_id, done) {
   User.findById(_id, function(err, user) {
-    done(err, user)
-  })
-})
+    done(err, user);
+  });
+});
 
 
 // ROUTES
-
+////////////////////
 var staticRouter  = require('./routes/staticRouter.js');
 var blogRouter    = require('./routes/blogRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
@@ -78,7 +80,7 @@ app.use('/messages', messageRouter);
 
 
 // ERROR HANDLING
-
+////////////////////
 app.use(function(req, res, next) { // catch 404
   var err = new Error('Not Found');
   err.status = 404;

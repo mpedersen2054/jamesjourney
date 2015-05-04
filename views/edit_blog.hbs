@@ -1,0 +1,24 @@
+
+<div id="edit-blog">
+
+  <div class="container">
+    
+    <h2>Editing : <i>{{blog.title}}</i> </h2>
+    <hr>
+
+    <form id="blog-form" class="form" action="/blog/{{blog._id}}?_method=PUT" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <div class="form-group">
+        <label for="title-input">Title</label>
+        <input id="title-input" class="form-control" type="text" name="title" value="{{blog.title}}">
+      </div>
+      <div class="form-group">
+        <label for="content-input">Content</label>
+        <textarea id="content-input" class="form-control" name="content">{{blog.content}}</textarea>
+      </div>
+      <input type="submit" value="submit" class="btn">
+    </form>
+
+  </div>
+
+</div>

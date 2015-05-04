@@ -12,18 +12,6 @@
       </div>
     {{/if}}
 
-
-    <form id="blog-form" action="/blog" method="post">
-      <div class="form-group">
-        <input type="text" class="form-control" name="title" placeholder="Enter title...">
-      </div>
-      <div class="form-group">
-        <textarea name="content" class="form-control" placeholder="Enter content..."></textarea>
-      </div>
-      <input type="submit" class="btn" value="Submit">
-    </form>
-
-
     {{#each blogs}}
       <div class="blog-container">
         <h3><a href="/blog/{{_id}}">{{title}}</a></h3>

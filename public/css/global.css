@@ -1,6 +1,9 @@
-body {
-  background-color: #E0FFF2;
+.container {
+  width: 960px;
 }
+
+.pull-right { float: right; }
+.pull-left { float: left; }
 
 .jumbotron {
   text-align: center;
@@ -18,4 +21,9 @@ body {
 
 #blog-form {
   width: 40em;
+}
+
+.blog-table .options a {
+  margin: 0px 10px;
+  float: right;
 }
