@@ -1,41 +1,38 @@
 <div id="cover">
 
-  <nav class="menu slide-menu-right">
-    <ul>
-      <li><button class="close-menu">Close &rarr;</button></li>
-      <li><a href="#">Broccoli</a></li>
-    </ul>
-  </nav><!-- /slide menu right -->
+  <div class="site-wrap">
 
-  <div class="jumbotron">
-    <h1>Index Page</h1>
-    {{#if user}}
-      <h2>Welcome, {{user}}</h2>
-    {{/if}}
-  </div>
+    <div class="jumbotron">
+      <h1>Index Page</h1>
+      {{#if user}}
+        <h2>Welcome, {{user}}</h2>
+      {{/if}}
+    </div>
 
-  <div class="container">
+    <div class="container">
 
-    <h2><a href="/blog">Blog</a></h2>
+      <h2><a href="/blog">Blog</a></h2>
 
-    {{#each blogs}}
-      <div class="blog-container small">
-        <h4><a href="/blog/{{_id}}">{{title}}</a></h4>
-        {{!-- <p>{{{content}}}</p> --}}
-        <p>{{content}}</p>
-      </div>
-    {{/each}}
+      {{#each blogs}}
+        <div class="blog-container small">
+          <h4><a href="/blog/{{slug}}">{{title}}</a></h4>
+          {{!-- <p>{{{content}}}</p> --}}
+          <p>{{content}}</p>
+        </div>
+      {{/each}}
 
-    <hr>
+      <hr>
 
-    <h2><a href="/gallery">Gallery</a></h2>
+      <h2><a href="/gallery">Gallery</a></h2>
 
-    {{#each gals}}
-      <a href="/gallery/{{_id}}">{{title}}</a> | {{image}}
-      <br>
-    {{/each}}
-    <br><br>
+      {{#each gals}}
+        <a href="/gallery/{{_id}}">{{title}}</a> | {{image}}
+        <br>
+      {{/each}}
+      <br><br>
 
-  </div>
+    </div> {{!-- end .container --}}
 
-</div>
+  </div> {{!-- end .wrapper --}}
+
+</div> {{!-- end #cover --}}

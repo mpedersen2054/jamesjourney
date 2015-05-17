@@ -84,6 +84,7 @@ app.use('/messages', messageRouter);
 app.use(function(req, res, next) { // catch 404
   var err = new Error('Not Found');
   err.status = 404;
+  res.render('404')
   next(err);
 });
 // will print stacktrace in dev

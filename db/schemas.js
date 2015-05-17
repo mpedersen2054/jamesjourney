@@ -27,8 +27,8 @@ BlogSchema.pre('save', function(next) {
   next();
 });
 
-exports.User = mongoose.model('User', UserSchema);
-exports.Blog = mongoose.model('Blog', BlogSchema);
+exports.User    = mongoose.model('User', UserSchema);
+exports.Blog    = mongoose.model('Blog', BlogSchema);
 exports.Gallery = mongoose.model('Gallery', GallerySchema);
 exports.Message = mongoose.model('Message', MessageSchema);
 
