@@ -1,5 +1,5 @@
 var galleryRouter = require('express').Router();
-var Gallery = require('../db/schemas.js').Gallery;
+var Gallery = require('../db/gallery.js');
 
 galleryRouter.route('/')
   .get(function(req, res) {

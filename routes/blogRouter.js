@@ -1,5 +1,5 @@
 var blogRouter = require('express').Router();
-var Blog = require('../db/schemas.js').Blog;
+var Blog = require('../db/blog');
 
 
 blogRouter.route('/')
@@ -26,7 +26,7 @@ blogRouter.route('/new')
         res.redirect('/admin-page');
       })
     } else {
-      redirect('/login');
+      res.redirect('/login');
     }
   })
 

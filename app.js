@@ -37,7 +37,7 @@ app.use(session({
 }));
 
 
-var User = require('./db/schemas').User;
+var User = require('./db/user');
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new passportLocal.Strategy(function(username, password, done) {
@@ -46,9 +46,11 @@ passport.use(new passportLocal.Strategy(function(username, password, done) {
     if (!user) {
       return done(null, false, { message: 'Incorrect username' });
     }
-    // if (!user.validPassword(password)) {
+    // if (!user.comparePassword(password)) {
     //   return done(null, false, { message: 'Incorrect password' })
     // }
+    // var itwork = user.comparePassword(password)
+    // console.log(itwork)
     return done(null, user)
   });
 }));
@@ -72,11 +74,40 @@ var galleryRouter = require('./routes/galleryRouter.js');
 var messageRouter = require('./routes/messageRouter.js');
 
 
-app.use('/', staticRouter);
-
+app.use('/',         staticRouter);
 app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
+
+app.get('/users', function(req, res) {
+  if (req.user) {
+    User.find({}, function(err, users) {
+      res.json(users)
+    })
+  } else {
+    res.redirect('/login')
+  }
+})
+
+app.get('/users/new', function(req, res) {
+  if (req.user) {
+    res.render('new_user')
+  } else {
+    res.redirect('/login')
+  }
+})
+
+app.post('/users/new', function(req, res) {
+  console.log(req.body)
+  if (req.user) {
+    var user = new User(req.body);
+    user.save(function(err, user) {
+      res.redirect('/users')
+    })
+  } else {
+    res.redirect('/login')
+  }
+})
 
 
 // ERROR HANDLING

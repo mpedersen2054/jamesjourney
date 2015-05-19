@@ -3,8 +3,9 @@ var staticRouter = require('express').Router();
 var async        = require('async');
 var flash        = require('connect-flash');
 var schema       = require('../db/schemas.js');
+var Blog         = require('../db/blog.js')
+var Gallery      = require('../db/gallery.js')
 
-var Blog = schema.Blog, Gallery = schema.Gallery, Message = schema.Message;
 
 var authPassport = passport.authenticate('local', {
   successRedirect: '/admin-page',
