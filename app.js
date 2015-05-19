@@ -9,6 +9,7 @@ var session        = require('express-session');
 var mongoose       = require('mongoose');
 var passport       = require('passport');
 var passportLocal  = require('passport-local');
+var flash          = require('connect-flash');
 
 
 // DATABASE
@@ -35,6 +36,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use(flash())
 
 
 var User = require('./db/user');
@@ -46,11 +48,9 @@ passport.use(new passportLocal.Strategy(function(username, password, done) {
     if (!user) {
       return done(null, false, { message: 'Incorrect username' });
     }
-    // if (!user.comparePassword(password)) {
-    //   return done(null, false, { message: 'Incorrect password' })
-    // }
-    // var itwork = user.comparePassword(password)
-    // console.log(itwork)
+    if (!user.comparePassword(password)) {
+      return done(null, false, { message: 'Incorrect password' })
+    }
     return done(null, user)
   });
 }));
@@ -79,21 +79,25 @@ app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
 
+// app.get('/flash', function(req, res) {
+//   req.flash('wrong-password', 'The password you entered for that username is incorrect.')
+// })
+
 app.get('/users', function(req, res) {
   if (req.user) {
     User.find({}, function(err, users) {
-      res.json(users)
-    })
+      res.json(users);
+    });
   } else {
     res.redirect('/login')
   }
-})
+});
 
 app.get('/users/new', function(req, res) {
   if (req.user) {
-    res.render('new_user')
+    res.render('new_user');
   } else {
-    res.redirect('/login')
+    res.redirect('/login');
   }
 })
 

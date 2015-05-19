@@ -2,15 +2,14 @@ var passport     = require('passport');
 var staticRouter = require('express').Router();
 var async        = require('async');
 var flash        = require('connect-flash');
-var schema       = require('../db/schemas.js');
-var Blog         = require('../db/blog.js')
-var Gallery      = require('../db/gallery.js')
+var Blog         = require('../db/blog')
+var Gallery      = require('../db/gallery')
 
 
 var authPassport = passport.authenticate('local', {
   successRedirect: '/admin-page',
   failureRedirect: '/login',
-  failureFlash: 'Invalid username or password'
+  failureFlash: true
 });
 
 // make async query to Blog.all and Gallery.all, render the page
@@ -41,7 +40,7 @@ staticRouter.route('/')
 
 staticRouter.route('/login')
   .get(function(req, res) {
-    res.render('login')
+    res.render('login', { message: req.flash('error') });
   })
   .post(authPassport, function(req, res) {
     res.redirect('/admin-page')
