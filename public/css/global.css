@@ -9,6 +9,9 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 
 .jumbotron {
   text-align: center;
+  height: 30em;
+  color: white;
+  text-transform: uppercase;
 }
 
 .blog-container {

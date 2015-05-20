@@ -2,9 +2,14 @@ var mongoose = require('mongoose');
 var slugify  = require('../lib/slugify.js');
 
 var BlogSchema = new mongoose.Schema({
-  title: { type: String },
-  content: { type: String },
-  slug: { type: String }
+  coverImage: { type: String },
+  title:      { type: String, unique: true },
+  subTitle:   { type: String },
+  dateAdded:  { type: Date, default: Date.now },
+  slug:       { type: String },
+  author:     { type: String },
+  content:    { type: String },
+  social:     [ String ]
 });
 
 BlogSchema.pre('save', function(next) {
