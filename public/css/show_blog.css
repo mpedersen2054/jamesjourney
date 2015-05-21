@@ -3,7 +3,7 @@
 
 #show-blog .jumbotron {
   position: relative;
-  height: 41.6875em;
+  height: 43em;
 }
 
 #show-blog .jumbotron .title {
@@ -14,6 +14,7 @@
   background-color: rgba(0,0,0,0.4);
   text-transform: uppercase;
   font-weight: 700;
+  border-radius: 0.4em;
 }
 
 #show-blog .meta {

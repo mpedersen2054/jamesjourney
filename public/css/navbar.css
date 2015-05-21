@@ -1,0 +1,24 @@
+
+#navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #111;
+  width: 100%;
+}
+
+.logo,
+.slide-menu-icon {
+  padding: 1.6em 0;
+}
+
+.logo {
+  font-weight: 600;
+  color: #fff;
+  float: left;
+}
+
+.slide-menu-icon {
+  cursor: pointer;
+  float: right;
+}

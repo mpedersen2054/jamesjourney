@@ -6,6 +6,15 @@ body
   font-family: 'Source Sans Pro', sans-serif;
 } /* 1em === 16px */
 
+.container {
+  width: 64em;
+}
+
+.navbar-container {
+  max-width: 64em;
+  margin: 0 auto;
+}
+
 ul {
   margin: 0px 0px;
   padding: 0px 0px;
