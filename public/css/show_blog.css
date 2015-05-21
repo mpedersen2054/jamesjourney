@@ -1,2 +1,23 @@
 
 #show-blog {}
+
+#show-blog .jumbotron {
+  position: relative;
+  height: 41.6875em;
+}
+
+#show-blog .jumbotron .title {
+  margin: 160px 0 auto;
+  color: #fff;
+  font-size: 4.875em;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#show-blog .meta {
+  background-color: #ccc;
+}
+
+#show-blog .content

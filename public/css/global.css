@@ -1,34 +1,16 @@
-html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+body
+{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+} /* 1em === 16px */
 
-.container {
-  width: 960px;
+ul {
+  margin: 0px 0px;
+  padding: 0px 0px;
 }
-
-.pull-right { float: right; }
-.pull-left { float: left; }
 
 .jumbotron {
-  text-align: center;
-  height: 30em;
-  color: white;
-  text-transform: uppercase;
-}
-
-.blog-container {
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 1em;
-  padding: 1em 0em;
-}
-
-.blog-container h3 {
-  margin-top: 0.4em;
-}
-
-#blog-form {
-  width: 40em;
-}
-
-.blog-table .options a {
-  margin: 0px 10px;
-  float: right;
+  overflow: auto;
 }

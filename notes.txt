@@ -1,0 +1,7 @@
+blog.coverImage
+blog.title
+blog.subTitle
+blog.slug
+blog.dateAdded
+blog.content
+blog.social
