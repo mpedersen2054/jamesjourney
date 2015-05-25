@@ -1,5 +1,33 @@
 
 #subscribe_block {
-  background-color: #ccc;
-  padding: 4em;
+  background-color: #ebebeb;
+  padding: 6em 4em 4em;
+  text-align: center;
+}
+
+#subscribe_block h2 {
+  font-size: 2.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#subscribe_block h3 {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+#subscribe_block .input-group {
+  /*max-width: 30em;*/
+  margin: 0 auto;
+  padding: 2.2em 1.6em;
+}
+
+#subscribe_block .form-control {
+  height: 4em;
+}
+#subscribe_block .btn {
+  margin-top: 0.2em;
+  height: 4.6em;
+  background-color: #C2C2C2;
+  color: white;
 }

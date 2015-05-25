@@ -1,21 +1,120 @@
 <div id="show-blog">
 
   <div class="jumbotron" style="background-image: url({{blog.coverImage}}); background-size: cover; background-position: center;">
-    <div class="container">
+    <div class="smaller-fluid-container">
       <h1 class="title">{{blog.title}}</h1>
+      
     </div>
   </div>
 
   <div class="meta">
-    <div class="container">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cupiditate distinctio aliquid animi harum nihil est placeat, voluptatum dolor vel.
+    <div class="smaller-fluid-container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="subtitle">Blog Post Title</h2>
+        </div>
+      </div>
+      <div class="row">
+        <br>
+        <div class="col-sm-6">
+          <div class="author">Laura Kaylor</div>
+        </div>
+        <div class="col-sm-6">
+          <div class="date">May 26, 2015</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="content">
-    <div class="container">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias inventore ullam expedita labore similique, provident illum blanditiis iusto beatae. Repellendus eos dolorum fugit rem nesciunt cum sint, dolore illo velit minima itaque asperiores quaerat vitae vel, architecto laborum quo ipsum sapiente impedit soluta, explicabo quis a quidem aliquid. Libero minima eveniet et inventore enim debitis quisquam ducimus, cum sed minus itaque at fuga ullam dolorem ut ratione cumque repellat, adipisci omnis sequi consequuntur dolorum suscipit quis. Vitae suscipit a nam magnam quos soluta non corrupti enim explicabo sunt omnis debitis dicta, deserunt voluptas perferendis veniam! Ipsam omnis sapiente dolore non consectetur dicta nobis fugit, odio aperiam sequi explicabo quod. Adipisci officiis dolorem molestias, repudiandae! Delectus facilis suscipit minus veritatis harum labore numquam! Optio alias error, similique fugiat at! Ipsam culpa commodi fugit consequatur sint velit vel veniam atque cupiditate voluptas inventore odio, ducimus ullam ex quo possimus totam assumenda sunt molestias laborum reprehenderit pariatur dignissimos nostrum minima quam? Maxime, sit, quisquam. Facere pariatur minus veritatis molestiae enim magni illo culpa, unde exercitationem cumque amet temporibus sint excepturi dolorum. Praesentium rerum earum, ea nesciunt magni recusandae. Praesentium soluta, neque, mollitia vel doloremque voluptates, amet fugiat quis, culpa aliquam illo vitae sequi.</div>
+    <div class="smaller-fluid-container">
+      <p>Coming home is a powerful feeling. As someone who enjoys the comforts and ease of a familiar place, I am not a prime candidate for living and working in the jungles of central Africa. The desire for home was never stronger than after four days of battling cerebral malaria and listening to a steady stream of Al Jazeera Arabic thanks to my Moroccan caretakers in a UN hospital in the Democratic Republic of Congo (DRC).</p>
+
+      <p>It’s in moments like this—laying on a cot with a 104-degree temperature—that one starts to wonder: what am I doing out here?</p>
+
+      <p>I had been captured by the story of children who were abducted by the Lord’s Resistance Army (LRA) and forced to commit mass atrocities under the direction of the maniacal leader, Joseph Kony. Having no real political ambitions in 2008 other than avoiding International Criminal Court warrants, Kony relocated his forces from Uganda to the DRC and the Central African Republic because of the utter lack of governance and security available to the vulnerable populations there.</p>
+
+      <p>This story captivated and baffled me. I consumed every piece of information on the LRA and sought to learn the root causes of the conflict and the enablers that allowed the LRA to exist. After a few internships with Invisible Children, I found myself working on the expansion of the organization’s programs into the DRC and the Central African Republic—an expansion that mirrored the LRA’s.</p>
+
+      <p>In my role at Invisible Children I moved to Uganda, working to identify and develop new programs to stem LRA violence. It was a process of building perseverance and mental self-control that allowed me to focus on my job and learn to enjoy life on the other side of the world. It comes naturally to some, the ability to pick up and move, travel and leave family, friends and a life behind; for me it was a constant struggle.</p>
+
+      <p>The LRA is a unique armed group in that it is almost wholly comprised of combatants who were once captured as children and conditioned, brainwashed and trained into soldiers in Joseph Kony’s army. Former LRA fighters I’ve spoken with have told me that to survive in the captivity, you have to embrace the role of fighter and assume a new identity within the group. The LRA is known for its brutal tactics of brainwashing children, forcing them to kill parents or loved ones, so that they know, even if they wanted to go home, no one will forgive them for what they did. They believe their only option is to live as a LRA fighter.</p>
+    </div>
   </div>
+
+  <div class="featured-posts">
+    <div class="fluid-container">
+      <h2>Featured Posts</h2>
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <a class="post" href="#">
+            <div class="image">
+              <img src="http://placehold.it/200x200">
+            </div>
+            <div class="title">
+              Blog Post Title
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <a class="post" href="#">
+            <div class="image">
+              <img src="http://placehold.it/200x200">
+            </div>
+            <div class="title">
+              Blog Post Title
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <a class="post" href="#">
+            <div class="image">
+              <img src="http://placehold.it/200x200">
+            </div>
+            <div class="title">
+              Blog Post Title
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <a class="post" href="#">
+            <div class="image">
+              <img src="http://placehold.it/200x200">
+            </div>
+            <div class="title">
+              Blog Post Title
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> subscribe_block}}
 
 
 
 </div>
+
+
+{{!-- <div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <ul class="social-network social-circle">
+      <li>
+        <a href="#" class="icoFacebook" title="Facebook">
+          <i class="fa fa-facebook fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="icoTwitter" title="Twitter">
+          <i class="fa fa-twitter fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="icoGoogle" title="Google +">
+          <i class="fa fa-google-plus fa-lg"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div> --}}

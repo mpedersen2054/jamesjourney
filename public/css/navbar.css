@@ -1,24 +1,24 @@
-
-#navbar {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: #111;
-  width: 100%;
+.navbar {
+  background-color: #333;
+  color: #ccc;
+  border: none;
+  outline: none;
+  max-width: 100%
 }
 
-.logo,
-.slide-menu-icon {
-  padding: 1.6em 0;
-}
-
-.logo {
-  font-weight: 600;
+.navbar .navbar-brand {
   color: #fff;
-  float: left;
 }
 
-.slide-menu-icon {
+.navbar-brand,
+.menu-btn {
+  padding: 1.2em;
+}
+
+.menu-btn {
   cursor: pointer;
   float: right;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
 }
