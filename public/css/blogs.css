@@ -1,0 +1,22 @@
+#blogs .jumbotron {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+  min-height: 40em;
+}
+
+#blogs .jumbotron .title {
+  color: #fff;
+  font-size: 4.875em;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.4em;
+  margin-top: 2em;
+}
+
+#blogs .smaller-fluid-container {
+  padding: 2em 0 4em;
+}
