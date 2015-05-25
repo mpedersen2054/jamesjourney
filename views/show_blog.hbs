@@ -11,16 +11,16 @@
     <div class="smaller-fluid-container">
       <div class="row">
         <div class="col-sm-12">
-          <h2 class="subtitle">Blog Post Title</h2>
+          <h2 class="subtitle">{{blog.subTitle}}</h2>
         </div>
       </div>
       <div class="row">
         <br>
         <div class="col-sm-6">
-          <div class="author">Laura Kaylor</div>
+          <div class="author">{{blog.author}}</div>
         </div>
         <div class="col-sm-6">
-          <div class="date">May 26, 2015</div>
+          <div class="date">{{blog.dateAdded}}</div>
         </div>
       </div>
     </div>
@@ -28,17 +28,7 @@
 
   <div class="content">
     <div class="smaller-fluid-container">
-      <p>Coming home is a powerful feeling. As someone who enjoys the comforts and ease of a familiar place, I am not a prime candidate for living and working in the jungles of central Africa. The desire for home was never stronger than after four days of battling cerebral malaria and listening to a steady stream of Al Jazeera Arabic thanks to my Moroccan caretakers in a UN hospital in the Democratic Republic of Congo (DRC).</p>
-
-      <p>It’s in moments like this—laying on a cot with a 104-degree temperature—that one starts to wonder: what am I doing out here?</p>
-
-      <p>I had been captured by the story of children who were abducted by the Lord’s Resistance Army (LRA) and forced to commit mass atrocities under the direction of the maniacal leader, Joseph Kony. Having no real political ambitions in 2008 other than avoiding International Criminal Court warrants, Kony relocated his forces from Uganda to the DRC and the Central African Republic because of the utter lack of governance and security available to the vulnerable populations there.</p>
-
-      <p>This story captivated and baffled me. I consumed every piece of information on the LRA and sought to learn the root causes of the conflict and the enablers that allowed the LRA to exist. After a few internships with Invisible Children, I found myself working on the expansion of the organization’s programs into the DRC and the Central African Republic—an expansion that mirrored the LRA’s.</p>
-
-      <p>In my role at Invisible Children I moved to Uganda, working to identify and develop new programs to stem LRA violence. It was a process of building perseverance and mental self-control that allowed me to focus on my job and learn to enjoy life on the other side of the world. It comes naturally to some, the ability to pick up and move, travel and leave family, friends and a life behind; for me it was a constant struggle.</p>
-
-      <p>The LRA is a unique armed group in that it is almost wholly comprised of combatants who were once captured as children and conditioned, brainwashed and trained into soldiers in Joseph Kony’s army. Former LRA fighters I’ve spoken with have told me that to survive in the captivity, you have to embrace the role of fighter and assume a new identity within the group. The LRA is known for its brutal tactics of brainwashing children, forcing them to kill parents or loved ones, so that they know, even if they wanted to go home, no one will forgive them for what they did. They believe their only option is to live as a LRA fighter.</p>
+      {{{blog.content}}}
     </div>
   </div>
 

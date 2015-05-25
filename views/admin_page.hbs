@@ -3,8 +3,9 @@
   <div class="fluid-container">
     
     {{#if user}}
-      <div class="well">
-        <h2>Welcome, {{user.username}}</h2>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Welcome!</strong> {{user.username}}
       </div>
     {{/if}}
 
@@ -23,8 +24,8 @@
             <td>{{@index}}</td>
             <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
             <td class="options">
-              <a href="/blog/{{_id}}/edit" class="btn btn-default btn-sm">edit</a>
-              <a href="/blog/{{_id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">delete</a>
+              <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm">edit</a>
+              <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">delete</a>
             </td>
           </tr>
           {{/each}}

@@ -48,28 +48,31 @@ blogRouter.route('/:slug')
   })
   .put(function(req, res) {
     if (req.user) {
-      Blog.findById(req.params.id, function(err, blog) {
+      Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
         if(err) console.log(err);
         if(!blog) {
           res.status(404).render('404', {
-            message: 'Could not found that Blog.'
+            message: 'Could not find that Blog.'
           });
         }
-        blog.title = req.body.title;
-        blog.content = req.body.content;
+
+        blog = req.body;
+        console.log(blog)
+
         blog.save(function(err) {
           if(err) console.log(err);
           res.redirect('/admin-page');
         });
       })
+
     } else {
       res.redirect('/login')
     }
   })
-blogRouter.route('/:id/edit')
+blogRouter.route('/:slug/edit')
   .get(function(req, res) {
     if (req.user) {
-      Blog.findById(req.params.id, function(err, blog) {
+      Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
         if(err) console.log(err);
         if(!blog) {
           res.status(404).render('404', {
@@ -82,10 +85,10 @@ blogRouter.route('/:id/edit')
       res.redirect('/login')
     }
   })
-blogRouter.route('/:id/delete')
+blogRouter.route('/:slug/delete')
   .get(function(req, res) {
     if (req.user) {
-      Blog.remove({ _id: req.params.id }, function(err) {
+      Blog.remove({ 'slug': req.params.slug }, function(err) {
         if(err) console.log(err);
         res.redirect('/admin-page')
       })
