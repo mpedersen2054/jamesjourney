@@ -56,8 +56,11 @@ blogRouter.route('/:slug')
           });
         }
 
-        blog = req.body;
-        console.log(blog)
+        blog.coverImage = req.body.coverImage;
+        blog.title      = req.body.title;
+        blog.subTitle   = req.body.subTitle;
+        blog.author     = req.body.author;
+        blog.content    = req.body.content;
 
         blog.save(function(err) {
           if(err) console.log(err);
