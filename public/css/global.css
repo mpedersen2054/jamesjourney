@@ -59,6 +59,9 @@ img {
   max-width: 100%;
 }
 
+table a:not(.btn), .table a:not(.btn) {
+  text-decoration: none;
+}
 
 
 @media (max-width: 36em) {

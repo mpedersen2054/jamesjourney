@@ -1,0 +1,17 @@
+#admin-page {
+  padding: 4em 0;
+}
+
+#admin-page .blog-title {
+  font-size: 2.6em;
+  text-align: center;
+}
+
+#admin-page .options {
+  float: right;
+}
+
+#admin-page td {
+  font-size: 1.2em;
+  padding: 1em;
+}

@@ -1,23 +1,26 @@
 <div id="new-blog">
 
-  <div class="container">
+  <div class="smaller-fluid-container">
 
     <h2>New Blog</h2>
 
     <form id="blog-form" action="/blog/new" method="post">
       <div class="form-group">
-        <input type="text" class="form-control" name="coverImage" placeholder="cover image url...">
+        <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="title" placeholder="title...">
+        <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" name="subTitle" placeholder="sub title...">
+        <input type="text" class="form-control" name="subTitle" placeholder="sub title..." autocomplete="off">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="author" placeholder="author" autocomplete="off">
       </div>
       <div class="form-group">
         <textarea name="content" class="form-control" placeholder="Enter content..."></textarea>
       </div>
-      <input type="submit" class="btn" value="Submit">
+      <input type="submit" class="btn btn-primary" value="Submit">
     </form>
 
   </div>
