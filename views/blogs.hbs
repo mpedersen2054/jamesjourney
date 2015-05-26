@@ -1,18 +1,35 @@
 <div id="blogs">
 
-  <div class="jumbotron" style="background-image: url({{blog.coverImage}}); background-size: cover; background-position: center;">
+  <div class="jumbotron" style="background-image: url(https://static.pexels.com/photos/185/black-and-white-sky-flying-holiday.jpg); background-size: cover; background-position: center;">
       <div class="smaller-fluid-container">
-        <h1 class="title">The Blog Index Title</h1>
+        <h1 class="title">
+          Blog
+          <div class="subtitle">Updates and inspiration</div>
+        </h1>
         
       </div>
     </div>
 
-  <div class="smaller-fluid-container">
+  <div class="fluid-container">
 
     {{#each blogs}}
-      <div class="blog-container">
-        <h3><a href="/blog/{{slug}}">{{title}}</a></h3>
-        <p>{{{content}}}</p>
+      <div class="post">
+        <div class="row blog-row">
+          <div class="col-md-4 col-sm-12">
+            <div class="image-and-meta">
+              <img src="{{coverImage}}" width="250px" height="250px">
+              <div class="author">{{author}}</div>
+              <div class="date">{{dateAdded}}</div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-12">
+            <div class="title-and-contprev">
+              <h3 class="title"><a href="/blog/{{slug}}">{{title}}</a></h3>
+              <p class="content">{{contentPreview}}</p>
+              <a href="/blog/{{slug}}" class="btn btn-default">Read more</a>
+            </div>
+          </div>
+        </div>
       </div>
     {{/each}}
 

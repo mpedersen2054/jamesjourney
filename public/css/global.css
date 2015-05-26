@@ -68,7 +68,7 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 
-@media (max-width: 36em) {
+@media (max-width: 62em) {
   body {
     font-size: 14px;
   }
