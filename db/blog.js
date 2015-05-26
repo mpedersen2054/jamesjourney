@@ -6,11 +6,19 @@ var BlogSchema = new mongoose.Schema({
   title:          { type: String, unique: true },
   subTitle:       { type: String },
   dateAdded:      { type: Date, default: Date.now },
+  formattedDate:  { type: String },
   slug:           { type: String },
   author:         { type: String },
   contentPreview: { type: String },
   content:        { type: String },
   social:         [ String ]
+});
+
+BlogSchema.pre('save', function(next) {
+  var blog = this;
+  var fd = blog.dateAdded.toDateString();
+  blog.formattedDate = fd;
+  next();
 });
 
 BlogSchema.pre('save', function(next) {
