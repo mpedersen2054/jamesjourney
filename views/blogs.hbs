@@ -1,19 +1,17 @@
 <div id="blogs">
 
   <div class="jumbotron" style="background-image: url(https://static.pexels.com/photos/185/black-and-white-sky-flying-holiday.jpg); background-size: cover; background-position: center;">
-      <div class="smaller-fluid-container">
-        <h1 class="title">
-          Blog
-          <div class="subtitle">updates and inspiration</div>
-        </h1>
-        
-      </div>
+    <div class="smaller-fluid-container">
+      <h1 class="title">
+        Blog
+        <div class="subtitle">updates and inspiration</div>
+      </h1>
     </div>
+  </div>
 
-  <div class="fluid-container">
-
-    {{#each blogs}}
-      <div class="post">
+  {{#each blogs}}
+    <div class="blog-post">
+      <div class="fluid-container">
         <div class="row blog-row">
           <div class="col-md-4 col-sm-12">
             <div class="image-and-meta">
@@ -26,14 +24,13 @@
             <div class="title-and-contprev">
               <h3 class="title"><a href="/blog/{{slug}}">{{title}}</a></h3>
               <p class="content">{{contentPreview}}</p>
-              <a href="/blog/{{slug}}" class="btn btn-default">Read more</a>
+              <a href="/blog/{{slug}}" class="btn btn-primary">Read more</a>
             </div>
           </div>
         </div>
       </div>
-    {{/each}}
-
-  </div> {{!-- end container --}}
+    </div>
+  {{/each}}
 
   {{> featured_posts}}
   {{> subscribe_block}}
