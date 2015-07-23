@@ -3,7 +3,7 @@ var staticRouter = require('express').Router();
 var async        = require('async');
 var flash        = require('connect-flash');
 var Blog         = require('../db/blog')
-var Gallery      = require('../db/gallery')
+var Gallery      = require('../db/gallery');
 
 
 var authPassport = passport.authenticate('local', {
@@ -24,7 +24,7 @@ var getDbs = function(page, req, res) {
   ], function(err, results) {
     if (err) console.log(err);
     var blogs = results[0], gals = results[1];
-    res.render(page, { 
+    res.render(page, {
       blogs: blogs,
       gals: gals,
       isAuthenticated: req.isAuthenticated(),
