@@ -1,5 +1,6 @@
 var blogRouter = require('express').Router();
 var Blog = require('../db/blog');
+var markdown = require('markdown').markdown;
 
 
 blogRouter.route('/')
@@ -21,6 +22,10 @@ blogRouter.route('/new')
   })
   .post(function(req, res) {
     if (req.user) {
+      var data = req.body;
+      var mdcontent = markdown.toHTML(data.content);
+      data.content = mdcontent;
+      console.log(data)
       var blog = new Blog(req.body);
       blog.save(function(err, blog) {
         res.redirect('/admin-page');

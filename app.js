@@ -33,7 +33,7 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({ 
+app.use(session({
   secret: process.env.SESSION_SECRET || 'secret',
   resave: false,
   saveUninitialized: false
@@ -103,16 +103,17 @@ app.get('/users/new', function(req, res) {
   }
 })
 
+// REMOVE ONCE ALL USERS ADDED
 app.post('/users/new', function(req, res) {
   console.log(req.body)
-  if (req.user) {
+  // if (req.user) {
     var user = new User(req.body);
     user.save(function(err, user) {
       res.redirect('/users')
-    })
-  } else {
-    res.redirect('/login')
-  }
+  //   })
+  // } else {
+  //   res.redirect('/login')
+  })
 })
 
 
