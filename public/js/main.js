@@ -31,9 +31,17 @@ $(function() {
     });
   }
 
-  $('#navbar-wrapper').affix({})
 
+  function featuredPostSlide() {
+    var featuredSlider = $('.featured-slider');
+    var featuredPost = featuredSlider.find('.post');
+
+    featuredPost.mouseover(function() {
+      console.log($(this).find('.title').text())
+    })
+  }
 
   windowFix();
   overlayMenu();
+  featuredPostSlide();
 });

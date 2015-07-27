@@ -4,12 +4,6 @@ var Featured   = require('../lib/queries');
 var markdown   = require('markdown').markdown;
 
 
-// Featured.findFeatured(function(err, results) {
-//   console.log('from findFeatured')
-//   console.log(results)
-// })
-
-
 blogRouter.route('/')
   .get(function(req, res) {
     Blog.find(function(err, blogs) {
@@ -46,13 +40,19 @@ blogRouter.route('/new')
 blogRouter.route('/:slug')
   .get(function(req, res) {
     Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
-      if(err) console.log(err);
-      if(!blog) {
-        res.status(404).render('404', {
-          message: 'Could not found that Blog.'
-        });
-      }
-      res.render('show_blog', { blog: blog });
+      Featured.findFeatured(function(err, featured) {
+        if(err) console.log(err);
+        if (!featured || !blog) {
+          res.render('404', {
+            message: 'There was an error loading featured posts'
+          });
+        }
+        console.log(featured.length)
+        res.render('show_blog', {
+          blog: blog,
+          featured: featured
+        })
+      })
     })
   })
   .put(function(req, res) {

@@ -145,7 +145,7 @@ a.socialIcon:hover, .socialHoverClass {
 
 #show-blog .content .smaller-fluid-container {
   margin-bottom: 4em;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
   line-height: 1.8;
   padding: 2em 1em;
   font-size: 1.2em;
