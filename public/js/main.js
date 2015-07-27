@@ -7,29 +7,31 @@ $(function() {
 
 
   function overlayMenu() {
+    var openRight = $('.open-right');
+    var closeAny  = $('.close-any');
+    var menuBtn   = $('.menu-btn');
+
     var controller = new slidebars();
     controller.init()
 
-    $( '.open-right' ).on( 'click', function ( event ) {
-      event.preventDefault();
-      event.stopPropagation();
+    openRight.on('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      menuBtn.addClass('right-margin');
       controller.open( 'sb-1' );
     });
 
-    $( '.close-right' ).on( 'click', function ( event ) {
-      event.preventDefault();
-      event.stopPropagation();
-      controller.close( 'sb-1' );
-    });
-
-    $( '.close-any' ).on( 'click', function ( event ) {
+    $( '.close-any' ).on( 'click', function (e) {
       if ( controller.active( 'slidebar' ) ) {
-        event.preventDefault();
-        event.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
+        menuBtn.removeClass('right-margin')
         controller.close();
       }
     });
   }
+
+  $('#navbar-wrapper').affix({})
 
 
   windowFix();

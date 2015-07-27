@@ -58,7 +58,7 @@ html, body {
 	position: fixed;
 	overflow: hidden;
 	overflow-y: auto;
-	background-color: #333;
+	background-color: #000;
 	color: #ccc; /* Basic colors, overwrite this in your own css. */
 	-webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS. */
 }
@@ -109,8 +109,8 @@ html, body {
 	-webkit-transform: translate( 0px, 0px );
 	    -ms-transform: translate( 0px, 0px );
 	        transform: translate( 0px, 0px );
-	-webkit-transition: -webkit-transform 200ms;
-	        transition:         transform 200ms;
+	/*-webkit-transition: -webkit-transform 200ms;
+	        transition:         transform 200ms;*/
 	/*-webkit-backface-visibility: hidden;  Prevents flickering but may be removed if your having problems with fixed background images in Chrome.*/
 }
 

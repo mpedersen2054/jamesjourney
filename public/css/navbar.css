@@ -1,10 +1,17 @@
 .navbar {
-  background-color: transparent;
-  color: #ccc;
+  background-color: #000;
+  color: #fff;
   border: none;
   outline: none;
   max-width: 100%;
-  margin: 0 -1px;
+  margin: -1px -1px;
+  border-radius: 0;
+}
+
+#navbar-wrapper {}
+
+.right-margin {
+  margin-right: 2em;
 }
 
 .navbar .navbar-brand {
@@ -21,8 +28,22 @@
 }
 
 .menu-btn {
-  margin-right: -1.2em;
+  /*margin-right: 1.2em;*/
 }
+
+.menu-btn i {
+  border: 2px solid #fff;
+  border-radius: 6px;
+  padding: 0.4em 0.6em;
+  font-size: 1.2em;
+}
+
+.menu-btn i:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
 
 .menu-btn {
   cursor: pointer;
@@ -76,7 +97,7 @@ body {
 }
 
 [off-canvas] {
-  background-color: #333;
+  background-color: #000;
   color: #ccc;
 }
 
