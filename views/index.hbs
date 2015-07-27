@@ -3,13 +3,15 @@
   <div class="site-wrap">
 
     <div class="jumbotron">
-      <h1>Index Page</h1>
-      {{#if user}}
-        <h2>Welcome, {{user}}</h2>
-      {{/if}}
+      <div class="container">
+        <h1 class="pull-right">JAMES4EDS</h1>
+        {{#if user}}
+          <h2>Welcome, {{user}}</h2>
+        {{/if}}
+      </div>
     </div>
 
-    <div class="container">
+    <div class="fluid-container">
 
       <h2><a href="/blog">Blog</a></h2>
 
@@ -17,7 +19,7 @@
         <div class="blog-container small">
           <h4><a href="/blog/{{slug}}">{{title}}</a></h4>
           {{!-- <p>{{{content}}}</p> --}}
-          <p>{{content}}</p>
+          <p>{{{contentPreview}}}</p>
         </div>
       {{/each}}
 

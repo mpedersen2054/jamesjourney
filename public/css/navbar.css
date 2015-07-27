@@ -1,9 +1,10 @@
 .navbar {
-  background-color: #333;
+  background-color: transparent;
   color: #ccc;
   border: none;
   outline: none;
-  max-width: 100%
+  max-width: 100%;
+  margin: 0 -1px;
 }
 
 .navbar .navbar-brand {
@@ -26,8 +27,6 @@
 .menu-btn {
   cursor: pointer;
   float: right;
-  color: #fff;
-  font-weight: 400;
 }
 
 
@@ -79,4 +78,10 @@ body {
 [off-canvas] {
   background-color: #333;
   color: #ccc;
+}
+
+#offcanvas-menu h3 {
+  color: #fff;
+  margin: 3em 1em;
+
 }

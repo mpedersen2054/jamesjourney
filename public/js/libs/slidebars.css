@@ -73,7 +73,7 @@ html, body {
 	width: 255px;
 	height: 100%;
 	top: 0;
-	right: -255px;
+	right: 0;
 }
 
 [off-canvas*=bottom] {
@@ -109,8 +109,8 @@ html, body {
 	-webkit-transform: translate( 0px, 0px );
 	    -ms-transform: translate( 0px, 0px );
 	        transform: translate( 0px, 0px );
-	/*-webkit-transition: -webkit-transform 200ms;
-	        transition:         transform 200ms;*/
+	-webkit-transition: -webkit-transform 200ms;
+	        transition:         transform 200ms;
 	/*-webkit-backface-visibility: hidden;  Prevents flickering but may be removed if your having problems with fixed background images in Chrome.*/
 }
 
