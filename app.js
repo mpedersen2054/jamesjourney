@@ -38,7 +38,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-app.use(flash())
+app.use(flash());
 
 
 var User = require('./db/user');
@@ -68,6 +68,8 @@ passport.deserializeUser(function(_id, done) {
 });
 
 
+
+
 // ROUTES
 ////////////////////
 var staticRouter  = require('./routes/staticRouter.js');
@@ -80,6 +82,9 @@ app.use('/',         staticRouter);
 app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
+
+// var fakeData = require('./lib/fakeData.js');
+// fakeData();
 
 // app.get('/flash', function(req, res) {
 //   req.flash('wrong-password', 'The password you entered for that username is incorrect.')
