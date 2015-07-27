@@ -29,3 +29,54 @@
   color: #fff;
   font-weight: 400;
 }
+
+
+/**
+ * Slide Menu
+ */
+
+body {
+  background-color: #333;
+}
+
+[canvas=container],
+[off-canvas] {
+  padding: 10px 20px;
+}
+
+.custom-fixed-width {
+  width: 400px;
+}
+
+.custom-fluid-width {
+  width: 60%;
+}
+
+@media ( min-width: 600px ) {
+  .custom-fluid-width {
+    width: 50%;
+  }
+}
+
+@media ( min-width: 900px ) {
+  .custom-fluid-width {
+    width: 40%;
+  }
+}
+
+@media ( min-width: 1200px ) {
+  .custom-fluid-width {
+    width: 30%;
+  }
+}
+
+@media ( min-width: 1500px ) {
+  .custom-fluid-width {
+    width: 20%;
+  }
+}
+
+[off-canvas] {
+  background-color: #333;
+  color: #ccc;
+}
