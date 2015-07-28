@@ -16,19 +16,18 @@
 
 .navbar .navbar-brand {
   color: #fff;
+  font-size: 1.1em;
 }
 
-.navbar-brand,
-.menu-btn {
+.navbar-brand {
   padding: 1.2em;
+}
+.menu-btn {
+  padding: 1.2em 0;
 }
 
 .navbar-brand {
   margin-left: -1.2em;
-}
-
-.menu-btn {
-  /*margin-right: 1.2em;*/
 }
 
 .menu-btn i {
@@ -155,4 +154,15 @@ body {
 #twitter-widget-0 { /*twitter*/
   position: relative !important;
   left: 40px;
+}
+
+@media (max-width: 62em) {
+  .right-margin {
+    margin-right: 180px;
+  }
+
+  .navbar {
+    padding: 0 2em;
+  }
+
 }

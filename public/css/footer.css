@@ -1,6 +1,31 @@
 
 #footer {
   background-color: #000;
-  color: #fff;
-  padding: 3em;
+  color: #aaa;
+  padding: 2em 2em 1em;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  /*margin: -1px -1px;*/
+}
+
+#footer .copyright {
+  font-size: 1em;
+  text-align: left;
+}
+
+#footer .phone {
+  text-align: center;
+}
+
+#footer .social {
+  text-align: right;
+  float: right;
+  font-size: 1em;
+}
+
+#footer .social > a {
+  color: #aaa;
+  margin-left: 1em;
 }
