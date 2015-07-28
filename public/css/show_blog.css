@@ -1,6 +1,10 @@
 
 /* Jumbotron */
 
+#show-blog {
+  margin: 0 -2px;
+}
+
 #show-blog .jumbotron {
   color: inherit;
   background-color: #eee;

@@ -49,8 +49,7 @@ ul {
 }
 
 .jumbotron {
-  /*min-width: 100%;*/
-  /*overflow: hidden;*/
+  border: none;
   margin-bottom: 0;
 }
 
