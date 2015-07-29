@@ -31,17 +31,14 @@ $(function() {
     });
   }
 
-
-  function featuredPostSlide() {
-    var featuredSlider = $('.featured-slider');
-    var featuredPost = featuredSlider.find('.post');
-
-    featuredPost.mouseover(function() {
-      console.log($(this).find('.title').text())
+  function subscriptionFormSubmit() {
+    $('#mc-embedded-subscribe-form').on('submit', function(e) {
+      e.preventDefault();
+      $('.email-success').append('<div class="alert alert-success" role="alert"><b>Success!</b> Now check your email for a confirmation.</div>')
     })
   }
 
   windowFix();
   overlayMenu();
-  featuredPostSlide();
+  subscriptionFormSubmit();
 });

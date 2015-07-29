@@ -4,7 +4,7 @@ var slugify  = require('../lib/slugify.js');
 var BlogSchema = new mongoose.Schema({
   coverImage:     { type: String },
   title:          { type: String, unique: true },
-  subTitle:       { type: String },
+  caption:        { type: String },
   isFeatured:     { type: Boolean, default: false },
   dateAdded:      { type: Date, default: Date.now },
   formattedDate:  { type: String },

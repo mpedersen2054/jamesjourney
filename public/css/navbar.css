@@ -31,7 +31,7 @@
 }
 
 .menu-btn i {
-  border: 2px solid #fff;
+  /*border: 2px solid #fff;*/
   border-radius: 6px;
   padding: 0.4em 0.6em;
   font-size: 1.2em;
@@ -43,12 +43,10 @@
 }
 
 
-
 .menu-btn {
   cursor: pointer;
   float: right;
 }
-
 
 /**
  * Slide Menu

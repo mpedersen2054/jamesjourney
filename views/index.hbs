@@ -11,29 +11,6 @@
       </div>
     </div>
 
-    <div class="fluid-container">
-
-      <h2><a href="/blog">Blog</a></h2>
-
-      {{#each blogs}}
-        <div class="blog-container small">
-          <h4><a href="/blog/{{slug}}">{{title}}</a></h4>
-          {{!-- <p>{{{content}}}</p> --}}
-          <p>{{{contentPreview}}}</p>
-        </div>
-      {{/each}}
-
-      <hr>
-
-      <h2><a href="/gallery">Gallery</a></h2>
-
-      {{#each gals}}
-        <a href="/gallery/{{_id}}">{{title}}</a> | {{image}}
-        <br>
-      {{/each}}
-      <br><br>
-
-    </div> {{!-- end .container --}}
 
     {{> subscribe_block}}
 

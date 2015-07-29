@@ -12,7 +12,7 @@
 
     <h3 class="blog-title">Blog Posts <span><a href="/blog/new" class="btn btn-default btn-xs"><i> + new</i></a></span></h3>
     {{#if blogs}}
-    <div class="well">
+      <div class="well">
         <hr>
         <table class="table table-striped">
           <tr>
@@ -32,6 +32,14 @@
           {{/each}}
         </table>
       </div>
+    {{/if}}
+
+
+    {{#if mcd}}
+      subscribers:
+      {{#each mcd}}
+        email: {{email}}
+      {{/each}}
     {{/if}}
 
   </div>

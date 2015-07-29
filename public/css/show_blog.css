@@ -6,20 +6,22 @@
 }
 
 #show-blog .jumbotron {
+  position: relative;
   color: inherit;
-  background-color: #eee;
   min-height: 40em;
 }
 
 #show-blog .jumbotron .title {
+  position: absolute;
+  bottom: 340px;
   color: #fff;
-  font-size: 4.875em;
+  font-size: 3em;
   text-align: center;
-  background-color: rgba(0,0,0,0.4);
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 0.4em;
-  margin-top: 1.6em;
+  /*margin-top: 1.6em;*/
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* SOCIAL */
