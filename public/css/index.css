@@ -1,3 +1,12 @@
+
+#cover h2 { font-size: 5em; font-weight: 800; text-transform: uppercase; text-align: center; }
+.small-line { border: 2px solid #333; width: 16em; margin: 1em auto; }
+
+
+/*
+========= Jumbotron
+ */
+
 #cover {
   margin: 0 -2px;
 }
@@ -7,9 +16,75 @@
   height: 46em;
   width: 100%;
   color: #fff;
-  padding-top: 10em;
+  /*padding-top: 10em;*/
+  padding: 10em 4em 0;
 }
 
 #cover .jumbotron h1 {
   font-weight: 800;
 }
+
+
+/*
+========= We Need You
+ */
+
+#we_need_you {
+  min-height: 46em;
+  padding: 4em 0 6em;
+}
+
+#we_need_you .meta {
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+#we_need_you .row {
+  /*padding: 0 4em;*/
+}
+
+.need-item {
+  /*margin: 4em;*/
+}
+
+.need-item .circular {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+#we_need_you .col-sm-12 {
+}
+
+.need-item img {
+  border: 10px solid gray;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.need-item p {
+  text-align: center;
+  font-size: 1em;
+  padding: 0.5em;
+  font-weight: 400;
+}
+
+.need-item a {
+  display: block;
+  width: 190px;
+  margin: 0 auto;
+  /*margin-left: 1em;*/
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+
+
+
+
+
+
+ /*
+ ========= Blog Preview
+  */

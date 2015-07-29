@@ -3,7 +3,7 @@
   <div class="site-wrap">
 
     <div class="jumbotron">
-      <div class="container">
+      <div class="fluid-container">
         <h1 class="pull-right">JAMES4EDS</h1>
         {{#if user}}
           <h2>Welcome, {{user}}</h2>
@@ -11,7 +11,8 @@
       </div>
     </div>
 
-
+    {{> we_need_you}}
+    {{> blog_preview}}
     {{> subscribe_block}}
 
   </div> {{!-- end .wrapper --}}
