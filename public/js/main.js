@@ -45,11 +45,11 @@ $(function() {
       var bgImage = b.find('.image').data('image');
       var styles = {
         backgroundImage: 'url(' + bgImage + ')',
-        opacity: '0.75'
+        opacity: '0.7'
       }
-      console.log(styles)
-      b.css(styles)
+      b.css(styles);
     })
+
   }
 
   windowFix();

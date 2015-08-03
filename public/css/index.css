@@ -93,17 +93,24 @@
 }
 
 .blog {
+  position: relative;
   width: 100%;
   height: 380px;
-  background-color: yellow;
 }
 
-.opacity-full { opacity: 1.0; }
+.blog:hover {
+  opacity: 1.0 !important;
+}
+
+#blog_preview a {
+  text-decoration: none;
+  color: #fff;
+}
 
 .blog .title,
 .blog .caption,
 .blog .date {
   color: #fff;
-  opacity: 1.0;
+  opacity: 1.0 !important;
 }
 
