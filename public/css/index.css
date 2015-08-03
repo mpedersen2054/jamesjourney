@@ -31,21 +31,21 @@
 
 #we_need_you {
   min-height: 46em;
-  padding: 4em 0 6em;
+  padding: 4em 0 4em;
 }
 
-#we_need_you .meta {
+#we_need_you .meta,
+#blog_preview .meta {
   font-size: 1.3em;
   text-align: center;
   margin-bottom: 3em;
 }
 
 #we_need_you .row {
-  /*padding: 0 4em;*/
 }
 
 .need-item {
-  /*margin: 4em;*/
+  margin-bottom: 4em;
 }
 
 .need-item .circular {
@@ -80,11 +80,30 @@
 }
 
 
-
-
-
-
-
  /*
  ========= Blog Preview
   */
+
+#blog_preview {
+  padding: 4em 0;
+}
+
+.preview .col-md-4 {
+  padding: 0;
+}
+
+.blog {
+  width: 100%;
+  height: 380px;
+  background-color: yellow;
+}
+
+.opacity-full { opacity: 1.0; }
+
+.blog .title,
+.blog .caption,
+.blog .date {
+  color: #fff;
+  opacity: 1.0;
+}
+

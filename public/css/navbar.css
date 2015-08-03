@@ -12,6 +12,8 @@
 
 .right-margin {
   margin-right: 255px;
+  /*-webkit-transition: -webkit-transform 200ms;
+  transition:         transform 200ms;*/
 }
 
 .navbar .navbar-brand {

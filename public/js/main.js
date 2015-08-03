@@ -38,7 +38,22 @@ $(function() {
     })
   }
 
+  function blogPreviewBG() {
+    var blogs = $('.preview .blog');
+    $.each(blogs, function(i, blog) {
+      var b = $(this);
+      var bgImage = b.find('.image').data('image');
+      var styles = {
+        backgroundImage: 'url(' + bgImage + ')',
+        opacity: '0.75'
+      }
+      console.log(styles)
+      b.css(styles)
+    })
+  }
+
   windowFix();
   overlayMenu();
   subscriptionFormSubmit();
+  blogPreviewBG();
 });
