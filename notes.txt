@@ -1,7 +1,22 @@
-blog.coverImage
-blog.title
-blog.subTitle
-blog.slug
-blog.dateAdded
-blog.content
-blog.social
+
+coverImage
+title
+caption
+isFeatured
+author
+content
+social
+
+dateAdded *
+formattedDate *
+slug *
+captionPreview *
+
+
+http://images.freeimages.com/images/previews/8fe/goldfractalzzz-1-1169741.jpg
+http://images.freeimages.com/images/previews/94e/fraktalzzz-8-1171354.jpg
+http://images.freeimages.com/images/previews/8a9/this-photo-is-only-for-test-1620626.jpg
+http://images.freeimages.com/images/previews/1a0/blue-time-1555002.jpg
+http://images.freeimages.com/images/previews/d3f/scanning-test-1243141.jpg
+http://netdna.webdesignerdepot.com/uploads/2008/12/stock-microstock.jpg
+

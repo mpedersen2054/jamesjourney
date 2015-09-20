@@ -19,11 +19,6 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
-p {
-  /*margin: 0 0 1em 0;
-  font-size: 1.2em;*/
-}
-
 .center {
   text-align: center;
 }
@@ -80,3 +75,46 @@ table a:not(.btn), .table a:not(.btn) {
 .alert-success {
   opacity: 0.9;
 }
+
+.twitter-thang {
+  height: 650px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  padding-top: 6em;
+}
+
+.twitter-thang iframe {
+  margin: 0 auto;
+}
+
+.image-grid {
+  margin: 0;
+  padding: 0;
+}
+
+.ig1,
+.ig2 {
+  height: 405px;
+}
+
+.ig1 { background-image: url(http://placehold.it/500x500/F7C234); }
+.ig2 { background-image: url(http://placehold.it/500x500/FF0077); }
+
+.ig3,
+.ig4,
+.ig5 {
+  height: 300px;
+}
+
+.ig3 { background-image: url(http://placehold.it/500x500/9b59b6); }
+.ig4 { background-image: url(http://placehold.it/500x500/95a5a6); }
+.ig5 { background-image: url(http://placehold.it/500x500/f1c40f); }
+
+.ig6,
+.ig7 {
+  height: 405px;
+}
+
+.ig6 { background-image: url(http://placehold.it/500x500/2980b9); }
+.ig7 { background-image: url(http://placehold.it/500x500/ecf0f1); }
+

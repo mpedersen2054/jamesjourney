@@ -75,4 +75,9 @@ staticRouter.route('/admin-page')
     }
   })
 
+staticRouter.route('/fuck')
+  .get(function(req, res) {
+    res.render('scratch_page')
+  })
+
 module.exports = staticRouter;

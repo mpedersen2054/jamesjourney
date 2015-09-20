@@ -10,6 +10,7 @@ $(function() {
     var openRight = $('.open-right');
     var closeAny  = $('.close-any');
     var menuBtn   = $('.menu-btn');
+    var logo      = $('.navbar-brand');
 
     var controller = new slidebars();
     controller.init()
@@ -17,15 +18,17 @@ $(function() {
     openRight.on('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      menuBtn.addClass('right-margin');
-      controller.open( 'sb-1' );
+      logo.addClass('move-left');
+      menuBtn.addClass('move-left');
+      controller.open('sb-1');
     });
 
-    $( '.close-any' ).on( 'click', function (e) {
-      if ( controller.active( 'slidebar' ) ) {
+    $('.close-any').on('click', function (e) {
+      if ( controller.active('slidebar')) {
         e.preventDefault();
         e.stopPropagation();
-        menuBtn.removeClass('right-margin')
+        logo.removeClass('move-left');
+        menuBtn.removeClass('move-left');
         controller.close();
       }
     });
@@ -45,7 +48,8 @@ $(function() {
       var bgImage = b.find('.image').data('image');
       var styles = {
         backgroundImage: 'url(' + bgImage + ')',
-        opacity: '0.7'
+        backgroundSize: 'cover',
+        opacity: '0.9'
       }
       b.css(styles);
     })

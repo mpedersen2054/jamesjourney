@@ -12,8 +12,10 @@
 }
 
 #cover .jumbotron {
-  background-image: url(https://drscdn.500px.org/photo/116099309/m%3D2048/ba8b15d5884ba60972887cfdc0254984);
-  height: 46em;
+  background-image: url(http://res.cloudinary.com/mattp/image/upload/v1441070133/jtronbg_z7pnhc.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 75em;
   width: 100%;
   color: #fff;
   /*padding-top: 10em;*/
@@ -24,6 +26,51 @@
   font-weight: 800;
 }
 
+/*
+========= EDS preview
+ */
+
+#eds-preview {
+  background-color: #00CCCC;
+  height: 37.5em;
+  color: #fff;
+  /*padding: 2em 0;*/
+}
+
+#eds-preview header {
+  width: 520px;
+  margin: 0 auto;
+}
+
+/* 360px, 53.33px, 32px */
+#eds-preview header h2,
+#eds-preview header h3 {
+  color: #fff;
+  text-align: center;
+}
+
+#eds-preview header h2 {
+  font-size: 300px;
+  text-transform: uppercase;
+}
+
+#eds-preview header h3 {
+  position: relative;
+  bottom: 1em;
+  font-size: 45px;
+  text-transform: capitalize;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 0.2em;
+}
+
+#eds-preview p {
+  font-size: 22px;
+  padding: 0 1em;
+  text-align: center;
+}
+
+
+
 
 /*
 ========= We Need You
@@ -32,6 +79,7 @@
 #we_need_you {
   min-height: 46em;
   padding: 4em 0 4em;
+  background-color: #fff;
 }
 
 #we_need_you .meta,
@@ -86,6 +134,7 @@
 
 #blog_preview {
   padding: 4em 0;
+  background-color: #fff;
 }
 
 .preview .col-md-4 {
@@ -96,6 +145,7 @@
   position: relative;
   width: 100%;
   height: 380px;
+  padding: 2em 3em;
 }
 
 .blog:hover {
@@ -112,5 +162,57 @@
 .blog .date {
   color: #fff;
   opacity: 1.0 !important;
+  text-shadow: #000 0.1em 0.1em 0.2em;
 }
 
+.blog .title,
+.blog .date {
+}
+
+.blog .title {
+  font-size: 2.25em;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.blog .caption {
+  padding: 0 3em;
+  font-size: 1.1em;
+  font-weight: 100;
+  /*font-style: italic;*/
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.blog .date {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/*
+========= quote1
+ */
+
+#quote1 {
+  background-color: #00CCCC;
+  color: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 2em 4em;
+}
+
+#quote1 .fluid-container > div {
+  font-weight: 600;
+  font-size: 3.6em;
+}
+
+#quote1 .smaller-fluid-container > p {
+  font-weight: 300;
+  font-size: 1.2em;
+}

@@ -4,16 +4,19 @@
   border: none;
   outline: none;
   max-width: 100%;
-  margin: -1px -1px;
+  /*margin: -1px -1px;*/
   border-radius: 0;
 }
 
 #navbar-wrapper {}
 
-.right-margin {
-  margin-right: 255px;
-  /*-webkit-transition: -webkit-transform 200ms;
-  transition:         transform 200ms;*/
+.move-left {
+  position: relative;
+  right: 255px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .navbar .navbar-brand {
@@ -21,15 +24,9 @@
   font-size: 1.1em;
 }
 
-.navbar-brand {
-  padding: 1.2em;
-}
+.navbar-brand,
 .menu-btn {
   padding: 1.2em 0;
-}
-
-.navbar-brand {
-  margin-left: -1.2em;
 }
 
 .menu-btn i {
@@ -54,9 +51,9 @@
  * Slide Menu
  */
 
-body {
+/*body {
   background-color: #333;
-}
+}*/
 
 [canvas=container],
 [off-canvas] {

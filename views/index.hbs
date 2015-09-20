@@ -2,18 +2,37 @@
 
   <div class="site-wrap">
 
-    <div class="jumbotron">
-      <div class="fluid-container">
-        <h1 class="pull-right">JAMES4EDS</h1>
-        {{#if user}}
-          <h2>Welcome, {{user}}</h2>
-        {{/if}}
+    {{> jumbotron}}
+
+    <div id="eds-preview">
+      <div class="smaller-fluid-container">
+      <header>
+        <h2>eds</h2>
+        <h3>(ehlers-danlos syndrome)</h3>
+      </header>
+
+      <p>
+        Ehlers-Danlos syndrome is a group of disorders that affect connective tissues, which are tissues that support the skin, bones, blood vessels, and other organs. Defects in connective tissues cause the signs and symptoms of Ehlers-Danlos syndrome, which vary from mildly loose joints to life-threatening complications.
+      </p>
       </div>
     </div>
 
     {{> we_need_you}}
+
+    <div id="quote1">
+      <div class="fluid-container">
+        <div>EDS is represented by a zebra</div>
+      </div>
+      <div class="smaller-fluid-container">
+        <p>
+          meaning it stands a medical term for a rare condition. The reasoning behind the zebra in medicine is an explanation for physicians as to not diagnose rare conditions or exotic illnesses that are highly unlikely. Doctors are expected to encounter common diseases. “Zebras,” exist but getting diagnosed and treated can be difficult.
+        </p>
+      </div>
+    </div>
+
     {{> blog_preview}}
     {{> subscribe_block}}
+
 
   </div> {{!-- end .wrapper --}}
 
