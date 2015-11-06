@@ -1,165 +1,134 @@
-.navbar {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  outline: none;
-  max-width: 100%;
-  /*margin: -1px -1px;*/
-  border-radius: 0;
+.sidebar-cont {
+  position: fixed;
+  left: 0;
+  width: 50px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #ccc;
+  background-color: #222;
+  -webkit-transition: margin-left .3s ease-in-out, width .3s ease-in-out;
 }
 
-#navbar-wrapper {}
-
-.move-left {
-  position: relative;
-  right: 255px;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-.navbar .navbar-brand {
-  color: #fff;
-  font-size: 1.1em;
-}
-
-.navbar-brand,
-.menu-btn {
-  padding: 1.2em 0;
-}
-
-.menu-btn i {
-  border: 1px solid #fff;
-  border-radius: 6px;
-  padding: 0.4em 0.6em;
-  font-size: 1.2em;
-}
-
-.menu-btn i:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-
-.menu-btn {
-  cursor: pointer;
-  float: right;
-}
-
-/**
- * Slide Menu
- */
-
-/*body {
-  background-color: #333;
-}*/
-
-[canvas=container],
-[off-canvas] {
-  padding: 10px 20px;
-}
-
-.custom-fixed-width {
-  width: 400px;
-}
-
-.custom-fluid-width {
-  width: 60%;
-}
-
-@media ( min-width: 600px ) {
-  .custom-fluid-width {
-    width: 50%;
-  }
-}
-
-@media ( min-width: 900px ) {
-  .custom-fluid-width {
-    width: 40%;
-  }
-}
-
-@media ( min-width: 1200px ) {
-  .custom-fluid-width {
-    width: 30%;
-  }
-}
-
-@media ( min-width: 1500px ) {
-  .custom-fluid-width {
-    width: 20%;
-  }
-}
-
-[off-canvas] {
-  background-color: #000;
+.sidebar-cont a {
   color: #ccc;
 }
 
-.offcanvas-nav {
-  margin-top: 4.5em;
+.sidebar-cont:hover {
+  width: 175px;
 }
 
-.offcanvas-nav li {
-  width: 100%;
-  font-size: 1.4em;
-  font-weight: 300;
-  padding: 0.1em 0;
-  letter-spacing: 1.4px;
+.sidebar-cont:hover + .main-cont {
+  margin-left: 175px;
 }
 
-.offcanvas-nav li:hover {
-  background-color: #fff;
-  font-weight: 600;
-  border-left: 4px solid #158cba;
-  padding-left: 0.6em;
-}
-
-.offcanvas-nav li a {
-  list-style: none;
-  text-decoration: none;
-  padding: 2.5px 40px;
-  width: 100%;
-  height: 100%;
-}
-
-.offcanvas-subnav {
-  margin-top: 3.5em;
-}
-
-.offcanvas-subnav li {
-  width: 100%;
-  font-size: 1em;
+.nav-link {
+  height: 65px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #000;
   font-weight: 300;
 }
 
-.offcanvas-subnav li a {
-  color: #A8CDF0;
+.nav-link i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-weight: 100 !important;
+  float: left;
+  padding: 20px 15px;
+  transition: opacity .3s ease-out, top .3s ease-out, width .3s ease-in-out;
+}
+
+.sidebar-cont:hover .nav-link i {
+  top: -120px;
+  opacity: 0;
+  width: 50px;
+}
+
+.nav-link > span {
+  display: block;
+  text-transform: uppercase;
+  opacity: 0;
+  min-width: 180px;
+  padding: 20px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  transition: opacity .3s ease-in-out;
+  transition-delay: 60ms;
+}
+
+.sidebar-cont:hover .nav-link span {
+  opacity: 1;
+}
+
+.nav-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 65px;
+  padding-bottom: 50px;
   list-style: none;
-  text-decoration: none;
-  padding: 2.5px 40px;
-  width: 100%;
-  height: 100%;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding-left: 0;
 }
 
-.fb-like {
-  padding: 5px 40px;
-  margin-top: 3.5em;
+.nav-list li > a {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 175px;
+  border-bottom: 1px solid #000;
+  padding: 15px 0;
 }
 
-#twitter-widget-0 { /*twitter*/
-  position: relative !important;
-  left: 40px;
+.nav-list li > a:hover {
+  background-color: #444;
+  color: #5EDCFF;
 }
 
-@media (max-width: 62em) {
-  .right-margin {
-    margin-right: 180px;
-  }
+.nav-list li > a.active {
+  color: #5EDCFF;
+}
 
-  .navbar {
-    padding: 0 2em;
-  }
+.nav-list li > a i {
+  float: left;
+  display: inline-block;
+  font-size: 16px;
+  width: 50px;
+  text-align: center;
+}
 
+.nav-list li > a span {
+  display: inline-block;
+  position: relative;
+  bottom: 2px;
+  font-weight: 300;
+  padding-left: 4px;
+}
+
+.nav-info {
+  font-weight: 300;
+  position: absolute;
+  top: 225px;
+  min-width: 175px;
+  padding: 0 15px;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  border-bottom: 1px solid #000;
+  transition: opacity .3s ease-in-out, height .2s ease-out, padding .2s ease-out;
+}
+
+.sidebar-cont:hover .nav-info {
+  height: auto;
+  opacity: 1;
+  padding: 24px 15px;
+}
+
+.nav-info .title {
+  padding-bottom: 10px;
 }

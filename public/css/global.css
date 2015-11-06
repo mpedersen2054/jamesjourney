@@ -11,48 +11,6 @@ h1,h2,h3,h4,h5,h6 {
   color: #333;
 }
 
-#edit-blog {
-  margin-top: 3em;
-}
-
-.row {
-  margin: 0;
-}
-
-.center {
-  text-align: center;
-}
-
-.container {
-  width: 64em;
-  margin: 0 auto;
-}
-
-.smaller-container {
-  width: 46em;
-  margin: 0 auto;
-}
-
-.fluid-container {
-  max-width: 64em;
-  margin: 0 auto;
-}
-
-.smaller-fluid-container {
-  max-width: 46em;
-  margin: 0 auto;
-}
-
-ul {
-  margin: 0px 0px;
-  padding: 0px 0px;
-}
-
-.jumbotron {
-  border: none;
-  margin-bottom: 0;
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -65,56 +23,9 @@ table a:not(.btn), .table a:not(.btn) {
   text-decoration: none;
 }
 
-
-@media (max-width: 62em) {
-  body {
-    font-size: 14px;
-  }
+.main-cont {
+  max-width: calc(100% - 50px);
+  margin-left: 50px;
+  /*height: 100vh;*/
+  -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
-
-.alert-success {
-  opacity: 0.9;
-}
-
-.twitter-thang {
-  height: 650px;
-  overflow-y: scroll;
-  margin: 0 auto;
-  padding-top: 6em;
-}
-
-.twitter-thang iframe {
-  margin: 0 auto;
-}
-
-.image-grid {
-  margin: 0;
-  padding: 0;
-}
-
-.ig1,
-.ig2 {
-  height: 405px;
-}
-
-.ig1 { background-image: url(http://placehold.it/500x500/F7C234); }
-.ig2 { background-image: url(http://placehold.it/500x500/FF0077); }
-
-.ig3,
-.ig4,
-.ig5 {
-  height: 300px;
-}
-
-.ig3 { background-image: url(http://placehold.it/500x500/9b59b6); }
-.ig4 { background-image: url(http://placehold.it/500x500/95a5a6); }
-.ig5 { background-image: url(http://placehold.it/500x500/f1c40f); }
-
-.ig6,
-.ig7 {
-  height: 405px;
-}
-
-.ig6 { background-image: url(http://placehold.it/500x500/2980b9); }
-.ig7 { background-image: url(http://placehold.it/500x500/ecf0f1); }
-
