@@ -161,6 +161,40 @@ colors used:
 }
 
 
+/*
+========= About James
+ */
+
+#about-james {
+  min-height: 40em;
+}
+
+#about-james .info {
+  background-color: #9fe2fa;
+  padding: 3em 6em;
+  min-height: 40em;
+}
+
+#about-james .image-gal {
+  min-height: 40em;
+}
+
+#about-james h2 {
+  font-size: 66px;
+  font-weight: 400;
+  text-transform: none;
+  color: #19728f;
+  margin-bottom: 40px;
+}
+#about-james .small-line {
+  border: 1px solid #19728f;
+}
+#about-james p {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 200;
+  margin-top: 40px;
+}
 
 /*
 ========= We Need You
