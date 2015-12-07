@@ -79,25 +79,25 @@ app.get('/users/new', function(req, res) {
 // REMOVE ONCE ALL USERS ADDED
 app.post('/users/new', function(req, res) {
   console.log(req.body)
-  // if (req.user) {
+  if (req.user) {
     var user = new User(req.body);
     user.save(function(err, user) {
       res.redirect('/users')
-  //   })
-  // } else {
-  //   res.redirect('/login')
-  })
+    })
+  } else {
+    res.redirect('/login')
+  }
 })
 
 
 // ERROR HANDLING
 ////////////////////
-app.use(function(req, res, next) { // catch 404
-  var err = new Error('Not Found');
-  err.status = 404;
-  res.render('404')
-  next(err);
-});
+// app.use(function(req, res, next) { // catch 404
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   res.render('404')
+//   next(err);
+// });
 
 var port = process.env.PORT || 3000;
 app.listen(port);

@@ -16,7 +16,12 @@
     "express": "~4.12.2",
     "express-session": "^1.11.1",
     "faker": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
     "hbs": "^2.9.0",
+    "mailchimp-api": "*",
     "markdown": "^0.5.0",
     "method-override": "^2.3.2",
     "mongoose": "^4.0.2",
@@ -24,7 +29,6 @@
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "request": "^2.60.0",
-    "serve-favicon": "~2.2.0",
-    "mailchimp-api": "*"
+    "serve-favicon": "~2.2.0"
   }
 }

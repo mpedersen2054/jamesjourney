@@ -4,13 +4,24 @@
 
 
 /*
+colors used:
+#0a3a4b
+#9fe2fa
+#1972bf
+#c4ecfa
+#f0f0f0
+#2E738F
+ */
+
+
+/*
 ========= EDS preview
  */
 
 #eds-preview {
-  background-color: #00CCCC;
+  background-color: #2e738f;
   color: #fff;
-  padding: 1em 0 5em;
+  padding: 1em 1em 5em;
 }
 
 #eds-preview header {
@@ -21,32 +32,46 @@
 /* 360px, 53.33px, 32px */
 #eds-preview header h2,
 #eds-preview header h3 {
-  color: #fff;
   text-align: center;
+  max-width: 550px;
 }
 
 #eds-preview header h2 {
+  color: #0a3a4b;
   font-size: 300px;
   text-transform: uppercase;
 }
 
 #eds-preview header h3 {
+  color: #c4ecfa;
   position: relative;
   bottom: 1em;
   font-size: 50px;
   text-transform: capitalize;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #c4ecfa;
   padding-bottom: 0.2em;
 }
 
 #eds-preview p {
-  font-size: 26px;
+  color: #c4ecfa;
+  font-size: 25px;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
 
-
+@media (max-width: 62em) {
+  #eds-preview header h2 {
+    font-size: 150px;
+    margin-bottom: 30px;
+  }
+  #eds-preview header h3 {
+    font-size: 25px;
+  }
+  #eds-preview p {
+    font-size: 18px;
+  }
+}
 
 
 /*
