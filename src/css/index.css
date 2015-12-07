@@ -97,7 +97,6 @@ colors used:
   bottom: 0.5em;
   font-size: 50px;
   text-transform: capitalize;
-  /*padding-bottom: 0.2em;*/
 }
 
 #eds-preview .small-line {
@@ -166,17 +165,17 @@ colors used:
  */
 
 #about-james {
-  min-height: 40em;
+  min-height: 46em;
 }
 
 #about-james .info {
   background-color: #9fe2fa;
-  padding: 3em 6em;
-  min-height: 40em;
+  padding: 4em 6em;
+  min-height: 46em;
 }
 
 #about-james .image-gal {
-  min-height: 40em;
+  min-height: 46em;
 }
 
 #about-james h2 {
@@ -200,30 +199,30 @@ colors used:
 ========= We Need You
  */
 
-#we_need_you {
+#we-need-you {
   min-height: 46em;
-  padding: 4em 0 2em;
+  padding: 2em 0;
   background: url(../img/weneedyou.png);
-  color: #c4ecfa;
+  color: #f0f0f0;
 }
 
-#we_need_you h2 {
+#we-need-you h2 {
   text-transform: none;
-  color: #c4ecfa;
+  color: #f0f0f0;
   font-size: 120px;
-  margin: 10px 0;
 }
-#we_need_you .small-line {
+#we-need-you .small-line {
   border: 1px solid #f0f0f0;
+  margin-bottom: 3em;
 }
-#we_need_you .meta {
+#we-need-you p.sub-title {
   text-align: center;
-  font-size: 42px;
+  font-size: 40px;
 }
 
 .need-item {
-  margin-top: 4em;
-  margin-bottom: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .need-item .circular {
@@ -240,7 +239,7 @@ colors used:
 
 .need-item p {
   text-align: center;
-  font-size: 1em;
+  font-size: 20px;
   padding: 0.5em;
   font-weight: 400;
 }
@@ -254,10 +253,83 @@ colors used:
 }
 
 
-#recent-updates {}
+/*
+========= Recent Updates
+ */
 
-#recent-updates {}
-#recent-updates {}
-#recent-updates {}
-#recent-updates {}
-#recent-updates {}
+#recent-updates {
+  background-color: #0a3a4b;
+  padding-bottom: 3em;
+}
+
+#recent-updates .title {
+  padding: 2em;
+}
+#recent-updates h2 {
+  font-size: 66px;
+  text-transform: none;
+  font-weight: 400;
+  color: #c4ecfa;
+  margin-bottom: 20px;
+}
+#recent-updates .small-line {
+  border: 1px solid #c4ecfa;
+}
+#recent-updates .updates {
+  padding: 3.75px;
+}
+
+.updates .update-container {
+  padding: 7.5px;
+}
+
+.updates .update {
+  padding: 10px;
+  background-image: url(http://www.narand.com/images/qss/background/big/200.jpg);
+  height: 260px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.updates .update > div {
+  position: absolute;
+  bottom: 10px;
+}
+
+.updates .update .name {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  color: #0a3a4b;
+  padding: 0 10px;
+  /* so all lines of name have the padding */
+  -webkit-box-decoration-break: clone;
+}
+
+.updates .update .tags {}
+.updates .update .tag {}
+
+.updates .update p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #f0f0f0;
+  text-shadow: 1px 1px #0a3a4b;
+  margin-top: 10px;
+}
+.updates .update p .poster-image {
+  position: relative;
+  bottom: 2px;
+  width: 20px;
+  height: 20px;
+}
+.updates .update p .poster-name {
+  padding-right: 10px;
+}
+
+.updates .update p .poster-date {
+  text-align: right;
+  padding-left: 10px;
+}
+
+

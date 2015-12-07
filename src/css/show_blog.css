@@ -2,13 +2,13 @@
 /* Jumbotron */
 
 #show-blog {
-  margin: 0 -2px;
+  /*margin: 0 -2px;*/
 }
 
 #show-blog .jumbotron {
   position: relative;
   color: inherit;
-  min-height: 40em;
+  min-height: 46em;
 }
 
 #show-blog .jumbotron .title {
