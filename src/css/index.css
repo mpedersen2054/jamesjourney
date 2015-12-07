@@ -13,6 +13,55 @@ colors used:
 #2E738F
  */
 
+ /*
+ ========= Jumbotron
+  */
+
+#jumbotron {
+  height: 46em;
+}
+
+#jumbotron .jjlogo {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#jumbotron .jjlogo img {
+  margin-top: 15em;
+}
+
+
+/*
+========= Small Description
+ */
+
+#short-description {
+  background-color: #c4ecfa;
+  padding: 3em 0;
+}
+
+#short-description h2 {
+  font-size: 66px;
+  font-weight: 400;
+  text-transform: none;
+  color: #19728f;
+  margin-bottom: 40px;
+}
+
+#short-description p {
+  max-width: 550px;
+  margin: 0 auto;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+  color: #19728f;
+}
+
+#short-description .small-line {
+  border: 1px solid #19728f;
+}
+
 
 /*
 ========= EDS preview
@@ -21,7 +70,7 @@ colors used:
 #eds-preview {
   background-color: #2e738f;
   color: #fff;
-  padding: 1em 1em 5em;
+  padding: 2em 1em 6em;
 }
 
 #eds-preview header {
@@ -45,19 +94,25 @@ colors used:
 #eds-preview header h3 {
   color: #c4ecfa;
   position: relative;
-  bottom: 1em;
+  bottom: 0.5em;
   font-size: 50px;
   text-transform: capitalize;
-  border-bottom: 2px solid #c4ecfa;
-  padding-bottom: 0.2em;
+  /*padding-bottom: 0.2em;*/
+}
+
+#eds-preview .small-line {
+  border: 1px solid #0a3a4b;
 }
 
 #eds-preview p {
   color: #c4ecfa;
-  font-size: 25px;
+  font-size: 24px;
+  font-weight: 200;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 1.5em;
+  padding: 0 1em;
 }
 
 @media (max-width: 62em) {
