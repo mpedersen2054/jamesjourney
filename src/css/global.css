@@ -19,6 +19,10 @@ img {
   max-width: 100%;
 }
 
+.btn {
+  text-transform: uppercase;
+}
+
 table a:not(.btn), .table a:not(.btn) {
   text-decoration: none;
 }

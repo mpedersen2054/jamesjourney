@@ -7,13 +7,24 @@
 
 #subscribe_block h2 {
   font-weight: 400;
-  /*font-size: 48px;*/
+  font-size: 48px;
+  text-transform: uppercase;
 }
 
 #subscribe_block h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   margin-bottom: 20px;
+}
+
+#newsletterBtn {
+  background-color: transparent;
+  border: 2px solid #3F738D;
+  color: #3F738D;
+}
+#newsletterBtn:hover {
+  background-color: #3F738D;
+  color: #f0f0f0;
 }
 
 .nl-typer {
