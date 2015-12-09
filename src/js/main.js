@@ -3,21 +3,25 @@
 ;(function($) {
 
   var root = this;
-
   App = root.App || {};
 
-  App.typer = (function() {
-
-    $('.pooptype').typed({
-      strings: ['hello there santa', 'goodbye guns', 'why obama?'],
-      typeSpeed: 50,
+  App.typer = function(element) {
+    $(element).typed({
+      strings: [
+        'support our cause.',
+        'recieve regular updates on events.',
+        'help make the world a better place.'
+      ],
+      typeSpeed: 0,
       loop: true,
-      backDelay: 5000,
-      backSpeed: 50,
-      cursorChar: "",
+      backDelay: 3000,
+      backSpeed: -5,
       showCursor: false
-    })
+    });
+  }
 
-  })()
+  root.App = App;
+
+  App.typer('.nl-typer');
 
 })(jQuery);

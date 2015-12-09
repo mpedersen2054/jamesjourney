@@ -1,7 +1,12 @@
 
-#cover h2 { font-size: 5em; font-weight: 800; text-transform: uppercase; text-align: center; }
+
 .small-line { border: 2px solid #333; width: 16em; margin: 1em auto; }
 
+#cover h2 {
+  font-size: 66px;
+  font-weight: 400;
+  text-align: center;
+}
 
 /*
 colors used:
@@ -132,15 +137,12 @@ colors used:
  */
 
 #quote1 {
-  background: url(../img/zebrabg.png) no-repeat center;
+  background: url(../img/zebrabg.png) no-repeat center fixed;
   background-size: cover;
   padding: 4em 0 5em;
 }
 
 #quote1 h2 {
-  font-size: 66px;
-  font-weight: 400;
-  text-transform: none;
   color: #c4ecfa;
   margin-bottom: 40px;
 }
@@ -179,9 +181,6 @@ colors used:
 }
 
 #about-james h2 {
-  font-size: 66px;
-  font-weight: 400;
-  text-transform: none;
   color: #19728f;
   margin-bottom: 40px;
 }
@@ -207,9 +206,9 @@ colors used:
 }
 
 #we-need-you h2 {
-  text-transform: none;
   color: #f0f0f0;
   font-size: 120px;
+  font-weight: 600;
 }
 #we-need-you .small-line {
   border: 1px solid #f0f0f0;
@@ -266,8 +265,6 @@ colors used:
   padding: 2em;
 }
 #recent-updates h2 {
-  font-size: 66px;
-  text-transform: none;
   font-weight: 400;
   color: #c4ecfa;
   margin-bottom: 20px;

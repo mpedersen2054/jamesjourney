@@ -29,3 +29,5 @@ table a:not(.btn), .table a:not(.btn) {
   /*height: 100vh;*/
   -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
+
+.bigger-btn {}
