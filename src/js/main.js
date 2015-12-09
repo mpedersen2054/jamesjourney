@@ -1,10 +1,23 @@
 
-function power(base, exponent) {
-  if (exponent == 0)
-    return 1;
-  else
-    return base * power(base, exponent - 1);
-}
 
-console.log(power(4, 4));
-// → 8
+;(function($) {
+
+  var root = this;
+
+  App = root.App || {};
+
+  App.typer = (function() {
+
+    $('.pooptype').typed({
+      strings: ['hello there santa', 'goodbye guns', 'why obama?'],
+      typeSpeed: 50,
+      loop: true,
+      backDelay: 5000,
+      backSpeed: 50,
+      cursorChar: "",
+      showCursor: false
+    })
+
+  })()
+
+})(jQuery);

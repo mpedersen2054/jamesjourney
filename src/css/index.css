@@ -272,62 +272,83 @@ colors used:
   color: #c4ecfa;
   margin-bottom: 20px;
 }
-#recent-updates .small-line {
-  border: 1px solid #c4ecfa;
-}
+#recent-updates .small-line { border: 1px solid #c4ecfa; }
+
 #recent-updates .updates {
   padding: 3.75px;
 }
 
-.updates .update-container {
-  padding: 7.5px;
-}
+/* change gutters */
+.updates .update-container { padding: 3.75px; }
 
-.updates .update {
-  padding: 10px;
-  background-image: url(http://www.narand.com/images/qss/background/big/200.jpg);
+.update {
+  background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg);
   height: 260px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
-.updates .update > div {
+/* for overlay */
+.update .wrapper {
+  height: 260px;
+  position: absolute;
+  bottom: 3.75px;
+  left: 3.75px;
+  right: 3.75px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 2px;
+}
+
+
+/* so content could be pulled to the bottom */
+.update .wrapper > div {
   position: absolute;
   bottom: 10px;
+  padding: 0 15px;
 }
 
-.updates .update .name {
+.update .tags {
+  margin-bottom: 10px;
+}
+.update .tag {
+}
+
+.update .post-title {
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 24px;
-  background-color: #f0f0f0;
+  font-size: 20px;
   color: #0a3a4b;
+  background-color: rgba(196, 236, 250, 0.9);
   padding: 0 10px;
+  /*box-shadow: 2px 2px blue;*/
   /* so all lines of name have the padding */
   -webkit-box-decoration-break: clone;
 }
 
-.updates .update .tags {}
-.updates .update .tag {}
+.update .descr {
+  color: #f0f0f0;
+  font-size: 14px;
+}
 
-.updates .update p {
+/* name and date row */
+.update p {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   color: #f0f0f0;
   text-shadow: 1px 1px #0a3a4b;
-  margin-top: 10px;
+  margin-top: 15px;
 }
-.updates .update p .poster-image {
+.update p .poster-image {
   position: relative;
   bottom: 2px;
   width: 20px;
   height: 20px;
+  margin-right: 5px;
 }
-.updates .update p .poster-name {
+.update p .poster-name {
   padding-right: 10px;
 }
-
-.updates .update p .poster-date {
+.update p .poster-date {
   text-align: right;
   padding-left: 10px;
 }
