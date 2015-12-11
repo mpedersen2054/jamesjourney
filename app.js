@@ -11,12 +11,8 @@ var path           = require('path');
 var favicon        = require('serve-favicon');
 var flash          = require('connect-flash');
 
-// DATABASE
-////////////////////
 require('./config/db')(mongoose);
 
-// CONFIG
-////////////////////
 var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
@@ -88,17 +84,6 @@ app.post('/users/new', function(req, res) {
     res.redirect('/login')
   }
 })
-
-
-// ERROR HANDLING
-////////////////////
-// app.use(function(req, res, next) { // catch 404
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   res.render('404')
-//   next(err);
-// });
-
 
 var port = process.env.PORT || 3000;
 app.listen(port);

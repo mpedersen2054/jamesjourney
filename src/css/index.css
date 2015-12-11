@@ -37,7 +37,6 @@ colors used:
   margin-top: 12em;
 }
 
-
 /*
 ========= Small Description
  */
@@ -81,6 +80,7 @@ colors used:
 #eds-preview header h2 {
   color: #0a3a4b;
   font-size: 300px;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -113,7 +113,7 @@ colors used:
  */
 
 #quote1 {
-  background: url(../img/zebrabg.png) no-repeat center fixed;
+  background: url(../img/zebrabg.png) no-repeat center;
   background-size: cover;
   padding: 4em 0 5em;
 }
@@ -234,7 +234,7 @@ colors used:
 
 #recent-updates {
   background-color: #0a3a4b;
-  padding-bottom: 3em;
+  padding-bottom: 4px;
 }
 
 #recent-updates .title {
