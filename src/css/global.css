@@ -19,6 +19,10 @@ img {
   max-width: 100%;
 }
 
+input:required {
+  border: 1px solid #C26464;
+}
+
 .btn {
   text-transform: uppercase;
 }
