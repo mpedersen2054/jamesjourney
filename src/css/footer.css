@@ -25,6 +25,19 @@
   min-height: 200px;
 }
 
+#footer .foot1o4 .logo img {
+  height: 100px;
+  margin: 0 auto;
+}
+
+#footer .foot1o4 h3 {
+  color: #fff;
+}
+
+#footer .foot1o4 .copyw {
+  color: #555;
+}
+
 #footer .foot2o4,
 #footer .foot3o4 {
   padding: 0 1em;
@@ -34,11 +47,15 @@
   border-right: none;
 }
 
-#footer .foot3o4 i {
-  padding-right: 5px;
+#footer .foot3o4 .social {
 }
 
+#footer .foot3o4 i {
+}
 
+/*#footer .foot3o4 .facebook { color: #3B5998; }
+#footer .foot3o4 .instagram { color: #000; }
+#footer .foot3o4 .twitter { color: #4FA0FB; }*/
 
 #footer .right-list a {
   color: #eee;
