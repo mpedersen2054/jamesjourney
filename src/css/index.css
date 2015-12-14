@@ -294,6 +294,7 @@ colors used:
   background-color: rgba(196, 236, 250, 0.9);
   padding: 0 5px;
   border-radius: 3px;
+  /*float: left;*/
   /* so all lines of name have the padding */
   -webkit-box-decoration-break: clone;
 }

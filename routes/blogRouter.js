@@ -40,17 +40,19 @@ blogRouter.route('/new')
 blogRouter.route('/:slug')
   .get(function(req, res) {
     Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
+      if(err) console.log(err);
       Featured.findFeatured(function(err, featured) {
         if(err) console.log(err);
         if (!featured || !blog) {
-          res.render('404', {
-            message: 'There was an error loading featured posts'
-          });
+          res.render('404', { message: 'There was an error loading featured posts' });
         }
-        console.log(featured.length)
         res.render('show_blog', {
           blog: blog,
-          featured: featured
+          featured: featured,
+          disqus: {
+            url: 'http://localhost:3000'+'/blog/'+req.params.slug,
+            identifier: '/blog/'+req.params.slug
+          }
         })
       })
     })
