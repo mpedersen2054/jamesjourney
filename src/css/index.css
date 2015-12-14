@@ -255,10 +255,10 @@ colors used:
 .updates .update-container { padding: 3.75px; }
 
 .update {
-  background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg);
   height: 260px;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 4px;
+  /*background-size: cover;*/
 }
 
 /* for overlay */
@@ -269,7 +269,7 @@ colors used:
   left: 3.75px;
   right: 3.75px;
   background-color: rgba(0,0,0,0.6);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 
@@ -292,8 +292,8 @@ colors used:
   font-size: 20px;
   color: #0a3a4b;
   background-color: rgba(196, 236, 250, 0.9);
-  padding: 0 10px;
-  /*box-shadow: 2px 2px blue;*/
+  padding: 0 5px;
+  border-radius: 3px;
   /* so all lines of name have the padding */
   -webkit-box-decoration-break: clone;
 }
