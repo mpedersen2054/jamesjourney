@@ -38,4 +38,8 @@ table a:not(.btn), .table a:not(.btn) {
   -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
 
-.bigger-btn {}
+.bigger-btn {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 30px;
+}

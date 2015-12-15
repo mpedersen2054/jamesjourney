@@ -2,7 +2,7 @@
 /* Jumbotron */
 
 #show-blog {
-  background-color: #ddd;
+  background-color: #eee;
 }
 
 #show-blog .jumbo {
@@ -56,7 +56,7 @@
 }
 
 #show-blog .content {
-  padding: 20px 120px 100px;
+  padding: 20px 120px 40px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 24px;
 }
@@ -90,6 +90,37 @@
   margin: 40px 0;
 }
 
+#show-blog .share {
+  margin: 20px 120px 60px;
+  padding: 60px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+#show-blog .share h3 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+#show-blog .share ul {
+  list-style: none;
+  padding: 0;
+}
+
+#show-blog .share .social {
+  display: inline-block;
+  background-color: #000;
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+#show-blog .share .social a { color: #fff; width: 100%; height: 100%;}
+#show-blog .share .facebook { background-color: #3D5E96; }
+#show-blog .share .twitter { background-color: #4FA0FB; }
+#show-blog .share .google-plus { background-color: #C35544; }
 
 #show-blog .disqus-partial {
   padding: 20px 120px;
