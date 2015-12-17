@@ -4,19 +4,16 @@
 
     <h2>New Blog</h2>
 
-    <form id="blog-form" action="/blog/new" method="post">
+    <form id="blog-form" action="" method="post">
       <div class="form-group">
         <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off">
       </div>
       <div class="form-group">
         <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off">
       </div>
-      <div class="form-group">
+      {{!-- <div class="form-group">
         <textarea name="caption" class="form-control" maxlength="320" placeholder="Caption: text shown along with title on the blog index page // 320 characters max..."></textarea>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="author" placeholder="author..." autocomplete="off">
-      </div>
+      </div> --}}
       <div class="form-group">
         <textarea name="content" class="form-control" placeholder="Enter content (markdown!) ..."></textarea>
       </div>

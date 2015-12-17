@@ -25,11 +25,12 @@ blogRouter.route('/new')
     if (req.user) {
       var data = req.body;
       var mdcontent = markdown.toHTML(data.content);
+      data.author = req.user;
       data.content = mdcontent;
-      console.log(data)
       var blog = new Blog(req.body);
-      blog.save(function(err, blog) {
-        res.redirect('/admin-page');
+      blog.save(function(err) {
+        if(err) return console.log(err);
+        return res.redirect('/admin-page');
       })
     } else {
       res.redirect('/login');

@@ -15,9 +15,10 @@ var authPassport = passport.authenticate('local', {
 });
 
 // make async query to Blog.all and Gallery.all, render the page
+// page : to pass to res.render(example: res.render('index'))
+// req/res : takes the req/res where the func is being called
+// admin: bool that gets mailchimp data if true
 var getDbs = function(page, req, res, admin) {
-  var mcData;
-
   async.parallel([
     function(cb) {
       Blog.find(function(err, blogs) { cb(null, blogs) });
@@ -45,7 +46,7 @@ var getDbs = function(page, req, res, admin) {
     res.render(page, {
       blogs: blogs,
       gals: gals,
-      mcd: mcd,
+      mcd: mcd ? mcd : null,
       isAuthenticated: req.isAuthenticated(),
       user: req.user,
     });

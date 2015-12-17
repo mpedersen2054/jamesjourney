@@ -117,7 +117,7 @@
   border-radius: 50%;
   margin: 0 20px;
 }
-#show-blog .share .social a { color: #fff; width: 100%; height: 100%;}
+#show-blog .share .social { color: #fff; }
 #show-blog .share .facebook { background-color: #3D5E96; }
 #show-blog .share .twitter { background-color: #4FA0FB; }
 #show-blog .share .google-plus { background-color: #C35544; }

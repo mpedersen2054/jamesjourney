@@ -4,7 +4,6 @@ var slugify  = require('../lib/slugify.js');
 var BlogSchema = new mongoose.Schema({
   coverImage:     { type: String },
   title:          { type: String, unique: true },
-  caption:        { type: String }, // 320 chars / for blog index
   isFeatured:     { type: Boolean, default: false },
   dateAdded:      { type: Date, default: Date.now },
   formattedDate:  { type: String },
@@ -33,7 +32,7 @@ BlogSchema.pre('save', function(next) {
 // adds caption preview
 BlogSchema.pre('save', function(next) {
   var blog = this;
-  var contPrev = blog.caption.slice(0, 15);
+  var contPrev = blog.content.slice(0, 100);
   blog.contentPreview = contPrev + '[...]';
   next();
 });

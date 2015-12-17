@@ -1,8 +1,6 @@
 <div id="admin-page">
 
-  <div class="fluid-container">
-
-    <br>
+  <div class="container">
 
     {{#if user}}
       <div class="alert alert-success alert-dismissible" role="alert">
@@ -12,52 +10,59 @@
     {{/if}}
 
 
-    <h3 class="blog-title">Blog Posts <span><a href="/blog/new" class="btn btn-default btn-xs"><i> + new</i></a></span></h3>
+    <h3 class="blog-title">Blog Posts</h3>
+    <a href="/blog/new" class="btn btn-default btn-xs">+ new</a>
     {{#if blogs}}
-      <div class="well">
-        <hr>
-        <table class="table">
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-          {{#each blogs}}
-          <tr>
-            <td>{{@index}}</td>
-            <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
-            <td class="options">
-              <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm">edit</a>
-              <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">delete</a>
-            </td>
-          </tr>
-          {{/each}}
+      {{!-- <div class="well"> --}}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each blogs}}
+              <tr>
+                <td>{{@index}}</td>
+                <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
+                <td class="options">
+                  <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm">edit</a>
+                  <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">delete</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
         </table>
-      </div>
+      {{!-- </div> --}}
     {{/if}}
 
 
     <h3 class="subscribers-title">Subscribers</h3>
+    <a href="https://us11.admin.mailchimp.com/campaigns/create/" class="btn btn-default btn-xs">Send Mass Email</a>
     {{#if mcd}}
-      <div class="well">
-        <a href="https://us11.admin.mailchimp.com/campaigns/create/" class="btn btn-default pull-right">Send Mass Email</a>
-        <br>
-        <hr>
-        <table class="table">
+      <table class="table table-hover">
+        <thead>
           <tr>
             <th></th>
             <th></th>
+            <th></th>
+            <th></th>
           </tr>
-          {{#each mcd}}
-            <tr>
-              <th>{{@index}}</th>
-              <th>{{email}}</th>
-            </tr>
-          {{/each}}
-        </table>
-      </div>
+        </thead>
+        <tbody>
+        {{#each mcd}}
+          <tr>
+            <td>{{@index}}</td>
+            <td>{{email}}</td>
+            <td>{{fname}}</td>
+            <td>{{lname}}</td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
     {{/if}}
-
   </div>
 
 </div>

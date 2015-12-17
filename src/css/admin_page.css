@@ -4,15 +4,12 @@
 
 #admin-page .blog-title,
 #admin-page .subscribers-title {
-  font-size: 2.6em;
-  text-align: center;
 }
 
 #admin-page .options {
-  float: right;
+  text-align: right;
 }
 
 #admin-page td {
-  font-size: 1.2em;
-  padding: 1em;
+  border-bottom: 1px solid #eee;
 }
