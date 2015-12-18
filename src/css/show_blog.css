@@ -15,7 +15,7 @@
   position: absolute;
   bottom: 60px;
   /*max-width: 1000px;*/
-  padding: 0 120px;
+  padding: 0 40px;
 }
 
 #show-blog .jumbo-title {
@@ -35,14 +35,15 @@
 }
 
 #show-blog .meta {
-  padding: 50px 120px 0;
+  font-size: 14px;
   text-transform: uppercase;
   color: #aaa;
+  padding: 20px 40px 0;
 }
 
 #show-blog .line {
   border-bottom: 1px solid #ddd;
-  margin-top: 40px;
+  padding-bottom: 10px;
 }
 
 #show-blog .meta .date { float: left; }
@@ -55,27 +56,26 @@
   margin-bottom: 2px;
 }
 
-#show-blog .content {
-  padding: 20px 120px 40px;
+#show-blog .on-left {
+  border: 1px solid blue;
+}
+
+#show-blog .post-content {
+  padding: 0px 40px 40px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-#show-blog .content p {
-  margin: 20px 0;
-}
+#show-blog .post-content p { margin: 20px 0; }
+#show-blog .post-content img { margin: 20px 0; }
 
-#show-blog .content img {
-  margin: 20px 0;
-}
-
-#show-blog .content h3 {
+#show-blog .post-content h3 {
   font-size: 30px;
   font-weight: bold;
   margin: 40px 0;
 }
 
-#show-blog .content .caption {
+#show-blog .post-content .caption {
   position: relative;
   top: -20px;
   font-size: 16px;
@@ -85,13 +85,25 @@
   padding: 0;
 }
 
-#show-blog .content h4 {
+#show-blog .post-content h4 {
   font-size: 26px;
   margin: 40px 0;
 }
 
+#show-blog .on-right {
+  border: 1px solid red;
+  /*top: 0;
+  left: 0;
+  max-width: 100%;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 15px;
+}
+
+
 #show-blog .share {
-  margin: 20px 120px 60px;
+  margin: 20px 40px 60px;
   padding: 60px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -123,5 +135,5 @@
 #show-blog .share .google-plus { background-color: #C35544; }
 
 #show-blog .disqus-partial {
-  padding: 20px 120px;
+  padding: 20px 40px;
 }

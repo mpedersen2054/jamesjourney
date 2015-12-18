@@ -8,22 +8,26 @@ blogRouter.route('/')
 
   .get(function(req, res) {
 
-    // http://localhost:3000/blog?tags=star%20wars
-    if ('tags' in req.query) {
-      Blog.find({ 'tags': req.query.tags }, function(err, blogs) {
-        if(err) console.log(err);
-        res.render('blogs', { blogs: blogs });
-      })
-    }
-    // if no tags query
-    else {
-      Blog.find(function(err, blogs) {
-        if(err) console.log(err);
-        res.render('blogs', { blogs: blogs });
-      })
-    }
+    Blog.distinct('tags', function(err, dist) {
+      // http://localhost:3000/blog?tags=star%20wars
+      if ('tags' in req.query) {
+        Blog.find({ 'tags': req.query.tags }, function(err, blogs) {
+          if(err) console.log(err);
+          res.render('blogs', { blogs: blogs, dist_tags: dist });
+        })
+      }
 
-  })
+      // if no tags query
+      else {
+        Blog.find(function(err, blogs) {
+          if(err) console.log(err);
+          res.render('blogs', { blogs: blogs, dist_tags: dist });
+        })
+      }
+
+    });
+
+  });
 
 
 blogRouter.route('/new')

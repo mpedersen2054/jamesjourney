@@ -30,10 +30,19 @@
     })
   }
 
+  App.scrollFollow = function(elem) {
+    $(elem).simpleScrollFollow({
+      limit_elem: '.on-left'
+    });
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
-  App.tokenField('#new-blog-tokenfield')
-  App.tokenField('#edit-blog-tokenfield')
+  App.tokenField('#new-blog-tokenfield');
+  App.tokenField('#edit-blog-tokenfield');
+  App.scrollFollow('#show-blog .on-right');
+
+
 
 })(jQuery);
