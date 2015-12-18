@@ -9,6 +9,7 @@ var BlogSchema = new mongoose.Schema({
   formattedDate:  { type: String },
   slug:           { type: String },
   author:         { type: String },
+  tags:           [ String ],
   captionPreview: { type: String }, // 15 chars / for blog_preview
   content:        { type: String },
   social:         [ String ]

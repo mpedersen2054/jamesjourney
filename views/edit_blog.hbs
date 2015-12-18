@@ -21,14 +21,14 @@
         <input id="subtitle-input" class="form-control" type="text" name="subTitle" value="{{blog.subTitle}}">
       </div> --}}
       <div class="form-group">
-        <label for="author-input">Author</label>
-        <input id="author-input" class="form-control" type="text" name="author" value="{{blog.author}}">
+        <label for="author-input">tags</label>
+        <input type="text" name="tags" class="form-control" id="edit-blog-tokenfield" value="{{blog.tags}}" />
       </div>
       <div class="form-group">
         <label for="content-input">Content</label>
         <textarea id="content-input" class="form-control" name="content">{{blog.content}}</textarea>
       </div>
-      <input type="submit" value="submit" class="btn btn-primary">
+      <input type="submit" value="Save" class="btn btn-primary">
     </form>
 
   </div>

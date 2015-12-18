@@ -6,10 +6,21 @@ var markdown   = require('markdown').markdown;
 
 blogRouter.route('/')
   .get(function(req, res) {
-    Blog.find(function(err, blogs) {
-      if(err) console.log(err);
-      res.render('blogs', { blogs: blogs });
-    })
+
+    if ('tag' in req.query) {
+      console.log('hello there req.query')
+      Blog.find({ 'tag.name': req.query.tag }, function(err, blogs) {
+        console.log(req.query)
+        console.log(blogs)
+      })
+    }
+    else {
+      console.log('no req.query')
+      // Blog.find(function(err, blogs) {
+      //   if(err) console.log(err);
+      //   res.render('blogs', { blogs: blogs });
+      // })
+    }
   })
 
 
@@ -24,14 +35,23 @@ blogRouter.route('/new')
   .post(function(req, res) {
     if (req.user) {
       var data = req.body;
-      var mdcontent = markdown.toHTML(data.content);
+      // returns array of tags
+      data.tags = data.tags.split(',').map(function(tag) {
+        return tag.trim();
+      });
+
       data.author = req.user;
-      data.content = mdcontent;
+
+      // uses markdown module to turn the MD into html
+      data.content = markdown.toHTML(data.content);
+
       var blog = new Blog(req.body);
+
       blog.save(function(err) {
         if(err) return console.log(err);
         return res.redirect('/admin-page');
       })
+
     } else {
       res.redirect('/login');
     }
@@ -70,8 +90,9 @@ blogRouter.route('/:slug')
 
         blog.coverImage = req.body.coverImage;
         blog.title      = req.body.title;
-        blog.subTitle   = req.body.subTitle;
-        blog.author     = req.body.author;
+        blog.tags       = req.body.tags.split(',').map(function(tag) {
+          return tag.trim();
+        });
         blog.content    = req.body.content;
 
         blog.save(function(err) {
