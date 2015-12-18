@@ -58,6 +58,7 @@
 
 #show-blog .on-left {
   border: 1px solid blue;
+  overflow: hidden;
 }
 
 #show-blog .post-content {
@@ -92,9 +93,6 @@
 
 #show-blog .on-right {
   border: 1px solid red;
-  /*top: 0;
-  left: 0;
-  max-width: 100%;*/
   position: absolute;
   top: 0;
   left: 0;
