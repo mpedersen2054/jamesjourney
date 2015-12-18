@@ -5,22 +5,24 @@ var markdown   = require('markdown').markdown;
 
 
 blogRouter.route('/')
+
   .get(function(req, res) {
 
-    if ('tag' in req.query) {
-      console.log('hello there req.query')
-      Blog.find({ 'tag.name': req.query.tag }, function(err, blogs) {
-        console.log(req.query)
-        console.log(blogs)
+    // http://localhost:3000/blog?tags=star%20wars
+    if ('tags' in req.query) {
+      Blog.find({ 'tags': req.query.tags }, function(err, blogs) {
+        if(err) console.log(err);
+        res.render('blogs', { blogs: blogs });
       })
     }
+    // if no tags query
     else {
-      console.log('no req.query')
-      // Blog.find(function(err, blogs) {
-      //   if(err) console.log(err);
-      //   res.render('blogs', { blogs: blogs });
-      // })
+      Blog.find(function(err, blogs) {
+        if(err) console.log(err);
+        res.render('blogs', { blogs: blogs });
+      })
     }
+
   })
 
 
