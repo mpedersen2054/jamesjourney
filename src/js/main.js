@@ -36,12 +36,30 @@
     });
   }
 
+  App.navbar = function() {
+    var $navbar = $('header');
+    var $window = $(window);
+
+    console.log($window.scrollTop())
+
+    $window.on('scroll change', function() {
+      console.log($(this).scrollTop())
+      if ($(this).scrollTop() > 20) {
+        $navbar.addClass('with-bg');
+      } else {
+        $navbar.removeClass('with-bg');
+      }
+
+    }).scroll();
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
   App.tokenField('#new-blog-tokenfield');
   App.tokenField('#edit-blog-tokenfield');
   App.scrollFollow('#show-blog .on-right');
+  App.navbar();
 
 
 

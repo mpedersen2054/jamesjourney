@@ -65,26 +65,26 @@ colors used:
   padding: 2em 1em 6em;
 }
 
-#eds-preview header {
+#eds-preview .head {
   max-width: 550px;
   margin: 0 auto;
 }
 
 /* 360px, 53.33px, 32px */
-#eds-preview header h2,
-#eds-preview header h3 {
+#eds-preview .head h2,
+#eds-preview .head h3 {
   text-align: center;
   max-width: 550px;
 }
 
-#eds-preview header h2 {
+#eds-preview .head h2 {
   color: #0a3a4b;
   font-size: 300px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-#eds-preview header h3 {
+#eds-preview .head h3 {
   color: #c4ecfa;
   position: relative;
   bottom: 0.5em;
