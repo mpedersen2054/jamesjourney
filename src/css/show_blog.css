@@ -91,15 +91,6 @@
   margin: 40px 0;
 }
 
-#show-blog .on-right {
-  /*border: 1px solid red;*/
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 15px;
-}
-
-
 #show-blog .share {
   margin: 20px 40px 60px;
   padding: 60px 0;

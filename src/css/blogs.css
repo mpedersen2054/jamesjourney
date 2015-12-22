@@ -49,14 +49,9 @@
   margin: 40px 0;
 }
 
-#blogs .blog:first-child {
-  margin-top: 40px;
-}
-
 #blogs .blog .wrap {
   position: absolute;
   bottom: 30px;
-  /*max-width: 1000px;*/
   padding: 0 20px;
 }
 
@@ -92,10 +87,6 @@
 
 #blogs .blog .blog-content {
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#blogs .on-right {
-  left: unset !important;
 }
 
 .takeupspace {

@@ -55,6 +55,7 @@
     // var $navMenu = $('#nav')
     var $navbarBtn = $('a#header-menu-link');
     var $mainCont = $('.main-cont');
+    var $navMenu = $('#nav-menu')
     var $toPushRight = $('.main-cont, header');
 
     // menu link clicked
@@ -63,13 +64,13 @@
 
       // if main-cont has class .push-right then remove it
       if ($mainCont.hasClass('push-right')) {
+        $navMenu.hide();
         $toPushRight.removeClass('push-right')
-        $('.on-right').css('right', 'auto')
       }
       // add it if there isnt .push-right
       else {
+        $navMenu.show();
         $toPushRight.addClass('push-right');
-        // $('.on-right').css('right', '300px !important')
       }
     })
   }
