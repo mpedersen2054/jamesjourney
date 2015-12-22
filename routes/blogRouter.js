@@ -49,7 +49,8 @@ blogRouter.route('/new')
       data.author = req.user;
 
       // uses markdown module to turn the MD into html
-      data.content = markdown.toHTML(data.content);
+      var content = markdown.toHTML(data.content);
+      data.content = content;
 
       var blog = new Blog(req.body);
 

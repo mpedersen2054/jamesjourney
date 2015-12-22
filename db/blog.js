@@ -10,7 +10,7 @@ var BlogSchema = new mongoose.Schema({
   slug:           { type: String },
   author:         { type: String },
   tags:           [ String ],
-  captionPreview: { type: String }, // 15 chars / for blog_preview
+  contentPreview: { type: String }, // 360 chars
   content:        { type: String },
   social:         [ String ]
 });
@@ -33,7 +33,7 @@ BlogSchema.pre('save', function(next) {
 // adds caption preview
 BlogSchema.pre('save', function(next) {
   var blog = this;
-  var contPrev = blog.content.slice(0, 100);
+  var contPrev = blog.content.slice(0, 360);
   blog.contentPreview = contPrev + '[...]';
   next();
 });

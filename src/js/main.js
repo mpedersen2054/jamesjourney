@@ -40,10 +40,8 @@
     var $navbar = $('header');
     var $window = $(window);
 
-    console.log($window.scrollTop())
-
     $window.on('scroll change', function() {
-      console.log($(this).scrollTop())
+      // console.log($(this).scrollTop())
       if ($(this).scrollTop() > 20) {
         $navbar.addClass('with-bg');
       } else {
@@ -53,13 +51,23 @@
     }).scroll();
   }
 
+  App.pushMenu = function() {
+    var $navbarBtn = $('#header-menu-link');
+
+    $navbarBtn.on('click', function(e) {
+      e.preventDefault();
+      console.log('hello there')
+    })
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
   App.tokenField('#new-blog-tokenfield');
   App.tokenField('#edit-blog-tokenfield');
-  App.scrollFollow('#show-blog .on-right');
+  App.scrollFollow('#show-blog .on-right, #blogs .on-right');
   App.navbar();
+  App.pushMenu();
 
 
 

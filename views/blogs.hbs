@@ -1,40 +1,70 @@
 <div id="blogs">
 
-  <div class="jumbotron" style="background-image: url(https://static.pexels.com/photos/185/black-and-white-sky-flying-holiday.jpg); background-size: cover; background-position: center;">
-    <div class="smaller-fluid-container">
-      <h1 class="title">
-        Blog
-        <div class="subtitle">updates and inspiration</div>
-      </h1>
-      {{dist_tags}}
-    </div>
-  </div>
+  <div class="container whitebg">
+    <div class="row">
+      <div class="col-md-12">
 
-  {{#each blogs}}
-    <div class="blog-post">
-      <div class="fluid-container">
-        <div class="row blog-row">
-          <div class="col-md-4 col-sm-12">
-            <div class="image-and-meta">
-              <img src="{{coverImage}}" width="250px" height="250px">
-              <div class="author">{{author}}</div>
-              <div class="date">{{formattedDate}}</div>
-            </div>
-          </div>
-          <div class="col-md-8 col-sm-12">
-            <div class="title-and-contprev">
-              <h3 class="title"><a href="/blog/{{slug}}">{{title}}</a></h3>
-              <p class="content">{{caption}}</p>
-              <a href="/blog/{{slug}}" class="btn btn-primary">Read more</a>
-            </div>
+        <!-- {{dist_tags}} -->
+        <div class="head">
+          <div class="wrap">
+            <h2>Blog</h2>
+            <h4>Updates and inspiration</h4>
           </div>
         </div>
       </div>
-    </div>
-  {{/each}}
 
-  {{!-- only show featured on show_blog --}}
-  {{!-- {{> featured_posts}} --}}
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="on-left">
+
+              {{#each blogs}}
+
+                <div class="blog">
+
+                  <div class="jumbo" style="background: no-repeat center/100% url({{coverImage}})">
+                    <div class="wrap">
+                      <a href="/blog/{{slug}}">{{title}}</a>
+                    </div>
+                  </div>
+
+                  <div class="meta">
+                    <span class="left">Posted on {{formattedDate}}</span>
+                    <span class="right">By
+                      <img class="img-circle" src="//placehold.it/50x50" alt="">
+                      Donald Duck
+                    </span>
+                  </div>
+
+                  <div class="blog-content">{{{content}}}</div>
+
+                </div>
+
+              {{/each}}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="on-right">
+              <div class="takeupspace"></div>
+              <h4>Side content</h4>
+
+              <div class="tag-list">
+                <ul>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   {{> subscribe_block}}
 
 </div>

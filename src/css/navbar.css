@@ -17,7 +17,8 @@ header {
   top: 0;
   left: 0;
   z-index: 10003;
-  background-color: #aaa;
+  background-color: transparent;
+  color: #222;
 }
 
 header #header-logo-link {
@@ -74,6 +75,6 @@ header #header-menu-link {
 }
 
 .with-bg {
-  background-color: #000;
+  background-color: #222;
   padding: 7.5px 45px;
 }

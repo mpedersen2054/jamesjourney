@@ -11,65 +11,65 @@
             </a>
           </div>
         </div>
+      </div>
 
-        <div class="content">
+      <div class="content">
 
-          <div class="row">
-            <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-8">
 
-              <div class="on-left">
+            <div class="on-left">
 
-                <div class="meta">
-                  <span class="date">Posted on {{blog.formattedDate}}</span>
-                  <span class="author">
-                    <img src="//placehold.it/100x100" class="img-circle author-image">
-                    <span>Donald Duck</span>
-                  </span>
-                  <div class="line clearfix"></div>
-                </div>
-
-                <div class="post-content">
-                  {{{blog.content}}}
-                </div>
+              <div class="meta">
+                <span class="date">Posted on {{blog.formattedDate}}</span>
+                <span class="author">
+                  <img src="//placehold.it/100x100" class="img-circle author-image">
+                  <span>Donald Duck</span>
+                </span>
+                <div class="line clearfix"></div>
               </div>
-            </div>
 
-
-            <div class="col-md-4">
-              <div class="on-right">
-                <h4>Side content</h4>
-
-                <div class="tag-list">
-                  <ul>
-                    <li class="tag label label-info">A Tag</li>
-                    <li class="tag label label-info">A Tag</li>
-                    <li class="tag label label-info">A Tag</li>
-                    <li class="tag label label-info">A Tag</li>
-                  </ul>
-                </div>
-
+              <div class="post-content">
+                {{{blog.content}}}
               </div>
             </div>
           </div>
 
-          <div class="share">
-            <h3>Think people should hear about this?</h3>
-            <a href="#" class="social facebook">
-              <i class="fa fa-facebook fa-3x"></i>
-            </a>
-            <a href="#" class="social twitter">
-              <i class="fa fa-twitter fa-3x"></i>
-            </a>
-            <a href="#" class="social google-plus">
-              <i class="fa fa-google-plus fa-3x"></i>
-            </a>
-          </div>
 
-          {{!-- load the disqus vars into partial --}}
-          <div class="disqus-partial">
-            {{> disqus_partial disqusvars=disqus}}
-          </div>
+          <div class="col-md-4">
+            <div class="on-right">
+              <div class="takeupspace"></div>
+              <h4>Side content</h4>
 
+              <div class="tag-list">
+                <ul>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                  <li class="tag label label-info">A Tag</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="share">
+          <h3>Think people should hear about this?</h3>
+          <a href="#" class="social facebook">
+            <i class="fa fa-facebook fa-3x"></i>
+          </a>
+          <a href="#" class="social twitter">
+            <i class="fa fa-twitter fa-3x"></i>
+          </a>
+          <a href="#" class="social google-plus">
+            <i class="fa fa-google-plus fa-3x"></i>
+          </a>
+        </div>
+
+        {{!-- load the disqus vars into partial --}}
+        <div class="disqus-partial">
+          {{> disqus_partial disqusvars=disqus}}
         </div>
 
       </div>
