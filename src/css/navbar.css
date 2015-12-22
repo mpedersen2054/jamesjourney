@@ -78,6 +78,11 @@ header #header-menu-link {
   margin-top: -8px;
 }
 
+header #header-menu-link:hover,
+header #header-menu-link:active {
+  text-decoration: none;
+}
+
 .with-bg {
   background-color: #222;
   padding: 7.5px 45px;

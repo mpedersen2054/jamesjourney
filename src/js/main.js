@@ -53,7 +53,7 @@
 
   App.pushMenu = function() {
     // var $navMenu = $('#nav')
-    var $navbarBtn = $('#header-menu-link');
+    var $navbarBtn = $('a#header-menu-link');
     var $mainCont = $('.main-cont');
     var $toPushRight = $('.main-cont, header');
 
@@ -64,10 +64,12 @@
       // if main-cont has class .push-right then remove it
       if ($mainCont.hasClass('push-right')) {
         $toPushRight.removeClass('push-right')
+        $('.on-right').css('right', 'auto')
       }
       // add it if there isnt .push-right
       else {
         $toPushRight.addClass('push-right');
+        // $('.on-right').css('right', '300px !important')
       }
     })
   }
