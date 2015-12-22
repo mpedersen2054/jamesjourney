@@ -1,5 +1,4 @@
 .push-right {
-  left: -300px;
 }
 
 header {
@@ -89,10 +88,10 @@ header #header-menu-link:active {
 
 #nav-menu {
   position: fixed;
-  right: 0px;
+  right: 0;
   top: 0;
   bottom: 0;
-  width: 300px;
+  width: 0px;
   padding-top: 100px;
   display: none;
 }
