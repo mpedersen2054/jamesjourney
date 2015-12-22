@@ -11,7 +11,8 @@
   position: relative;
   height: 26em;
   margin: 0 -15px;
-  background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);
+  background-color: #0a3a4b;
+  /*background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);*/
   text-align: center;
   text-transform: uppercase;
 }

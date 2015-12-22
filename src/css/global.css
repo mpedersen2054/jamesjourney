@@ -4,6 +4,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background: url(null) fixed;
   color: #333;
+  position: relative;
 } /* 1em === 16px */
 
 h1,h2,h3,h4,h5,h6 {
