@@ -37,16 +37,16 @@ header #header-logo-link {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-  background-image: url('http://invisiblechildren.com/wp-content/themes/invisiblechildren2.0/images/logo.png');
+  opacity: 0.8;
+  background-image: url('/img/jjsmalllogo.png');
   -moz-background-size: contain;
   -o-background-size: contain;
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
   float: left;
-  width: 133px;
-  height: 65px;
+  width: 100px;
+  height: 50px;
   position: relative;
 }
 
@@ -67,13 +67,17 @@ header #header-menu-link {
   font-style: normal;
   font-weight: 700;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-  color: #FFF;
+  opacity: 1;
+  color: #aaa;
   text-transform: uppercase;
   position: absolute;
   top: 50%;
   right: 45px;
   margin-top: -8px;
+}
+
+header #header-menu-link:hover {
+  color: #fff;
 }
 
 header #header-menu-link:hover,
@@ -94,6 +98,9 @@ header #header-menu-link:active {
   width: 0px;
   padding-top: 100px;
   display: none;
+
+  background-color: #222;
+  color: #ddd;
 }
 
 #nav-menu .wrap {
@@ -101,10 +108,57 @@ header #header-menu-link:active {
   top: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid blue;
 }
 
-.main-cont {
-  position: relative;
+#nav-menu h3,
+#nav-menu .list,
+#nav-menu .link {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-menu h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  height: 80px;
+  padding: 20px;
+  font-size: 32px;
+}
+
+#nav-menu .list {
+  list-style: none;
+}
+
+#nav-menu .list .top-list {
+  margin-bottom: 100px;
+}
+
+#nav-menu .list .bottom-list {}
+#nav-menu .link {
+  font-weight: 300;
+  padding: 5px 5px 5px 40px;
+}
+
+#nav-menu .link a {
+  color: #ccc;
+}
+
+#nav-menu .link a:hover {
+  color: #fff;
+}
+
+#nav-menu .link:hover {
+  border-left: 6px solid #63AECC;
+}
+
+#nav-menu .large-link a {
+  font-size: 24px;
+}
+
+#nav-menu .small-link a {
+  font-size: 16px;
+  color: #63AECC;
 }
 

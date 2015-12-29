@@ -24,7 +24,7 @@
   text-transform: uppercase;
   background-color: #fff;
   cursor: default;
-  color: blue;
+  color: #5AB7D1;
   padding: 0 15px;
   line-height: 1.42857143;
   -webkit-box-decoration-break: clone;
@@ -63,7 +63,7 @@
 
 #show-blog .post-content {
   padding: 0px 40px 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
   font-size: 20px;
 }
 

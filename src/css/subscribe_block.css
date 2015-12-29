@@ -42,6 +42,10 @@
   color: white;
 }
 
+.modal {
+  margin-top: 100px;
+}
+
 /*.modal-body { padding: 50px 150px; }*/
 .modal-footer { padding: 20px 0; }
 

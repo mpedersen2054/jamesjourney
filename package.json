@@ -22,7 +22,7 @@
     "faker": "^3.0.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-    "gulp-minify-css": "^1.2.2",
+    "gulp-minify-css": "^1.2.3",
     "gulp-sourcemaps": "^1.6.0",
     "hbs": "^2.9.0",
     "mailchimp-api": "*",

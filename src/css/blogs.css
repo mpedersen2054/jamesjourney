@@ -11,7 +11,7 @@
   position: relative;
   height: 26em;
   margin: 0 -15px;
-  background-color: #0a3a4b;
+  background-color: #5AB7D1;
   /*background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);*/
   text-align: center;
   text-transform: uppercase;
@@ -60,18 +60,22 @@
   border-radius: 3px;
   text-transform: uppercase;
   background-color: #fff;
-  color: blue;
+  color: #5AB7D1;
   padding: 0 15px;
   line-height: 1.42857143;
   -webkit-box-decoration-break: clone;
 }
+#blogs .blog .wrap a:hover {
+  background-color: #5AB7D1;
+  color: #fff;
+}
 
 #blogs .blog .meta {
   text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 100;
+  font-size: 14px;
+  font-weight: 400;
   color: #aaa;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
 
 #blogs .blog .meta .left { text-align: left; }
@@ -86,7 +90,7 @@
 }
 
 #blogs .blog .blog-content {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
 }
 
 .takeupspace {

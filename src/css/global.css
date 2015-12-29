@@ -59,3 +59,5 @@ table a:not(.btn), .table a:not(.btn) {
   left: unset !important;
   top: -20px;
 }
+
+.main-cont { position: relative; }

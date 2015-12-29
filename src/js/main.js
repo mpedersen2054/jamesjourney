@@ -1,6 +1,6 @@
 
 
-;(function($) {
+(function($) {
 
   var root = this;
   App = root.App || {};
@@ -39,23 +39,25 @@
   App.navbar = function() {
     var $navbar = $('header');
     var $window = $(window);
+    var $logo = $('#header-logo-link');
 
     $window.on('scroll change', function() {
       // console.log($(this).scrollTop())
       if ($(this).scrollTop() > 20) {
         $navbar.addClass('with-bg');
+        // $logo.show();
       } else {
         $navbar.removeClass('with-bg');
       }
 
-    }).scroll();
+    })
   }
 
   App.pushMenu = function() {
     // var $navMenu = $('#nav')
     var $navbarBtn = $('a#header-menu-link');
     var $mainCont = $('.main-cont');
-    var $navMenu = $('#nav-menu')
+    var $navMenu = $('#nav-menu');
 
     // menu link clicked
     $navbarBtn.on('click', function(e) {
@@ -63,6 +65,7 @@
 
       // if main-cont has class .push-right then remove it
       if ($mainCont.hasClass('push-right')) {
+        $(this).css('color', '#aaa');
         $navMenu
           .animate({ width: '0px' }, 200)
         $mainCont
@@ -71,6 +74,7 @@
       }
       // add it if there isnt .push-right
       else {
+        $(this).css('color', '#fff');
         $navMenu
           .show()
           .animate({ width: '300px' }, 200)
