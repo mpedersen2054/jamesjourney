@@ -30,6 +30,20 @@
     })
   }
 
+  App.contentPreviewCount = function() {
+    var maxNum = 600;
+    var currentNum;
+    var $contentPreview = $('.content-preview-input');
+    var $currentCount = $('.current-count');
+    var $maxNum = $('.current-count__max');
+    var $currentNum = $('.current-count__current');
+
+    $contentPreview.on('keyup', function() {
+      currentNum = $contentPreview.val().length;
+      $currentNum.text(currentNum);
+    })
+  }
+
   App.scrollFollow = function(elem) {
     $(elem).simpleScrollFollow({
       limit_elem: '.on-left'
@@ -90,6 +104,7 @@
   App.typer('.nl-typer');
   App.tokenField('#new-blog-tokenfield');
   App.tokenField('#edit-blog-tokenfield');
+  App.contentPreviewCount();
   App.scrollFollow('#show-blog .on-right, #blogs .on-right');
   App.navbar();
   App.pushMenu();

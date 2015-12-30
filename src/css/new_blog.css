@@ -14,3 +14,8 @@
   max-width: 40em;
   margin: 3em auto;
 }
+
+#blog-form .current-count {
+  font-size: 14px;
+  color: #aaa;
+}

@@ -8,10 +8,11 @@ blogRouter.route('/')
 
   .get(function(req, res) {
 
+    // distinct returns list of all unique tags
     Blog.distinct('tags', function(err, dist) {
       // http://localhost:3000/blog?tags=star%20wars
       if ('tags' in req.query) {
-        Blog.find({ 'tags': req.query.tags }, function(err, blogs) {
+        Blog.find({ $query: {'tags': req.query.tags}, $orderBy: { 'dateAdded': -1 } }, function(err, blogs) {
           if(err) console.log(err);
           res.render('blogs', { blogs: blogs, dist_tags: dist });
         })
@@ -19,7 +20,10 @@ blogRouter.route('/')
 
       // if no tags query
       else {
-        Blog.find(function(err, blogs) {
+        Blog
+          .find()
+          .sort({dateAdded: -1})
+          .exec(function(err, blogs) {
           if(err) console.log(err);
           res.render('blogs', { blogs: blogs, dist_tags: dist });
         })
@@ -50,9 +54,11 @@ blogRouter.route('/new')
 
       // uses markdown module to turn the MD into html
       var content = markdown.toHTML(data.content);
+      var contentPreview = markdown.toHTML(data.contentPreview);
       data.content = content;
+      data.contentPreview = contentPreview;
 
-      var blog = new Blog(req.body);
+      var blog = new Blog(data);
 
       blog.save(function(err) {
         if(err) return console.log(err);

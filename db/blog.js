@@ -11,6 +11,7 @@ var BlogSchema = new mongoose.Schema({
   author:         { type: String },
   tags:           [ String ],
   contentPreview: { type: String }, // 360 chars
+  hasReadMoreBtn: { type: Boolean, default: false },
   content:        { type: String },
   social:         [ String ]
 });
@@ -33,8 +34,11 @@ BlogSchema.pre('save', function(next) {
 // adds caption preview
 BlogSchema.pre('save', function(next) {
   var blog = this;
-  var contPrev = blog.content.slice(0, 360);
-  blog.contentPreview = contPrev + '[...]';
+  if (!blog.hasReadMoreBtn) {
+    var readMoreBtn = '<a href="/blog/'+blog.slug+'" class="btn btn-primary btn-read-more btn-block">read more</a>';
+    blog.contentPreview += readMoreBtn;
+    blog.hasReadMoreBtn = true;
+  }
   next();
 });
 

@@ -20,6 +20,7 @@
 
 #show-blog .jumbo-title {
   font-size: 52px;
+  font-weight: 600;
   border-radius: 3px;
   text-transform: uppercase;
   background-color: #fff;
@@ -36,6 +37,7 @@
 
 #show-blog .meta {
   font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
   color: #aaa;
   padding: 20px 40px 0;
@@ -64,15 +66,21 @@
 #show-blog .post-content {
   padding: 0px 40px 40px;
   /*font-family: Georgia, 'Times New Roman', Times, serif;*/
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #555;
 }
 
 #show-blog .post-content p { margin: 20px 0; }
 #show-blog .post-content img { margin: 20px 0; }
 
 #show-blog .post-content h3 {
-  font-size: 30px;
+  font-size: 42px;
   font-weight: bold;
+  margin: 40px 0;
+}
+#show-blog .post-content h4 {
+  font-size: 36px;
   margin: 40px 0;
 }
 
@@ -84,11 +92,6 @@
   text-transform: italic;
   margin: 0;
   padding: 0;
-}
-
-#show-blog .post-content h4 {
-  font-size: 26px;
-  margin: 40px 0;
 }
 
 #show-blog .share {
