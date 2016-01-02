@@ -54,13 +54,13 @@ app.use('/messages', messageRouter);
 
 var User = require('./db/user');
 app.get('/users', function(req, res) {
-  if (req.user) {
+  // if (req.user) {
     User.find({}, function(err, users) {
       res.json(users);
     });
-  } else {
-    res.redirect('/login')
-  }
+  // } else {
+    // res.redirect('/login')
+  // }
 });
 
 app.get('/users/new', function(req, res) {
@@ -68,7 +68,7 @@ app.get('/users/new', function(req, res) {
     res.render('new_user');
   // } else {
     // res.redirect('/login');
-  }
+  // }
 })
 
 // REMOVE ONCE ALL USERS ADDED
@@ -81,7 +81,7 @@ app.post('/users/new', function(req, res) {
   })
   // } else {
     // res.redirect('/login')
-  }
+  // }
 })
 
 var port = process.env.PORT || 3000;
