@@ -11,5 +11,25 @@
 }
 
 #admin-page td {
-  border-bottom: 1px solid #eee;
+}
+
+.admin-page__blogs,
+.admin-page__subscribers {}
+
+.admin-page__blogs .submenu,
+.admin-page__subscribers .submenu {
+  position: relative;
+  top: 20px;
+  padding: 10px 0;
+  height: 100%;
+  background-color: #dedede;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.admin-page__blogs .submenu .item,
+.admin-page__subscribers .submenu .item {
+  padding: 0px 10px;
+  float: left;
+  border-right: 1px solid #ccc;
 }
