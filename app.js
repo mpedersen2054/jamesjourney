@@ -34,7 +34,6 @@ app.use(flash());
 require('./config/passport')(app, passport)
 
 // ROUTES
-////////////////////
 var staticRouter  = require('./routes/staticRouter.js');
 var blogRouter    = require('./routes/blogRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
@@ -76,10 +75,10 @@ app.get('/users/new', function(req, res) {
 app.post('/users/new', function(req, res) {
   console.log(req.body)
   // if (req.user) {
-    var user = new User(req.body);
-    user.save(function(err, user) {
-      res.redirect('/users')
-    })
+  var user = new User(req.body);
+  user.save(function(err, user) {
+    res.redirect('/users')
+  })
   // } else {
     // res.redirect('/login')
   }
