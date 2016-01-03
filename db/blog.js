@@ -13,7 +13,8 @@ var BlogSchema = new mongoose.Schema({
   contentPreview: { type: String }, // 360 chars
   hasReadMoreBtn: { type: Boolean, default: false },
   content:        { type: String },
-  social:         [ String ]
+  social:         [ String ],
+  pageViews:      { type: Number, default: 0 }
 });
 
 // adds formatted date
