@@ -38,12 +38,14 @@ var staticRouter  = require('./routes/staticRouter.js');
 var blogRouter    = require('./routes/blogRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
 var messageRouter = require('./routes/messageRouter.js');
+var eventRouter   = require('./routes/eventRouter.js');
 
 
 app.use('/',         staticRouter);
 app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
+app.use('/events',   eventRouter);
 
 // var fakeData = require('./lib/fakeData.js');
 // fakeData();

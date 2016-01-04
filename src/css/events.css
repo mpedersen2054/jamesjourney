@@ -1,0 +1,96 @@
+
+#events {}
+
+#events .head {
+  position: relative;
+  height: 26em;
+  background-color: #5AB7D1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#events .wrap {
+  position: relative;
+  top: 240px;
+  margin: 0 auto;
+}
+
+#events .head h2 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#events .head h4 {
+  font-size: 32px;
+  color: #fff;
+}
+
+#events .event-container {
+  margin-top: 20px;
+}
+
+#events .event-container .controls {
+  border-bottom: 1px solid #ccc;
+}
+
+#events .event-container .filters {
+  list-style: none;
+  float: left;
+  clear: both;
+  padding-left: 0;
+}
+
+#events .event-container .event-search {
+  max-width: 360px;
+  float: right;
+  /*from livestrong, DL locally*/
+  background: url(http://www.livestrong.org/static/images/5a2c54463f6005dc043a358303d7f9e2.png) 99% center no-repeat #fff;
+}
+
+#events .event-list {
+  margin: 10px 0 40px;
+}
+
+#events .event-list .event-listing {
+  padding: 20px 20px;
+  width: 100%;
+}
+
+#events .event-list .event-listing a {
+  color: #222;
+}
+
+#events .event-list .event-listing:nth-child(odd) {
+  background-color: #eee;
+}
+
+#events .event-list .event-listing .name,
+#events .event-list .event-listing .location,
+#events .event-list .event-listing .date,
+#events .event-list .event-listing .register {
+  display: inline-block;
+}
+
+#events .event-list .event-listing .name {
+  width: 520px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#events .event-list .event-listing .location,
+#events .event-list .event-listing .date {
+  font-size: 16px;
+}
+
+#events .event-list .event-listing .location {
+  width: 200px;
+}
+
+#events .event-list .event-listing .date {}
+
+#events .event-list .event-listing .register {
+  position: relative;
+  bottom: 5px;
+  float: right;
+}

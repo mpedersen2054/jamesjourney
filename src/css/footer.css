@@ -71,3 +71,9 @@
   color: #fff;
   margin-bottom: 10px;
 }
+
+@media (max-width: 62em) {
+  #footer .foot {
+    border-right: none;
+  }
+}

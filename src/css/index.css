@@ -372,11 +372,11 @@ colors used:
     padding: 1em;
   }
 
-  #eds-preview header h2 {
+  #eds-preview .head h2 {
     font-size: 100px;
     margin-bottom: 30px;
   }
-  #eds-preview header h3 {
+  #eds-preview .head h3 {
     font-size: 25px;
   }
   #eds-preview p {
