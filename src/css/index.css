@@ -258,7 +258,7 @@ colors used:
   height: 260px;
   overflow: hidden;
   border-radius: 4px;
-  /*background-size: cover;*/
+  background-size: 100% 100%;
 }
 
 /* for overlay */

@@ -3,6 +3,7 @@
   <div class="container">
     <div class="title">
       <h2>Recent Updates</h2>
+      {{!-- {{blogs.length}} --}}
       <div class="small-line"></div>
     </div>
   </div>
@@ -10,213 +11,35 @@
   <div class="container-fluid">
     <div class="row updates">
 
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{#each blogs}}
 
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: no-repeat center/120% url(http://www.dogslovewagtime.com/wp-content/uploads/2015/07/Dog-Pictures.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
+        <div class="col-md-3 update-container">
+          <div class="update" style="background: no-repeat center/100% url({{coverImage}})">
+            <div class="wrapper"> <!-- for overlay -->
+              <div> <!-- to pull contents to bottom -->
+                <div class="tags">
+                  {{#each tags}}
+                  <div class="tag label label-info">{{this}}</div>
+                  {{/each}}
+                </div>
+                {{!-- <br> --}}
+                <a href="/blog/{{slug}}" class="post-title">{{title}}</a>
+                {{!-- <div class="descr">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
+                </div> --}}
+                <p>
+                  <span class="poster-name">
+                    <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
+                  </span>
+                  /
+                  <span class="poster-date">{{formattedDate}}</span>
+                </p>
               </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">When Designing Your Customer Experience, Consider Today's Intergenerational Reality. When Designing Your Customer Experience, Consider Today's Intergenerational Reality</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 update-container">
-        <div class="update" style="background: url(http://strictlypaper.com/blog/wp-content/uploads/2013/12/maud-vantours-3d-paper-patterns-2.jpg)">
-          <div class="wrapper"> <!-- for overlay -->
-            <div> <!-- to pull contents to bottom -->
-              <div class="tags">
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-                <div class="tag label label-info">Event</div>
-              </div>
-              {{!-- <br> --}}
-              <a href="#" class="post-title">This is a title for a blog post. How long can they get?</a>
-              {{!-- <div class="descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-              </div> --}}
-              <p>
-                <span class="poster-name">
-                  <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                </span>
-                /
-                <span class="poster-date">Nov 2, 2014</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/each}}
 
     </div>
   </div>

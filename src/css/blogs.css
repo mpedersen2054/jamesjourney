@@ -10,7 +10,7 @@
 #blogs .head {
   position: relative;
   height: 26em;
-  margin: 0 -15px;
+  /*margin: 0 -15px;*/
   background-color: #5AB7D1;
   /*background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);*/
   text-align: center;
@@ -18,7 +18,7 @@
 }
 
 #blogs .whitebg {
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 #blogs .head .wrap {
@@ -92,9 +92,6 @@
   height: 20px;
   margin: 0 5px;
 }
-#blogs .blog .meta,
-#blogs .blog .blog-content {
-}
 
 #blogs .blog .blog-content {
   font-size: 18px;
@@ -106,7 +103,7 @@
 #blogs .blog-content p { margin: 20px 0; }
 
 .takeupspace {
-  height: 80px;
+  height: 100px;
 }
 
 #blogs .btn-read-more {
@@ -120,4 +117,113 @@
 #blogs .btn-read-more:hover {
   background-color: #5AB7D1;
   color: #f0f0f0;
+}
+
+#blogs .on-right__content {
+  position: relative;
+  top: -50px;
+  padding: 20px 0;
+  min-height: 100px;
+  /*border: 1px solid red;*/
+}
+
+#blogs .on-right__content .recent-updates {
+  /*background-color: #fff;*/
+}
+
+#blogs .on-right__content .recent-updates h4 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+  /*text-align: center;*/
+}
+
+#blogs .on-right__content .featured-post {
+  /*min-height: 60px;*/
+  padding: 10px 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 2px 15px;
+  border-radius: 6px;
+}
+
+#blogs .on-left {
+  position: relative;
+  top: -10px;
+}
+
+
+#blogs .on-right__content .tag-list {}
+
+#blogs .on-right__content .tag-list h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#blogs .on-right__content .tag-list ul {
+  padding: 10px;
+}
+
+#blogs .on-right__content .tag-list .tag {
+  float: left;
+  font-weight: 400;
+  margin: 1px;
+}
+
+#blogs .on-right__content .tag-list .tag a {
+  color: #fff;
+  width: 100%;
+}
+
+
+@media (max-width: 62em) {
+
+  #blogs .blog {
+    padding: 10px;
+  }
+
+  /* title */
+  #blogs .blog .wrap a {
+    position: relative;
+    top: -30px;
+    font-size: 16px;
+  }
+
+  #blogs .content {
+    padding: 0 20px;
+  }
+
+  #blogs .on-right__content .featured-post {
+    margin: 2px 30px;
+  }
+
+  #blogs .blog .meta {
+    /*position: relative;
+    top: -40px;*/
+    padding: 20px 20px;
+    font-size: 14px;
+  }
+
+  #blogs .blog .meta .left,
+  #blogs .blog .meta .right {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+
+  #blogs .blog .blog-content {
+    position: relative;
+    top: -20px;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+}
+
+@media (max-width: 70em) {
+  #blogs .blog .meta {
+    position: relative;
+    top: -40px;
+  }
 }

@@ -12,55 +12,89 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="content">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="on-left">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="on-left">
 
-              {{#each blogs}}
+            {{#each blogs}}
 
-                <div class="blog">
+              <div class="blog">
 
-                  <div class="jumbo" style="background: no-repeat center/100% url({{coverImage}})">
-                    <div class="wrap">
-                      <a href="/blog/{{slug}}">{{title}}</a>
-                    </div>
+                <div class="jumbo" style="background: no-repeat center/100% url({{coverImage}})">
+                  <div class="wrap">
+                    <a href="/blog/{{slug}}">{{title}}</a>
                   </div>
-
-                  <div class="meta">
-                    <span class="left">Posted on {{formattedDate}}</span>
-                    <span class="right">
-                      <img class="img-circle" src="//placehold.it/50x50" alt="">
-                      Donald Duck
-                    </span>
-                  </div>
-
-                  <div class="blog-content">{{{contentPreview}}}</div>
-
                 </div>
 
-              {{/each}}
-            </div>
-          </div>
+                <div class="meta">
+                  <span class="left">Posted on {{formattedDate}}</span>
+                  <span class="right">
+                    <img class="img-circle" src="//placehold.it/50x50" alt="">
+                    Donald Duck
+                  </span>
+                </div>
 
-          <div class="col-md-4">
-            <div class="on-right">
-              <div class="takeupspace"></div>
-              <h4>Side content</h4>
+                <div class="blog-content">{{{contentPreview}}}</div>
+
+              </div>
+
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="on-right">
+            <div class="takeupspace"></div>
+
+            <div class="on-right__content">
+
+              <div class="recent-updates">
+                <h4>Recent Posts</h4>
+
+                {{#each featured}}
+                  <div class="row">
+                    <div class="featured-post clearfix">
+                      <a href="/blog/{{slug}}">
+                        <div class="col-md-8">
+                          <div class="title">{{title}}</div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="cover-image">
+                            <img src="{{coverImage}}" alt="">
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                {{/each}}
+
+              </div>
+
+              <br>
+              <hr>
+              <br>
 
               <div class="tag-list">
+                <h4>Categories</h4>
                 <ul>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
+                  {{#each dist_tags}}
+                    <li class="tag label label-info">
+                      <a href="/blog?tags={{this}}">{{this}}</a>
+                    </li>
+                  {{/each}}
                 </ul>
               </div>
-            </div>
-          </div>
 
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
   </div>

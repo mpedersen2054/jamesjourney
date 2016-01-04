@@ -3,6 +3,7 @@ var staticRouter = require('express').Router();
 var async        = require('async');
 var flash        = require('connect-flash');
 var Blog         = require('../db/blog')
+var Featured     = require('../lib/queries');
 var Gallery      = require('../db/gallery');
 var mcapi        = require('mailchimp-api');
 var mc           = new mcapi.Mailchimp('a6eec20e3398ba1010f1243598ee34cb-us11');
@@ -21,7 +22,7 @@ var authPassport = passport.authenticate('local', {
 var getDbs = function(page, req, res, admin) {
   async.parallel([
     function(cb) {
-      Blog.find(function(err, blogs) { cb(null, blogs) });
+      Featured.findFeaturedBlogs(8, function(err, blogs) { cb(null, blogs) })
     },
     function(cb) {
       Gallery.find(function(err, gals) { cb(null, gals) });

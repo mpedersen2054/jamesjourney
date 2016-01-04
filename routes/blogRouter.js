@@ -14,7 +14,10 @@ blogRouter.route('/')
       if ('tags' in req.query) {
         Blog.find({ $query: {'tags': req.query.tags}, $orderBy: { 'dateAdded': -1 } }, function(err, blogs) {
           if(err) console.log(err);
-          res.render('blogs', { blogs: blogs, dist_tags: dist });
+
+          Featured.findFeaturedBlogs(4, function(err, featured) {
+            res.render('blogs', { blogs: blogs, dist_tags: dist, featured: featured });
+          })
         })
       }
 
@@ -24,8 +27,9 @@ blogRouter.route('/')
           .find()
           .sort({dateAdded: -1})
           .exec(function(err, blogs) {
-          if(err) console.log(err);
-          res.render('blogs', { blogs: blogs, dist_tags: dist });
+            if(err) console.log(err);
+            var featured = blogs.slice(0, 4);
+            res.render('blogs', { blogs: blogs, dist_tags: dist, featured: featured });
         })
       }
 
@@ -70,7 +74,6 @@ blogRouter.route('/new')
     }
   })
 
-var pageViewArr = [];
 
 blogRouter.route('/:slug')
   .get(function(req, res) {
@@ -78,15 +81,23 @@ blogRouter.route('/:slug')
 
     Blog.findOne({ 'slug': slug }, function(err, blog) {
 
-      Featured.findFeatured(function(err, featured) {
+      // error handle here
+
+      // find the featured
+      Featured.findFeaturedBlogs(4, function(err, featured) {
         if(err) console.log(err);
         if (!featured || !blog) {
           res.render('404', { message: 'There was an error loading featured posts' });
         }
 
+        // update the blogs pageviews
+        // and save the blog
         blog.pageViews++;
         blog.save(function(err) {
 
+          // error handle here
+
+          // render the page if no error
           res.render('show_blog', {
             blog: blog,
             featured: featured,
