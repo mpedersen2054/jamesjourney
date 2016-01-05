@@ -3,6 +3,7 @@ var staticRouter = require('express').Router();
 var async        = require('async');
 var flash        = require('connect-flash');
 var Blog         = require('../db/blog')
+var EEvent       = require('../db/event');
 var Featured     = require('../lib/queries');
 var Gallery      = require('../db/gallery');
 var mcapi        = require('mailchimp-api');
@@ -28,6 +29,9 @@ var getDbs = function(page, req, res, admin) {
       Gallery.find(function(err, gals) { cb(null, gals) });
     },
     function(cb) {
+      EEvent.find(function(err, events) { cb(null, events) })
+    },
+    function(cb) {
       // if this is being called for use /admin-page
       // return list of mailchimp subscribers
       if (admin) {
@@ -42,14 +46,15 @@ var getDbs = function(page, req, res, admin) {
     }
   ], function(err, results) {
     if (err) console.log(err);
-    var blogs = results[0], gals = results[1], mcd = results[2];
+    var blogs = results[0], gals = results[1], events = results[2], mcd = results[3];
 
     res.render(page, {
       blogs: blogs,
       gals: gals,
+      events: events,
       mcd: mcd ? mcd : null,
       isAuthenticated: req.isAuthenticated(),
-      user: req.user,
+      user: req.user
     });
   })
 }

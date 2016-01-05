@@ -2,9 +2,7 @@
   padding: 4em 0;
 }
 
-#admin-page .blog-title,
-#admin-page .subscribers-title {
-}
+#admin-page .title {}
 
 #admin-page .options {
   text-align: right;
@@ -17,7 +15,8 @@
 .admin-page__subscribers {}
 
 .admin-page__blogs .submenu,
-.admin-page__subscribers .submenu {
+.admin-page__subscribers .submenu,
+.admin-page__events .submenu {
   position: relative;
   top: 20px;
   padding: 10px 0;
@@ -28,8 +27,20 @@
 }
 
 .admin-page__blogs .submenu .item,
-.admin-page__subscribers .submenu .item {
+.admin-page__subscribers .submenu .item,
+.admin-page__events .submenu .item {
   padding: 0px 10px;
   float: left;
   border-right: 1px solid #ccc;
+}
+
+.admin-page__events .btn-attendees {
+  position: relative;
+  float: right;
+}
+
+.admin-page__events .btn-attendees i {
+  position: relative;
+  bottom: 3px;
+  margin: auto 5px;
 }

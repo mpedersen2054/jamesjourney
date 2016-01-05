@@ -99,6 +99,47 @@
     })
   }
 
+  App.submitRegisterEvent = function() {
+    var $registerForm = $('#event-register-form');
+    var $fName        = $registerForm.find('.first-name');
+    var $lName        = $registerForm.find('.last-name');
+    var $email        = $registerForm.find('.email');
+    var $message      = $registerForm.find('.message');
+    var $slug         = $registerForm.find('.hidden-slug');
+    var $regSuccess   = $('.register-success');
+    var $regError     = $('.register-error');
+
+    function resetForm(wasSuccess) {
+      if (wasSuccess) {
+        $regSuccess.show();
+      }
+      $fName.val('');
+      $lName.val('');
+      $email.val('');
+      $message.val('');
+      $slug.val('');
+    }
+
+    $registerForm.on('submit', function(e) {
+      e.preventDefault();
+
+      var data = {
+        f_name:  $fName.val(),
+        l_name:  $lName.val(),
+        full_name: $.trim($fName.val()) + ' ' + $.trim($lName.val()),
+        email:   $email.val(),
+        message: $message.val(),
+        slug:    $slug.val()
+      }
+
+      $.post('/events/'+data.slug+'/register', data, function(result) {
+        // call func based on weather or not res.send(true)
+        result ? resetForm(true) : resetForm(false);
+      });
+
+    });
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -108,6 +149,7 @@
   App.scrollFollow('#show-blog .on-right, #blogs .on-right');
   App.navbar();
   App.pushMenu();
+  App.submitRegisterEvent();
 
 
 
