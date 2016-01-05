@@ -5,9 +5,16 @@ var EventSchema = new mongoose.Schema({
   name: { type: String },
   slug: { type: String },
   date: { type: Date, default: Date.now },
-  formattedDate: { type: Date },
+  formattedDate: { type: String },
   location: { type: String },
-  category: { type: String }
+  category: { type: String },
+  description: { type: String },
+  atendees: [{
+    f_name: String,
+    l_name: String,
+    email: String,
+    message: String
+  }]
 });
 
 EventSchema.pre('save', function(next) {

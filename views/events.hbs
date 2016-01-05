@@ -27,49 +27,19 @@
           </div>
 
           <div class="event-list">
-            <div class="event-listing">
-              <a href="#">
-                <h4 class="name">Austin Marathon and Half Marathon</h4>
-                <div class="location">Austin, TX</div>
-                <div class="date">Feb 14, 2016</div>
-                <div class="register">
-                  <a href="#" class="btn btn-default">Register</a>
-                </div>
-              </a>
-            </div>
 
-            <div class="event-listing">
-              <a href="#">
-                <h4 class="name">Austin Marathon and Half Marathon</h4>
-                <div class="location">Austin, TX</div>
-                <div class="date">Feb 14, 2016</div>
-                <div class="register">
-                  <a href="#" class="btn btn-default">Register</a>
-                </div>
-              </a>
-            </div>
-
-            <div class="event-listing">
-              <a href="#">
-                <h4 class="name">Austin Marathon and Half Marathon</h4>
-                <div class="location">Austin, TX</div>
-                <div class="date">Feb 14, 2016</div>
-                <div class="register">
-                  <a href="#" class="btn btn-default">Register</a>
-                </div>
-              </a>
-            </div>
-
-            <div class="event-listing">
-              <a href="#">
-                <h4 class="name">Austin Marathon and Half Marathon</h4>
-                <div class="location">Austin, TX</div>
-                <div class="date">Feb 14, 2016</div>
-                <div class="register">
-                  <a href="#" class="btn btn-default">Register</a>
-                </div>
-              </a>
-            </div>
+            {{#each events}}
+              <div class="event-listing">
+                <a href="/events/{{slug}}">
+                  <h4 class="name">{{name}}</h4>
+                  <div class="location">{{location}}</div>
+                  <div class="date">{{formattedDate}}</div>
+                  <div class="register">
+                    <a href="/events/{{slug}}" class="btn btn-default">Register</a>
+                  </div>
+                </a>
+              </div>
+            {{/each}}
 
           </div>
 

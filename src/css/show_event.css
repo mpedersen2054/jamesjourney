@@ -1,0 +1,48 @@
+
+#show-event {}
+
+#show-event .bg {
+  position: relative;
+  background-color: #5AB7D1;
+  height: 300px;
+  margin-bottom: 40px;
+}
+
+#show-event .head {
+  position: absolute;
+  bottom: 100px;
+  /*left: 150px;*/
+}
+
+#show-event .head h4,
+#show-event .head h2 {
+  color: #fff;
+}
+
+#show-event .head h4 {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#show-event .head h2 {
+  font-size: 40px;
+}
+
+#show-event .register {}
+
+#show-event .register h3 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+#show-event .description {
+}
+
+#show-event #event-register-form {
+  margin-bottom: 40px;
+}
+
+#show-event #event-register-form input,
+#show-event #event-register-form textarea {
+  font-size: 20px;
+}
