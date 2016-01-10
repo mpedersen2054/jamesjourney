@@ -10,26 +10,52 @@ eventRouter.route('/')
 
 eventRouter.route('/new')
   .get(function(req, res) {
-    res.render('new_event');
+    if (req.user) { res.render('new_event'); }
+    else { res.redirect('/login') }
   })
   .post(function(req, res) {
     var data = req.body;
+    var date = new Date(data.date);
+    data.date = date;
     var ev = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
       return res.send('saved!');
-    })
+    });
   })
-
-
 
 
 eventRouter.route('/:slug')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       res.render('show_event', { event: ev });
-    })
+    });
   })
+
+  .put(function(req, res) {
+    EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
+      var body = req.body;
+      ev.name = body.name;
+      ev.date = new Date(body.date);
+      ev.location = body.location;
+      ev.description = body.description;
+
+      ev.save(function(err) {
+        if (err) console.log(err);
+        res.redirect('/admin-page');
+      });
+    });
+  });
+
+
+eventRouter.route('/:slug/edit')
+  .get(function(req, res) {
+    EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
+      if (err) console.log(err);
+      res.render('edit_event', { event: ev });
+    });
+  });
+
 
 
 eventRouter.route('/:slug/register')
@@ -44,14 +70,15 @@ eventRouter.route('/:slug/register')
         delete data.slug;
         // push the new attendee into the
         // array of attendees subdocs
+        data.created_at = new Date();
         ev.attendees.push(data);
         ev.save(function(err) {
           if (err) return console.log(err);
-          return res.send(true)
-        })
+          return res.send(true);
+        });
       }
-    })
-  })
+    });
+  });
 
 
 module.exports = eventRouter;

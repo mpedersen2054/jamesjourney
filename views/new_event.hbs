@@ -7,7 +7,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <form id="new-event-form">
+        <form id="new-event-form" method="post">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Name...">
           </div>
@@ -15,11 +15,12 @@
             <input type="date" name="date" class="form-control" placeholder="Date...">
           </div>
           <div class="form-group">
-            <input type="location" name="location" class="form-control" placeholder="Location...">
+            <input type="text" name="location" class="form-control" placeholder="Location...">
           </div>
           <div class="form-group">
-            <textarea name="message" class="form-control" placeholder="Message..."></textarea>
+            <textarea name="description" class="form-control" placeholder="Message..."></textarea>
           </div>
+          <input type="submit" value="Submit" class="btn btn-default">
         </form>
       </div>
     </div>

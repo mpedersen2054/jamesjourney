@@ -1,0 +1,31 @@
+
+<div id="edit-event">
+  <div class="container">
+    <h2>Edit Event</h2>
+    <h4>{{event.name}}</h4>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6">
+        <form id="edit-event-form" class="form" action="/events/{{event.slug}}/?_method=PUT" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" placeholder="Name..." value="{{event.name}}">
+          </div>
+          <div class="form-group">
+            <input type="date" name="date" class="form-control" placeholder="Date..." value="{{event.date}}">
+          </div>
+          <div class="form-group">
+            <input type="text" name="location" class="form-control" placeholder="Location..." value="{{event.location}}">
+          </div>
+          <div class="form-group">
+            <textarea name="message" class="form-control" placeholder="Message...">{{event.description}}</textarea>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-default">
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

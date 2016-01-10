@@ -1,0 +1,85 @@
+
+
+#programs-slider {
+  height: 700px;
+  overflow: hidden;
+}
+
+#programs-slider .program {
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 24.9%;
+  height: 700px;
+  overflow: hidden;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  position: absolute;
+  margin-right: 1px;
+  background: #000;
+  color: #FFF;
+}
+
+#programs-slider a.program:nth-child(1) {
+  left: 0%;
+}
+
+#programs-slider a.program:nth-child(2) {
+  left: 25%;
+}
+
+#programs-slider a.program:nth-child(3) {
+  left: 50%;
+}
+
+#programs-slider a.program:nth-child(4) {
+  left: 75%;
+}
+
+#programs-slider a.program .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#programs-slider a.program .content {
+  -moz-transition-property: width,left;
+  -o-transition-property: width,left;
+  -webkit-transition-property: width,left;
+  transition-property: width,left;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+  padding-top: 180px;
+  height: 490px;
+}
+
+#programs-slider a.program .content .title {}
+
+#programs-slider a.program .content .icon {}

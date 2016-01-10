@@ -48,6 +48,13 @@ colors used:
   font-size: 24px;
   font-weight: 200;
   color: #19728f;
+  visibility: visible;
+  animation-name: fadeInLeft;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .short-description .small-line {

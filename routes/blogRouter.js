@@ -106,7 +106,6 @@ blogRouter.route('/:slug')
               identifier: '/blog/'+slug
             }
           })
-
         })
       })
     })
@@ -135,7 +134,7 @@ blogRouter.route('/:slug')
       })
 
     } else {
-      res.redirect('/login')
+      res.redirect('/login');
     }
   })
 blogRouter.route('/:slug/edit')

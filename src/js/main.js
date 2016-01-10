@@ -31,12 +31,12 @@
   }
 
   App.contentPreviewCount = function() {
-    var maxNum = 600;
     var currentNum;
+    var maxNum          = 600;
     var $contentPreview = $('.content-preview-input');
-    var $currentCount = $('.current-count');
-    var $maxNum = $('.current-count__max');
-    var $currentNum = $('.current-count__current');
+    var $currentCount   = $('.current-count');
+    var $maxNum         = $('.current-count__max');
+    var $currentNum     = $('.current-count__current');
 
     $contentPreview.on('keyup', function() {
       currentNum = $contentPreview.val().length;
@@ -63,8 +63,7 @@
       } else {
         $navbar.removeClass('with-bg');
       }
-
-    })
+    });
   }
 
   App.pushMenu = function() {
@@ -96,7 +95,7 @@
           .addClass('push-right')
           .animate({ left: '-300px' }, 200)
       }
-    })
+    });
   }
 
   App.submitRegisterEvent = function() {
@@ -124,12 +123,12 @@
       e.preventDefault();
 
       var data = {
-        f_name:  $fName.val(),
-        l_name:  $lName.val(),
+        f_name:    $fName.val(),
+        l_name:    $lName.val(),
         full_name: $.trim($fName.val()) + ' ' + $.trim($lName.val()),
-        email:   $email.val(),
-        message: $message.val(),
-        slug:    $slug.val()
+        email:     $email.val(),
+        message:   $message.val(),
+        slug:      $slug.val()
       }
 
       $.post('/events/'+data.slug+'/register', data, function(result) {
