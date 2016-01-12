@@ -36,8 +36,8 @@
                     {{else}}
 
                     {{/if}} --}}
-                    <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm">edit</a>
-                    <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">delete</a>
+                    <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
+                    <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                   </td>
                 </tr>
               {{/each}}
@@ -105,13 +105,40 @@
               <td>{{location}}</td>
               <td>{{formattedDate}}</td>
               <td>
-                <a href="/events/{{slug}}/edit" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
                 <a href="#" class="btn btn-default btn-xs btn-attendees">
                   {{attendees.length}} Attendees
                   <span><i class="fa fa-sort-desc"></i></span>
                 </a>
+                <a href="/events/{{slug}}/delete" class="btn btn-danger btn-xs delete-event-btn"><i class="fa fa-times"></i></a>
+                <a href="/events/{{slug}}/edit" class="btn btn-default btn-xs edit-event-btn"><i class="fa fa-pencil"></i></a>
               </td>
             </tr>
+
+            <tr class="attendee-row">
+              <td colspan="4">
+                <div class="row">
+                  <div class="col-md-3 attendee-title"><b>Name</b></div>
+                  <div class="col-md-3 attendee-title"><b>Email</b></div>
+                  <div class="col-md-3 attendee-title"><b>Signed up Date</b></div>
+                  <div class="col-md-3 attendee-title"><b>Message</b></div>
+                </div>
+                {{#each attendees}}
+                <div class="row">
+                  <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
+                  <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
+                  <div class="col-md-3 attendee-col attendee__created-at" data-createdat="{{created_at}}"></div>
+                  <div class="col-md-3 attendee-col attendee__message">
+                    {{#if message}}
+                      <a href="#" class="btn btn-link btn-sm" class="view-message-btn" data-message="{{message}}">
+                        View Message
+                      </a>
+                    {{/if}}
+                  </div>
+                </div>
+                {{/each}}
+              </td>
+            </tr>
+
           {{/each}}
           </tbody>
         </table>

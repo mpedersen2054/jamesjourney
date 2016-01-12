@@ -20,7 +20,7 @@ eventRouter.route('/new')
     var ev = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
-      return res.send('saved!');
+      return res.redirect('/admin-page')
     });
   })
 
@@ -54,6 +54,18 @@ eventRouter.route('/:slug/edit')
       if (err) console.log(err);
       res.render('edit_event', { event: ev });
     });
+  });
+
+eventRouter.route('/:slug/delete')
+  .get(function(req, res) {
+    if (req.user) {
+      EEvent.remove({ 'slug': req.params.slug }, function(err) {
+        if (err) console.log(err);
+        res.redirect('/admin-page')
+      });
+    } else {
+      res.redirect('/login');
+    }
   });
 
 

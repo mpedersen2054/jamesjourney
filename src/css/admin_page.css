@@ -34,13 +34,41 @@
   border-right: 1px solid #ccc;
 }
 
-.admin-page__events .btn-attendees {
+.admin-page__events .btn-attendees,
+.admin-page__events .edit-event-btn,
+.admin-page__events .delete-event-btn {
   position: relative;
   float: right;
+  margin-left: 10px;
 }
 
 .admin-page__events .btn-attendees i {
   position: relative;
   bottom: 3px;
   margin: auto 5px;
+}
+
+.admin-page__events .attendee-col {
+  text-overflow: ellipsis;
+  white-space: no-wrap;
+  overflow: hidden;
+  color: #eee;
+}
+
+.admin-page__events .attendee-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 6px;
+  text-decoration: underline;
+}
+
+.admin-page__events .attendee-row {
+  background-color: #666;
+  display: none;
+}
+
+.admin-page__events .attendee-row:hover {
+  background-color: #666;
 }

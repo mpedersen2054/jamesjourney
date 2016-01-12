@@ -139,6 +139,40 @@
     });
   }
 
+  App.handleAdminEventAttendees = function() {
+    var $createdAt = $('.attendee__created-at');
+    var $attendeeMessage = $('.attendee__message');
+    var $viewAttendeesBtn = $('.btn-attendees');
+    var $attendeeRow = $('.attendee-row');
+    var attRowShowing = false;
+
+    // iterate over each attendee
+    // take each data-createdat, call toDateString
+    // then append back onto __created-at
+    $createdAt.each(function(caElem) {
+      var $this = $(this);
+      var dateData = $this.data('createdat');
+      var dateString = new Date(dateData);
+      $(this).append(dateString.toDateString());
+    });
+
+    // click event for view attendees
+    $viewAttendeesBtn.on('click', function(e) {
+      e.preventDefault();
+
+      if (!attRowShowing) {
+        attRowShowing = true;
+        $attendeeRow.show();
+      }
+      else {
+        attRowShowing = false;
+        $attendeeRow.hide();
+      }
+
+    })
+
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -149,6 +183,7 @@
   App.navbar();
   App.pushMenu();
   App.submitRegisterEvent();
+  App.handleAdminEventAttendees();
 
 
 
