@@ -153,7 +153,7 @@
       var $this = $(this);
       var dateData = $this.data('createdat');
       var dateString = new Date(dateData);
-      $(this).append(dateString.toDateString());
+      $this.append(dateString.toDateString());
     });
 
     // click event for view attendees
@@ -161,16 +161,15 @@
       e.preventDefault();
 
       if (!attRowShowing) {
+        // show attRow
         attRowShowing = true;
         $attendeeRow.show();
-      }
-      else {
+      } else {
+        // hide attRow
         attRowShowing = false;
         $attendeeRow.hide();
       }
-
-    })
-
+    });
   }
 
   root.App = App;

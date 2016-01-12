@@ -39,6 +39,7 @@ var blogRouter    = require('./routes/blogRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
 var messageRouter = require('./routes/messageRouter.js');
 var eventRouter   = require('./routes/eventRouter.js');
+var galleryRouter = require('./routes/galleryRouter.js');
 
 
 app.use('/',         staticRouter);
@@ -46,6 +47,7 @@ app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
 app.use('/events',   eventRouter);
+app.use('/gallery',  galleryRouter);
 
 // var fakeData = require('./lib/fakeData.js');
 // fakeData();
