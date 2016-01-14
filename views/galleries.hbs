@@ -9,7 +9,7 @@
         <!-- {{dist_tags}} -->
         <div class="head">
           <div class="wrap">
-            <h2>Image Gallery</h2>
+            <h2>Gallery</h2>
             <h4>A Picture Lasts a Lifetime</h4>
           </div>
         </div>
@@ -17,12 +17,12 @@
     </div>
   </div>
 
-  <div class="container whitebg">
+  <div class="container">
 
-    <div class="all-images-container grid">
+    <div class="all-images-container grid whitebg">
       <div class="grid-sizer"></div>
       {{#each images}}
-        <a href="#" class="grid-item">
+        <a href="{{image_url}}" class="grid-item fancybox" rel="allimgs" title="{{name}}">
           <img src="{{image_url}}" alt="" class="img">
         </a>
       {{/each}}
