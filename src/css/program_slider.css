@@ -1,7 +1,13 @@
 
 
 #programs-slider {
+  position: relative;
   height: 700px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#programs-slider .container-fluid {
   overflow: hidden;
 }
 
@@ -21,7 +27,7 @@
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  width: 24.8%;
+  width: 25%;
   height: 700px;
   overflow: hidden;
   border-left: 1px solid #FFF;
@@ -34,18 +40,27 @@
 
 #programs-slider a.program:nth-child(1) {
   left: 0%;
+  border-left: none;
+}
+
+#programs-slider a.program:nth-child(1) .content {
+  /*width: 100%;*/
 }
 
 #programs-slider a.program:nth-child(2) {
-  left: 25%;
+  left: 20%;
 }
 
 #programs-slider a.program:nth-child(3) {
-  left: 50%;
+  left: 40%;
 }
 
 #programs-slider a.program:nth-child(4) {
-  left: 75%;
+  left: 60%;
+}
+
+#programs-slider a.program:nth-child(5) {
+  left: 80%;
 }
 
 #programs-slider a.program .bg {
@@ -89,7 +104,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
   /*width: 80%;*/
   position: relative;
   z-index: 1;
@@ -100,9 +115,13 @@
 
 #programs-slider a.program .content .title {
   font-size: 24px;
+  font-weight: 200;
   text-transform: uppercase;
-  text-align: center;
+  /*text-align: center;*/
+  width: 100%;
+  padding: 10px 20px;
 }
-#programs-slider a.program .content .icon img {
+#programs-slider a.program .content .icon {
+  width: 100%;
 }
 
