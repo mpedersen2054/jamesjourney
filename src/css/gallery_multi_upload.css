@@ -1,0 +1,16 @@
+#gallery-multi-upload {
+  padding: 4em 0;
+}
+
+#gallery-multi-upload h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 4em;
+}
+
+#gallery-multi-upload-form {
+  padding: 0 2em 8em;
+  max-width: 40em;
+  margin: 3em auto;
+}

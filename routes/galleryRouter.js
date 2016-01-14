@@ -4,7 +4,6 @@ var galleryRouter = require('express').Router();
 var Gallery       = require('../db/gallery');
 var s3fs          = require('s3fs');
 
-
 var s3fsImpl = new s3fs('jamestestbucket123', {
   accessKeyId: 'AKIAI5RTSCA4OXAPD6RA',
   secretAccessKey: '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'
@@ -18,7 +17,6 @@ var multipartyMiddleware = multiparty();
 
 // pass the multiparty middleware into every request
 galleryRouter.use(multipartyMiddleware);
-
 
 // pass in the file(s)
 // if it is single file do it once
@@ -40,11 +38,9 @@ function uploadFile(files, finished) {
   }
   // if multiple files
   else if (isMultiUpload) {
-
     // iterate over each array of each file object
     // upload each one to s3
     var results = [];
-
     files.forEach(function(file) {
       var stream = fs.createReadStream(file.path);
 
@@ -54,27 +50,23 @@ function uploadFile(files, finished) {
         });
         results.push(a);
       });
-
     });
-
     // this will be empty array due to async
     finished(null, results);
-
   }
 }
 
 
 galleryRouter.route('/')
   .get(function(req, res) {
-    // var bb = s3fsImpl.getPath('blog photos.jpg')
-
-    s3fsImpl.listContents('/', '/').then(function(data) {
-      console.log(data)
-    })
-
+    Gallery
+      .find()
+      .sort({ dateAdded: -1 })
+      .exec(function(err, images) {
+        res.render('galleries', { images: images });
+      });
   })
 
-galleryRouter.route('/:id')
 
 galleryRouter.route('/single-upload')
 
@@ -103,9 +95,10 @@ galleryRouter.route('/multi-upload')
     uploadFile(files, function(err, resp) {
       if (!err) {
         var bucketUrl = 'https://s3.amazonaws.com/jamestestbucket123/';
+        var itemsProcessed = 0;
         var done = false;
 
-        files.forEach(function(file) {
+        files.forEach(function(file, index, array) {
           var galleryObj = {
             image_url: bucketUrl + file.originalFilename.replace(' ', '+'),
             size: file.size,
@@ -115,10 +108,22 @@ galleryRouter.route('/multi-upload')
           var newGal = new Gallery(galleryObj);
 
           newGal.save(function(err) {
+
             if (err) console.log(err);
-            console.log('saved image!');
+            itemsProcessed++;
+
+            // if the loop is over
+            if (itemsProcessed === array.length) {
+              res.redirect('/gallery/multi-upload');
+            }
+
           });
+
+
         });
+      } else {
+        // if there was an error
+        res.send('there was an error!');
       }
     });
   });
