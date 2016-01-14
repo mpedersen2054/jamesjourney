@@ -3,10 +3,69 @@
   background-color: #ddd;
 }
 
-.whitebg {
-  background-color: #fff;
+#galleries .head {
+  position: relative;
+  height: 26em;
+  /*margin: 0 -15px;*/
+  background-color: #5AB7D1;
+  /*background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);*/
+  text-align: center;
+  text-transform: uppercase;
 }
 
-#galleries .all-images-container {
-  padding: 200px 20px;
+#galleries .head .wrap {
+  position: relative;
+  top: 240px;
+  margin: 0 auto;
+}
+
+#galleries .head h2 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#galleries .head h4 {
+  font-size: 32px;
+  color: #fff;
+}
+
+.whitebg {
+  background-color: #transparent;
+}
+
+#galleries .loading {
+  /*position: relative;
+  // adding this class to the image that needs to be loaded
+  displays a loading spinner until image is loaded then it disappears
+  background: transparent url(http://i.forbesimg.com/assets/img/loading_spinners/43px_on_transparent.gif) no-repeat scroll center center;
+  width: 100%;
+  min-height: 100px;*/
+}
+
+#galleries .grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#galleries .grid {
+  padding: 10px 0 60px;
+}
+
+.grid-sizer,
+.grid-item {
+  /*width: 33.333%;*/
+  /*width: 24.69%;*/
+  width: 19.66%;
+}
+
+.grid-item {
+  float: left;
+  margin-bottom: 5px;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
 }

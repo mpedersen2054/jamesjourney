@@ -289,6 +289,19 @@
     })
   }
 
+  App.imageGallery = function() {
+    var $grid = $('#galleries .grid').imagesLoaded(function() {
+
+      $grid.masonry({
+        itemSelector:    '.grid-item',
+        percentPosition: true,
+        columnWidth:     '.grid-sizer',
+        gutter:          5
+      });
+
+    });
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -301,5 +314,6 @@
   App.submitRegisterEvent();
   App.handleAdminEventAttendees();
   App.programSlider();
+  App.imageGallery();
 
 })(jQuery);
