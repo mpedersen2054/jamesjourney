@@ -245,6 +245,7 @@ colors used:
 }
 
 #recent-updates .title {
+  text-transform: uppercase;
   padding: 2em;
 }
 #recent-updates h2 {
@@ -265,7 +266,7 @@ colors used:
   height: 260px;
   overflow: hidden;
   border-radius: 4px;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 /* for overlay */
@@ -275,7 +276,7 @@ colors used:
   bottom: 3.75px;
   left: 3.75px;
   right: 3.75px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.5);
   border-radius: 4px;
 }
 
@@ -297,8 +298,8 @@ colors used:
   text-transform: uppercase;
   font-weight: 400;
   font-size: 20px;
-  color: #0a3a4b;
-  background-color: rgba(196, 236, 250, 0.9);
+  color: #eee;
+  background-color: rgba(0,0,0,0.5);
   padding: 0 5px;
   border-radius: 3px;
   /*float: left;*/
