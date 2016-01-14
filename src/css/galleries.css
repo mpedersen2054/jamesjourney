@@ -6,3 +6,7 @@
 .whitebg {
   background-color: #fff;
 }
+
+#galleries .all-images-container {
+  padding: 200px 20px;
+}
