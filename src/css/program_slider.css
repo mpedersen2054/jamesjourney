@@ -50,7 +50,8 @@
   content: '';
   border-left: 83px solid transparent;
   border-right: 83px solid transparent;
-  border-top: 40px solid #2e738f;
+  /*border-top: 40px solid #2e738f;*/
+  border-top: 40px solid #eee;
   position: relative;
   top: 38px;
   z-index: 1;
