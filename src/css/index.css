@@ -69,7 +69,7 @@ colors used:
 #eds-preview {
   background-color: #2e738f;
   color: #fff;
-  padding: 2em 1em 6em;
+  padding: 3em 1em 9em;
 }
 
 #eds-preview .head {
@@ -240,8 +240,8 @@ colors used:
  */
 
 #recent-updates {
+  padding: 4em 0 6em;
   background-color: #0a3a4b;
-  padding-bottom: 4px;
 }
 
 #recent-updates .title {

@@ -148,8 +148,12 @@ header #header-menu-link:active {
   color: #fff;
 }
 
+#nav-menu .link:hover a {
+  color: #4DAFCF;
+}
+
 #nav-menu .link:hover {
-  border-left: 6px solid #63AECC;
+  border-left: 6px solid #4DAFCF;
 }
 
 #nav-menu .large-link a {

@@ -19,10 +19,14 @@
   color: #aaa;
 }
 
+#footer a:hover {
+  color: #4DAFCF !important;
+}
+
 #footer .foot {
   border-right: 2px solid #333;
   /*padding: 0 1.5em;*/
-  min-height: 200px;
+  height: 190px;
 }
 
 #footer .foot1o4 .logo img {
