@@ -1,5 +1,5 @@
 var eventRouter = require('express').Router();
-var EEvent = require('../db/event');
+var EEvent      = require('../db/event');
 
 eventRouter.route('/')
   .get(function(req, res) {

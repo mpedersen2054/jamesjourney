@@ -302,6 +302,4 @@
   App.handleAdminEventAttendees();
   App.programSlider();
 
-
-
 })(jQuery);

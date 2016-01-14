@@ -3,6 +3,7 @@
   /*padding: 3em 0 0;*/
   position: relative;
   background-color: #eee;
+  /*padding: 4em 0 0;*/
 }
 
 #programs-slider .head {
@@ -49,7 +50,7 @@
   content: '';
   border-left: 83px solid transparent;
   border-right: 83px solid transparent;
-  border-top: 40px solid #eee;
+  border-top: 40px solid #2e738f;
   position: relative;
   top: 38px;
   z-index: 1;
