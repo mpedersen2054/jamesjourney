@@ -4,7 +4,7 @@ var galleryRouter = require('express').Router();
 var Gallery       = require('../db/gallery');
 var s3fs          = require('s3fs');
 
-var s3fsImpl = new s3fs('jamestestbucket123', {
+var s3fsImpl = new s3fs('jamesbucket123', {
   accessKeyId: 'AKIAI5RTSCA4OXAPD6RA',
   secretAccessKey: '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'
 });
@@ -94,7 +94,7 @@ galleryRouter.route('/multi-upload')
 
     uploadFile(files, function(err, resp) {
       if (!err) {
-        var bucketUrl = 'https://s3.amazonaws.com/jamestestbucket123/';
+        var bucketUrl = 'https://s3.amazonaws.com/jamesbucket123/';
         var itemsProcessed = 0;
         var done = false;
 
