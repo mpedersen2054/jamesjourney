@@ -49,12 +49,12 @@ var getDbs = function(page, req, res, admin) {
     var blogs = results[0], gals = results[1], events = results[2], mcd = results[3];
 
     res.render(page, {
-      blogs: blogs,
-      gals: gals,
-      events: events,
-      mcd: mcd ? mcd : null,
+      blogs:           blogs,
+      images:          gals,
+      events:          events,
+      mcd:             mcd ? mcd : null,
       isAuthenticated: req.isAuthenticated(),
-      user: req.user
+      user:            req.user
     });
   })
 }

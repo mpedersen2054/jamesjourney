@@ -1,9 +1,6 @@
 #programs-slider {
-  /*height: 1000px;*/
-  /*padding: 3em 0 0;*/
   position: relative;
   background-color: #eee;
-  /*padding: 4em 0 0;*/
 }
 
 #programs-slider .head {
@@ -50,7 +47,6 @@
   content: '';
   border-left: 83px solid transparent;
   border-right: 83px solid transparent;
-  /*border-top: 40px solid #2e738f;*/
   border-top: 40px solid #eee;
   position: relative;
   top: 38px;
@@ -92,10 +88,6 @@
 #programs-slider a.program:nth-child(1) {
   left: 0%;
   border-left: none;
-}
-
-#programs-slider a.program:nth-child(1) .content {
-  /*width: 100%;*/
 }
 
 #programs-slider a.program:nth-child(2) {
@@ -156,7 +148,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 80%;
-  /*width: 80%;*/
   position: relative;
   z-index: 1;
   padding-top: 220px;
@@ -165,12 +156,12 @@
 }
 
 #programs-slider a.program .content .title {
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 30px;
+  font-weight: 400;
   text-transform: uppercase;
-  /*text-align: center;*/
+  letter-spacing: 3px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 20px 40px;
 }
 #programs-slider a.program .content .icon {
   width: 100%;

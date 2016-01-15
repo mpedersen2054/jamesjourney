@@ -2,6 +2,10 @@
   padding: 4em 0;
 }
 
+#admin-page section {
+  margin-bottom: 100px;
+}
+
 #admin-page .title {}
 
 #admin-page .options {
@@ -71,4 +75,16 @@
 
 .admin-page__events .attendee-row:hover {
   background-color: #666;
+}
+
+.admin-page__gallery .image-options {
+  text-align: right;
+}
+
+.admin-page__gallery .image-options a {
+  margin-left: 10px;
+}
+
+.admin-page__gallery .image-row td {
+  padding: 10px;
 }

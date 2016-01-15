@@ -54,31 +54,36 @@
     var $navbar = $('header');
     var $window = $(window);
     var $logo = $('#header-logo-link');
+    var $menu = $('#header-menu-link');
 
     $window.on('scroll change', function() {
       // console.log($(this).scrollTop())
       if ($(this).scrollTop() > 20) {
         $navbar.addClass('with-bg');
-        // $logo.show();
+        $menu.css({ color: '#ddd' })
+        $logo.css({ opacity: '0.8' });
       } else {
         $navbar.removeClass('with-bg');
+        $menu.css({ color: '#999' })
+        $logo.css({ opacity: '0' })
       }
     });
   }
 
   App.pushMenu = function() {
-    // var $navMenu = $('#nav')
-    var $navbarBtn = $('a#header-menu-link');
-    var $mainCont = $('.main-cont');
-    var $navMenu = $('#nav-menu');
+    var $navbarBtn  = $('a#header-menu-link');
+    var $mainCont   = $('.main-cont');
+    var $siteHeader = $('header.site-header');
+    var $navMenu    = $('#nav-menu');
 
     // menu link clicked
     $navbarBtn.on('click', function(e) {
       e.preventDefault();
+      var $this = $(this);
 
       // if main-cont has class .push-right then remove it
       if ($mainCont.hasClass('push-right')) {
-        $(this).css('color', '#aaa');
+        $this.css({ color: '#999' });
         $navMenu
           .animate({ width: '0px' }, 200)
         $mainCont
@@ -87,7 +92,14 @@
       }
       // add it if there isnt .push-right
       else {
-        $(this).css('color', '#fff');
+        if (!$siteHeader.hasClass('with-bg')) {
+          console.log('no bg')
+          $this.css({ color: '#4dafcf' })
+        }
+        else {
+          $this.css({ 'color': '#fff' })
+        }
+
         $navMenu
           .show()
           .animate({ width: '300px' }, 200)

@@ -15,12 +15,12 @@ header {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   width: 100%;
-  padding: 30px 45px;
+  padding: 30px 45px 45px;
   position: fixed;
   top: 0;
   z-index: 10003;
   background-color: transparent;
-  color: #222;
+  color: #999;
 }
 
 header #header-logo-link {
@@ -37,7 +37,7 @@ header #header-logo-link {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.8;
+  opacity: 0;
   background-image: url('/img/jjsmalllogo.png');
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -51,10 +51,10 @@ header #header-logo-link {
 }
 
 header #header-menu-link {
-  -moz-transition-property: opacity,right;
-  -o-transition-property: opacity,right;
-  -webkit-transition-property: opacity,right;
-  transition-property: opacity,right;
+  -moz-transition-property: opacity,right,color;
+  -o-transition-property: opacity,right,color;
+  -webkit-transition-property: opacity,right,color;
+  transition-property: opacity,right,color;
   -moz-transition-duration: 0.3s,0.2s;
   -o-transition-duration: 0.3s,0.2s;
   -webkit-transition-duration: 0.3s,0.2s;
@@ -64,11 +64,10 @@ header #header-menu-link {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   font-family: "futura-pt",sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 1;
-  color: #aaa;
+  color: #999;
   text-transform: uppercase;
   position: absolute;
   top: 50%;
@@ -76,18 +75,26 @@ header #header-menu-link {
   margin-top: -8px;
 }
 
-header #header-menu-link:hover {
-  color: #fff;
-}
-
 header #header-menu-link:hover,
 header #header-menu-link:active {
   text-decoration: none;
+  color: #4dafcf !important;
 }
 
-.with-bg {
+header.with-bg #header-menu-link:hover,
+header.with-bg #header-menu-link:active {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+header.with-bg {
   background-color: #222;
-  padding: 7.5px 45px;
+  padding: 20px 45px;
+}
+
+header.with-bg #header-logo-link {
+  width: 100px;
+  height: 50px;
 }
 
 #nav-menu {
@@ -100,7 +107,6 @@ header #header-menu-link:active {
   display: none;
 
   background-color: #222;
-  color: #ddd;
 }
 
 #nav-menu .wrap {
