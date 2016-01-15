@@ -195,7 +195,6 @@
     var $satImg   = $pSlider.find('.saturated-img');
     var $desatImg = $pSlider.find('.desaturated-img');
 
-    console.log($progAll)
 
     $progAll.on('mouseenter', function(e) {
       e.preventDefault();
