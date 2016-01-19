@@ -8,17 +8,6 @@
   text-align: center;
 }
 
-
-/*
-colors used:
-#0a3a4b
-#9fe2fa
-#1972bf
-#c4ecfa
-#f0f0f0
-#2E738F
- */
-
  /*
  ========= Jumbotron
   */
@@ -37,10 +26,7 @@ colors used:
   margin-top: 12em;
 }
 
-/*
-========= Small Description
- */
-
+/* jumbo subhead */
 .short-description p {
   margin-top: 40px;
   padding: 0 12em;
@@ -70,7 +56,6 @@ colors used:
   background-color: #2e738f;
   color: #fff;
   padding: 5em 1em 10em;
-  /*height: 50em;*/
 }
 
 #eds-preview .head {
@@ -78,7 +63,6 @@ colors used:
   margin: 0 auto;
 }
 
-/* 360px, 53.33px, 32px */
 #eds-preview .head h2,
 #eds-preview .head h3 {
   text-align: center;
@@ -115,7 +99,6 @@ colors used:
   padding: 0 1em;
 }
 
-
 /*
 ========= Quote1
  */
@@ -150,19 +133,14 @@ colors used:
 ========= About James
  */
 
-#about-james {
-  /*min-height: 46em;*/
-}
+#about-james {}
 
 #about-james .info {
   background-color: #9fe2fa;
   padding: 4em 6em;
-  /*min-height: 46em;*/
 }
 
-#about-james .image-gal {
-  /*min-height: 46em;*/
-}
+#about-james .image-gal {}
 
 #about-james h2 {
   color: #19728f;
@@ -235,7 +213,6 @@ colors used:
   font-weight: 400;
 }
 
-
 /*
 ========= Recent Updates
  */
@@ -304,7 +281,6 @@ colors used:
   background-color: rgba(0,0,0,0.5);
   padding: 0 5px;
   border-radius: 3px;
-  /*float: left;*/
   /* so all lines of name have the padding */
   -webkit-box-decoration-break: clone;
 }
@@ -329,16 +305,18 @@ colors used:
   height: 20px;
   margin-right: 5px;
 }
+
 .update p .poster-name {
   padding-right: 10px;
 }
+
 .update p .poster-date {
   text-align: right;
   padding-left: 10px;
 }
 
 
-/* media queries */
+/* SMALL SCREEN */
 @media (max-width: 62em) {
 
   #jumbotron {
@@ -364,8 +342,6 @@ colors used:
     padding: 1em;
     margin-top: 10px;
   }
-
-  #about-james {}
 
   #about-james .info h2 {
     font-size: 40px;
@@ -438,9 +414,6 @@ colors used:
 @media (min-width: 100em) {
   #jumbotron {
     height: 60em;
-  }
-
-  #eds-preview {
   }
 
   #about-james .info {
