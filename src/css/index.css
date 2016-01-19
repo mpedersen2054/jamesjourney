@@ -434,6 +434,7 @@ colors used:
 
 }
 
+/* FOR BIG SCREEN */
 @media (min-width: 100em) {
   #jumbotron {
     height: 60em;

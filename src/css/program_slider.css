@@ -167,7 +167,8 @@
   width: 100%;
 }
 
-@media (max-width: 62em) {
+/* FOR BIG SCREEN */
+@media (min-width: 100em) {
   #programs-slider .program {
     height: 900px;
   }
