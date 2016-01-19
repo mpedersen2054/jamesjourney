@@ -21,15 +21,6 @@
 
             <div class="on-left">
 
-              <div class="meta">
-                <span class="date">Posted on {{blog.formattedDate}}</span>
-                <span class="author">
-                  <img src="//placehold.it/100x100" class="img-circle author-image">
-                  <span>Donald Duck</span>
-                </span>
-                <div class="line clearfix"></div>
-              </div>
-
               <div class="post-content">
                 {{{blog.content}}}
               </div>
@@ -40,7 +31,23 @@
           <div class="col-md-4">
             <div class="on-right">
               <div class="takeupspace"></div>
-              <h4>Side content</h4>
+              <div class="meta">
+                <div class="author">
+                  <img src="//placehold.it/100x100" class="img-circle author-image">
+                  <span>Donald Duck</span>
+                </div>
+
+                <div class="split clearfix">
+                  <span class="date">{{blog.formattedDate}}</span>
+                  <span class="views-num">
+                    <i class="fa fa-eye"></i>
+                    {{blog.pageViews}}
+                  </span>
+                </div>
+
+                <div class="line clearfix"></div>
+              </div>
+              {{!-- <h4>Side content</h4>
 
               <div class="tag-list">
                 <ul>
@@ -49,7 +56,7 @@
                   <li class="tag label label-info">A Tag</li>
                   <li class="tag label label-info">A Tag</li>
                 </ul>
-              </div>
+              </div> --}}
 
             </div>
           </div>

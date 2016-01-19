@@ -4,22 +4,20 @@
 }
 
 #blogs .content {
+  position: relative;
+  top: -20px;
   background-color: #ddd;
 }
 
 #blogs .head {
   position: relative;
   height: 26em;
-  /*margin: 0 -15px;*/
   background-color: #5AB7D1;
-  /*background-image: url(https://img0.etsystatic.com/028/2/6078010/il_570xN.579610998_pj9n.jpg);*/
   text-align: center;
   text-transform: uppercase;
 }
 
-#blogs .whitebg {
-  /*background-color: #fff;*/
-}
+#blogs .whitebg {}
 
 #blogs .head .wrap {
   position: relative;
@@ -44,6 +42,10 @@
   margin: 40px 0;
   border-radius: 6px;
   border: 1px solid #bbb;
+}
+
+#blogs .blog:nth-child(1) {
+  margin-top: 80px;
 }
 
 #blogs .blog .jumbo {
@@ -121,7 +123,7 @@
 
 #blogs .on-right__content {
   position: relative;
-  top: -50px;
+  top: -25px;
   padding: 20px 0;
   min-height: 100px;
   /*border: 1px solid red;*/
