@@ -173,7 +173,7 @@
     height: 900px;
   }
 
-  #programs-slider .head {
-    padding: 6em 4em 4em;
+  #programs-slider .content {
+    padding-top: 200px;
   }
 }
