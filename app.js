@@ -11,6 +11,7 @@ var path           = require('path');
 var favicon        = require('serve-favicon');
 var flash          = require('connect-flash');
 
+
 require('./config/db')(mongoose);
 
 var app = express();
