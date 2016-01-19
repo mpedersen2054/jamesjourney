@@ -167,3 +167,12 @@
   width: 100%;
 }
 
+@media (max-width: 62em) {
+  #programs-slider .program {
+    height: 900px;
+  }
+
+  #programs-slider .head {
+    padding: 6em 4em 4em;
+  }
+}

@@ -41,6 +41,7 @@ var galleryRouter = require('./routes/galleryRouter.js');
 var messageRouter = require('./routes/messageRouter.js');
 var eventRouter   = require('./routes/eventRouter.js');
 var galleryRouter = require('./routes/galleryRouter.js');
+var userRouter    = require('./routes/userRouter.js');
 
 
 app.use('/',         staticRouter);
@@ -49,45 +50,8 @@ app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
 app.use('/events',   eventRouter);
 app.use('/gallery',  galleryRouter);
+app.use('/users',    userRouter);
 
-// var fakeData = require('./lib/fakeData.js');
-// fakeData();
-
-// app.get('/flash', function(req, res) {
-//   req.flash('wrong-password', 'The password you entered for that username is incorrect.')
-// })
-
-var User = require('./db/user');
-app.get('/users', function(req, res) {
-  // if (req.user) {
-    User.find({}, function(err, users) {
-      res.json(users);
-    });
-  // } else {
-    // res.redirect('/login')
-  // }
-});
-
-app.get('/users/new', function(req, res) {
-  // if (req.user) {
-    res.render('new_user');
-  // } else {
-    // res.redirect('/login');
-  // }
-})
-
-// REMOVE ONCE ALL USERS ADDED
-app.post('/users/new', function(req, res) {
-  console.log(req.body)
-  // if (req.user) {
-  var user = new User(req.body);
-  user.save(function(err, user) {
-    res.redirect('/users')
-  })
-  // } else {
-    // res.redirect('/login')
-  // }
-})
 
 var port = process.env.PORT || 3000;
 app.listen(port);

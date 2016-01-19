@@ -24,7 +24,7 @@ colors used:
   */
 
 #jumbotron {
-  height: 50em;
+  height: 100vh;
   text-align: center;
 }
 
@@ -69,7 +69,8 @@ colors used:
 #eds-preview {
   background-color: #2e738f;
   color: #fff;
-  padding: 3em 1em 9em;
+  padding: 5em 1em 10em;
+  /*height: 50em;*/
 }
 
 #eds-preview .head {
@@ -431,4 +432,22 @@ colors used:
     font-size: 36px;
   }
 
+}
+
+@media (min-width: 100em) {
+  #jumbotron {
+    height: 60em;
+  }
+
+  #eds-preview {
+  }
+
+  #about-james .info {
+    padding: 6em;
+  }
+
+  #recent-updates .updates {
+    max-width: 100em;
+    margin: 0 auto;
+  }
 }

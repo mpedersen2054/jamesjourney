@@ -1,31 +1,24 @@
-var User = require('./db/user');
-app.get('/users', function(req, res) {
-  if (req.user) {
+var User = require('../db/user');
+var userRouter = require('express').Router();
+
+userRouter.route('/')
+  .get(function(req, res) {
     User.find({}, function(err, users) {
       res.json(users);
-    });
-  } else {
-    res.redirect('/login')
-  }
-});
-
-app.get('/users/new', function(req, res) {
-  // if (req.user) {
-    res.render('new_user');
-  // } else {
-    // res.redirect('/login');
-  }
-})
-
-// REMOVE ONCE ALL USERS ADDED
-app.post('/users/new', function(req, res) {
-  console.log(req.body)
-  // if (req.user) {
-  var user = new User(req.body);
-  user.save(function(err, user) {
-    res.redirect('/users')
+    })
   })
-  // } else {
-    // res.redirect('/login')
-  }
-})
+
+
+userRouter.route('/new')
+  .get(function(req, res) {
+    res.render('new_user');
+  })
+
+  .post(function(req, res) {
+    var user = new User(req.body);
+    user.save(function(err, user) {
+      res.redirect('/users')
+    });
+  })
+
+module.exports = userRouter;
