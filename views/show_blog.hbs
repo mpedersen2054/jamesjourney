@@ -4,11 +4,10 @@
   <div class="container whitebg">
     <div class="row">
       <div class="col-md-12">
-        <div class="jumbo" style="background: url({{blog.coverImage}}) no-repeat fixed center">
+        <div class="jumbo" style="background: url({{blog.coverImage}}) no-repeat fixed center/100%">
           <div class="wrap">
             <a href="#" class="jumbo-title">
               {{blog.title}}
-              {{blog.pageViews}}
             </a>
           </div>
         </div>
@@ -33,8 +32,9 @@
               <div class="takeupspace"></div>
               <div class="meta">
                 <div class="author">
-                  <img src="//placehold.it/100x100" class="img-circle author-image">
+                  <img src="http://i.imgur.com/6csh4ip.jpg" class="img-circle author-image">
                   <span>Donald Duck</span>
+                  <span class="twitter-handle">@faketwitter</span>
                 </div>
 
                 <div class="split clearfix">
@@ -45,18 +45,20 @@
                   </span>
                 </div>
 
-                <div class="line clearfix"></div>
-              </div>
-              {{!-- <h4>Side content</h4>
+                <div class="split2">
+                  {{#each blog.tags}}
+                    <span class="label label-info">{{this}}</span>
+                  {{/each}}
+                </div>
 
-              <div class="tag-list">
-                <ul>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
-                  <li class="tag label label-info">A Tag</li>
-                </ul>
-              </div> --}}
+              </div>
+
+              <div class="recent-updates">
+                {{#each featured}}
+                  {{title}}
+                {{/each}}
+              </div>
+
 
             </div>
           </div>

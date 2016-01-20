@@ -2,19 +2,19 @@
 /* Jumbotron */
 
 #show-blog {
-  background-color: #ddd;
+  background-color: #fafafa;
 }
 
 #show-blog .jumbo {
   position: relative;
   height: 36em;
   margin: 0 -15px;
+  z-index: 20;
 }
 
 #show-blog .wrap {
   position: absolute;
   bottom: 60px;
-  /*max-width: 1000px;*/
   padding: 0 40px;
 }
 
@@ -32,70 +32,100 @@
 }
 
 #show-blog .whitebg {
-  background-color: #fff;
+  /*background-color: #fcfcfc;*/
 }
 
 #show-blog .meta {
-  color: #bbb;
-  padding: 0 40px 0 0;
+  color: #999;
+  border-radius: 6px;
+  padding: 20px 0 10px;
+  background-color: #fafafa;
 }
 
 #show-blog .line {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 #show-blog .meta .date,
 #show-blog .meta .author {
   display: block;
-  /*float: left;*/
+}
+
+#show-blog .meta .split,
+#show-blog .meta .split2 {
+  font-size: 18px;
+  margin: 0 20px;
+  padding: 5px 0 10px;
 }
 
 #show-blog .meta .split {
-  font-size: 18px;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 #show-blog .meta .date {
   float: left;
-  width: 70%;
-  border-right: 1px solid #efefef;
+  width: 60%;
+  border-right: 1px solid #dfdfdf;
 }
 
 #show-blog .meta .views-num {
   float: left;
-  width: 30%;
+  width: 40%;
   text-align: center;
 }
 
 #show-blog .meta .author {
-  font-size: 32px;
+  font-size: 24px;
   color: #888;
   text-transform: uppercase;
   margin-bottom: 30px;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+#show-blog .meta .author .twitter-handle {
+  font-size: 14px;
 }
 
 #show-blog .meta .author span {
   position: relative;
+  display: block;
   top: 10px;
 }
 
 #show-blog .meta .author img {
-  width: 50px;
-  height: 50px;
-  margin-right: 5px;
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
   margin-bottom: 2px;
 }
 
+#show-blog .on-right {
+  background-color: #fff;
+  padding: 0 20px 0 0;
+}
+
+#show-blog .on-left {
+  padding: 0 0px 0 20px;
+  /*border-right: 1px solid #efefef;*/
+}
+
+#show-blog .takeupspace {
+  position: relative;
+  top: -60px;
+  height: 100px;
+}
 
 
 #show-blog .on-left {
-  /*border: 1px solid blue;*/
   overflow: hidden;
 }
 
 #show-blog .post-content {
-  padding: 60px 40px;
-  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+  margin-top: 40px;
+  padding: 15px 10px 40px;
+  background-color: #fff;
   font-size: 24px;
   font-weight: 400;
   color: #555;
