@@ -44,6 +44,7 @@
     })
   }
 
+  // plugin used in blogs/show_blog sidebar
   App.scrollFollow = function(elem) {
     $(elem).simpleScrollFollow({
       limit_elem: '.on-left'
@@ -322,6 +323,67 @@
     });
   }
 
+  App.imageSlider = function() {
+    var self = this;
+    var $slider = $('#slider');
+
+    self.sliderArr = [];
+
+    var imgLinks = [
+      'http://i.imgur.com/6csh4ip.jpg',
+      'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg'
+    ];
+
+    populateSliderArr(imgLinks, function(err, arr) {
+      var $sliderUl = $('<ul/>', { class: 'slider__list' });
+
+      $slider.append($sliderUl);
+
+      for (var i=0; i<arr.length; i++) {
+        var list = [];
+        var img  = arr[i].image;
+        var item = $('<li/>', { class: 'slider__item' });
+
+        item.append(img);
+        $sliderUl.append(item);
+      }
+    });
+
+    function populateSliderArr(imgLinks, callback) {
+      // return error if no imgLinks or imgLinks !== Array
+      if (!imgLinks || !(imgLinks instanceof Array)) callback('error!', null);
+
+      // iterate over list and create <img>
+      // image and thumbnail have different w/h & class
+      for (var i=0; i<imgLinks.length; i++) {
+        var link = imgLinks[i];
+        var image = createImageElem(link, false);
+        var thumbnail = createImageElem(link, true);
+
+        // push pair into object then into sliderArr
+        self.sliderArr.push({
+          image: image,
+          thumbnail: thumbnail
+        });
+      }
+      callback(null, self.sliderArr);
+    }
+
+    function createImageElem(imgLink, isThumbnail) {
+      var width  = isThumbnail ? '40px' : '100%';
+      var height = isThumbnail ? '40px' : '100%';
+      var klass  = isThumbnail ? 's-img-thumb' : 's-img';
+
+      return $('<img/>', {
+        src: imgLink,
+        width: width,
+        height: height,
+        class: klass
+      });
+    }
+
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -335,5 +397,6 @@
   App.handleAdminEventAttendees();
   App.programSlider();
   App.imageGallery();
+  App.imageSlider(); // for james index
 
 })(jQuery);

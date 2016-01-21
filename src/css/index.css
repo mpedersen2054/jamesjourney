@@ -133,34 +133,75 @@
 ========= About James
  */
 
-#about-james {}
-
-#about-james .info {
-  background-color: #9fe2fa;
-  padding: 4em 6em;
+#about-james {
+  display: block;
 }
 
-#about-james .image-gal {}
+#about-james .info {
+  position: relative;
+  display: block;
+  background-color: #9fe2fa;
+  height: 40em;
+  overflow: hidden;
+}
 
-#about-james h2 {
+#about-james .image-gal {
+  position: relative;
+  display: block;
+  height: 40em;
+  max-height: 40em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#about-james .info h2 {
   color: #19728f;
   margin-bottom: 40px;
 }
-#about-james .small-line {
+#about-james .info .small-line {
   border: 1px solid #19728f;
 }
-#about-james p {
+#about-james .info p {
   font-size: 24px;
   text-align: center;
   font-weight: 200;
   margin-top: 40px;
 }
 
+#slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider__item {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__item .s-img {}
+
+/*#slider img*/
+
 /*
 ========= We Need You
  */
 
-#we-need-you {
+/*#we-need-you {
   min-height: 46em;
   padding: 2em 0;
   background: url(../img/weneedyou.png);
@@ -211,13 +252,15 @@
   margin: 0 auto;
   font-size: 1.5em;
   font-weight: 400;
-}
+}*/
 
 /*
 ========= Recent Updates
  */
 
 #recent-updates {
+  display: block;
+  /*min-height: 40em;*/
   padding: 4em 0 6em;
   background-color: #0a3a4b;
 }
