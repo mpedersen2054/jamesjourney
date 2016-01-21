@@ -1,4 +1,7 @@
+/*HEADER weight: 400, 700*/
+/*TYPE weight: 300, 400*/
 
+/*good blue #00aeef */
 
 .small-line { border: 2px solid #333; width: 16em; margin: 1em auto; }
 
@@ -32,7 +35,7 @@
   padding: 0 12em;
   text-align: center;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 300;
   color: #19728f;
   visibility: visible;
   animation-name: fadeInLeft;
@@ -72,7 +75,7 @@
 #eds-preview .head h2 {
   color: #0a3a4b;
   font-size: 300px;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -91,7 +94,7 @@
 #eds-preview p {
   color: #c4ecfa;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -123,7 +126,7 @@
   margin: 0 auto;
   margin-top: 40px;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   color: #f0f0f0;
 }
@@ -134,68 +137,60 @@
  */
 
 #about-james {
-  display: block;
+  position: relative;
+  background-color: #fff;
+  padding: 6em 0 8em;
+  color: #555;
 }
+
+#about-james .head {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+
+#about-james .head .small-header {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #222;
+}
+
+#about-james .head h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #00aeef;
+}
+
+#about-james .image-slider {}
 
 #about-james .info {
-  position: relative;
-  display: block;
-  background-color: #9fe2fa;
-  height: 40em;
-  overflow: hidden;
+  padding-left: 20px;
 }
 
-#about-james .image-gal {
-  position: relative;
-  display: block;
-  height: 40em;
-  max-height: 40em;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+#about-james .info h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-#about-james .info h2 {
-  color: #19728f;
-  margin-bottom: 40px;
-}
-#about-james .info .small-line {
-  border: 1px solid #19728f;
-}
 #about-james .info p {
-  font-size: 24px;
-  text-align: center;
-  font-weight: 200;
-  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 #slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.slider__list {
-  position: relative;
-  margin: 0;
-  padding: 0;
   list-style: none;
+  padding: 10px;
 }
 
 .slider__item {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  /*display: none;*/
+  /*text-align: center;*/
+  margin: 0 auto;
 }
 
-.slider__item .s-img {}
-
-/*#slider img*/
+#slider .s-img {}
 
 /*
 ========= We Need You

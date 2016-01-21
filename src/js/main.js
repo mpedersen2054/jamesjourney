@@ -325,33 +325,30 @@
 
   App.imageSlider = function() {
     var self = this;
-    var $slider = $('#slider');
+    var $slider = $('ul#slider');
 
     self.sliderArr = [];
 
     var imgLinks = [
-      'http://i.imgur.com/6csh4ip.jpg',
-      'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg'
+      'https://i.ytimg.com/vi/UIrEM_9qvZU/maxresdefault.jpg',
+      // 'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg'
     ];
 
-    populateSliderArr(imgLinks, function(err, arr) {
-      var $sliderUl = $('<ul/>', { class: 'slider__list' });
+    populateSliderArr(imgLinks, animateSlider);
 
-      $slider.append($sliderUl);
-
-      for (var i=0; i<arr.length; i++) {
-        var list = [];
-        var img  = arr[i].image;
-        var item = $('<li/>', { class: 'slider__item' });
-
-        item.append(img);
-        $sliderUl.append(item);
-      }
-    });
+    function animateSlider(err, ul) {
+      console.log('hello there!')
+      console.log(err, ul.children().length)
+    }
 
     function populateSliderArr(imgLinks, callback) {
+      var sliderArr = []
+
       // return error if no imgLinks or imgLinks !== Array
-      if (!imgLinks || !(imgLinks instanceof Array)) callback('error!', null);
+      if (!imgLinks || !(imgLinks instanceof Array)) {
+        var err = 'there was an error!';
+        callback(err, null);
+      }
 
       // iterate over list and create <img>
       // image and thumbnail have different w/h & class
@@ -361,12 +358,22 @@
         var thumbnail = createImageElem(link, true);
 
         // push pair into object then into sliderArr
-        self.sliderArr.push({
+        sliderArr.push({
           image: image,
           thumbnail: thumbnail
         });
       }
-      callback(null, self.sliderArr);
+
+      for (var i=0; i<sliderArr.length; i++) {
+        var list = [];
+        var img  = sliderArr[i].image;
+        var item = $('<li/>', { class: 'slider__item' });
+
+        item.append(img);
+        $slider.append(item);
+      }
+
+      callback(null, $slider);
     }
 
     function createImageElem(imgLink, isThumbnail) {
@@ -376,8 +383,8 @@
 
       return $('<img/>', {
         src: imgLink,
-        width: width,
-        height: height,
+        // width: width,
+        // height: height,
         class: klass
       });
     }
