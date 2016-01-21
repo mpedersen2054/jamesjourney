@@ -165,7 +165,7 @@
 #about-james .image-slider {}
 
 #about-james .info {
-  padding-left: 20px;
+  padding: 0 20px 0;
 }
 
 #about-james .info h3 {
@@ -184,13 +184,18 @@
   padding: 10px;
 }
 
+.slider__item.show {
+  display: block;
+}
+
 .slider__item {
-  /*display: none;*/
-  /*text-align: center;*/
+  display: none;
   margin: 0 auto;
 }
 
-#slider .s-img {}
+#slider .s-img {
+  background-color: #000;
+}
 
 /*
 ========= We Need You

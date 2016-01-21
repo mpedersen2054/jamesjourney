@@ -323,69 +323,93 @@
     });
   }
 
+  // accepts array of img links and creates
+  // slider elements and animates between them
   App.imageSlider = function() {
-    var self = this;
     var $slider = $('ul#slider');
-
-    self.sliderArr = [];
 
     var imgLinks = [
       'https://i.ytimg.com/vi/UIrEM_9qvZU/maxresdefault.jpg',
-      // 'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg'
+      'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg',
+      'http://www.unoosa.org/res/timeline/index_html/space-2.jpg',
+      'http://www.dogbreedplus.com/images/puredogss.png'
     ];
 
-    populateSliderArr(imgLinks, animateSlider);
+    // build Eslider DOM, pass animateSlider as
+    // callback to do when animateSlider is done
+    buildSliderDom(imgLinks, animateSlider);
 
-    function animateSlider(err, ul) {
-      console.log('hello there!')
-      console.log(err, ul.children().length)
+    function animateSlider(err) {
+      var $slideItems = $('.slider__item');
+      var sliderLen = $slideItems.length,
+          count = 0,
+          item;
+
+      setInterval(function() {
+        // if at end of array, return count to 0
+        (count === sliderLen - 1) ? count = 0 : count++;
+        // remove .show from all slide__item's
+        $slideItems.removeClass('show');
+        // find element based on its data-testing
+        // attr then add .show, repeat sI
+        item = $("li.slider__item[data-testing='"+count+"']");
+        item.addClass('show');
+
+      }, 3000);
     }
 
-    function populateSliderArr(imgLinks, callback) {
+    function buildSliderDom(imgLinks, callback) {
       var sliderArr = []
 
       // return error if no imgLinks or imgLinks !== Array
       if (!imgLinks || !(imgLinks instanceof Array)) {
         var err = 'there was an error!';
-        callback(err, null);
+        callback(err);
       }
 
       // iterate over list and create <img>
       // image and thumbnail have different w/h & class
       for (var i=0; i<imgLinks.length; i++) {
         var link = imgLinks[i];
-        var image = createImageElem(link, false);
-        var thumbnail = createImageElem(link, true);
+        var image = newImage(link, false);
+        var thumbnail = newImage(link, true);
 
-        // push pair into object then into sliderArr
+        // { image: $(...), thumbnail: $(...) }
         sliderArr.push({
           image: image,
           thumbnail: thumbnail
         });
       }
 
+      // once sliderArr done, create a li.slide__item,
+      // append the image into the li, then append li onto #slider
       for (var i=0; i<sliderArr.length; i++) {
-        var list = [];
         var img  = sliderArr[i].image;
-        var item = $('<li/>', { class: 'slider__item' });
+        var item = $('<li/>', {
+          'class': 'slider__item',
+          'data-testing': i
+        })
 
         item.append(img);
         $slider.append(item);
       }
 
-      callback(null, $slider);
+      // all went well
+      callback(null);
     }
 
-    function createImageElem(imgLink, isThumbnail) {
-      var width  = isThumbnail ? '40px' : '100%';
-      var height = isThumbnail ? '40px' : '100%';
-      var klass  = isThumbnail ? 's-img-thumb' : 's-img';
+    // returns new img element with src=imgLink
+    function newImage(imgLink, isThumbnail) {
+      // var width  = isThumbnail ? '40px' : '100%';
+      // var height = isThumbnail ? '40px' : '100%';
+      // var klass  = isThumbnail ? 's-img-thumb' : 's-img';
 
       return $('<img/>', {
-        src: imgLink,
-        // width: width,
-        // height: height,
-        class: klass
+        'src': imgLink,
+        'class': 's-img'
+        // 'data-test': num
+        // width: widt, ih,
+        // height: height, i,
       });
     }
 
