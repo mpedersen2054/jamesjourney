@@ -1,0 +1,61 @@
+
+#twitter-slider {
+  position: relative;
+  background: url("http://themeregion.com/demo/arki/default-images/bg/twitter-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5em 0;
+  color: #fff;
+  font-size: 24px;
+  background-color: #2db7eb;
+}
+
+#twitter-slider .overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 174, 239, 0.90);
+}
+
+#twitter-slider .twitter-carousel {
+  text-align: center;
+}
+
+#twitter-slider .twitter-icon {
+  position: relative;
+  font-size: 60px;
+  color: #fff;
+  z-index: 10;
+  margin-bottom: 25px;
+  line-height: 55px;
+  text-align: center;
+}
+
+#twitter-slider .carousel-indicators {
+  /*bottom: -55px;*/
+}
+
+#twitter-slider .carousel-indicators li {
+  background-color: #fff;
+}
+
+#twitter-slider .carousel-indicators li.active {
+  background-color: #0072bc;
+  border-color: #0072bc;
+}
+
+#twitter-slider .carousel-in {}
+
+#twitter-slider .carousel-in .item {
+  transition: transform .6s ease-in-out;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+#twitter-slider .carousel-in .item.active {}
+
+#twitter-slider .carousel-in .item p {}
+
+#twitter-slider .carousel-in .item a {}
