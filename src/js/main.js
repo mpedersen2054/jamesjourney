@@ -415,6 +415,67 @@
 
   }
 
+  App.twitterSlider = function() {
+    var $indicatorsUl = $('.carousel-indicators');
+    var $innerCarousel = $('.carousel-inner');
+
+    var tweets = [
+      {
+        title: '1 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+        url: 'http://t.co/7FoVSP0vIf'
+      },
+      {
+        title: '2 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+        url: 'http://t.co/7FoVSP0vIf'
+      },
+      {
+        title: '3 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+        url: 'http://t.co/7FoVSP0vIf'
+      }
+    ]
+
+    for (var i=0; i<tweets.length; i++) {
+      var tdata = tweets[i];
+      var $indicator = createIndicator(i);
+      var $item = createItem(tdata.title, tdata.url, i)
+
+      $indicatorsUl.append($indicator);
+      $innerCarousel.append($item);
+    }
+
+    $('.carousel').carousel()
+
+
+    function createIndicator(count) {
+      var indi = $('<li/>', {
+        'data-target': '#twitter-slider',
+        'data-slide-to': count
+      })
+
+      if (count === 0) {
+        indi.addClass('active');
+      }
+
+      return indi;
+    }
+
+    function createItem(tweetText, tweetUrl, count) {
+      var item = $('<div/>', {
+        'class': 'item'
+      });
+      var para = $('<p/>').text(tweetText);
+      var anch = $('<a/>', {
+        'href': tweetUrl
+      }).text(tweetUrl);
+
+      if (count === 0) {
+        item.addClass('active');
+      }
+
+      return item.append(para).append(anch);
+    }
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -429,5 +490,6 @@
   App.programSlider();
   App.imageGallery();
   App.imageSlider(); // for james index
+  App.twitterSlider();
 
 })(jQuery);

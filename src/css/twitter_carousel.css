@@ -4,10 +4,11 @@
   background: url("http://themeregion.com/demo/arki/default-images/bg/twitter-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 5em 0;
+  padding: 4em 0 8em;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   background-color: #2db7eb;
+  text-align: center;
 }
 
 #twitter-slider .overlay-bg {
@@ -34,11 +35,12 @@
 }
 
 #twitter-slider .carousel-indicators {
-  /*bottom: -55px;*/
+  bottom: 70px;
 }
 
 #twitter-slider .carousel-indicators li {
   background-color: #fff;
+  margin: 0 5px;
 }
 
 #twitter-slider .carousel-indicators li.active {
