@@ -82,9 +82,29 @@ staticRouter.route('/admin-page')
     }
   })
 
-staticRouter.route('/fuck')
+staticRouter.route('/get-involved')
   .get(function(req, res) {
-    res.render('scratch_page')
+    res.render('get_involved');
   })
+
+staticRouter.route('/our-work')
+  .get(function(req, res) {
+    res.render('our_work');
+  })
+
+staticRouter.route('/donate')
+  .get(function(req, res) {
+    res.render('donate');
+  })
+
+staticRouter.route('/contact-us')
+  .get(function(req, res) {
+    res.render('contact_us');
+  })
+
+  staticRouter.route('/our-team')
+    .get(function(req, res) {
+      res.render('our_team');
+    })
 
 module.exports = staticRouter;

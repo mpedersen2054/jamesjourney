@@ -135,19 +135,21 @@
   width: 80%;
   position: relative;
   z-index: 1;
-  padding-top: 220px;
+  padding-top: 100px;
   height: 490px;
   text-align: center;
 }
 
 #programs-slider a.program .content .title {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
   width: 100%;
   padding: 10px 20px 40px;
   white-space: nowrap;
+  text-shadow: 2px 2px 2px #777;
+  color: #fff;
 }
 #programs-slider a.program .content .icon {
   width: 100%;

@@ -1,4 +1,44 @@
 
+// ROUTER IF I WANT IT
+// // initiate router
+// var params = { format: 'html' };
+// var router = new PathParser(params);
+
+// // STATIC ROUTES
+// router.add('/', function() {
+//   console.log('hello index!');
+// });
+
+
+// // BLOG ROUTES
+// router.add('/blog', function() {
+//   console.log('hello blog!')
+// });
+
+// router.add('/blog/:slug', function() {
+//   console.log('hello blog show! ' + params.slug)
+// });
+
+
+// // EVENT ROUTES
+// router.add('/events', function() {
+//   console.log('hello events!')
+// });
+
+// router.add('/events/:slug', function() {
+//   console.log('hello events show! ' + params.slug)
+// });
+
+
+// // GALLERY ROUTES
+// router.add('/gallery', function() {
+//   console.log('hello gallery!')
+// });
+
+
+// // run the router with the current url
+// router.run(window.location.pathname);
+
 
 (function($) {
 
@@ -314,11 +354,11 @@
 
     $('.fancybox').fancybox({
       fitToView: true,
-      closeBtn: true,
-      padding: '60px 0px 30px 0px',
-      // width: '60%',
+      closeBtn:  true,
+      padding:   '60px 0px 30px 0px',
+      // width:  '60%',
       // height: '60%',
-      maxWidth: 1200,
+      maxWidth:  1200,
       maxHeight: 560
     });
   }
