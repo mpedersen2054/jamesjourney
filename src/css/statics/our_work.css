@@ -1,0 +1,34 @@
+
+
+#our-work .bg {
+  position: relative;
+  height: 20em;
+  background: url('https://s3.amazonaws.com/jamesbucket123/staticassets/our-work-nonsat.jpg');
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#our-work .overlay-bg {
+  background-color: rgba(0, 174, 239, 0.80);
+}
+
+#our-work .head {
+  position: absolute;
+  bottom: 100px;
+  color: #fff;
+}
+
+#our-work .head h4,
+#our-work .head h2 {
+  color: #fff;
+}
+
+#our-work .head h4 {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#our-work .head h2 {
+  font-size: 48px;
+}

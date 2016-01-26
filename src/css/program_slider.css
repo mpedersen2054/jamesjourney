@@ -1,6 +1,6 @@
 #programs-slider {
   position: relative;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 #programs-slider .head {
@@ -47,7 +47,7 @@
   content: '';
   border-left: 83px solid transparent;
   border-right: 83px solid transparent;
-  border-top: 40px solid #eee;
+  border-top: 40px solid #fff;
   position: relative;
   top: 38px;
   z-index: 1;
