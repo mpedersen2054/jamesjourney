@@ -12,29 +12,8 @@ adminRouter.route('/')
       res.redirect('/login');
     }
     else {
-      Blog.find({}, function(err, blogs) {
-        if (err) return next(err);
-
-        EEvent.find({}, function(err, events) {
-          if (err) return next(err);
-
-          Gallery.find({}, function(err, galleries) {
-
-            // get mailchimp subscribers
-            mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
-
-              res.render('admin_page', {
-                blogs: blogs,
-                events: events,
-                images: galleries,
-                mcd: data.data
-              });
-
-            });
-
-          });
-        });
-      });
+      console.log(req.adminData)
+      res.render('admin_page', req.adminData);
     }
   })
 

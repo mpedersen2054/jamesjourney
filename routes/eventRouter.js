@@ -8,11 +8,13 @@ eventRouter.route('/')
     })
   })
 
+// GET NEW EVENT TMPL
 eventRouter.route('/new')
   .get(function(req, res) {
     if (req.user) { res.render('new_event'); }
     else { res.redirect('/login') }
   })
+  // ADD NEW EVENT
   .post(function(req, res) {
     var data = req.body;
     var date = new Date(data.date);
@@ -20,18 +22,18 @@ eventRouter.route('/new')
     var ev = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
-      return res.redirect('/admin-page')
+      return res.redirect('/admin')
     });
   })
 
-
+// SHOW EVENT
 eventRouter.route('/:slug')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       res.render('show_event', { event: ev });
     });
   })
-
+  // UPDATE EVENT
   .put(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       var body = req.body;
@@ -42,12 +44,13 @@ eventRouter.route('/:slug')
 
       ev.save(function(err) {
         if (err) console.log(err);
-        res.redirect('/admin-page');
+        res.redirect('/admin');
       });
     });
   });
 
 
+// GET SINGLE EVENT
 eventRouter.route('/:slug/edit')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
@@ -56,20 +59,20 @@ eventRouter.route('/:slug/edit')
     });
   });
 
+// DELETE SINGLE EVENT
 eventRouter.route('/:slug/delete')
   .get(function(req, res) {
     if (req.user) {
       EEvent.remove({ 'slug': req.params.slug }, function(err) {
         if (err) console.log(err);
-        res.redirect('/admin-page')
+        res.redirect('/admin')
       });
     } else {
       res.redirect('/login');
     }
   });
 
-
-
+// REGISTER AN ATTENDEE
 eventRouter.route('/:slug/register')
   .post(function(req, res) {
     var data = req.body;

@@ -1,0 +1,36 @@
+<section class="admin-page__blogs">
+  <h3 class="title">Blog Posts</h3>
+  <div class="submenu clearfix">
+    <div class="item">
+      <a href="/blog/new" class="btn btn-default btn-xs">+ new</a>
+    </div>
+  </div>
+  {{#if blogs}}
+    {{!-- <div class="well"> --}}
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each blogs}}
+            <tr>
+              <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
+              <td class="options">
+                {{!-- {{#if isFeatured}}
+
+                {{else}}
+
+                {{/if}} --}}
+                <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
+                <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fa fa-times"></i></a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{!-- </div> --}}
+  {{/if}}
+</section>

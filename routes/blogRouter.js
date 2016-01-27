@@ -66,7 +66,7 @@ blogRouter.route('/new')
 
       blog.save(function(err) {
         if(err) return console.log(err);
-        return res.redirect('/admin-page');
+        return res.redirect('/admin');
       })
 
     } else {
@@ -129,7 +129,7 @@ blogRouter.route('/:slug')
 
         blog.save(function(err) {
           if(err) console.log(err);
-          res.redirect('/admin-page');
+          res.redirect('/admin');
         });
       })
 
@@ -158,10 +158,10 @@ blogRouter.route('/:slug/delete')
     if (req.user) {
       Blog.remove({ 'slug': req.params.slug }, function(err) {
         if(err) console.log(err);
-        res.redirect('/admin-page')
+        res.redirect('/admin');
       })
     } else {
-      res.redirect('/login')
+      res.redirect('/login');
     }
   })
 

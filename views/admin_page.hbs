@@ -1,5 +1,4 @@
-<div id="admin-page">
-
+{{!-- <div id="admin-page">
   <div class="container">
 
     {{#if user}}
@@ -9,180 +8,186 @@
       </div>
     {{/if}}
 
-
-    <section class="admin-page__blogs">
-      <h3 class="title">Blog Posts</h3>
-      <div class="submenu clearfix">
-        <div class="item">
-          <a href="/blog/new" class="btn btn-default btn-xs">+ new</a>
-        </div>
-      </div>
-      {{#if blogs}}
-        {{!-- <div class="well"> --}}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each blogs}}
-                <tr>
-                  <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
-                  <td class="options">
-                    {{!-- {{#if isFeatured}}
-
-                    {{else}}
-
-                    {{/if}} --}}
-                    <a href="/blog/{{slug}}/edit" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
-                    <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-                  </td>
-                </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        {{!-- </div> --}}
-      {{/if}}
-    </section>
-
-    <hr>
-
-    <section class="admin-page__subscribers">
-      <h3 class="title">Subscribers</h3>
-      <div class="submenu clearfix">
-        <div class="item">
-          <a href="https://us11.admin.mailchimp.com/campaigns/create/" class="btn btn-default btn-xs">Send Mass Email</a>
-        </div>
-      </div>
-      {{#if mcd}}
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          {{#each mcd}}
-            <tr>
-              <td>{{email}}</td>
-              <td>{{fname}}</td>
-              <td>{{lname}}</td>
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
-      {{/if}}
-    </section>
-
-    <hr>
-
-    <section class="admin-page__events">
-      <h3 class="title">Events</h3>
-      <div class="submenu clearfix">
-        <div class="item">
-          <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
-        </div>
-      </div>
-
-      {{#if events}}
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          {{#each events}}
-            <tr>
-              <td><a href="/events/{{slug}}">{{name}}</a></td>
-              <td>{{location}}</td>
-              <td>{{formattedDate}}</td>
-              <td>
-                <a href="#" class="btn btn-default btn-xs btn-attendees">
-                  {{attendees.length}} Attendees
-                  <span><i class="fa fa-sort-desc"></i></span>
-                </a>
-                <a href="/events/{{slug}}/delete" class="btn btn-danger btn-xs delete-event-btn"><i class="fa fa-times"></i></a>
-                <a href="/events/{{slug}}/edit" class="btn btn-default btn-xs edit-event-btn"><i class="fa fa-pencil"></i></a>
-              </td>
-            </tr>
-
-            <tr class="attendee-row">
-              <td colspan="4">
-                <div class="row">
-                  <div class="col-md-3 attendee-title"><b>Name</b></div>
-                  <div class="col-md-3 attendee-title"><b>Email</b></div>
-                  <div class="col-md-3 attendee-title"><b>Signed up Date</b></div>
-                  <div class="col-md-3 attendee-title"><b>Message</b></div>
-                </div>
-                {{#each attendees}}
-                <div class="row">
-                  <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
-                  <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
-                  <div class="col-md-3 attendee-col attendee__created-at" data-createdat="{{created_at}}"></div>
-                  <div class="col-md-3 attendee-col attendee__message">
-                    {{#if message}}
-                      <a href="#" class="btn btn-link btn-sm" class="view-message-btn" data-message="{{message}}">
-                        View Message
-                      </a>
-                    {{/if}}
-                  </div>
-                </div>
-                {{/each}}
-              </td>
-            </tr>
-
-          {{/each}}
-          </tbody>
-        </table>
-      {{/if}}
-
-    </section>
-
-    <section class="admin-page__gallery">
-      <h3 class="title">Gallery</h3>
-      <div class="submenu clearfix">
-        <div class="item">
-          {{!-- <a href="/events/new" class="btn btn-default btn-xs">+ new</a> --}}
-        </div>
-      </div>
-
-      {{#if images}}
-        <p>hi</p>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each images}}
-            <tr class="image-row">
-              <td>{{name}}</td>
-              <td>{{dateAdded}}</td>
-              <td>{{file_type}}</td>
-              <td class="image-options">
-                <a href="#" class="btn btn-default btn-xs edit-image-btn"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="btn btn-danger btn-xs delete-image-btn"><i class="fa fa-times"></i></a>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      {{/if}}
-    </section>
-
+    {{> admin_page_blogs blogs=blogs }}
+    {{> admin_page_subscribers mcd=mcd }}
+    {{> admin_page_events events=events }}
+    {{> admin_page_gallery images=images }}
 
   </div>
+</div> --}}
 
+
+<div id="admin-page">
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="" href="index.html">
+        JamesJourney
+      </a>
+    </div>
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+        <ul class="dropdown-menu message-dropdown">
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                </span>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <strong>John Smith</strong>
+                  </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                </span>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <strong>John Smith</strong>
+                  </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                </span>
+                <div class="media-body">
+                  <h5 class="media-heading">
+                    <strong>John Smith</strong>
+                  </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-footer">
+            <a href="#">Read All New Messages</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+        <ul class="dropdown-menu alert-dropdown">
+          <li>
+            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+          </li>
+          <li>
+            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+          </li>
+          <li>
+            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+          </li>
+          <li>
+            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+          </li>
+          <li>
+            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+          </li>
+          <li>
+            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">View All</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <li class="active" data-atab="all">
+          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> All</a>
+        </li>
+        <li data-atab="blogs">
+          <a href="charts.html"><i class="fa fa-fw fa-edit"></i> Blogs</a>
+        </li>
+        <li data-atab="events">
+          <a href="tables.html"><i class="fa fa-fw fa-table"></i> Events</a>
+        </li>
+        <li data-atab="gallery">
+          <a href="forms.html"><i class="fa fa-fw fa-desktop"></i> Gallery</a>
+        </li>
+        {{!-- <li>
+          <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+          <ul id="demo" class="collapse">
+            <li>
+              <a href="#">Dropdown Item</a>
+            </li>
+            <li>
+              <a href="#">Dropdown Item</a>
+            </li>
+          </ul>
+        </li> --}}
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Blank Page
+            <small>Subheading</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li>
+              <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+            </li>
+            <li class="active">
+              <i class="fa fa-file"></i> Blank Page
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /#page-wrapper -->
 </div>

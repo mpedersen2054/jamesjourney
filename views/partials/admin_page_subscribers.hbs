@@ -1,0 +1,28 @@
+<section class="admin-page__subscribers">
+  <h3 class="title">Subscribers</h3>
+  <div class="submenu clearfix">
+    <div class="item">
+      <a href="https://us11.admin.mailchimp.com/campaigns/create/" class="btn btn-default btn-xs">Send Mass Email</a>
+    </div>
+  </div>
+  {{#if mcd}}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each mcd}}
+        <tr>
+          <td>{{email}}</td>
+          <td>{{fname}}</td>
+          <td>{{lname}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</section>

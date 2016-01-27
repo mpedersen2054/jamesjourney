@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 var cookieParser   = require('cookie-parser');
 var bodyParser     = require('body-parser');
 var session        = require('express-session');
-var path           = require('path');
+// var path           = require('path');
 var favicon        = require('serve-favicon');
 var flash          = require('connect-flash');
 
@@ -36,24 +36,29 @@ app.use(flash());
 require('./config/passport')(app, passport)
 
 // ROUTES
-var staticRouter  = require('./routes/staticRouter.js');
-var adminRouter   = require('./routes/adminRouter.js');
-var blogRouter    = require('./routes/blogRouter.js');
-var galleryRouter = require('./routes/galleryRouter.js');
-var messageRouter = require('./routes/messageRouter.js');
-var eventRouter   = require('./routes/eventRouter.js');
-var galleryRouter = require('./routes/galleryRouter.js');
-var userRouter    = require('./routes/userRouter.js');
+var staticRouter    = require('./routes/staticRouter.js');
+var adminRouter     = require('./routes/adminRouter.js');
+var blogRouter      = require('./routes/blogRouter.js');
+var galleryRouter   = require('./routes/galleryRouter.js');
+var messageRouter   = require('./routes/messageRouter.js');
+var eventRouter     = require('./routes/eventRouter.js');
+var galleryRouter   = require('./routes/galleryRouter.js');
+var userRouter      = require('./routes/userRouter.js');
 
+// middleware to attach all queries onto req.adminData
+var adminMiddleware = require('./middleware/adminData')(adminRouter);
 
 app.use('/',         staticRouter);
-app.use('/admin',    adminRouter);
 app.use('/blog',     blogRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/messages', messageRouter);
 app.use('/events',   eventRouter);
 app.use('/gallery',  galleryRouter);
 app.use('/users',    userRouter);
+
+// middleware then adminRouter
+app.use(adminMiddleware);
+app.use('/admin',    adminRouter);
 
 
 var port = process.env.PORT || 3000;
