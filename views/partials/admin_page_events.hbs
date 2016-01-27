@@ -1,13 +1,25 @@
 <section class="admin-page__events">
-  <h3 class="title">Events</h3>
+  {{!-- <h3 class="title">Events</h3>
   <div class="submenu clearfix">
     <div class="item">
       <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
     </div>
-  </div>
+  </div> --}}
+  <h1 class="page-header">
+    Subscribers
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+    </li>
+    <li class="active">
+      <i class="fa fa-table"></i> Blank Page
+    </li>
+  </ol>
 
   {{#if events}}
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
       <thead>
         <tr>
           <th></th>

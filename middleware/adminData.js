@@ -15,7 +15,6 @@ function queryAll(callback) {
         if (err) return callback(err, null);
         // get mailchimp subscribers
         mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
-
           var adminData = {
             blogs: blogs,
             events: events,
@@ -25,9 +24,7 @@ function queryAll(callback) {
           }
 
           callback(null, adminData);
-
         });
-
       });
     });
   });

@@ -8,11 +8,6 @@
       </div>
     {{/if}}
 
-    {{> admin_page_blogs blogs=blogs }}
-    {{> admin_page_subscribers mcd=mcd }}
-    {{> admin_page_events events=events }}
-    {{> admin_page_gallery images=images }}
-
   </div>
 </div> --}}
 
@@ -139,16 +134,19 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
-        <li class="active" data-atab="all">
-          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> All</a>
+        <li class="admin-link admin-link__all active">
+          <a href="index.html"><i class="fa fa-fw fa-database"></i> All</a>
         </li>
-        <li data-atab="blogs">
+        <li class="admin-link admin-link__subscribers">
+          <a href="index.html"><i class="fa fa-fw fa-users"></i> Subscribers</a>
+        </li>
+        <li class="admin-link admin-link__blogs">
           <a href="charts.html"><i class="fa fa-fw fa-edit"></i> Blogs</a>
         </li>
-        <li data-atab="events">
+        <li class="admin-link admin-link__events">
           <a href="tables.html"><i class="fa fa-fw fa-table"></i> Events</a>
         </li>
-        <li data-atab="gallery">
+        <li data-atab="admin-link admin-link__gallery">
           <a href="forms.html"><i class="fa fa-fw fa-desktop"></i> Gallery</a>
         </li>
         {{!-- <li>
@@ -167,22 +165,23 @@
     <!-- /.navbar-collapse -->
   </nav>
   <div id="page-wrapper">
+
     <div class="container-fluid">
-      <!-- Page Heading -->
       <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-header">
-            Blank Page
-            <small>Subheading</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li>
-              <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-            </li>
-            <li class="active">
-              <i class="fa fa-file"></i> Blank Page
-            </li>
-          </ol>
+        <div class="col-md-12 admin-section admin-section__all">
+          {{> admin_page_all }}
+        </div>
+        <div class="col-md-12 admin-section admin-section__blogs">
+          {{> admin_page_blogs blogs=blogs }}
+        </div>
+        <div class="col-md-12 admin-section admin-section__subscribers">
+          {{> admin_page_subscribers mcd=mcd }}
+        </div>
+        <div class="col-md-12 admin-section admin-section__events">
+          {{> admin_page_events events=events }}
+        </div>
+        <div class="col-md-12 admin-section admin-section__images">
+          {{> admin_page_gallery images=images }}
         </div>
       </div>
       <!-- /.row -->

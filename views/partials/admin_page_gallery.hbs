@@ -1,14 +1,25 @@
 <section class="admin-page__gallery">
-  <h3 class="title">Gallery</h3>
+  {{!-- <h3 class="title">Gallery</h3>
   <div class="submenu clearfix">
     <div class="item">
-      {{!-- <a href="/events/new" class="btn btn-default btn-xs">+ new</a> --}}
+      <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
     </div>
-  </div>
+  </div> --}}
+  <h1 class="page-header">
+    Gallery
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+    </li>
+    <li class="active">
+      <i class="fa fa-desktop"></i> All
+    </li>
+  </ol>
 
   {{#if images}}
-    <p>hi</p>
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
       <thead>
         <tr>
           <th></th>
