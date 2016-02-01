@@ -522,6 +522,60 @@
     elem.countTo('toggle');
   }
 
+  App.adminPageRenderer = function() {
+    var $adminSections   = $('.admin-section');
+    var $adminAll        = $('.admin-section__all');
+    var $adminBlogs      = $('.admin-section__blogs');
+    var $adminEvents     = $('.admin-section__events');
+    var $adminSubs       = $('.admin-section__subscribers');
+    var $adminImages     = $('.admin-section__gallery');
+
+    var $adminLinks      = $('.admin-link');
+    var $adminLinkAll    = $('.admin-link__all');
+    var $adminLinkBlogs  = $('.admin-link__blogs');
+    var $adminLinkEvents = $('.admin-link__events');
+    var $adminLinkSubs   = $('.admin-link__subscribers');
+    var $adminLinkImages = $('.admin-link__gallery');
+
+    $adminSections.hide();
+
+    $adminLinkAll.addClass('active');
+    $adminAll.show();
+
+    $adminLinks.on('click', function(e) {
+      e.preventDefault();
+
+      var $clicked = $(this);
+
+      $adminLinks.removeClass('active');
+      $adminSections.hide();
+      $clicked.addClass('active')
+
+
+      if ($clicked[0] == $adminLinkAll[0]) {
+        console.log('hello blogs!')
+        $adminAll.show();
+      }
+      else if ($clicked[0] == $adminLinkBlogs[0]) {
+        console.log('hello blogs!')
+        $adminBlogs.show();
+      }
+      else if ($clicked[0] == $adminLinkEvents[0]) {
+        console.log('hello events!')
+        $adminEvents.show();
+      }
+      else if ($clicked[0] == $adminLinkSubs[0]) {
+        console.log('hello subs!')
+        $adminSubs.show();
+      }
+      else if ($clicked[0] == $adminLinkImages[0]) {
+        console.log('hello images!')
+        $adminImages.show();
+      }
+    })
+
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -538,5 +592,6 @@
   App.imageSlider(); // for james index
   App.twitterSlider();
   App.countTo($('.achivements .timer'));
+  App.adminPageRenderer();
 
 })(jQuery);
