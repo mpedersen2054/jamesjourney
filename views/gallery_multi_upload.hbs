@@ -1,17 +1,27 @@
+
 <div id="gallery-multi-upload">
 
-  <div class="container">
+  <div class="container admin-form">
 
-    <h2>Upload Multiple Images</h2>
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="page-header">
+          <h1>Upload Multiple Images</h1>
+        </div>
 
-    {{!-- set enctype or else req.files wont exist --}}
-    <form id="gallery-multi-upload-form" method="post" enctype="multipart/form-data">
-      <div class="form-group">
-        {{!-- multiple property allows multiple files to be uploaded --}}
-        <input type="file" name="fileUpload" id="fileUpload" multiple="true">
+        {{!-- set enctype or else req.files wont exist --}}
+        <form id="gallery-multi-upload-form" class="form well" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            {{!-- multiple property allows multiple files to be uploaded --}}
+            <input type="file" name="fileUpload" id="fileUpload" multiple="true">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+      <div class="col-sm-5"></div>
+    </div>
 
   </div>
 

@@ -17,7 +17,7 @@ userRouter.route('/new')
   .post(function(req, res) {
     var user = new User(req.body);
     user.save(function(err, user) {
-      res.redirect('/users')
+      res.redirect('/users');
     });
   })
 

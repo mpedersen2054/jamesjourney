@@ -5,9 +5,11 @@ var bcrypt   = require('bcrypt-nodejs');
 var UserSchema = new mongoose.Schema({
   username:  { type: 'String', required: true, index: { unique: true } },
   password:  { type: 'String', required: true },
-  full_name: { type: 'String' },
-  dateJoined: { type: Date, default: Date.now },
-  thumbnail_url: { type: 'String' }
+  fullname: { type: 'String' },
+  facebookUrl: { type: 'String' },
+  twitterUrl: { type: 'String' },
+  thumbnailUrl: { type: 'String' },
+  dateJoined: { type: Date, default: Date.now }
 });
 
 UserSchema.pre('save', function(next) {

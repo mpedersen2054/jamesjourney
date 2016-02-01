@@ -1,34 +1,43 @@
+
 <div id="new-blog">
 
-  <div class="container">
+  <div class="container admin-form">
 
-    <h2>New Blog</h2>
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="page-header">
+          <h1>New Blog Post</h1>
+        </div>
 
-    <form id="blog-form" action="" method="post">
-      <div class="form-group">
-        <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off">
-      </div>
-      <div class="form-group">
-        <input type="text" name="tags" class="form-control" id="new-blog-tokenfield" value="red,green,blue" />
-      </div>
+        <form id="blog-form" class="form well" action="" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="text" name="tags" class="form-control" id="new-blog-tokenfield" value="red,green,blue" />
+          </div>
 
-      <div class="current-count">
-        <span class="current-count__current">0</span>
-        /
-        <span class="current-count__max">600</span>
-      </div>
-      <div class="form-group">
-        <textarea name="contentPreview" class="form-control content-preview-input" placeholder="Enter the content preview to be shown on /blogs. Max 600 characters"></textarea>
-      </div>
+          <div class="current-count">
+            <span class="current-count__current">0</span>
+            /
+            <span class="current-count__max">600</span>
+          </div>
+          <div class="form-group">
+            <textarea name="contentPreview" class="form-control content-preview-input" placeholder="Enter the content preview to be shown on /blogs. Max 600 characters"></textarea>
+          </div>
 
-      <div class="form-group">
-        <textarea name="content" class="form-control" placeholder="Enter content (markdown!) ..."></textarea>
+          <div class="form-group">
+            <textarea name="content" class="form-control" placeholder="Enter content (markdown!) ..."></textarea>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+      <div class="col-sm-5"></div>
+    </div>
 
   </div>
 

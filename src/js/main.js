@@ -537,40 +537,41 @@
     var $adminLinkSubs   = $('.admin-link__subscribers');
     var $adminLinkImages = $('.admin-link__gallery');
 
-    $adminSections.hide();
+
 
     $adminLinkAll.addClass('active');
-    $adminAll.show();
+    $adminAll.addClass('show');
 
     $adminLinks.on('click', function(e) {
       e.preventDefault();
 
       var $clicked = $(this);
 
+      $adminSections.removeClass('show');
       $adminLinks.removeClass('active');
-      $adminSections.hide();
+      $adminSections.removeClass('show');
       $clicked.addClass('active')
 
 
       if ($clicked[0] == $adminLinkAll[0]) {
         console.log('hello blogs!')
-        $adminAll.show();
+        $adminAll.addClass('show');
       }
       else if ($clicked[0] == $adminLinkBlogs[0]) {
         console.log('hello blogs!')
-        $adminBlogs.show();
+        $adminBlogs.addClass('show');
       }
       else if ($clicked[0] == $adminLinkEvents[0]) {
         console.log('hello events!')
-        $adminEvents.show();
+        $adminEvents.addClass('show');
       }
       else if ($clicked[0] == $adminLinkSubs[0]) {
         console.log('hello subs!')
-        $adminSubs.show();
+        $adminSubs.addClass('show');
       }
       else if ($clicked[0] == $adminLinkImages[0]) {
         console.log('hello images!')
-        $adminImages.show();
+        $adminImages.addClass('show');
       }
     })
 

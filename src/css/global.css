@@ -62,4 +62,17 @@ table a:not(.btn), .table a:not(.btn) {
   top: -20px;
 }
 
+.show {
+  display: block;
+}
+
 .main-cont { position: relative; }
+
+
+/*
+===== for all new_xxx admin only forms
+ */
+
+.admin-form {
+  margin: 120px auto;
+}

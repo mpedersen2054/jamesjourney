@@ -16,8 +16,9 @@
 #admin-page td {
 }
 
-.admin-page__blogs,
-.admin-page__subscribers {}
+.admin-section {
+  display: none;
+}
 
 .admin-page__blogs .submenu,
 .admin-page__subscribers .submenu,

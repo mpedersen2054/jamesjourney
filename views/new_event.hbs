@@ -1,13 +1,15 @@
 
 <div id="new-event">
-  <div class="container">
-    <h2>New Event</h2>
 
-    <hr>
+  <div class="container admin-form">
 
     <div class="row">
-      <div class="col-md-6">
-        <form id="new-event-form" method="post">
+      <div class="col-sm-7">
+        <div class="page-header">
+          <h1>New Event</h1>
+        </div>
+
+        <form id="new-event-form" class="form well" method="post">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Name...">
           </div>
@@ -20,10 +22,12 @@
           <div class="form-group">
             <textarea name="description" class="form-control" placeholder="Message..."></textarea>
           </div>
-          <input type="submit" value="Submit" class="btn btn-default">
+          <input type="submit" value="Submit" class="btn btn-primary">
         </form>
       </div>
+      <div class="col-sm-5"></div>
     </div>
 
   </div>
+
 </div>
