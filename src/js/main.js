@@ -518,6 +518,10 @@
     }
   }
 
+  App.countTo = function(elem) {
+    elem.countTo('toggle');
+  }
+
   root.App = App;
 
   App.typer('.nl-typer');
@@ -533,5 +537,6 @@
   App.imageGallery();
   App.imageSlider(); // for james index
   App.twitterSlider();
+  App.countTo($('.achivements .timer'));
 
 })(jQuery);
