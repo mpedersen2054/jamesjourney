@@ -12,7 +12,7 @@ adminRouter.route('/')
       res.redirect('/login');
     }
     else {
-      console.log(req.adminData)
+      req.adminData.username = req.user.username;
       res.render('admin_page', req.adminData);
     }
   })
