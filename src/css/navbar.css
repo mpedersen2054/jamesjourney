@@ -15,7 +15,7 @@ header {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   width: 100%;
-  padding: 30px 45px 45px;
+  padding: 30px;
   position: fixed;
   top: 0;
   z-index: 10003;
@@ -45,8 +45,8 @@ header #header-logo-link {
   background-size: contain;
   background-repeat: no-repeat;
   float: left;
-  width: 100px;
-  height: 50px;
+  /*width: 100px;*/
+  height: 60px;
   position: relative;
 }
 
@@ -89,7 +89,7 @@ header.with-bg #header-menu-link:active {
 
 header.with-bg {
   background-color: #222;
-  padding: 20px 45px;
+  padding: 10px 40px;
 }
 
 header.with-bg #header-logo-link {

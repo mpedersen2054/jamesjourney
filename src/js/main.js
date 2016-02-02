@@ -1,45 +1,4 @@
 
-// ROUTER IF I WANT IT
-// // initiate router
-// var params = { format: 'html' };
-// var router = new PathParser(params);
-
-// // STATIC ROUTES
-// router.add('/', function() {
-//   console.log('hello index!');
-// });
-
-
-// // BLOG ROUTES
-// router.add('/blog', function() {
-//   console.log('hello blog!')
-// });
-
-// router.add('/blog/:slug', function() {
-//   console.log('hello blog show! ' + params.slug)
-// });
-
-
-// // EVENT ROUTES
-// router.add('/events', function() {
-//   console.log('hello events!')
-// });
-
-// router.add('/events/:slug', function() {
-//   console.log('hello events show! ' + params.slug)
-// });
-
-
-// // GALLERY ROUTES
-// router.add('/gallery', function() {
-//   console.log('hello gallery!')
-// });
-
-
-// // run the router with the current url
-// router.run(window.location.pathname);
-
-
 (function($) {
 
   var root = this;
@@ -102,11 +61,11 @@
       if ($(this).scrollTop() > 20) {
         $navbar.addClass('with-bg');
         $menu.css({ color: '#ddd' })
-        $logo.css({ opacity: '0.8' });
+        $logo.css({ opacity: '0.8', height: '40px' });
       } else {
         $navbar.removeClass('with-bg');
         $menu.css({ color: '#999' })
-        $logo.css({ opacity: '0' })
+        $logo.css({ opacity: '0', height: '60px' })
       }
     });
   }
@@ -538,15 +497,19 @@
     var $adminLinkImages = $('.admin-link__gallery');
 
 
-
+    // have the `all` be the initial state
     $adminLinkAll.addClass('active');
     $adminAll.addClass('show');
+
 
     $adminLinks.on('click', function(e) {
       e.preventDefault();
 
+      // .admin-link__XXX
       var $clicked = $(this);
 
+      // remove all showed and add `active`
+      // to the clicked link
       $adminSections.removeClass('show');
       $adminLinks.removeClass('active');
       $adminSections.removeClass('show');
@@ -579,18 +542,17 @@
 
   App.googleMap = function() {
 
-    $(window).load(function() {
-      // body...
+    // $(window).load(function() {
 
       // set your google maps parameters
-      var $latitude = 42.090297, //If you unable to find latitude and longitude of your address. Please visit http://www.latlong.net/convert-address-to-lat-long.html you can easily generate.
+      var $latitude = 42.090297,
         $longitude = -88.07598200000001,
         $map_zoom = 12; /* ZOOM SETTING */
 
-      // google map custom marker icon
+      // custom marker
       // var $marker_url = '../assets/img/map-marker.png';
 
-      // we define here the style of the map
+      // pasted the styled maps definition
       var style = [{"featureType":"all","elementType":"all","stylers":[{"saturation":"39"},{"lightness":"11"},{"color":"#99dee9"}]},{"featureType":"all","elementType":"geometry.fill","stylers":[{"hue":"#7d00ff"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":20}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"color":"#cd3c3c"},{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"color":"#613737"}]},{"featureType":"landscape","elementType":"labels.icon","stylers":[{"color":"#f7c770"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"color":"#8ed8e1"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"color":"#8ed8e1"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#8ed8e1"},{"lightness":21}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#08b7be"}]},{"featureType":"poi.medical","elementType":"labels.text.fill","stylers":[{"color":"#59b1b5"}]},{"featureType":"poi.medical","elementType":"labels.icon","stylers":[{"color":"#f2be3b"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"lightness":21}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#723f83"},{"weight":"2"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"},{"weight":"1"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":17},{"color":"#f2be3b"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"lightness":17},{"color":"#f5f5f5"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#641c7c"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
 
       // set google map options
@@ -616,7 +578,7 @@
         visible: true,
         // icon: $marker_url
       });
-    })
+    // })
   }
 
   root.App = App;
