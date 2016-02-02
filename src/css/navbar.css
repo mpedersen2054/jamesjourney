@@ -15,7 +15,7 @@ header {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   position: fixed;
   top: 0;
   z-index: 10003;
@@ -45,7 +45,6 @@ header #header-logo-link {
   background-size: contain;
   background-repeat: no-repeat;
   float: left;
-  /*width: 100px;*/
   height: 60px;
   position: relative;
 }
@@ -88,7 +87,7 @@ header.with-bg #header-menu-link:active {
 }
 
 header.with-bg {
-  background-color: #222;
+  background-color: #252735;
   padding: 10px 40px;
 }
 
@@ -106,7 +105,7 @@ header.with-bg #header-logo-link {
   padding-top: 100px;
   display: none;
 
-  background-color: #222;
+  background-color: #252735;
 }
 
 #nav-menu .wrap {
