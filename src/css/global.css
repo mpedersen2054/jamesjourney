@@ -45,10 +45,10 @@ table a:not(.btn), .table a:not(.btn) {
   -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
 
-.bigger-btn {
-  font-size: 18px;
-  font-weight: 600;
-  padding: 15px 30px;
+.btn.btn-primary {
+  background-color: #00aeef;
+  border: none;
+  outline: none;
 }
 
 
