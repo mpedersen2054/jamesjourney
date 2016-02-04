@@ -20,6 +20,7 @@ header {
   top: 0;
   z-index: 10003;
   background-color: transparent;
+  /*box-shadow: 0px 0px 5px 2px #e8e8e8;*/
   color: #999;
 }
 
@@ -87,7 +88,7 @@ header.with-bg #header-menu-link:active {
 }
 
 header.with-bg {
-  background-color: #252735;
+  background-color: #424242;
   padding: 10px 40px;
 }
 
@@ -105,7 +106,7 @@ header.with-bg #header-logo-link {
   padding-top: 100px;
   display: none;
 
-  background-color: #252735;
+  background-color: #424242;
 }
 
 #nav-menu .wrap {
