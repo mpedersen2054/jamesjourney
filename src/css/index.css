@@ -16,17 +16,40 @@
   */
 
 #jumbotron {
-  height: 56em;
+  height: 50em;
   text-align: center;
+  background: url(/img/jumbo_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #jumbotron .jjlogo {
-  max-width: 520px;
-  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  margin: 140px auto;
+  background-color: #fff;
+  background-image: url(https://lh5.googleusercontent.com/-hCm2725zqbw/VtzEVUMUYJI/AAAAAAAAAIQ/muX3J6HTFp4/s451-no/image_background-02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 6px solid #666;
 }
 
 #jumbotron .jjlogo img {
-  margin-top: 12em;
+  position: relative;
+  right: 5px;
+  top: 80px;
+  width: 175px;
+  height: 175px;
+}
+
+#jumbotron .jjlogo h1 {
+  position: relative;
+  color: #6d6d6d;
+  letter-spacing: -2px;
+  top: 90px;
+  font-weight: 400;
+  font-size: 50px;
 }
 
 /* jumbo subhead */
