@@ -21,17 +21,19 @@
   background: url(/img/jumbo_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: fixed;
 }
 
 #jumbotron .jjlogo {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  margin: 140px auto;
+  margin: 180px auto;
   background-color: #fff;
   background-image: url(https://lh5.googleusercontent.com/-hCm2725zqbw/VtzEVUMUYJI/AAAAAAAAAIQ/muX3J6HTFp4/s451-no/image_background-02.png);
   background-repeat: no-repeat;
   background-size: cover;
+  // background-position: fixed;
   border: 6px solid #666;
 
 }
@@ -53,28 +55,6 @@
   font-size: 50px;
 }
 
-/* jumbo subhead */
-.short-description p {
-  margin-top: 40px;
-  padding: 0 12em;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 300;
-  color: #19728f;
-  visibility: visible;
-  animation-name: fadeInLeft;
-
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.short-description .small-line {
-  border: 1px solid #19728f;
-}
-
-
 /*
 ========= EDS preview
  */
@@ -82,7 +62,7 @@
 #eds-preview {
   background-color: #2e738f;
   color: #fff;
-  padding: 5em 1em 10em;
+  padding: 6em 1em 10em;
 }
 
 #eds-preview .head {
@@ -93,21 +73,22 @@
 #eds-preview .head h2,
 #eds-preview .head h3 {
   text-align: center;
-  max-width: 610px;
+  max-width: 800px;
 }
 
 #eds-preview .head h2 {
   color: #0a3a4b;
-  font-size: 300px;
-  font-weight: 400;
+  font-size: 252px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 #eds-preview .head h3 {
   color: #c4ecfa;
+  font-weight: 400;
   position: relative;
   bottom: 0.5em;
-  font-size: 50px;
+  font-size: 36px;
   text-transform: capitalize;
 }
 
@@ -177,13 +158,14 @@
 #about-james .head .small-header {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 30px;
+  font-weight: 700;
   color: #222;
 }
 
 #about-james .head h2 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 400;
   color: #00aeef;
 }
 
@@ -233,7 +215,8 @@
 }
 
 #events-preview h2 {
-  font-size: 32px;
+  text-transform: uppercase;
+  font-size: 48px;
   margin-bottom: 10px;
   margin-bottom: 60px;
   font-weight: 400;
