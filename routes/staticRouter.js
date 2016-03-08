@@ -15,7 +15,7 @@ var authPassport = passport.authenticate('local', {
 
 staticRouter.route('/')
   .get(function(req, res) {
-    Featured.findFeaturedBlogs(8, function(err, blogs) {
+    Featured.findFeaturedBlogs(6, function(err, blogs) {
       if (err) return next(err);
 
       EEvent.find({}, function(err, events) {

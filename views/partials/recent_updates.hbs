@@ -1,47 +1,26 @@
 
 <div id="recent-updates">
-  <div class="container">
-    <div class="title">
-      <h2>Recent Updates</h2>
-      {{!-- {{blogs.length}} --}}
-      <div class="small-line"></div>
-    </div>
-  </div>
-
   <div class="container-fluid">
-    <div class="row updates">
+    <div class="head">
+      <h2>Recent Updates</h2>
+    </div>
 
+    <div class="row">
       {{#each blogs}}
-
-        <div class="col-md-3 update-container">
-          <div class="update" style="background: no-repeat url({{coverImage}})">
-            <div class="wrapper"> <!-- for overlay -->
-              <div> <!-- to pull contents to bottom -->
-                <div class="tags">
-                  {{#each tags}}
-                  <div class="tag label label-info">{{this}}</div>
-                  {{/each}}
-                </div>
-                {{!-- <br> --}}
-                <a href="/blog/{{slug}}" class="post-title">{{title}}</a>
-                {{!-- <div class="descr">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sint cumque tempora eaque consequuntur sapiente, nam iste. Facilis tempora perferendis placeat, eos?
-                </div> --}}
-                <p>
-                  <span class="poster-name">
-                    <img src="//placehold.it/100x100" class="img-circle poster-image">Donald Duck
-                  </span>
-                  /
-                  <span class="poster-date">{{formattedDate}}</span>
-                </p>
-              </div>
+        <div class="col-md-4 update">
+          <a href="#">
+            <div class="bg">
+              <img src="{{coverImage}}" alt="" class="saturated-img">
+              <img src="{{coverImage}}" alt="" class="desaturated-img">
             </div>
-          </div>
+            <div class="content">
+              <p class="date">posted on 01/21/16</p>
+              <p class="title">{{title}}</p>
+              <p class="author">by Donald Duck</p>
+            </div>
+          </a>
         </div>
-
       {{/each}}
-
     </div>
   </div>
-
 </div>
