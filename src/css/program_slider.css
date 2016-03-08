@@ -84,11 +84,11 @@
   background: #000;
   color: #eee;
 
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
+  // filter: grayscale(100%);
+  // -webkit-filter: grayscale(100%);
+  // -moz-filter: grayscale(100%);
+  // -ms-filter: grayscale(100%);
+  // -o-filter: grayscale(100%);
 }
 
 #programs-slider a.program:nth-child(1) { left: 0%; border-left: none; }
