@@ -73,6 +73,7 @@ table a:not(.btn), .table a:not(.btn) {
 ===== for all new_xxx admin only forms
  */
 
-.admin-form {
+.admin-form,
+#subscribe {
   margin: 120px auto;
 }

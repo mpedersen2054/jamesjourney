@@ -1,0 +1,13 @@
+
+
+<div id="subscribed">
+  <div class="container">
+    {{#if success}}
+      {{!-- wasnt on list, show welcoem --}}
+      <h1>Thanks {{name}}!, You are now subscribed to our mailing list!</h1>
+    {{else}}
+      {{!-- already on list --}}
+      <h1>Sorry, the email: {{email}} is already on our list</h1>
+    {{/if}}
+  </div>
+</div>
