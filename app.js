@@ -36,25 +36,25 @@ app.use(flash());
 require('./config/passport')(app, passport)
 
 // ROUTES
-var staticRouter    = require('./routes/staticRouter.js');
-var adminRouter     = require('./routes/adminRouter.js');
-var blogRouter      = require('./routes/blogRouter.js');
-var galleryRouter   = require('./routes/galleryRouter.js');
-var messageRouter   = require('./routes/messageRouter.js');
-var eventRouter     = require('./routes/eventRouter.js');
-var galleryRouter   = require('./routes/galleryRouter.js');
-var userRouter      = require('./routes/userRouter.js');
+var staticRouter      = require('./routes/staticRouter.js');
+var adminRouter       = require('./routes/adminRouter.js');
+var blogRouter        = require('./routes/blogRouter.js');
+var galleryRouter     = require('./routes/galleryRouter.js');
+var eventRouter       = require('./routes/eventRouter.js');
+var galleryRouter     = require('./routes/galleryRouter.js');
+var userRouter        = require('./routes/userRouter.js');
+var subscribersRouter = require('./routes/subscribersRouter');
 
 // middleware to attach all queries onto req.adminData
 var adminMiddleware = require('./middleware/adminData')(adminRouter);
 
-app.use('/',         staticRouter);
-app.use('/blog',     blogRouter);
-app.use('/gallery',  galleryRouter);
-app.use('/messages', messageRouter);
-app.use('/events',   eventRouter);
-app.use('/gallery',  galleryRouter);
-app.use('/users',    userRouter);
+app.use('/',            staticRouter);
+app.use('/blog',        blogRouter);
+app.use('/gallery',     galleryRouter);
+app.use('/events',      eventRouter);
+app.use('/gallery',     galleryRouter);
+app.use('/users',       userRouter);
+app.use('/subscribers', subscribersRouter);
 
 // middleware then adminRouter
 app.use(adminMiddleware);
