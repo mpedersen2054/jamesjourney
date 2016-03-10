@@ -27,15 +27,13 @@
 
           <div class="alert alert-success alert-dismissible register-success" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Success!</strong> You've successfully registered. Check your email for updates about this event.
           </div>
 
           <div class="alert alert-danger alert-dismissible register-error" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Warning!</strong> There was a problem registering you. Please try again or email us at info@james4eds.com.
           </div>
 
-          <form method="POST" id="event-register-form">
+          <form method="POST" id="event-register-form" class="form">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -56,7 +54,8 @@
             </div>
 
             {{!-- hidden slug --}}
-            <input type="hidden" value="{{event.slug}}" name="{{event.slug}}" class="hidden-slug">
+            <input type="hidden" value="{{event.slug}}" name="slug" class="hidden-slug">
+            <input type="hidden" value="{{event._id}}" name="event_id" class="hidden-slug">
 
             <input type="submit" value="Register" class="btn btn-default">
           </form>

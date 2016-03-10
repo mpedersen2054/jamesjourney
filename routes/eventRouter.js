@@ -1,5 +1,7 @@
-var eventRouter = require('express').Router();
-var EEvent      = require('../db/event');
+var eventRouter      = require('express').Router();
+var EEvent           = require('../db/event');
+var mailchimpWrapper = require('../lib/mailchimpWrapper');
+var Subscriber       = require('../db/subscribers');
 
 eventRouter.route('/')
   .get(function(req, res) {
@@ -37,6 +39,7 @@ eventRouter.route('/:slug')
   .put(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       var body = req.body;
+      console.log(body)
       ev.name = body.name;
       ev.date = new Date(body.date);
       ev.location = body.location;
@@ -79,18 +82,72 @@ eventRouter.route('/:slug/register')
 
     // find the event by slug
     EEvent.findOne({ 'slug': data.slug }, function(err, ev) {
-      if (err) throw err;
+      if (err) { console.log(err); };
       if (ev) {
-        // delete slug, not needded
-        delete data.slug;
-        // push the new attendee into the
-        // array of attendees subdocs
-        data.created_at = new Date();
-        ev.attendees.push(data);
-        ev.save(function(err) {
-          if (err) return console.log(err);
-          return res.send(true);
-        });
+        // maps ev.attendees to return the email, then uses indexOf to see if the email
+        // is in the ev.attendees array
+        var pos = ev.attendees.map(function(e) { return e.email }).indexOf(data.email);
+
+        if (pos >= 0) {
+          // return and do nothing
+          console.log('this is already in the array!');
+          res.send({ success: false, message: 'You are already registered for this event.' });
+        }
+        else {
+          console.log('not in array yet!');
+          mailchimpWrapper.addUser(data, function(err2, resp) {
+            if (err2 || resp.status === 400 || resp.title === 'Member Exists') {
+              // user is on list, not subscribed
+              //
+              console.log('already on list, not subscribed to event');
+
+              Subscriber.findOne({ email: data.email }, function(err, sub) {
+                if (err || !sub) { console.log('error!', err) }
+
+                else {
+                  // see if events id is already in subs events_attending array
+                  var pos2 = sub.events_attending.map(function(e) { return e._id }).indexOf(ev._id);
+
+                  // if event in sub.events_attending not already in array
+                  if (pos2 < 0) {
+                    sub.events_attending.push(ev._id);
+                    sub.save(function(err) {
+                      if (err) { console.log(err) }
+                      console.log('successfully added event to sub.events.attending');
+                    })
+                  }
+                  ev.attendees.push({ _id: sub._id, email: sub.email });
+                  ev.save(function(err) {
+                    if (err) { console.log(err) };
+                    console.log('successfully saved ev.attendees');
+                  });
+                  res.send({ success: true, message: 'Successfully registered for event.' })
+                }
+              })
+            }
+            else {
+              // sub not in list or subscribed to event
+              console.log('hasnt subscribed, not on the list');
+              Subscriber.findOne({ email: resp.email }, function(err, sub) {
+                if (err) { console.log('error!', err) }
+
+                ev.attendees.push({ _id: sub._id, email: sub.email });
+                sub.events_attending.push(ev._id);
+
+                ev.save(function(err) {
+                  if (err) { console.log(err) };
+                  console.log('successfully saved ev.attendees');
+                });
+                sub.save(function(err) {
+                  if (err) { console.log(err) }
+                  console.log('successfully added event to sub.events.attending');
+                });
+
+                res.send({ success: true, message: 'Successfully registered for event.' })
+              })
+            }
+          })
+        }
       }
     });
   });

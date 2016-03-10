@@ -120,9 +120,14 @@
     var $regSuccess   = $('.register-success');
     var $regError     = $('.register-error');
 
-    function resetForm(wasSuccess) {
-      if (wasSuccess) {
+    function resetForm(result) {
+      if (result.success) {
+        $regSuccess.append('<div>'+result.message+'</div>');
         $regSuccess.show();
+      }
+      else {
+        $regError.append('<div>'+result.message+'</div>');
+        $regError.show();
       }
       $fName.val('');
       $lName.val('');
@@ -145,7 +150,7 @@
 
       $.post('/events/'+data.slug+'/register', data, function(result) {
         // call func based on weather or not res.send(true)
-        result ? resetForm(true) : resetForm(false);
+        result ? resetForm(result) : resetForm(result);
       });
 
     });

@@ -2,18 +2,20 @@ var mongoose = require('mongoose');
 var slugify  = require('../lib/slugify.js');
 
 var AttendeeSchema = new mongoose.Schema({
-  f_name:    String,
-  l_name:    String,
-  full_name: String,
-  email:     String,
-  message:   String,
-  created_at: { type: Date, default: Date.now }
+  f_name:     String,
+  l_name:     String,
+  full_name:  String,
+  email:      String,
+  message:    String,
+  mcid:       String,
+  added_on: { type: Date, default: Date.now }
 });
 
 var EventSchema = new mongoose.Schema({
   name:          { type: String },
   slug:          { type: String },
   date:          { type: Date, default: Date.now },
+  updated_at:    { type: Date },
   formattedDate: { type: String },
   location:      { type: String },
   category:      { type: String, default: 'event' },
