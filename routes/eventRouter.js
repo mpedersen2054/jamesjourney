@@ -35,7 +35,7 @@ eventRouter.route('/:slug')
       res.render('show_event', { event: ev });
     });
   })
-  // UPDATE EVENT
+  // UPDATE EVENT // should be put into an admin route
   .put(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       var body = req.body;
@@ -98,14 +98,13 @@ eventRouter.route('/:slug/register')
           mailchimpWrapper.addUser(data, function(err2, resp) {
             if (err2 || resp.status === 400 || resp.title === 'Member Exists') {
               // user is on list, not subscribed
-              //
               console.log('already on list, not subscribed to event');
 
               Subscriber.findOne({ email: data.email }, function(err, sub) {
                 if (err || !sub) { console.log('error!', err) }
 
                 else {
-                  // see if events id is already in subs events_attending array
+                  // see if events id is already in sub.events_attending array
                   var pos2 = sub.events_attending.map(function(e) { return e._id }).indexOf(ev._id);
 
                   // if event in sub.events_attending not already in array
@@ -116,7 +115,14 @@ eventRouter.route('/:slug/register')
                       console.log('successfully added event to sub.events.attending');
                     })
                   }
-                  ev.attendees.push({ _id: sub._id, email: sub.email });
+                  ev.attendees.push({
+                    _id: sub._id,
+                    email: sub.email,
+                    message: data.message,
+                    f_name: data.f_name,
+                    l_name: data.l_name,
+                    full_name: data.f_name+' '+data.l_name
+                  });
                   ev.save(function(err) {
                     if (err) { console.log(err) };
                     console.log('successfully saved ev.attendees');
@@ -128,10 +134,20 @@ eventRouter.route('/:slug/register')
             else {
               // sub not in list or subscribed to event
               console.log('hasnt subscribed, not on the list');
+              // in the mailchimpWrapper it will create a new sub, so here
+              // we just find it instead of creating a new one
               Subscriber.findOne({ email: resp.email }, function(err, sub) {
                 if (err) { console.log('error!', err) }
 
-                ev.attendees.push({ _id: sub._id, email: sub.email });
+                ev.attendees.push({
+                  _id: sub._id,
+                  email: sub.email,
+                  message: data.message,
+                  f_name: data.f_name,
+                  l_name: data.l_name,
+                  full_name: data.f_name+' '+data.l_name
+                });
+
                 sub.events_attending.push(ev._id);
 
                 ev.save(function(err) {
@@ -143,10 +159,10 @@ eventRouter.route('/:slug/register')
                   console.log('successfully added event to sub.events.attending');
                 });
 
-                res.send({ success: true, message: 'Successfully registered for event.' })
-              })
+                res.send({ success: true, message: 'Successfully registered for event.' });
+              });
             }
-          })
+          });
         }
       }
     });
