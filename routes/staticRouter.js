@@ -51,11 +51,6 @@ staticRouter.route('/our-work')
     res.render('our_work');
   })
 
-staticRouter.route('/donate')
-  .get(function(req, res) {
-    res.render('donate');
-  })
-
 staticRouter.route('/contact-us')
   .get(function(req, res) {
     res.render('contact_us');

@@ -546,8 +546,9 @@
   }
 
   App.googleMap = function() {
-
-    // $(window).load(function() {
+    // required so error doesnt show, should eventually
+    // put all calls to App inside .load
+    $(window).load(function() {
 
       // set your google maps parameters
       var $latitude = 42.090297,
@@ -583,8 +584,13 @@
         visible: true,
         icon: $marker_url
       });
-    // })
+    })
   }
+
+  App.submitDonation = function() {
+
+  }
+
 
   root.App = App;
 
@@ -604,6 +610,7 @@
   App.countTo($('.achivements .timer'));
   App.adminPageRenderer();
   App.googleMap();
+  App.submitDonation();
 
 })(jQuery);
 

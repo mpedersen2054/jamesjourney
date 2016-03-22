@@ -44,6 +44,7 @@ var eventRouter       = require('./routes/eventRouter.js');
 var galleryRouter     = require('./routes/galleryRouter.js');
 var userRouter        = require('./routes/userRouter.js');
 var subscribersRouter = require('./routes/subscribersRouter');
+var donateRouter      = require('./routes/donateRouter');
 
 // middleware to attach all queries onto req.adminData
 var adminMiddleware = require('./middleware/adminData')(adminRouter);
@@ -55,6 +56,7 @@ app.use('/events',      eventRouter);
 app.use('/gallery',     galleryRouter);
 app.use('/users',       userRouter);
 app.use('/subscribers', subscribersRouter);
+app.use('/donate',      donateRouter);
 
 // middleware then adminRouter
 app.use(adminMiddleware);
