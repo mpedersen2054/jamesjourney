@@ -144,7 +144,9 @@
 #about-james {
   position: relative;
   background-color: #fff;
-  padding: 6em 0 8em;
+  padding: 6em 0;
+  // height: 52em;
+  min-height: 52em;
   // min-height: 48em;
   color: #555;
 }
