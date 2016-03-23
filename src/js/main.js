@@ -4,6 +4,8 @@
   var root = this;
   App = root.App || {};
 
+  Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
+
   App.typer = function(elem) {
     $(elem).typed({
       strings: [
@@ -588,7 +590,34 @@
   }
 
   App.submitDonation = function() {
+    var $donateForm = $('#donate-form');
 
+    $donateForm.on('submit', function(e) {
+      e.preventDefault();
+      var $form = $(this);
+      $form.find('.btn').prop('disabled', true);
+      // create the stripeToken
+      Stripe.card.createToken($form, stripeResponseHandler);
+    })
+
+    // callback handler that either inserts errors or attaches
+    // stripeToken to hidden input, then submits form
+    function stripeResponseHandler(status, response) {
+      var $form = $donateForm;
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        // response contains id and card, which contains additional card details
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    };
   }
 
 

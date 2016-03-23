@@ -16,7 +16,7 @@
 
   <div class="short-description">
     <div class="container">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit. Qui molestiae quos aperiam architecto! Beatae quos eaque, quisquam ad illo exercitationem repudiandae reiciendis aperiam maxime quibusdam, nulla ullam. Ipsam repudiandae sit laboriosam. Repellat, accusamus impedit optio sint nemo facilis, iure qui? Nihil, tenetur!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit.
     </div>
   </div>
 
@@ -32,34 +32,43 @@
               Your Donation
             </div>
             <div class="panel-body">
-              <form action="" class="form">
+              {{!-- handle errors of donating --}}
+              <div class="donate-errors"></div>
+              <form class="form" name="donate-form" id="donate-form" method="POST">
                 <div class="form-group">
-                  <label for="name-on-card">Email Address</label>
-                  <input type="email" class="form-control" id="email-address" name="email-address">
+                  <label for="emailAddress">Email Address</label>
+                  <input type="email" class="form-control" id="emailAddress" name="emailAddress">
                 </div>
                 <div class="form-group">
-                  <label for="name-on-card">Name on card</label>
-                  <input type="text" class="form-control" id="name-on-card" name="name-on-card">
+                  <label for="nameOnCard">Name on card</label>
+                  <input type="text" class="form-control" id="nameOnCard" name="nameOnCard">
                 </div>
                 <div class="form-group">
-                  <label for="name-on-card">Card Number</label>
-                  <input type="text" class="form-control" id="card-number" name="card-number">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="tel" id="cardNumber" name="cardNumber" class="form-control card-number cc-number" data-stripe="number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••">
                 </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label for="expiration-date">Expiration</label>
-                      <input type="month" class="form-control" id="card-expiration-date" name="card-expiration-date">
-                    </div>
-                    <div class="col-md-4 col-md-offset-2">
-                      <div class="form-group">
-                        <label for="cvc-code">Cvc Code</label>
-                        <input type="text" class="form-control" id="cvc-code" name="cvc-code">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cardExpiration">Expiration</label>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <input type="text" size="2" id="expMonth" name="expMonth" class="form-control" placeholder="MM" data-stripe="exp_month">
+                        </div>
+                        <div class="col-md-8">
+                          <input type="text" size="4" id="expYear" name="expYear" class="form-control" placeholder="YYYY" data-stripe="exp_year">
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <div class="col-md-4 col-md-offset-2">
+                    <div class="form-group">
+                      <label for="cvcCode">Cvc Code</label>
+                      <input type="text" class="form-control" id="cvcCode" name="cvcCode" data-stripe="cvc">
+                    </div>
+                  </div>
                 </div>
-                <input type="submit" class="btn btn-primary btn-lg">
+                <button type="submit" class="btn btn-primary btn-lg">Donate!</button>
               </form>
             </div>
           </div>
