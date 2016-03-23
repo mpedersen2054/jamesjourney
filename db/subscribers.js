@@ -8,7 +8,8 @@ var SubscriberSchema = new mongoose.Schema({
   email: String,
   added_on: { type: Date, default: Date.now },
   updated_on: { type: Date },
-  events_attending: [mongoose.Schema.Types.ObjectId]
+  events_attending: [mongoose.Schema.Types.ObjectId],
+  donations: [mongoose.Schema.Types.ObjectId]
 });
 
 module.exports = mongoose.model('Subscriber', SubscriberSchema);

@@ -1,4 +1,19 @@
 
 .donate-form-container {
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+.exp-col {
+  padding: 0 5px;
+}
+
+.exp-col:first-child {
+  padding-left: 15px;
+}
+
+/* SMALL SCREEN */
+@media (max-width: 62em) {
+  .exp-col {
+    padding: 0 15px;
+  }
 }

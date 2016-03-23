@@ -6,6 +6,7 @@
 .jumbohead {
   position: relative;
   height: 26em;
+  max-width: 100%;
   /*background: url('https://s3.amazonaws.com/jamesbucket123/staticassets/our-work-nonsat.jpg');
   background-position: 90% 80%;
   background-repeat: no-repeat;
@@ -21,7 +22,8 @@
 
 #our-work .jumbohead,
 #donate .jumbohead,
-#contact-us .jumbohead {
+#contact-us .jumbohead,
+#donate .jumbohead {
   background: url('https://s3.amazonaws.com/jamesbucket123/staticassets/our-work-nonsat.jpg');
   background-position: 90% 80%;
   background-repeat: no-repeat;
@@ -32,7 +34,7 @@
 .jumbohead .head,
 .jumbohead .head {
   position: relative;
-  width: 600px;
+  max-width: 600px;
   margin: 0px auto;
   text-align: center;
   bottom: -180px;

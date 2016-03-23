@@ -14,12 +14,6 @@
 
   </div>
 
-  <div class="short-description">
-    <div class="container">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit.
-    </div>
-  </div>
-
   <br>
 
   <div class="donate-form-container">
@@ -52,19 +46,19 @@
                     <div class="form-group">
                       <label for="cardExpiration">Expiration</label>
                       <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 exp-col form-group">
                           <input type="text" size="2" id="expMonth" name="expMonth" class="form-control" placeholder="MM" data-stripe="exp_month">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-6 exp-col form-group">
                           <input type="text" size="4" id="expYear" name="expYear" class="form-control" placeholder="YYYY" data-stripe="exp_year">
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 col-md-offset-2">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="cvcCode">Cvc Code</label>
-                      <input type="text" class="form-control" id="cvcCode" name="cvcCode" data-stripe="cvc">
+                      <input type="text" class="form-control" id="cvcCode" name="cvcCode" data-stripe="cvc" placeholder="XXXX">
                     </div>
                   </div>
                 </div>
@@ -73,10 +67,18 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6"></div>
+
+        <div class="col-md-6">
+          <div class="short-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit.
+          </div>
+        </div>
+
       </div>
     </div>
 
   </div>
+
+  {{> subscribe_block}}
 
 </div>
