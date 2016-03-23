@@ -372,7 +372,7 @@
   bottom: 0;
   margin: 120px 0 0;
   padding: 20px;
-  border-radius: 8px;
+  // border-radius: 8px;
   min-width: 120px;
   max-width: 280px;
   color: #aaa;
