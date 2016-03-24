@@ -21,11 +21,11 @@
   background: url(/img/jumbo_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: fixed;
+  // background-position: fixed;
 }
 
 #jumbotron .jjlogo {
-  width: 500px;
+  max-width: 500px;
   height: 500px;
   border-radius: 50%;
   margin: 180px auto;

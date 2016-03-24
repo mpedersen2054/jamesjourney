@@ -361,7 +361,7 @@
         item = $("li.slider__item[data-testing='"+count+"']");
         item.addClass('show');
 
-      }, 3000);
+      }, 5000);
     }
 
     function buildSliderDom(imgLinks, callback) {
@@ -495,6 +495,7 @@
     var $adminEvents     = $('.admin-section__events');
     var $adminSubs       = $('.admin-section__subscribers');
     var $adminImages     = $('.admin-section__gallery');
+    var $adminDonations     = $('.admin-section__donations');
 
     var $adminLinks      = $('.admin-link');
     var $adminLinkAll    = $('.admin-link__all');
@@ -502,6 +503,7 @@
     var $adminLinkEvents = $('.admin-link__events');
     var $adminLinkSubs   = $('.admin-link__subscribers');
     var $adminLinkImages = $('.admin-link__gallery');
+    var $adminLinkDonations = $('.admin-link__donations');
 
 
     // have the `all` be the initial state
@@ -542,6 +544,10 @@
       else if ($clicked[0] == $adminLinkImages[0]) {
         console.log('hello images!')
         $adminImages.addClass('show');
+      }
+      else if ($clicked[0] == $adminLinkDonations[0]) {
+        console.log('hello donations!')
+        $adminDonations.addClass('show');
       }
     })
 

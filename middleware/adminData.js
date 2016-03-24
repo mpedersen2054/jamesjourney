@@ -1,8 +1,9 @@
-var Blog        = require('../db/blog');
-var EEvent      = require('../db/event');
-var Gallery     = require('../db/gallery');
-var mcapi       = require('mailchimp-api');
-var mc          = new mcapi.Mailchimp('a6eec20e3398ba1010f1243598ee34cb-us11');
+var Blog     = require('../db/blog');
+var EEvent   = require('../db/event');
+var Gallery  = require('../db/gallery');
+var Donation = require('../db/donation');
+var mcapi    = require('mailchimp-api');
+var mc       = new mcapi.Mailchimp('a6eec20e3398ba1010f1243598ee34cb-us11');
 
 function queryAll(callback) {
   Blog.find({}, function(err, blogs) {
@@ -13,18 +14,24 @@ function queryAll(callback) {
 
       Gallery.find({}, function(err, galleries) {
         if (err) return callback(err, null);
-        // get mailchimp subscribers
-        mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
-          var adminData = {
-            blogs: blogs,
-            events: events,
-            images: galleries,
-            mcd: data.data,
-            isAdminPage: true
-          }
 
-          callback(null, adminData);
-        });
+        Donation.find({}, function(err, donations) {
+          if (err) return callback(err, null);
+
+          // get mailchimp subscribers
+          mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
+            var adminData = {
+              blogs:       blogs,
+              events:      events,
+              images:      galleries,
+              mcd:         data.data,
+              donations:   donations,
+              isAdminPage: true
+            }
+
+            callback(null, adminData);
+          });
+        })
       });
     });
   });

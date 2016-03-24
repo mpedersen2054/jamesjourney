@@ -149,6 +149,9 @@
         <li class="admin-link admin-link__gallery">
           <a href="#"><i class="fa fa-fw fa-desktop"></i> Gallery</a>
         </li>
+        <li class="admin-link admin-link__donations">
+          <a href="#"><i class="fa fa-fw fa-desktop"></i> Donations</a>
+        </li>
         {{!-- <li>
           <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
           <ul id="demo" class="collapse">
@@ -182,6 +185,9 @@
         </div>
         <div class="col-md-12 admin-section admin-section__gallery">
           {{> admin_page_gallery images=images }}
+        </div>
+        <div class="col-md-12 admin-section admin-section__donations">
+          {{> admin_page_donations donations=donations }}
         </div>
       </div>
       <!-- /.row -->
