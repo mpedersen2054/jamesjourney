@@ -361,7 +361,7 @@
         item = $("li.slider__item[data-testing='"+count+"']");
         item.addClass('show');
 
-      }, 5000);
+      }, 6000);
     }
 
     function buildSliderDom(imgLinks, callback) {
@@ -406,16 +406,9 @@
 
     // returns new img element with src=imgLink
     function newImage(imgLink, isThumbnail) {
-      // var width  = isThumbnail ? '40px' : '100%';
-      // var height = isThumbnail ? '40px' : '100%';
-      // var klass  = isThumbnail ? 's-img-thumb' : 's-img';
-
       return $('<img/>', {
         'src': imgLink,
         'class': 's-img'
-        // 'data-test': num
-        // width: widt, ih,
-        // height: height, i,
       });
     }
 
@@ -526,27 +519,21 @@
 
 
       if ($clicked[0] == $adminLinkAll[0]) {
-        console.log('hello blogs!')
         $adminAll.addClass('show');
       }
       else if ($clicked[0] == $adminLinkBlogs[0]) {
-        console.log('hello blogs!')
         $adminBlogs.addClass('show');
       }
       else if ($clicked[0] == $adminLinkEvents[0]) {
-        console.log('hello events!')
         $adminEvents.addClass('show');
       }
       else if ($clicked[0] == $adminLinkSubs[0]) {
-        console.log('hello subs!')
         $adminSubs.addClass('show');
       }
       else if ($clicked[0] == $adminLinkImages[0]) {
-        console.log('hello images!')
         $adminImages.addClass('show');
       }
       else if ($clicked[0] == $adminLinkDonations[0]) {
-        console.log('hello donations!')
         $adminDonations.addClass('show');
       }
     })

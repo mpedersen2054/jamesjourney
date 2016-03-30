@@ -197,13 +197,19 @@
 }
 
 .slider__item.show {
-  display: block;
-  /*float: left;*/
+  /*float: left;*/;
+  opacity: 1;
+  height: auto;
+  transition: all 1s ease-in-out;
 }
 
 .slider__item {
-  display: none;
+  display: block;
   margin: 0 auto;
+  transition: all 2s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 #slider .s-img {
