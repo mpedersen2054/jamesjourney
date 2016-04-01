@@ -80,15 +80,15 @@ blogRouter.route('/:slug')
     var slug = req.params.slug;
 
     Blog.findOne({ 'slug': slug }, function(err, blog) {
-
+      if (err) console.log(err);
       // error handle here
+      if (!blog) { return res.status(404).render('404'); }
 
       // find the featured
       Featured.findFeaturedBlogs(4, function(err, featured) {
         if(err) console.log(err);
-        if (!featured || !blog) {
-          res.render('404', { message: 'There was an error loading featured posts' });
-        }
+
+        if (!featured) { return res.status(404).render('404'); }
 
         // update the blogs pageviews
         // and save the blog
@@ -114,11 +114,7 @@ blogRouter.route('/:slug')
     if (req.user) {
       Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
         if(err) console.log(err);
-        if(!blog) {
-          res.status(404).render('404', {
-            message: 'Could not find that Blog.'
-          });
-        }
+        if(!blog) { return res.status(404).render('404'); }
 
         blog.coverImage = req.body.coverImage;
         blog.title      = req.body.title;
@@ -143,9 +139,7 @@ blogRouter.route('/:slug/edit')
       Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
         if(err) console.log(err);
         if(!blog) {
-          res.status(404).render('404', {
-            message: 'Could not found that Blog.'
-          });
+          return res.status(404).render('404');
         }
         res.render('edit_blog', { blog: blog });
       })

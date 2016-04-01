@@ -1,55 +1,50 @@
 
 <section class="admin-page__donations">
-  <section class="admin-page__gallery">
-    {{!-- <h3 class="title">Gallery</h3>
-    <div class="submenu clearfix">
-      <div class="item">
-        <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
-      </div>
-    </div> --}}
-    <h1 class="page-header">
-      Donations
-      <small></small>
-    </h1>
-    <ol class="breadcrumb">
-      <li>
-        <a href="#">
-          <i class="fa fa-dashboard"></i>
-          All
-        </a>
-      </li>
-      <li>
-        <a href="/gallery/multi-upload">
-          <i class="fa fa-plus"></i>
-          Stripe
-        </a>
-      </li>
-    </ol>
+  {{!-- <h3 class="title">Gallery</h3>
+  <div class="submenu clearfix">
+    <div class="item">
+      <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
+    </div>
+  </div> --}}
+  <h1 class="page-header">
+    Donations
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="#">
+        <i class="fa fa-dashboard"></i>
+        All
+      </a>
+    </li>
+    <li>
+      <a href="/gallery/multi-upload">
+        <i class="fa fa-plus"></i>
+        Stripe
+      </a>
+    </li>
+  </ol>
 
-    {{#if images}}
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each images}}
+  {{#if donations}}
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each donations}}
           <tr class="image-row">
-            <td>{{name}}</td>
-            <td>{{dateAdded}}</td>
-            <td>{{file_type}}</td>
-            <td class="image-options">
-              <a href="#" class="btn btn-default btn-xs edit-image-btn"><i class="fa fa-pencil"></i></a>
-              <a href="#" class="btn btn-danger btn-xs delete-image-btn"><i class="fa fa-times"></i></a>
-            </td>
+            <td>{{added_on}}</td>
+            <td>{{full_name}}</td>
+            <td>{{email}}</td>
+            <td>{{amount}}</td>
           </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    {{/if}}
-  </section>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
 </section>

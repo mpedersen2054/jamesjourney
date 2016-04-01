@@ -29,7 +29,8 @@ donateRouter.route('/')
           full_name: req.body.nameOnCard,
           type: charge.object,
           refundUrl: charge.refunds.url,
-          status: charge.status
+          status: charge.status,
+          amount: charge.amount
         }
 
         // sub found in db

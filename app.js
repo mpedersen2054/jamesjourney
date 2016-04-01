@@ -62,6 +62,14 @@ app.use('/donate',      donateRouter);
 app.use(adminMiddleware);
 app.use('/admin',    adminRouter);
 
+app.use(function(req, res, next){
+  res.status(404).render('404', {
+    message: 'Can\'t find this page.',
+    url: req.url
+  });
+  // next();
+});
+
 
 var port = process.env.PORT || 3000;
 app.listen(port);

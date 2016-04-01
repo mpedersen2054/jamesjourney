@@ -4,6 +4,7 @@ var DonationSchema = new mongoose.Schema({
   uid: { type: mongoose.Schema.Types.ObjectId},
   type: String,
   full_name: String,
+  amount: Number,
   email: String,
   refundUrl: String,
   status: String,
