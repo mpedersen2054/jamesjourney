@@ -6,6 +6,7 @@
 
   Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 
+  // PAGE >>> not specified
   App.typer = function(elem) {
     $(elem).typed({
       strings: [
@@ -21,6 +22,7 @@
     });
   }
 
+  // PAGE >>> new_blog, edit_blog
   App.tokenField = function(elem) {
     $(elem).tokenfield({
       // autocomplete: {
@@ -31,6 +33,7 @@
     })
   }
 
+  // PAGE >>> new_blog, edit_blog
   App.contentPreviewCount = function() {
     var currentNum;
     var maxNum          = 600;
@@ -45,13 +48,14 @@
     })
   }
 
-  // plugin used in blogs/show_blog sidebar
+  // PAGE >>> blogs, show_blog
   App.scrollFollow = function(elem) {
     $(elem).simpleScrollFollow({
       limit_elem: '.on-left'
     });
   }
 
+  // PAGE >>> all pages
   App.navbar = function() {
     var $navbar = $('header');
     var $window = $(window);
@@ -72,6 +76,7 @@
     });
   }
 
+  // PAGE >>> all pages
   App.pushMenu = function() {
     var $navbarBtn  = $('a#header-menu-link');
     var $mainCont   = $('.main-cont');
@@ -112,6 +117,7 @@
     });
   }
 
+  // PAGE >>> show_event
   App.submitRegisterEvent = function() {
     var $registerForm = $('#event-register-form');
     var $fName        = $registerForm.find('.first-name');
@@ -158,6 +164,7 @@
     });
   }
 
+  // PAGE >>> admin_page
   App.handleAdminEventAttendees = function() {
     var $createdAt = $('.attendee__created-at');
     var $attendeeMessage = $('.attendee__message');
@@ -191,6 +198,7 @@
     });
   }
 
+  // PAGE >>> index
   App.programSlider = function() {
     var $pSlider  = $('#programs-slider');
     var $progAll  = $pSlider.find('a.program');
@@ -307,6 +315,7 @@
     })
   }
 
+  // PAGE >>> index
   App.imageGallery = function() {
     // once all the images are all loaded init masonry with options
     var $grid = $('#galleries .grid').imagesLoaded(function() {
@@ -331,6 +340,7 @@
 
   // accepts array of img links and creates
   // slider elements and animates between them
+  // PAGE >>> index
   App.imageSlider = function() {
     var $slider = $('ul#slider');
 
@@ -414,6 +424,7 @@
 
   }
 
+  // PAGE >>> not specified
   App.twitterSlider = function() {
     var $indicatorsUl = $('.carousel-indicators');
     var $innerCarousel = $('.carousel-inner');
@@ -477,10 +488,12 @@
     }
   }
 
+  // PAGE >>> about_us
   App.countTo = function(elem) {
     elem.countTo('toggle');
   }
 
+  // PAGE >>> admin_page
   App.adminPageRenderer = function() {
     var $adminSections   = $('.admin-section');
     var $adminAll        = $('.admin-section__all');
@@ -540,6 +553,7 @@
 
   }
 
+  // PAGE >>> contact_us
   App.googleMap = function() {
     // required so error doesnt show, should eventually
     // put all calls to App inside .load
@@ -582,6 +596,7 @@
     })
   }
 
+  // PAGE >>> donate
   App.submitDonation = function() {
     var $donateForm = $('#donate-form');
 

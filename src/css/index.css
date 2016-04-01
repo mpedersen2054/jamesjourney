@@ -243,7 +243,12 @@
   height: 250px;
 }
 
-.event-preview .date {}
+.event-preview .date .month,
+.event-preview .date .day,
+.event-preview .location,
+.event-preview .citystate {
+  color: #555;
+}
 
 .event-preview .date .month {
   font-size: 32px;
@@ -255,10 +260,6 @@
   font-size: 46px;
   font-weight: 700;
 }
-
-.event-preview .location {}
-
-.event-preview .city-state {}
 
 #events-preview .btn {
   text-align: center;

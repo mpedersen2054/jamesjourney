@@ -17,6 +17,8 @@ var EventSchema = new mongoose.Schema({
   date:          { type: Date, default: Date.now },
   updated_at:    { type: Date },
   formattedDate: { type: String },
+  month:         { type: String },
+  day:           { type: String },
   location:      { type: String },
   category:      { type: String, default: 'event' },
   description:   { type: String },
@@ -24,16 +26,39 @@ var EventSchema = new mongoose.Schema({
 });
 
 EventSchema.pre('save', function(next) {
-  var ev = this;
+  var ev  = this;
   ev.slug = slugify(ev.name);
   next();
 });
 
 // adds formatted date
 EventSchema.pre('save', function(next) {
-  var ev = this;
-  var fd = ev.date.toDateString();
+
+  var months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ]
+
+  var ev       = this;
+  var fd       = ev.date.toDateString();
+  var day      = ev.date.getDate();
+  var monthNum = ev.date.getUTCMonth();
+  var monthStr = months[monthNum];
+
   ev.formattedDate = fd;
+  ev.day           = day;
+  ev.month         = monthStr;
+
   next();
 });
 

@@ -1,13 +1,13 @@
 
 #events {}
 
-#events .head {
-  position: relative;
-  height: 26em;
-  background-color: #5AB7D1;
-  text-align: center;
-  text-transform: uppercase;
-}
+// #events .head {
+//   position: relative;
+//   height: 26em;
+//   background-color: #5AB7D1;
+//   text-align: center;
+//   text-transform: uppercase;
+// }
 
 #events .wrap {
   position: relative;
