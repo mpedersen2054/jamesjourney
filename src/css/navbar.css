@@ -39,7 +39,7 @@ header #header-logo-link {
   transition-timing-function: ease;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0;
-  background-image: url('/img/jjsmalllogo.png');
+  background-image: url('https://lh3.googleusercontent.com/-UV-sdrmQ4ME/VwBJ4VcJT5I/AAAAAAAAAK4/RQpB6_3wLMUQmqGXBMB6KeKbn3fVPmk7A/s301-no/2016-04-02.png');
   -moz-background-size: contain;
   -o-background-size: contain;
   -webkit-background-size: contain;
@@ -89,12 +89,12 @@ header.with-bg #header-menu-link:active {
 
 header.with-bg {
   background-color: #424242;
-  padding: 10px 40px;
+  padding: 15px 40px;
 }
 
 header.with-bg #header-logo-link {
-  width: 100px;
-  height: 50px;
+  width: 125px;
+  height: 50px !important;
 }
 
 #nav-menu {

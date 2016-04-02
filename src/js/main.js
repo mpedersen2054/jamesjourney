@@ -345,10 +345,10 @@
     var $slider = $('ul#slider');
 
     var imgLinks = [
-      'https://i.ytimg.com/vi/UIrEM_9qvZU/maxresdefault.jpg',
-      'http://www.knowyourpresidents.com/wp-content/uploads/2015/11/george-washington1.jpg',
-      'http://www.unoosa.org/res/timeline/index_html/space-2.jpg',
-      'http://www.dogbreedplus.com/images/puredogss.png'
+      'http://i.imgur.com/9aMTBwU.jpg',
+      'http://i.imgur.com/U4JfOrb.jpg',
+      'http://i.imgur.com/W30xBsL.jpg',
+      'http://i.imgur.com/x69A8GD.jpg'
     ];
 
     // build Eslider DOM, pass animateSlider as

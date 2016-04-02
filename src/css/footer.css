@@ -16,7 +16,7 @@
 }
 
 #footer a {
-  color: #aaa;
+  color: #fff;
 }
 
 #footer a:hover {
@@ -29,6 +29,15 @@
   height: 190px;
 }
 
+#footer .foot1o4 {
+  padding-right: 40px;
+  text-align: center;
+}
+
+#footer .foot1o4 .logo {
+  text-align: center;
+}
+
 #footer .foot1o4 .logo img {
   height: 100px;
   margin: 0 auto;
@@ -39,7 +48,8 @@
 }
 
 #footer .foot1o4 .copyw {
-  color: #555;
+  color: #aaa;
+  font-size: 12px;
 }
 
 #footer .foot2o4,
