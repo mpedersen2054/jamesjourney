@@ -143,7 +143,7 @@
 
 #about-james {
   position: relative;
-  background-color: #fff;
+  background-color: #c4ecfa;
   padding: 6em 0;
   // height: 52em;
   min-height: 52em;
@@ -168,7 +168,7 @@
 #about-james .head h2 {
   font-size: 48px;
   font-weight: 400;
-  color: #00aeef;
+  color: #0a3a4b;
 }
 
 #about-james .image-slider {
@@ -214,12 +214,13 @@
 
 #slider .s-img {
   background-color: #000;
-  max-height: 600px;
+  max-height: 500px;
+  margin-left: 40px;
 }
 
 #events-preview {
   padding: 5em;
-  background-color: #183A4A;
+  background-color: #0a3a4b;
 }
 
 #events-preview h2 {
