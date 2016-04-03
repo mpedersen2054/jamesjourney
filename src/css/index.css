@@ -21,7 +21,7 @@
   background: url(/img/jumbo_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  // background-position: fixed;
+  background-position: fixed;
 }
 
 #jumbotron .jjlogo {
@@ -274,7 +274,7 @@
 #recent-updates {
   display: block;
   /*min-height: 40em;*/
-  padding: 4em 0 6em;
+  padding: 6em 0 8em;
   background-color: #0a3a4b;
   height: 100%;
   text-align: center;
@@ -282,7 +282,7 @@
 
 #recent-updates .head {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 #recent-updates .head h2 {
   font-size: 42px;
@@ -295,7 +295,7 @@
   box-sizing: border-box;
   padding: 0;
   overflow: hidden;
-  border: 1px solid #FFF;
+  border: 1px solid #000;
   height: 479px;
   overflow: hidden;
   background: #000;

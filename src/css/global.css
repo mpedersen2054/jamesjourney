@@ -34,6 +34,11 @@ input:required {
   text-transform: uppercase;
 }
 
+.btn.btn-xlg {
+  padding: 20px 32px;
+  font-size: 30px;
+}
+
 table a:not(.btn), .table a:not(.btn) {
   text-decoration: none;
 }
@@ -46,9 +51,13 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .btn.btn-primary {
-  background-color: #00aeef;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #00aeef;
   outline: none;
+}
+
+.btn.btn-primary:hover {
+  background-color: #00aeef;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
