@@ -20,6 +20,23 @@ staticRouter.route('/')
 
       EEvent.find({}, function(err, events) {
         if (err) return next(err);
+        var evsLen = events.length;
+        var placeholders = 4 - evsLen;
+
+        // if there are < 4 events, add blank data so there are 4 events
+        if (evsLen < 4) {
+          for (var i=0; i < placeholders; i++) {
+            var fakeData = {
+              month: '',
+              day: '',
+              formattedDate: '',
+              name: ''
+            }
+            events.push(fakeData);
+          }
+        }
+
+        console.log(events)
 
         Gallery.find({}, function(err, galleries) {
 
