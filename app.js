@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
-app.use(favicon(__dirname + '/public/img/favicon2.ico'));
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());
