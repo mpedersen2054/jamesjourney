@@ -49,7 +49,7 @@
 }
 
 #blogs .blog .jumbo {
-  height: 300px;
+  height: 460px;
   position: relative;
   border: none;
 }
@@ -61,19 +61,23 @@
 }
 
 #blogs .blog .wrap a {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 600;
   border-radius: 3px;
   text-transform: uppercase;
   background-color: #fff;
   color: #5AB7D1;
-  padding: 0 15px;
   line-height: 1.42857143;
   -webkit-box-decoration-break: clone;
 }
 #blogs .blog .wrap a:hover {
   background-color: #5AB7D1;
   color: #fff;
+}
+
+#blogs .blog .meta,
+#blogs .blog .blog-content {
+  padding: 30px;
 }
 
 #blogs .blog .meta {
@@ -83,7 +87,6 @@
   font-weight: 400;
   color: #aaa;
   border-bottom: 1px solid #ddd;
-  padding: 20px;
   clear: both;
 }
 
@@ -98,7 +101,6 @@
 #blogs .blog .blog-content {
   font-size: 18px;
   font-weight: 400;
-  padding: 20px;
   color: #555;
 }
 

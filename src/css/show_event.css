@@ -36,6 +36,7 @@
 }
 
 #show-event .description {
+  // text-align: center;
 }
 
 #show-event #event-register-form {
