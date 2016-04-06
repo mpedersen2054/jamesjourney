@@ -131,6 +131,19 @@
   padding: 0 1em;
 }
 
+@media (max-width: 62em) {
+  #eds-preview .head h2 {
+    font-size: 100px;
+    margin-bottom: 30px;
+  }
+  #eds-preview .head h3 {
+    font-size: 25px;
+  }
+  #eds-preview p {
+    font-size: 18px;
+  }
+}
+
 /*
 ========= Quote1
  */
@@ -481,78 +494,22 @@ EVENTS PREVIEW
   margin: 100px auto 0;
 }
 
-
-
-/* SMALL SCREEN */
 @media (max-width: 62em) {
-
-
-
-  /*#about-james .info h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
+  #recent-updates .update {
+    height: 360px;
   }
 
-  #about-james .info {
-    padding: 3em 1em;
+  #recent-updates .update .content {
+    margin-top: 70px;
   }
 
-  #about-james .info p {
-    font-size: 18px;
-    margin-top: 20px;
-    padding: 1em;
-  }*/
-
-  #eds-preview .head h2 {
-    font-size: 100px;
-    margin-bottom: 30px;
-  }
-  #eds-preview .head h3 {
-    font-size: 25px;
-  }
-  #eds-preview p {
-    font-size: 18px;
+  #recent-updates .update .content p.title {
+    font-size: 20px;
   }
 
-  #we-need-you {
-    padding: 2em;
+  #recent-updates .head h2 {
+    font-size: 34px;
   }
-
-  #we-need-you h2 {
-    font-size: 44px;
-  }
-
-  #we-need-you p.sub-title {
-    font-size: 22px;
-  }
-
-  .need-item .circular {
-    width: 200px;
-    height: 200px;
-  }
-
-  .need-item {
-    margin-bottom: 80px;
-  }
-
-  .need-item p {
-    font-size: 18px;
-  }
-
-  .need-item a {
-    display: block;
-    width: 140px;
-    margin: 0 auto;
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  #recent-updates {}
-
-  #recent-updates h2 {
-    font-size: 36px;
-  }
-
 }
 
 /* FOR BIG SCREEN */
