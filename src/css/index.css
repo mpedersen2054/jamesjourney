@@ -58,7 +58,7 @@
 
 @media (max-width: 62em) {
   #jumbotron {
-    min-height: 30em;
+    height: 36em;
   }
 
   #jumbotron .jjlogo {
@@ -70,6 +70,7 @@
     top: 0px;
     width: 100px;
     height: 100px;
+    margin-top: 6em;
   }
 
   #jumbotron .jjlogo h1 {
@@ -168,7 +169,7 @@
   position: relative;
   background-color: #c4ecfa;
   padding: 6em 0;
-  min-height: 52em;
+  min-height: 48em;
   color: #555;
 }
 
@@ -178,14 +179,6 @@
   margin-bottom: 80px;
 }
 
-#about-james .head .small-header {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  font-weight: 700;
-  color: #222;
-}
-
 #about-james .head h2 {
   font-size: 48px;
   font-weight: 400;
@@ -193,12 +186,12 @@
 }
 
 #about-james .image-slider {
-  // height: 40em;
+  /*height: 40em;*/
 }
 
 #about-james .info {
   padding: 0 20px 0;
-  // min-height: 50em;
+  /*min-height: 50em;*/
 }
 
 #about-james .info h3 {
@@ -239,7 +232,45 @@
   margin-left: 40px;
 }
 
-// EVENTS PREVIEW
+@media (max-width: 62em) {
+  #about-james {
+    padding: 80px 20px;
+  }
+
+  #about-james .head {
+    margin-bottom: 20px;
+  }
+
+  #about-james .head h2 {
+    font-size: 32px;
+    /*padding: 0 20px;*/
+  }
+
+  #slider .s-img {
+    margin-left: 0;
+  }
+
+  #about-james .info {
+    padding: 0;
+  }
+
+  #about-james .info h3 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #about-james .info p {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+    padding: 0px 10px;
+  }
+}
+
+/* =====>>>>
+EVENTS PREVIEW
+*/
 
 #events-preview {
   padding: 5em;
@@ -253,7 +284,6 @@
   margin-bottom: 60px;
   font-weight: 400;
   color: #CBEBF8;
-  // max-width: 100%;
 }
 
 #events-preview .view-events-btn {
@@ -293,7 +323,18 @@
 
 
 @media (max-width: 62em) {
-  #events-preview {}
+  #events-preview {
+    padding: 80px 10px 80px;
+  }
+
+  #events-preview h2 {
+    font-size: 34px;
+  }
+
+  #events-preview .event-preview {
+    padding: 40px 40px;
+    margin-bottom: 40px;
+  }
 }
 
 /*
@@ -445,31 +486,9 @@
 /* SMALL SCREEN */
 @media (max-width: 62em) {
 
-  #jumbotron {
-    height: 36em;
-  }
 
-  #jumbotron .jjlogo img {
-    margin-top: 6em;
-  }
 
-  #jumbotron p {
-    padding: 1em;
-    margin-top: 0;
-    font-size: 18px;
-  }
-
-  #quote1 h2 {
-    font-size: 36px;
-  }
-
-  #quote1 p {
-    font-size: 18px;
-    padding: 1em;
-    margin-top: 10px;
-  }
-
-  #about-james .info h2 {
+  /*#about-james .info h2 {
     font-size: 40px;
     margin-bottom: 20px;
   }
@@ -482,7 +501,7 @@
     font-size: 18px;
     margin-top: 20px;
     padding: 1em;
-  }
+  }*/
 
   #eds-preview .head h2 {
     font-size: 100px;

@@ -372,10 +372,10 @@
         $slideItems.removeClass('show');
         // find element based on its data-testing
         // attr then add .show, repeat sI
-        item = $("li.slider__item[data-testing='"+count+"']");
+        item = $("li.slider__item[data-position='"+count+"']");
         item.addClass('show');
 
-      }, 6000);
+      }, 4000);
     }
 
     function buildSliderDom(imgLinks, callback) {
@@ -407,7 +407,7 @@
         var img  = sliderArr[i].image;
         var item = $('<li/>', {
           'class': 'slider__item',
-          'data-testing': i
+          'data-position': i
         })
 
         item.append(img);
