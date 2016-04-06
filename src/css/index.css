@@ -35,7 +35,7 @@
   background-size: cover;
   // background-position: fixed;
   border: 6px solid #666;
-
+  overflow: hidden;
 }
 
 #jumbotron .jjlogo img {
@@ -53,6 +53,29 @@
   top: 90px;
   font-weight: 400;
   font-size: 50px;
+}
+
+
+@media (max-width: 62em) {
+  #jumbotron {
+    min-height: 30em;
+  }
+
+  #jumbotron .jjlogo {
+    height: 350px;
+    margin-top: 140px;
+  }
+
+  #jumbotron .jjlogo img {
+    top: 0px;
+    width: 100px;
+    height: 100px;
+  }
+
+  #jumbotron .jjlogo h1 {
+    top: 10px;
+    font-size: 40px;
+  }
 }
 
 /*
@@ -145,9 +168,7 @@
   position: relative;
   background-color: #c4ecfa;
   padding: 6em 0;
-  // height: 52em;
   min-height: 52em;
-  // min-height: 48em;
   color: #555;
 }
 
@@ -218,6 +239,8 @@
   margin-left: 40px;
 }
 
+// EVENTS PREVIEW
+
 #events-preview {
   padding: 5em;
   background-color: #0a3a4b;
@@ -230,6 +253,7 @@
   margin-bottom: 60px;
   font-weight: 400;
   color: #CBEBF8;
+  // max-width: 100%;
 }
 
 #events-preview .view-events-btn {
@@ -265,6 +289,11 @@
 #events-preview .btn {
   text-align: center;
   float: center;
+}
+
+
+@media (max-width: 62em) {
+  #events-preview {}
 }
 
 /*

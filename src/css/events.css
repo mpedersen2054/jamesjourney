@@ -1,6 +1,13 @@
 
 #events {}
 
+#events .jumbohead {
+  background: url(https://s3.amazonaws.com/jamesbucket123/staticassets/get-involved-nonsat.jpg);
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 // #events .head {
 //   position: relative;
 //   height: 26em;

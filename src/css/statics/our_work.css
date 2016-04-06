@@ -20,12 +20,7 @@
   height: 100%;
 }
 
-#our-work .jumbohead,
-#donate .jumbohead,
-#contact-us .jumbohead,
-#donate .jumbohead,
-#events .jumbohead {
-  background: url('https://s3.amazonaws.com/jamesbucket123/staticassets/our-work-nonsat.jpg');
+.jumbohead {
   background-position: 90% 80%;
   background-repeat: no-repeat;
   background-size: cover;
