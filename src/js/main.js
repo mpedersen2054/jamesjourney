@@ -125,6 +125,7 @@
     var $email        = $registerForm.find('.email');
     var $message      = $registerForm.find('.message');
     var $slug         = $registerForm.find('.hidden-slug');
+    var $tshirtSize   = $registerForm.find("select[name='tShirtSize']");
     var $regSuccess   = $('.register-success');
     var $regError     = $('.register-error');
 
@@ -153,8 +154,11 @@
         full_name: $.trim($fName.val()) + ' ' + $.trim($lName.val()),
         email:     $email.val(),
         message:   $message.val(),
-        slug:      $slug.val()
+        slug:      $slug.val(),
+        tshirt:    $tshirtSize.val()
       }
+
+      console.log(data);
 
       $.post('/events/'+data.slug+'/register', data, function(result) {
         // call func based on weather or not res.send(true)

@@ -92,7 +92,7 @@ eventRouter.route('/:slug/register')
         if (pos >= 0) {
           // return and do nothing
           console.log('this is already in the array!');
-          res.send({ success: false, message: 'You are already registered for this event.' });
+          return res.send({ success: false, message: 'You are already registered for this event.' });
         }
         else {
           console.log('not in array yet!');
@@ -117,12 +117,13 @@ eventRouter.route('/:slug/register')
                     })
                   }
                   ev.attendees.push({
-                    _id: sub._id,
-                    email: sub.email,
-                    message: data.message,
-                    f_name: data.f_name,
-                    l_name: data.l_name,
-                    full_name: data.f_name+' '+data.l_name
+                    _id:        sub._id,
+                    email:      sub.email,
+                    message:    data.message,
+                    f_name:     data.f_name,
+                    l_name:     data.l_name,
+                    full_name:  data.f_name+' '+data.l_name,
+                    tShirtSize: data.tshirt
                   });
                   ev.save(function(err) {
                     if (err) { console.log(err) };
@@ -141,12 +142,13 @@ eventRouter.route('/:slug/register')
                 if (err) { console.log('error!', err) }
 
                 ev.attendees.push({
-                  _id: sub._id,
-                  email: sub.email,
-                  message: data.message,
-                  f_name: data.f_name,
-                  l_name: data.l_name,
-                  full_name: data.f_name+' '+data.l_name
+                  _id:       sub._id,
+                  email:     sub.email,
+                  message:   data.message,
+                  f_name:    data.f_name,
+                  l_name:    data.l_name,
+                  full_name: data.f_name+' '+data.l_name,
+                  tshirt: data.tshirt
                 });
 
                 sub.events_attending.push(ev._id);

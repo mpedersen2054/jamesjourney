@@ -85,3 +85,24 @@ table a:not(.btn), .table a:not(.btn) {
 #subscribe {
   margin: 120px auto;
 }
+
+
+// FOR BOOTSTRAP SELECTBOX ON SHOW_EVENT
+.select-picker,
+.bootstrap-select {
+  width: 165px !important;
+}
+
+.bootstrap-select option {
+  text-align: center;
+  padding-left: 10px;
+}
+
+.pull-top {
+  position: absolute;
+}
+
+.select-label {
+  font-size: 14px;
+  color: #999;
+}

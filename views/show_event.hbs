@@ -35,14 +35,25 @@
 
           <form method="POST" id="event-register-form" class="form">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   <input type="text" name="f_name" class="first-name form-control" placeholder="First name...">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-5">
                 <div class="form-group">
                   <input type="text" name="l_name" class="last-name form-control" placeholder="Last name...">
+                </div>
+              </div>
+              <div class="col-md-3 select-col">
+                <div class="form-group pull-right">
+                  <span class="select-label">t-shirt size</span>
+                  <select name="tShirtSize" class="selectpicker" data-width="90px">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
                 </div>
               </div>
             </div>
