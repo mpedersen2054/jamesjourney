@@ -90,4 +90,10 @@
   #footer .foot {
     border-right: none;
   }
+
+  #footer .foot4o4 {
+    clear: both;
+    padding: 1em;
+    margin-top: 40px;
+  }
 }
