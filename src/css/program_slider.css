@@ -7,7 +7,7 @@
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  padding: 4em;
+  padding: 4em 0;
 }
 
 #programs-slider .head h2 {
@@ -30,7 +30,7 @@
 
 .slider {
   position: relative;
-  height: 700px;
+  min-height: 700px;
   width: 100%;
   overflow: hidden;
   bottom: 0px;
@@ -165,13 +165,53 @@
   height: 150px;
 }
 
-/* FOR BIG SCREEN */
-@media (min-width: 100em) {
-  /*#programs-slider .program {
-    height: 900px;
+@media (max-width: 62em) {
+  #programs-slider {
+    // min-height: 40em;
   }
 
-  #programs-slider .content {
-    padding-top: 200px;
-  }*/
+  #programs-slider .head {}
+
+  #programs-slider .head h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  #programs-slider .head p {
+    font-size: 20px;
+    padding: 20px 20px 0;
+  }
+
+  #programs-slider .program {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    left: 0 !important;
+    height: 400px;
+    display: block;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #FFF;
+  }
+
+  #programs-slider .program .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  #programs-slider a.program .bg img {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  #programs-slider a.program .content {
+    width: 100% !important;
+    padding-top: 100px;
+  }
 }
