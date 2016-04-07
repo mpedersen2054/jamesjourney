@@ -9,8 +9,8 @@
 }
 
 #show-event .head {
-  position: absolute;
-  bottom: 100px;
+  position: relative;
+  top: 260px;
 }
 
 #show-event .head h4,
@@ -33,10 +33,12 @@
   margin-top: 0;
   margin-bottom: 40px;
   font-size: 30px;
+  text-transform: uppercase;
 }
 
 #show-event .description {
   // text-align: center;
+  margin-top: 40px;
 }
 
 #show-event #event-register-form {
