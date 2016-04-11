@@ -34,7 +34,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   // background-position: fixed;
-  border: 6px solid #666;
+  border: 6px solid #5d5d5d;
   // border-image-source: url(http://www.thewallworks.com/images/products/circle-border.JPG);
   // border-image-slice: 100;
   overflow: hidden;
@@ -50,7 +50,7 @@
 
 #jumbotron .jjlogo h1 {
   position: relative;
-  color: #6d6d6d;
+  color: #5d5d5d;
   letter-spacing: -2px;
   top: 90px;
   font-weight: 400;

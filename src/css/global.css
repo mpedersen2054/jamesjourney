@@ -52,6 +52,8 @@ table a:not(.btn), .table a:not(.btn) {
 
 .btn.btn-primary {
   background-color: #00aeef;
+  border: none;
+  outline: none;
 }
 
 .btn.btn-primary:hover {
