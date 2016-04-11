@@ -84,9 +84,11 @@
  */
 
 #eds-preview {
-  background-color: #2e738f;
+  background: url(https://lh3.googleusercontent.com/--FfSLqrOQJo/Vwrw9GtR4zI/AAAAAAAAANc/NMKc8jJlHBc/w1025-h601-no/EDS_BREAKER_BKGD.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
-  padding: 6em 1em 10em;
+  padding: 8em 1em 12em;
 }
 
 #eds-preview .head {
@@ -96,7 +98,7 @@
 
 #eds-preview .head h2,
 #eds-preview .head h3 {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
 }
 
@@ -112,6 +114,7 @@
   font-weight: 400;
   position: relative;
   bottom: 0.5em;
+  left: 20px;
   font-size: 36px;
   text-transform: capitalize;
 }
@@ -122,25 +125,34 @@
 
 #eds-preview p {
   color: #c4ecfa;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 1.5em;
+  // margin-top: 1.5em;
   padding: 0 1em;
 }
 
 @media (max-width: 62em) {
+  #eds-preview {
+    padding: 4em 1em 6em;
+  }
+
   #eds-preview .head h2 {
     font-size: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    text-align: center;
   }
   #eds-preview .head h3 {
-    font-size: 25px;
+    left: 0;
+    font-size: 22px;
+    text-align: center;
   }
   #eds-preview p {
+    margin-top: 20px;
     font-size: 18px;
+    text-align: center;
   }
 }
 
