@@ -33,13 +33,6 @@
   margin-bottom: 0;
 }
 
-.addr-bullets .addr-bullet {}
-
-.addr-bullets .addr-bullet {}
-
-.addr-bullets .addr-bullet {}
-
-
 #google-container {
   height: 400px;
 }
@@ -84,4 +77,19 @@
 
 #contact-form__submit {
   /*float: right;*/
+}
+
+@media (max-width: 62em) {
+  #contact-form {
+    padding: 0 1em;
+  }
+
+  .contact-form-container {
+    padding: 80px 0 80px 0;
+  }
+
+  .addr-bullets .addr-bullet {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }

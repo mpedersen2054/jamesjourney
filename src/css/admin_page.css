@@ -58,25 +58,27 @@
   text-overflow: ellipsis;
   white-space: no-wrap;
   overflow: hidden;
-  color: #eee;
+  color: #111;
 }
 
 .admin-page__events .attendee-title {
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #fff;
+  color: #111;
   margin-bottom: 6px;
   text-decoration: underline;
 }
 
-.admin-page__events .attendee-row {
-  background-color: #666;
+.admin-page__events .attendee-row,
+.admin-page__events .attendee-meta-row {
+  background-color: #aaa;
+  color: #111;
   display: none;
 }
 
 .admin-page__events .attendee-row:hover {
-  background-color: #666;
+  // background-color: #aaa;
 }
 
 .admin-page__gallery .image-options {
@@ -89,4 +91,5 @@
 
 .admin-page__gallery .image-row td {
   padding: 10px;
+  color: #111;
 }

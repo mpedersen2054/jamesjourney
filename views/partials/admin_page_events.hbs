@@ -48,6 +48,19 @@
           </td>
         </tr>
 
+        <tr class="attendee-meta-row">
+          <td colspan="4">
+            <div class="row">
+              <div class="col-md-6">
+                hello therere
+              </div>
+              <div class="col-md-6">
+                hello therere
+              </div>
+            </div>
+          </td>
+        </tr>
+
         <tr class="attendee-row">
           <td colspan="4">
             <div class="row">
@@ -60,7 +73,7 @@
             <div class="row">
               <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
               <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
-              <div class="col-md-3 attendee-col attendee__created-at" data-createdat="{{created_at}}"></div>
+              <div class="col-md-3 attendee-col attendee__created-at" data-createdat="{{added_on}}"></div>
               <div class="col-md-3 attendee-col attendee__message">
                 {{#if message}}
                   <a href="#" class="btn btn-link btn-sm" class="view-message-btn" data-message="{{message}}">

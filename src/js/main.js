@@ -173,7 +173,7 @@
     var $createdAt = $('.attendee__created-at');
     var $attendeeMessage = $('.attendee__message');
     var $viewAttendeesBtn = $('.btn-attendees');
-    var $attendeeRow = $('.attendee-row');
+    var $attendeeRow = $('.attendee-row, .attendee-meta-row');
     var attRowShowing = false;
 
     // iterate over each attendee
@@ -182,6 +182,7 @@
     $createdAt.each(function(caElem) {
       var $this = $(this);
       var dateData = $this.data('createdat');
+      console.log(dateData)
       var dateString = new Date(dateData);
       $this.append(dateString.toDateString());
     });
