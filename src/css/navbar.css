@@ -39,7 +39,7 @@ header #header-logo-link {
   transition-timing-function: ease;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0;
-  background-image: url('https://lh3.googleusercontent.com/-UV-sdrmQ4ME/VwBJ4VcJT5I/AAAAAAAAAK4/RQpB6_3wLMUQmqGXBMB6KeKbn3fVPmk7A/s301-no/2016-04-02.png');
+  background-image: url(http://dft010l2k5dxv.cloudfront.net/SmallLogoWhite.png);
   -moz-background-size: contain;
   -o-background-size: contain;
   -webkit-background-size: contain;
