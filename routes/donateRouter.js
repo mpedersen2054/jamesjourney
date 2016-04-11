@@ -14,9 +14,9 @@ donateRouter.route('/')
 
       // to pass into stripeWrapper.charges.create
       var charge = {
-        amount: 2000, // make dynamic
+        amount:   2000, // make dynamic
         currency: 'USD',
-        card: req.body.stripeToken
+        card:     req.body.stripeToken
       };
 
       stripeWrapper.charges.create(charge, function(err, charge) {
@@ -24,13 +24,13 @@ donateRouter.route('/')
 
         // create charge object to save to db
         var dbCharge = {
-          chid: charge.id,
-          email: req.body.emailAddress,
+          chid:      charge.id,
+          email:     req.body.emailAddress,
           full_name: req.body.nameOnCard,
-          type: charge.object,
+          type:      charge.object,
           refundUrl: charge.refunds.url,
-          status: charge.status,
-          amount: charge.amount
+          status:    charge.status,
+          amount:    charge.amount
         }
 
         // sub found in db

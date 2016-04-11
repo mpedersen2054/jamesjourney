@@ -3,7 +3,8 @@ var EEvent   = require('../db/event');
 var Gallery  = require('../db/gallery');
 var Donation = require('../db/donation');
 var mcapi    = require('mailchimp-api');
-var mc       = new mcapi.Mailchimp('a6eec20e3398ba1010f1243598ee34cb-us11');
+var config   = require('../config');
+var mc       = new mcapi.Mailchimp(config.mailchimpApiKey);
 
 function queryAll(callback) {
   Blog.find({}, function(err, blogs) {

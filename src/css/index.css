@@ -35,6 +35,8 @@
   background-size: cover;
   // background-position: fixed;
   border: 6px solid #666;
+  // border-image-source: url(http://www.thewallworks.com/images/products/circle-border.JPG);
+  // border-image-slice: 100;
   overflow: hidden;
 }
 

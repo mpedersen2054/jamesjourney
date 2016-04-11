@@ -3,10 +3,11 @@ var slugify       = require('../lib/slugify');
 var galleryRouter = require('express').Router();
 var Gallery       = require('../db/gallery');
 var s3fs          = require('s3fs');
+var config        = require('../config');
 
 var s3fsImpl = new s3fs('jamesbucket123', {
-  accessKeyId: 'AKIAI5RTSCA4OXAPD6RA',
-  secretAccessKey: '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'
+  accessKeyId: config.s3AccessKey,
+  secretAccessKey: config.s3SecretAccessKey
 });
 
 // creates the bucket
@@ -94,7 +95,7 @@ galleryRouter.route('/multi-upload')
 
     uploadFile(files, function(err, resp) {
       if (!err) {
-        var bucketUrl = 'https://s3.amazonaws.com/jamesbucket123/';
+        var bucketUrl = config.s3BucketUrl;
         var itemsProcessed = 0;
         var done = false;
 

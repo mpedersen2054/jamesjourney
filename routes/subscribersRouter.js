@@ -1,5 +1,6 @@
+var config            = require('../config');
 var subscribersRouter = require('express').Router();
-var mailchimpWrapper = require('../lib/mailchimpWrapper');
+var mailchimpWrapper  = require('../lib/mailchimpWrapper');
 
 subscribersRouter.route('/')
   .get(function(req, res) {
@@ -37,9 +38,9 @@ subscribersRouter.route('/new')
 
 subscribersRouter.route('/members')
   .get(function(req, res) {
-    request('https://us11.api.mailchimp.com/3.0/lists/cb90ef9f1e/members', {
+    request(config.mailchimpListUrl, {
       'headers': {
-        'Authorization': 'apikey a6eec20e3398ba1010f1243598ee34cb-us11'
+        'Authorization': config.mailchimpAuthHeader
       }
     }, function(err, resp, body) {
       var theResp = JSON.parse(body);

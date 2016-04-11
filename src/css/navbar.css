@@ -64,7 +64,7 @@ header #header-menu-link {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   font-family: "futura-pt",sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 1;
   color: #999;

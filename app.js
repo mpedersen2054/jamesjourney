@@ -1,16 +1,15 @@
 var express        = require('express');
 var mongoose       = require('mongoose');
 var hbs            = require('hbs');
+var config         = require('./config.js');
 var passport       = require('passport');
 var logger         = require('morgan');
 var methodOverride = require('method-override');
 var cookieParser   = require('cookie-parser');
 var bodyParser     = require('body-parser');
 var session        = require('express-session');
-// var path           = require('path');
 var favicon        = require('serve-favicon');
 var flash          = require('connect-flash');
-
 
 require('./config/db')(mongoose);
 
@@ -26,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'secret',
+  secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false
 }));
@@ -45,9 +44,8 @@ var galleryRouter     = require('./routes/galleryRouter.js');
 var userRouter        = require('./routes/userRouter.js');
 var subscribersRouter = require('./routes/subscribersRouter');
 var donateRouter      = require('./routes/donateRouter');
-
 // middleware to attach all queries onto req.adminData
-var adminMiddleware = require('./middleware/adminData')(adminRouter);
+var adminMiddleware   = require('./middleware/adminData')(adminRouter);
 
 app.use('/',            staticRouter);
 app.use('/blog',        blogRouter);
@@ -69,7 +67,6 @@ app.use(function(req, res, next){
   });
   // next();
 });
-
 
 var port = process.env.PORT || 3000;
 app.listen(port);
