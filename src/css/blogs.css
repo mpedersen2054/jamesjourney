@@ -1,47 +1,21 @@
-
-#blogs {
-  background-color: #fafafa;
+#blogs .jumbohead {
+  background: url(http://dft010l2k5dxv.cloudfront.net/OurTeam_Color.jpg);
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #blogs .content {
   position: relative;
-  top: -20px;
   background-color: #fff;
   padding: 0 20px;
-}
-
-#blogs .head {
-  position: relative;
-  height: 26em;
-  background-color: #5AB7D1;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-#blogs .whitebg {}
-
-#blogs .head .wrap {
-  position: relative;
-  top: 240px;
-  margin: 0 auto;
-}
-
-#blogs .head h2 {
-  font-size: 64px;
-  font-weight: bold;
-  color: #fff;
-}
-
-#blogs .head h4 {
-  font-size: 32px;
-  color: #fff;
 }
 
 #blogs .blog {
   position: relative;
   margin: 60px 0;
   padding: 0 0 10px;
-  border: 1px solid #dedede;
+  border: 1px solid #eee;
 }
 
 #blogs .blog:nth-child(1) {
@@ -52,26 +26,28 @@
   height: 460px;
   position: relative;
   border: none;
+  // background-size: cover;
 }
 
 #blogs .blog .wrap {
   position: absolute;
-  bottom: 30px;
+  bottom: 100px;
   padding: 0 30px;
 }
 
 #blogs .blog .wrap a {
+  position: relative;
   font-size: 42px;
   font-weight: 600;
   border-radius: 3px;
   text-transform: uppercase;
   background-color: #fff;
-  color: #5AB7D1;
+  color: #47AFEB;
   line-height: 1.42857143;
   -webkit-box-decoration-break: clone;
 }
 #blogs .blog .wrap a:hover {
-  background-color: #5AB7D1;
+  background-color: #47AFEB;
   color: #fff;
 }
 
@@ -86,7 +62,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #aaa;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   clear: both;
 }
 
@@ -112,37 +88,15 @@
 
 #blogs .btn-read-more {
   background-color: transparent;
-  border: 1px solid #5AB7D1;
-  color: #5AB7D1;
+  border: 1px solid #47AFEB;
+  color: #47AFEB;
   margin-top: 40px;
   font-size: 18px;
 }
 
 #blogs .btn-read-more:hover {
-  background-color: #5AB7D1;
-  color: #f0f0f0;
-}
-
-#blogs .on-right__content {
-  position: relative;
-  top: -25px;
-  padding: 20px 0;
-  min-height: 100px;
-}
-
-#blogs .on-right__content .recent-updates {
-}
-
-#blogs .on-right__content .recent-updates h4 {
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-#blogs .on-right__content .featured-post {
-  padding: 10px 0;
-  background-color: #fff;
-  border-bottom: 1px solid #eaeaea;
+  background-color: #47AFEB;
+  color: #fff;
 }
 
 #blogs .on-left {
@@ -150,47 +104,67 @@
   top: -10px;
 }
 
+// #blogs .on-right__content {
+//   position: relative;
+//   top: -25px;
+//   padding: 20px 0;
+//   min-height: 100px;
+// }
 
-#blogs .on-right__content .tag-list {
-  margin-top: 20px;
-}
+// #blogs .on-right__content .recent-updates {
+// }
 
-#blogs .on-right__content .tag-list h4 {
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+// #blogs .on-right__content .recent-updates h4 {
+//   text-transform: uppercase;
+//   margin-bottom: 10px;
+//   font-weight: 700;
+// }
 
-#blogs .on-right__content .tag-list ul {
-  padding: 10px 0;
-}
+// #blogs .on-right__content .featured-post {
+//   padding: 10px 0;
+//   background-color: #fff;
+//   border-bottom: 1px solid #eaeaea;
+// }
 
-#blogs .on-right__content .tag-list .tag {
-  float: left;
-  font-weight: 400;
-  margin: 1px;
-}
+// #blogs .on-right__content .tag-list {
+//   margin-top: 20px;
+// }
 
-#blogs .on-right__content .tag-list .tag a {
-  color: #fff;
-  width: 100%;
-}
+// #blogs .on-right__content .tag-list h4 {
+//   text-transform: uppercase;
+//   font-weight: 700;
+//   margin-bottom: 10px;
+// }
+
+// #blogs .on-right__content .tag-list ul {
+//   padding: 10px 0;
+// }
+
+// #blogs .on-right__content .tag-list .tag {
+//   float: left;
+//   font-weight: 400;
+//   margin: 1px;
+// }
+
+// #blogs .on-right__content .tag-list .tag a {
+//   color: #fff;
+//   width: 100%;
+// }
 
 
 @media (max-width: 62em) {
 
-  #blogs .blog {
+  #blogs .blog .wrap {
+    bottom: 40px;
   }
 
   /* title */
   #blogs .blog .wrap a {
-    position: relative;
-    top: -70px;
     font-size: 20px;
   }
 
   #blogs .content {
-    padding: 0 20px;
+    padding: 0;
   }
 
   #blogs .on-right__content .featured-post {
@@ -216,7 +190,14 @@
     padding: 0 20px;
   }
 
-}
+  #blogs .blog .jumbo {
+    height: 200px;
+  }
 
-@media (max-width: 70em) {
+  #blogs .blog:nth-child(1) {
+    margin-top: 40px;
+  }
+
+
+
 }
