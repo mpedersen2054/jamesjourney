@@ -39,12 +39,6 @@ input:required {
   font-size: 30px;
 }
 
-.btn.btn-clear {
-  background-color: transparent;
-  border: 3px solid #00aeef;
-  outline: none;
-}
-
 table a:not(.btn), .table a:not(.btn) {
   text-decoration: none;
 }
@@ -56,8 +50,18 @@ table a:not(.btn), .table a:not(.btn) {
   -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
 
+.btn.btn-primary {
+  background-color: #00aeef;
+}
+
 .btn.btn-primary:hover {
   background-color: #00aeef;
+}
+
+.btn.btn-clear {
+  background-color: transparent;
+  border: 3px solid #00aeef;
+  outline: none;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
