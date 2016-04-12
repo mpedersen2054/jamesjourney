@@ -7,6 +7,7 @@ var App = App || {};
 
 Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 
+
 // PAGE >>> not specified
 App.typer = function(elem) {
   $(elem).typed({
@@ -202,6 +203,16 @@ App.handleAdminEventAttendees = function() {
       $attendeeRow.hide();
     }
   });
+}
+
+App.handleAdminEventAttendeesMessage = function() {
+  var $popovers = $('[data-toggle="popover"]');
+  $popovers.on('click', function(e) {
+    $popovers.popover('hide');
+    var $this = $(this);
+    e.preventDefault();
+    $this.popover('show');
+  })
 }
 
 // PAGE >>> index
@@ -644,6 +655,7 @@ App.navbar();
 App.pushMenu();
 App.submitRegisterEvent();
 App.handleAdminEventAttendees();
+App.handleAdminEventAttendeesMessage();
 App.programSlider();
 App.imageGallery();
 App.imageSlider(); // for james index

@@ -36,8 +36,6 @@ staticRouter.route('/')
           }
         }
 
-        console.log(events)
-
         Gallery.find({}, function(err, galleries) {
 
           res.render('index', {

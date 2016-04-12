@@ -59,6 +59,13 @@
 
 #footer .foot4o4 {
   border-right: none;
+  padding-left: 1.5em;
+}
+
+#footer .foot4o4 .contact {
+  width: 200px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 #footer .foot3o4 .social {

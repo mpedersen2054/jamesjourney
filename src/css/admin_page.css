@@ -70,15 +70,28 @@
   text-decoration: underline;
 }
 
+.admin-page__events .attendee-meta-row { background-color: #dfdfdf; }
+.admin-page__events .attendee-row { background-color: #eee; }
+
 .admin-page__events .attendee-row,
 .admin-page__events .attendee-meta-row {
-  background-color: #aaa;
   color: #111;
   display: none;
 }
 
-.admin-page__events .attendee-row:hover {
-  // background-color: #aaa;
+.admin-page__events .attendee-meta-row td {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.admin-page__events .attendee-meta-row .attendees-length-col {
+  font-size: 24px;
+  padding-top: 15px;
+  padding-left: 30px;
+}
+
+.admin-page__events .attendee-meta-row .shirt-col {
+  text-align: center;
 }
 
 .admin-page__gallery .image-options {

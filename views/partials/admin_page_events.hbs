@@ -23,7 +23,7 @@
   </ol>
 
   {{#if events}}
-    <table class="table table-hover table-striped">
+    <table class="table">
       <thead>
         <tr>
           <th></th>
@@ -51,11 +51,28 @@
         <tr class="attendee-meta-row">
           <td colspan="4">
             <div class="row">
-              <div class="col-md-6">
-                hello therere
+              <div class="col-md-6 attendees-length-col">
+                {{attendees.length}} attendees
               </div>
               <div class="col-md-6">
-                hello therere
+                <div class="row">
+                  <div class="col-md-3 shirt-col">
+                    <p>S</p>
+                    <b>{{tshirtMap.s}}</b>
+                  </div>
+                  <div class="col-md-3 shirt-col">
+                    <p>M</p>
+                    <b>{{tshirtMap.m}}</b>
+                  </div>
+                  <div class="col-md-3 shirt-col">
+                    <p>L</p>
+                    <b>{{tshirtMap.l}}</b>
+                  </div>
+                  <div class="col-md-3 shirt-col">
+                    <p>XL</p>
+                    <b>{{tshirtMap.xl}}</b>
+                  </div>
+                </div>
               </div>
             </div>
           </td>
@@ -66,22 +83,27 @@
             <div class="row">
               <div class="col-md-3 attendee-title"><b>Name</b></div>
               <div class="col-md-3 attendee-title"><b>Email</b></div>
-              <div class="col-md-3 attendee-title"><b>Signed up Date</b></div>
-              <div class="col-md-3 attendee-title"><b>Message</b></div>
+              <div class="col-md-2 attendee-title"><b>Signed up Date</b></div>
+              <div class="col-md-2 attendee-title"><b>Message</b></div>
+              <div class="col-md-2 attendee-title"><b>T-Shirt Size</b></div>
             </div>
             {{#each attendees}}
-            <div class="row">
-              <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
-              <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
-              <div class="col-md-3 attendee-col attendee__created-at" data-createdat="{{added_on}}"></div>
-              <div class="col-md-3 attendee-col attendee__message">
-                {{#if message}}
-                  <a href="#" class="btn btn-link btn-sm" class="view-message-btn" data-message="{{message}}">
-                    View Message
-                  </a>
-                {{/if}}
+              <div class="row">
+                <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
+                <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
+                <div class="col-md-2 attendee-col attendee__created-at" data-createdat="{{added_on}}"></div>
+                <div class="col-md-2 attendee-col attendee__message">
+                  {{#if message}}
+                    {{!-- <a href="#" class="btn btn-link" class="view-message-btn" data-attendeeMessage="{{message}}">
+                      View Message
+                    </a> --}}
+                    <button type="button" class="btn btn-link" data-container="body" data-placement="top" data-toggle="popover" title="Message" data-content="{{message}}">view message</button>
+                  {{else}}
+                    No Message
+                  {{/if}}
+                </div>
+                <div class="col-md-2 attendee-col attendee__tshirt"><b>{{tshirt}}</b></div>
               </div>
-            </div>
             {{/each}}
           </td>
         </tr>
