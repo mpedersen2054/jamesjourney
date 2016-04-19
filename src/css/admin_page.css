@@ -7,13 +7,8 @@
   margin-bottom: 100px;
 }
 
-#admin-page .title {}
-
 #admin-page .options {
   text-align: right;
-}
-
-#admin-page td {
 }
 
 .admin-section {
@@ -70,8 +65,8 @@
   text-decoration: underline;
 }
 
-.admin-page__events .attendee-meta-row { background-color: #dfdfdf; }
-.admin-page__events .attendee-row { background-color: #eee; }
+.admin-page__events .attendee-meta-row { background-color: #fbfbfb; }
+.admin-page__events .attendee-row      { background-color: #fefefe; }
 
 .admin-page__events .attendee-row,
 .admin-page__events .attendee-meta-row {
