@@ -1,0 +1,27 @@
+
+#donated {
+  position: relative;
+  background-image: url(http://dft010l2k5dxv.cloudfront.net/BlogHeaderImage.jpg);
+  height: 800px;
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#donated .content {
+  position: relative;
+  top: 300px;
+}
+
+#donated .content h1 {
+  color: #fff;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+#donated .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+}

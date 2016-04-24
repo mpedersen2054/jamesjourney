@@ -45,17 +45,18 @@
               {{!-- handle errors of donating --}}
               <div class="donate-errors"></div>
               <form class="form" name="donate-form" id="donate-form" method="POST">
+                <div class="text-danger payment-errors"></div>
                 <div class="form-group">
                   <label for="emailAddress">Email Address</label>
-                  <input type="email" class="form-control" id="emailAddress" name="emailAddress">
+                  <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="example@emailaddress.com...">
                 </div>
                 <div class="form-group">
                   <label for="nameOnCard">Name on card</label>
-                  <input type="text" class="form-control" id="nameOnCard" name="nameOnCard">
+                  <input type="text" class="form-control" id="nameOnCard" name="nameOnCard" placeholder="John E Smith...">
                 </div>
                 <div class="form-group">
                   <label for="cardNumber">Card Number</label>
-                  <input type="tel" id="cardNumber" name="cardNumber" class="form-control card-number cc-number" data-stripe="number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••">
+                  <input type="tel" id="cardNumber" name="cardNumber" class="form-control card-number cc-number" data-stripe="number" autocomplete="cc-number" placeholder="• • • •     • • • •     • • • •     • • • •">
                 </div>
                 <div class="row">
                   <div class="col-md-6">
@@ -78,7 +79,26 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg">Donate</button>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group donate-submit-col">
+                      <label for="donateAmt">Amount</label>
+                      <select id="donateAmt" name="donateAmt" class="selectpicker" data-width="">
+                        <option value="500">$5</option>
+                        <option value="2500">$25</option>
+                        <option value="5000">$50</option>
+                        <option value="10000">$100</option>
+                        <option value="25000">$250</option>
+                        <option value="50000">$500</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg donate-submit-btn">Donate</button>
+                <div class="spinner-container">
+                  {{!-- <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+                  <span class="sr-only">Loading...</span> --}}
+                </div>
               </form>
             </div>
           </div>
@@ -86,7 +106,7 @@
 
         <div class="col-md-7">
           <div class="short-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit.
+            {{!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero non enim ad similique laboriosam sapiente rerum, deleniti reiciendis, dicta repudiandae neque quaerat aliquam nemo vel consequatur! Cum quidem nesciunt, voluptates quaerat beatae, voluptate eveniet vitae, tempora itaque excepturi dolorem. Dolor vero magni, et veniam rerum asperiores quam. Odit et officia accusantium, nam nisi illo suscipit praesentium similique provident unde ea, sunt molestias odio necessitatibus dignissimos fugit. --}}
           </div>
         </div>
 

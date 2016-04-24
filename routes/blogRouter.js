@@ -54,7 +54,7 @@ blogRouter.route('/new')
         return tag.trim();
       });
 
-      data.author = req.user;
+      data.author = req.user.username;
 
       // uses markdown module to turn the MD into html
       var content = markdown.toHTML(data.content);

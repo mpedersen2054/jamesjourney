@@ -620,7 +620,16 @@ App.submitDonation = function() {
   $donateForm.on('submit', function(e) {
     e.preventDefault();
     var $form = $(this);
+    var $spinnerContainer = $('.spinner-container');
+    var $spinner = $('<i/>', {
+      class: 'fa fa-circle-o-notch fa-spin fa-2x fa-fw'
+    });
+    var $srOnly = $('<span/>', {
+      class: 'sr-only'
+    });
+    $spinnerContainer.append($spinner).append($srOnly);
     $form.find('.btn').prop('disabled', true);
+
     // create the stripeToken
     Stripe.card.createToken($form, stripeResponseHandler);
   })

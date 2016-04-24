@@ -1,6 +1,10 @@
 
 #donate {}
 
+#donate input {
+  letter-spacing: 1.4px;
+}
+
 #donate .jumbohead {
   background: url(http://dft010l2k5dxv.cloudfront.net/Donate_Color.jpg);
   background-position: 90% 80%;
@@ -10,6 +14,11 @@
 
 .donate-form-container {
   padding: 60px 0;
+}
+
+.donate-submit-col {
+  position: relative;
+  top: -15px;
 }
 
 .exp-col {
@@ -33,6 +42,20 @@
 .panel-heading > div {
   position: relative;
   height: 100%;
+}
+
+.donate-submit-btn,
+.spinner-container {
+  float: left;
+}
+
+.spinner-container {
+  padding-top: 5px;
+  margin-left: 20px;
+}
+
+.spinner-container i {
+  color: #a5a5a5;
 }
 
 /* SMALL SCREEN */

@@ -167,6 +167,10 @@ table a:not(.btn), .table a:not(.btn) {
   margin-top: -22.5px;
 }
 
+label {
+  display: block;
+}
+
 @media (max-width: 62em) {
   .select-col {
     margin-top: 0;

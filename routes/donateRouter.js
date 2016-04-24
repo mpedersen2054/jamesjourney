@@ -12,9 +12,11 @@ donateRouter.route('/')
     Subscriber.findOne({ email: req.body.emailAddress }, function(err, sub) {
       if (err) { console.log(err); }
 
+      console.log(req.body)
+
       // to pass into stripeWrapper.charges.create
       var charge = {
-        amount:   2000, // make dynamic
+        amount:   req.body.donateAmt, // make dynamic
         currency: 'USD',
         card:     req.body.stripeToken
       };
@@ -30,10 +32,12 @@ donateRouter.route('/')
           type:      charge.object,
           refundUrl: charge.refunds.url,
           status:    charge.status,
-          amount:    charge.amount
+          amount:    +charge.amount
         }
 
-        // sub found in db
+        console.log(dbCharge)
+
+        // sub found in db, create new donation & add to it
         if (sub) {
           dbCharge.uid = sub._id;
           var newDonation = new Donation(dbCharge);
@@ -44,12 +48,15 @@ donateRouter.route('/')
               sub.donations.push(don._id);
               sub.save(function(err) {
                 if (err) { console.log(err) }
-                console.log('saved donation onto sub')
+                res.render('donated', {
+                  success: true,
+                  message: 'Thank you '+dbCharge.full_name+' for your donation of $'+(dbCharge.amount/100).toFixed(2)+'.'
+                });
               });
             }
           })
 
-        // sub not found in db
+        // sub not found in db, create new & add donation to it
         } else {
           var splitName = req.body.nameOnCard.split(' ');
           var fName = splitName[0], lName = splitName[1];
@@ -72,6 +79,10 @@ donateRouter.route('/')
                 newSub.save(function(err) {
                   if (err) { console.log('error!', err); }
                   console.log('donation saved onto sub');
+                  res.render('donated', {
+                    success: true,
+                    message: 'Thank you '+dbCharge.full_name+' for your donation of $'+(dbCharge.amount/100).toFixed(2)+'.'
+                  });
                 });
               })
             }
