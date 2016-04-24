@@ -1,13 +1,21 @@
 
 
 <div id="subscribed">
+  <div class="overlay"></div>
   <div class="container">
-    {{#if success}}
-      {{!-- wasnt on list, show welcoem --}}
-      <h1>Thanks {{name}}!, You are now subscribed to our mailing list!</h1>
-    {{else}}
-      {{!-- already on list --}}
-      <h1>Sorry, the email: {{email}} is already on our list</h1>
-    {{/if}}
+    <div class="row">
+      <div class="col-md-5">
+        <div class="content">
+          {{#if success}}
+            {{!-- wasnt on list, show welcoem --}}
+            <h1>Thanks {{name}}!, You are now subscribed to our mailing list!</h1>
+          {{else}}
+            {{!-- already on list --}}
+            <h1>Sorry, the email: {{email}} is already on our list</h1>
+          {{/if}}
+          <a href="/" class="btn btn-primary btn-xlg btn-clear">Back to Home</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

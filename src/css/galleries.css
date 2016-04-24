@@ -3,22 +3,29 @@
   background-color: #ddd;
 }
 
-#galleries .head .wrap {
-  position: relative;
-  top: 240px;
-  margin: 0 auto;
+#galleries .jumbohead {
+  background: url(http://dft010l2k5dxv.cloudfront.net/GalleryHeaderImage2.jpg);
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#galleries .head h2 {
-  font-size: 64px;
-  font-weight: bold;
-  color: #fff;
-}
+// #galleries .head .wrap {
+//   position: relative;
+//   top: 240px;
+//   margin: 0 auto;
+// }
 
-#galleries .head h4 {
-  font-size: 32px;
-  color: #fff;
-}
+// #galleries .head h2 {
+//   font-size: 64px;
+//   font-weight: bold;
+//   color: #fff;
+// }
+
+// #galleries .head h4 {
+//   font-size: 32px;
+//   color: #fff;
+// }
 
 .whitebg {
   background-color: #fff;

@@ -93,6 +93,20 @@
   font-weight: 300;
 }
 
+@media (max-width: 62em) {
+  #our-team .team-member .img-overlay .content {
+    top: 40px;
+  }
+
+  #our-team .team-member .img-overlay .content h3 {
+    font-size: 24px;
+  }
+
+  #our-team .team-member .img-overlay .content span {
+    font-size: 16px;
+  }
+}
+
 
 #our-team .team-description {
   background-color: #2F738E;

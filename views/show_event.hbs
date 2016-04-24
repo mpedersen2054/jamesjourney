@@ -6,9 +6,9 @@
     <div class="container">
       <div class="overlay-bg">
         <div class="head">
-          {{!-- <p class="icon" align="center">
-            <img src="/img/Get_Involved_Icon.png">
-          </p> --}}
+          <p class="icon" align="center">
+            <img src="http://dft010l2k5dxv.cloudfront.net/ShowEventHeaderLogo.png">
+          </p>
           <h4>Register for</h4>
           <h2>{{event.name}}</h2>
         </div>
@@ -18,7 +18,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-8">
 
         <div class="description">
           {{event.description}}
@@ -74,6 +74,12 @@
           </form>
         </div>
       </div>
+
+      <div class="col-md-4">
+        something goes here
+      </div>
     </div>
   </div>
+
+  {{> subscribe_block}}
 </div>

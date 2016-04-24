@@ -59,6 +59,7 @@ eventRouter.route('/:slug/edit')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       if (err) console.log(err);
+      console.log(ev)
       res.render('edit_event', { event: ev });
     });
   });

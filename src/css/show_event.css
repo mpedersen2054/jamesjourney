@@ -1,6 +1,13 @@
 
 #show-event {}
 
+#show-event .jumbohead {
+  background: url(http://dft010l2k5dxv.cloudfront.net/ShowEventHeaderImage.jpg);
+  background-position: 90% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #show-event .bg {
   position: relative;
   background-color: #5AB7D1;
@@ -10,7 +17,7 @@
 
 #show-event .head {
   position: relative;
-  top: 260px;
+  top: 120px;
 }
 
 #show-event .head h4,
