@@ -26,6 +26,12 @@ img {
   max-width: 100%;
 }
 
+.panel-heading {
+  position: relative;
+  clear: both;
+  height: 40px;
+}
+
 input:required {
   border: 1px solid #C26464;
 }
@@ -159,4 +165,10 @@ table a:not(.btn), .table a:not(.btn) {
 
 .select-col {
   margin-top: -22.5px;
+}
+
+@media (max-width: 62em) {
+  .select-col {
+    margin-top: 0;
+  }
 }

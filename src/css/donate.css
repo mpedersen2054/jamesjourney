@@ -20,6 +20,21 @@
   padding-left: 15px;
 }
 
+.donate-form-container .cards {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.donate-form-container .cards .card {
+  height: 100%;
+}
+
+.panel-heading > div {
+  position: relative;
+  height: 100%;
+}
+
 /* SMALL SCREEN */
 @media (max-width: 62em) {
   .exp-col {
