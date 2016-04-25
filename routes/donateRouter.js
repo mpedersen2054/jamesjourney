@@ -12,8 +12,6 @@ donateRouter.route('/')
     Subscriber.findOne({ email: req.body.emailAddress }, function(err, sub) {
       if (err) { console.log(err); }
 
-      console.log(req.body)
-
       // to pass into stripeWrapper.charges.create
       var charge = {
         amount:   req.body.donateAmt, // make dynamic
@@ -44,13 +42,16 @@ donateRouter.route('/')
           newDonation.save(function(err, don) {
             if (err) { console.log('error creating donation', err); }
             if (!err) {
+              var donationAmtFloat = (dbCharge.amount/100).toFixed(2);
+              var msg = `Thank you <span class="text-lblue">${dbCharge.full_name} for your donation of <span class="text-lblue">${donationAmtFloat}</span>`
+
               console.log('new donation created!', don);
               sub.donations.push(don._id);
               sub.save(function(err) {
                 if (err) { console.log(err) }
                 res.render('donated', {
                   success: true,
-                  message: 'Thank you '+dbCharge.full_name+' for your donation of $'+(dbCharge.amount/100).toFixed(2)+'.'
+                  message: msg
                 });
               });
             }

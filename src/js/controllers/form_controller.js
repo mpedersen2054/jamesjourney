@@ -60,7 +60,6 @@ export function handleRegisterSubmit() {
 }
 
 export function handleDonateSubmit() {
-
   // need to set the publishable key
   Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 

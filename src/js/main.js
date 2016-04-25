@@ -9,27 +9,22 @@ import * as gallery from './controllers/gallery_controller';
 
 const currentPath = window.location.pathname;
 
-// $(document).ready(function() {
+// all pages
+globals.navbar();
+globals.pushMenu();
 
+// index
+statics.programSlider();
+statics.slideShow();
 
-  // all pages
-  globals.navbar();
-  globals.pushMenu();
+// contact-us
+statics.googleMap();
 
-  // index
-  statics.programSlider();
-  statics.slideShow();
+// show_event
+forms.handleDonateSubmit();
 
-  // contact-us
-  statics.googleMap();
-
-  // show_event
-  forms.handleDonateSubmit();
-
-  // donate
-  forms.handleRegisterSubmit();
-
-// })
+// donate
+forms.handleRegisterSubmit();
 
 
 

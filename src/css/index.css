@@ -17,7 +17,6 @@
   background: url(http://dft010l2k5dxv.cloudfront.net/JumbotronBackgroundPattern.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: fixed;
 }
 
 #jumbotron .jjlogo {
@@ -30,8 +29,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: 6px solid #5d5d5d;
-  // #4DAFCF
-  // border: 6px solid #4DAFCF;
   overflow: hidden;
 }
 
@@ -127,7 +124,6 @@
   text-align: left;
   max-width: 800px;
   margin: 0 auto;
-  // margin-top: 1.5em;
   padding: 0 1em;
 }
 
@@ -265,7 +261,6 @@
 
   #about-james .head h2 {
     font-size: 32px;
-    /*padding: 0 20px;*/
   }
 
   #slider .s-img {
@@ -473,7 +468,6 @@ EVENTS PREVIEW
   bottom: 0;
   margin: 120px 0 0;
   padding: 20px;
-  // border-radius: 8px;
   min-width: 120px;
   max-width: 280px;
   color: #aaa;
@@ -526,10 +520,6 @@ EVENTS PREVIEW
 @media (min-width: 100em) {
   #jumbotron {
     height: 60em;
-  }
-
-  #about-james .info {
-    /*padding: 6em 12em;*/
   }
 
   #recent-updates .updates {

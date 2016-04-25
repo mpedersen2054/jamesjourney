@@ -11,9 +11,6 @@ const $prog5    = $pSlider.find('.program5');
 const $satImg   = $pSlider.find('.saturated-img');
 const $desatImg = $pSlider.find('.desaturated-img');
 
-
-
-
 /*
 INDEX PAGE
  */
@@ -147,8 +144,8 @@ export function slideShow() {
     var count = 0;
     var item;
 
-    var sliderArr = []
-    var $slider   = $('ul#slider');
+    var sliderArr   = [];
+    var $slider     = $('ul#slider');
     var $slideItems = $('.slider__item');
     var sliderLen   = $slideItems.length;
 
@@ -179,7 +176,7 @@ export function slideShow() {
 
     // iterate over list and create <img>
     // image and thumbnail have different w/h & class
-    for (var i=0; i < imgLinks.length; i++) {
+    for (var i = 0; i < imgLinks.length; i++) {
       var link = imgLinks[i];
       var image = newImage(link, false);
       var thumbnail = newImage(link, true);

@@ -26,6 +26,10 @@ img {
   max-width: 100%;
 }
 
+.text-lblue {
+  color: #00aeef;
+}
+
 .panel-heading {
   position: relative;
   clear: both;
