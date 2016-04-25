@@ -1,27 +1,19 @@
-.push-right {
-}
+
 
 header {
-  -moz-transition-property: background,padding,left;
-  -o-transition-property: background,padding,left;
-  -webkit-transition-property: background,padding,left;
-  transition-property: background,padding,left;
-  -moz-transition-duration: 0.3s,0.3s,0.2s;
-  -o-transition-duration: 0.3s,0.3s,0.2s;
-  -webkit-transition-duration: 0.3s,0.3s,0.2s;
-  transition-duration: 0.3s,0.3s,0.2s;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
   width: 100%;
   padding: 20px;
   position: fixed;
   top: 0;
+  left: inherit;
   z-index: 10003;
   background-color: transparent;
   /*box-shadow: 0px 0px 5px 2px #e8e8e8;*/
   color: #999;
+}
+
+.main-content.push-right header {
+  left: -300px;
 }
 
 header #header-logo-link {
