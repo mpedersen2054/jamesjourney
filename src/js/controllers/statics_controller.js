@@ -13,14 +13,6 @@ const $desatImg = $pSlider.find('.desaturated-img');
 
 
 
-// images for slideshow
-var imgLinks = [
-  'http://i.imgur.com/9aMTBwU.jpg',
-  'http://i.imgur.com/U4JfOrb.jpg',
-  'http://i.imgur.com/W30xBsL.jpg',
-  'http://i.imgur.com/x69A8GD.jpg'
-];
-
 
 /*
 INDEX PAGE
@@ -138,14 +130,27 @@ builds the dom and then
 animates it
 [ <imageLinks> ]
  */
-export function slideShow(callback) {
+export function slideShow() {
+
+  // images for slideshow
+  var imgLinks = [
+    'http://i.imgur.com/9aMTBwU.jpg',
+    'http://i.imgur.com/U4JfOrb.jpg',
+    'http://i.imgur.com/W30xBsL.jpg',
+    'http://i.imgur.com/x69A8GD.jpg'
+  ];
+
   // build Eslider DOM, pass animateSlider as
   // callback to do when animateSlider is done
-  buildSliderDom(imgLinks, animateSlider);
 
   function animateSlider(err) {
     var count = 0;
     var item;
+
+    var sliderArr = []
+    var $slider   = $('ul#slider');
+    var $slideItems = $('.slider__item');
+    var sliderLen   = $slideItems.length;
 
     setInterval(function() {
       // if at end of array, return count to 0
@@ -157,12 +162,12 @@ export function slideShow(callback) {
       item = $("li.slider__item[data-position='"+count+"']");
       item.addClass('show');
 
-    }, 4000);
+    }, 6000);
   }
 
   function buildSliderDom(imgLinks, callback) {
-    var sliderArr = []
-    var $slider   = $('ul#slider');
+    var sliderArr   = []
+    var $slider     = $('ul#slider');
     var $slideItems = $('.slider__item');
     var sliderLen   = $slideItems.length;
 
@@ -174,7 +179,7 @@ export function slideShow(callback) {
 
     // iterate over list and create <img>
     // image and thumbnail have different w/h & class
-    for (var i=0; i<imgLinks.length; i++) {
+    for (var i=0; i < imgLinks.length; i++) {
       var link = imgLinks[i];
       var image = newImage(link, false);
       var thumbnail = newImage(link, true);
@@ -189,7 +194,7 @@ export function slideShow(callback) {
     // once sliderArr done, create a li.slide__item,
     // append the image into the li
     // then append li onto #slider
-    for (var i=0; i<sliderArr.length; i++) {
+    for (var i=0; i < sliderArr.length; i++) {
       var img  = sliderArr[i].image;
       var item = $('<li/>', {
         'class': 'slider__item',
@@ -200,7 +205,7 @@ export function slideShow(callback) {
       $slider.append(item);
     }
 
-    // all went well
+    // null for no err
     callback(null);
   }
 
@@ -211,6 +216,8 @@ export function slideShow(callback) {
       'class': 's-img'
     });
   }
+
+  buildSliderDom(imgLinks, animateSlider);
 
 }
 

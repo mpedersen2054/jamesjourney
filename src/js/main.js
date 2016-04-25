@@ -9,7 +9,8 @@ import * as gallery from './controllers/gallery_controller';
 
 const currentPath = window.location.pathname;
 
-$(document).ready(function() {
+// $(document).ready(function() {
+
 
   // all pages
   globals.navbar();
@@ -28,7 +29,7 @@ $(document).ready(function() {
   // donate
   forms.handleRegisterSubmit();
 
-})
+// })
 
 
 

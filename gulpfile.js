@@ -37,7 +37,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('watch',function() {
-  gulp.watch('./src/js/*.js',['es6'])
+  gulp.watch(['./src/js/*.js', './src/js/**/*.js'],['es6'])
   gulp.watch(sourceFiles.css, ['css'])
 });
 
