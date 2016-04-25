@@ -1,7 +1,11 @@
 
-import * as globals from './parts/global';
-import * as statics from './parts/staticPages';
-import * as forms from './parts/form_controller'
+import * as globals from './controllers/global_controller';
+import * as statics from './controllers/statics_controller';
+import * as forms   from './controllers/form_controller';
+import * as admins  from './controllers/admin_controller';
+import * as blogs   from './controllers/blogs_controller';
+import * as gallery from './controllers/gallery_controller';
+
 
 const currentPath = window.location.pathname;
 
@@ -195,9 +199,9 @@ App.adminPageRenderer();
 App.handleAdminEventAttendees();
 App.handleAdminEventAttendeesMessage();
 
+
 App.imageGallery();
 
-App.countTo($('.achivements .timer'));
 
 
 

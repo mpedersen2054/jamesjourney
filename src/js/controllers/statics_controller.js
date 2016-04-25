@@ -11,12 +11,10 @@ const $prog5    = $pSlider.find('.program5');
 const $satImg   = $pSlider.find('.saturated-img');
 const $desatImg = $pSlider.find('.desaturated-img');
 
-const $slider   = $('ul#slider');
-const $slideItems = $('.slider__item');
-const sliderLen   = $slideItems.length;
+
 
 // images for slideshow
-const imgLinks = [
+var imgLinks = [
   'http://i.imgur.com/9aMTBwU.jpg',
   'http://i.imgur.com/U4JfOrb.jpg',
   'http://i.imgur.com/W30xBsL.jpg',
@@ -32,7 +30,7 @@ export function programSlider() {
 
   $progAll.on('mouseenter', function(e) {
     e.preventDefault();
-    const $this = $(this);
+    var $this = $(this);
 
     // same accross all programs
     // hide desat img, show sat img
@@ -164,10 +162,13 @@ export function slideShow(callback) {
 
   function buildSliderDom(imgLinks, callback) {
     var sliderArr = []
+    var $slider   = $('ul#slider');
+    var $slideItems = $('.slider__item');
+    var sliderLen   = $slideItems.length;
 
     // return error if no imgLinks or imgLinks !== Array
     if (!imgLinks || !(imgLinks instanceof Array)) {
-      const err = 'there was an error!';
+      var err = 'there was an error!';
       callback(err);
     }
 
