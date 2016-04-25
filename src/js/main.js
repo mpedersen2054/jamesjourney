@@ -115,10 +115,6 @@ App.pushMenu = function() {
       $mainCont
         .addClass('push-right')
         .animate({ left: '-300px' }, 200)
-      // $siteHeader
-      //   .addClass('push-right')
-      //   .animate({ left: '-300px' }, 200)
-
     }
   });
 }

@@ -8,12 +8,7 @@ header {
   left: inherit;
   z-index: 10003;
   background-color: transparent;
-  /*box-shadow: 0px 0px 5px 2px #e8e8e8;*/
   color: #999;
-}
-
-.main-content.push-right header {
-  left: -300px;
 }
 
 header #header-logo-link {
@@ -97,7 +92,6 @@ header.with-bg #header-logo-link {
   width: 0px;
   padding-top: 100px;
   display: none;
-
   background-color: #424242;
 }
 
