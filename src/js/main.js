@@ -1,28 +1,25 @@
 
-import hello from './pages/indexPage'
+import * as globals from './parts/global';
+import * as statics from './parts/staticPages';
 
-hello('matt')
+const currentPath = window.location.pathname;
+
+$(document).ready(function() {
+
+  globals.navbar();
+  globals.pushMenu();
+
+  // index page
+  statics.programSlider();
+
+})
+
+
 
 var App = App || {};
 
 Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 
-
-// PAGE >>> not specified
-App.typer = function(elem) {
-  $(elem).typed({
-    strings: [
-      'support our cause.',
-      'recieve regular updates on events.',
-      'help make the world a better place.'
-    ],
-    typeSpeed: 0,
-    loop: true,
-    backDelay: 3000,
-    backSpeed: -5,
-    showCursor: false
-  });
-}
 
 // PAGE >>> new_blog, edit_blog
 App.tokenField = function(elem) {
@@ -50,74 +47,6 @@ App.contentPreviewCount = function() {
   })
 }
 
-// PAGE >>> blogs, show_blog
-App.scrollFollow = function(elem) {
-  $(elem).simpleScrollFollow({
-    limit_elem: '.on-left'
-  });
-}
-
-// PAGE >>> all pages
-App.navbar = function() {
-  var $navbar = $('header');
-  var $window = $(window);
-  var $logo = $('#header-logo-link');
-  var $menu = $('#header-menu-link');
-
-  $window.on('scroll change', function() {
-    // console.log($(this).scrollTop())
-    if ($(this).scrollTop() > 20) {
-      $navbar.addClass('with-bg');
-      $menu.css({ color: '#ddd' })
-      $logo.css({ opacity: '0.8', height: '40px' });
-    } else {
-      $navbar.removeClass('with-bg');
-      $menu.css({ color: '#999' })
-      $logo.css({ opacity: '0', height: '60px' })
-    }
-  });
-}
-
-// PAGE >>> all pages
-App.pushMenu = function() {
-  var $navbarBtn  = $('a#header-menu-link');
-  var $mainCont   = $('.main-cont');
-  var $siteHeader = $('header.site-header');
-  var $navMenu    = $('#nav-menu');
-
-  // menu link clicked
-  $navbarBtn.on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-
-    // if main-cont has class .push-right then remove it
-    if ($mainCont.hasClass('push-right')) {
-      $this.css({ color: '#999' });
-      $navMenu
-        .animate({ width: '0px' }, 200)
-      $mainCont
-        .removeClass('push-right')
-        .animate({ left: '0px' }, 200)
-    }
-    // add it if there isnt .push-right
-    else {
-      if (!$siteHeader.hasClass('with-bg')) {
-        console.log('no bg')
-        $this.css({ color: '#4dafcf' })
-      }
-      else {
-        $this.css({ 'color': '#fff' })
-      }
-
-      $navMenu
-        .show()
-        .animate({ width: '300px' }, 200)
-      $mainCont
-        .addClass('push-right')
-        .animate({ left: '-300px' }, 200)
-    }
-  });
-}
 
 // PAGE >>> show_event
 App.submitRegisterEvent = function() {
@@ -205,6 +134,7 @@ App.handleAdminEventAttendees = function() {
   });
 }
 
+// ADMIN
 App.handleAdminEventAttendeesMessage = function() {
   var $popovers = $('[data-toggle="popover"]');
   $popovers.on('click', function(e) {
@@ -216,123 +146,9 @@ App.handleAdminEventAttendeesMessage = function() {
 }
 
 // PAGE >>> index
-App.programSlider = function() {
-  var $pSlider  = $('#programs-slider');
-  var $progAll  = $pSlider.find('a.program');
-  var $prog1    = $pSlider.find('.program1');
-  var $prog2    = $pSlider.find('.program2');
-  var $prog3    = $pSlider.find('.program3');
-  var $prog4    = $pSlider.find('.program4');
-  var $prog5    = $pSlider.find('.program5');
-  var $satImg   = $pSlider.find('.saturated-img');
-  var $desatImg = $pSlider.find('.desaturated-img');
 
 
-  $progAll.on('mouseenter', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-
-    // same accross all programs
-    // hide desat img, show sat img
-    $this
-      .find('.desaturated-img')
-        .css({ display: 'none' })
-      .end()
-      .find('.saturated-img')
-        .css({ display: 'block' })
-
-    // if scenario programX
-    // make content width 100%
-    if ($this.hasClass('program1')) {
-      $this
-        .find('.content')
-        .css({ width: '100%' })
-
-      // push all over 4%
-      $prog2.css({ left: '24%' });
-      $prog3.css({ left: '44%' });
-      $prog4.css({ left: '64%' });
-      $prog5.css({ left: '84%' });
-    }
-
-    else if ($this.hasClass('program2')) {
-      $this
-        .css({ left: '18%' })
-        .find('.content')
-        .css({ width: '100%' })
-
-      // left -2% push all to the right 2%
-      $prog1.css({ left: '-2%' });
-      $prog3.css({ left: '42%' });
-      $prog4.css({ left: '62%' });
-      $prog5.css({ left: '82%' });
-    }
-
-    else if ($this.hasClass('program3')) {
-      $this
-        .css({ left: '38%' })
-        .find('.content')
-        .css({ width: '100%' })
-
-      $prog1.css({ left: '-2%' });
-      $prog2.css({ left: '18%' });
-      $prog4.css({ left: '62%' });
-      $prog5.css({ left: '82%' });
-    }
-
-    else if ($this.hasClass('program4')) {
-      $this
-        .css({ left: '58%' })
-        .find('.content')
-        .css({ width: '100%' })
-
-      $prog1.css({ left: '-2%' });
-      $prog2.css({ left: '18%' });
-      $prog3.css({ left: '38%' });
-      $prog5.css({ left: '82%' });
-
-    }
-
-    else if ($this.hasClass('program5')) {
-      $this
-        .css({ left: '76%' })
-        .find('.content')
-        .css({ width: '100%' })
-
-      // push all to the left -4%
-      $prog1.css({ left: '-4%' });
-      $prog2.css({ left: '16%' });
-      $prog3.css({ left: '36%' });
-      $prog4.css({ left: '56%' });
-
-    }
-  })
-
-  $progAll.on('mouseleave', function(e) {
-    e.preventDefault();
-
-    // hide all sat-img, show all desat-img
-    $progAll
-      .find('.saturated-img')
-        .css({ display: 'none' })
-      .end()
-      .find('.desaturated-img')
-        .css({ display: 'block' })
-      .end()
-      .find('.content')
-      .css({ width: '80%' })
-
-    // return all progams to their
-    // normal state
-    $prog1.css({ left: '0%' });
-    $prog2.css({ left: '20%' });
-    $prog3.css({ left: '40%' });
-    $prog4.css({ left: '60%' });
-    $prog5.css({ left: '80%' });
-  })
-}
-
-// PAGE >>> index
+// PAGE >>> /gallery
 App.imageGallery = function() {
   // once all the images are all loaded init masonry with options
   var $grid = $('#galleries .grid').imagesLoaded(function() {
@@ -442,68 +258,68 @@ App.imageSlider = function() {
 }
 
 // PAGE >>> not specified
-App.twitterSlider = function() {
-  var $indicatorsUl = $('.carousel-indicators');
-  var $innerCarousel = $('.carousel-inner');
+// App.twitterSlider = function() {
+//   var $indicatorsUl = $('.carousel-indicators');
+//   var $innerCarousel = $('.carousel-inner');
 
-  var tweets = [
-    {
-      title: '1 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
-      url: 'http://t.co/7FoVSP0vIf'
-    },
-    {
-      title: '2 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
-      url: 'http://t.co/7FoVSP0vIf'
-    },
-    {
-      title: '3 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
-      url: 'http://t.co/7FoVSP0vIf'
-    }
-  ]
+//   var tweets = [
+//     {
+//       title: '1 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+//       url: 'http://t.co/7FoVSP0vIf'
+//     },
+//     {
+//       title: '2 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+//       url: 'http://t.co/7FoVSP0vIf'
+//     },
+//     {
+//       title: '3 Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam ...',
+//       url: 'http://t.co/7FoVSP0vIf'
+//     }
+//   ]
 
-  for (var i=0; i<tweets.length; i++) {
-    var tdata = tweets[i];
-    var $indicator = createIndicator(i);
-    var $item = createItem(tdata.title, tdata.url, i)
+//   for (var i=0; i<tweets.length; i++) {
+//     var tdata = tweets[i];
+//     var $indicator = createIndicator(i);
+//     var $item = createItem(tdata.title, tdata.url, i)
 
-    $indicatorsUl.append($indicator);
-    $innerCarousel.append($item);
-  }
+//     $indicatorsUl.append($indicator);
+//     $innerCarousel.append($item);
+//   }
 
-  $('.carousel').carousel({
-    interval: 3000
-  });
+//   $('.carousel').carousel({
+//     interval: 3000
+//   });
 
 
-  function createIndicator(count) {
-    var indi = $('<li/>', {
-      'data-target': '#twitter-slider',
-      'data-slide-to': count
-    })
+//   function createIndicator(count) {
+//     var indi = $('<li/>', {
+//       'data-target': '#twitter-slider',
+//       'data-slide-to': count
+//     })
 
-    if (count === 0) {
-      indi.addClass('active');
-    }
+//     if (count === 0) {
+//       indi.addClass('active');
+//     }
 
-    return indi;
-  }
+//     return indi;
+//   }
 
-  function createItem(tweetText, tweetUrl, count) {
-    var item = $('<div/>', {
-      'class': 'item'
-    });
-    var para = $('<p/>').text(tweetText);
-    var anch = $('<a/>', {
-      'href': tweetUrl
-    }).text(tweetUrl);
+//   function createItem(tweetText, tweetUrl, count) {
+//     var item = $('<div/>', {
+//       'class': 'item'
+//     });
+//     var para = $('<p/>').text(tweetText);
+//     var anch = $('<a/>', {
+//       'href': tweetUrl
+//     }).text(tweetUrl);
 
-    if (count === 0) {
-      item.addClass('active');
-    }
+//     if (count === 0) {
+//       item.addClass('active');
+//     }
 
-    return item.append(para).append(anch);
-  }
-}
+//     return item.append(para).append(anch);
+//   }
+// }
 
 // PAGE >>> about_us
 App.countTo = function(elem) {
@@ -512,20 +328,20 @@ App.countTo = function(elem) {
 
 // PAGE >>> admin_page
 App.adminPageRenderer = function() {
-  var $adminSections   = $('.admin-section');
-  var $adminAll        = $('.admin-section__all');
-  var $adminBlogs      = $('.admin-section__blogs');
-  var $adminEvents     = $('.admin-section__events');
-  var $adminSubs       = $('.admin-section__subscribers');
-  var $adminImages     = $('.admin-section__gallery');
+  var $adminSections      = $('.admin-section');
+  var $adminAll           = $('.admin-section__all');
+  var $adminBlogs         = $('.admin-section__blogs');
+  var $adminEvents        = $('.admin-section__events');
+  var $adminSubs          = $('.admin-section__subscribers');
+  var $adminImages        = $('.admin-section__gallery');
   var $adminDonations     = $('.admin-section__donations');
 
-  var $adminLinks      = $('.admin-link');
-  var $adminLinkAll    = $('.admin-link__all');
-  var $adminLinkBlogs  = $('.admin-link__blogs');
-  var $adminLinkEvents = $('.admin-link__events');
-  var $adminLinkSubs   = $('.admin-link__subscribers');
-  var $adminLinkImages = $('.admin-link__gallery');
+  var $adminLinks         = $('.admin-link');
+  var $adminLinkAll       = $('.admin-link__all');
+  var $adminLinkBlogs     = $('.admin-link__blogs');
+  var $adminLinkEvents    = $('.admin-link__events');
+  var $adminLinkSubs      = $('.admin-link__subscribers');
+  var $adminLinkImages    = $('.admin-link__gallery');
   var $adminLinkDonations = $('.admin-link__donations');
 
 
@@ -655,20 +471,14 @@ App.submitDonation = function() {
 }
 
 
-App.typer('.nl-typer');
 App.tokenField('#new-blog-tokenfield');
 App.tokenField('#edit-blog-tokenfield');
 App.contentPreviewCount();
-App.scrollFollow('#show-blog .on-right, #blogs .on-right');
-App.navbar();
-App.pushMenu();
 App.submitRegisterEvent();
 App.handleAdminEventAttendees();
 App.handleAdminEventAttendeesMessage();
-App.programSlider();
 App.imageGallery();
 App.imageSlider(); // for james index
-App.twitterSlider();
 App.countTo($('.achivements .timer'));
 App.adminPageRenderer();
 App.googleMap();
