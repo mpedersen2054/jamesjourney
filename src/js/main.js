@@ -1,3 +1,5 @@
+import $ from 'jquery';
+import tokenfield from 'bootstrap-tokenfield';
 
 import * as globals from './controllers/global_controller';
 import * as statics from './controllers/statics_controller';
@@ -6,25 +8,31 @@ import * as admins  from './controllers/admin_controller';
 import * as blogs   from './controllers/blogs_controller';
 import * as gallery from './controllers/gallery_controller';
 
-
 const currentPath = window.location.pathname;
 
-// all pages
-globals.navbar();
-globals.pushMenu();
+// $(document).ready(function() {
+  // all pages
+  globals.navbar();
+  globals.pushMenu();
 
-// index
-statics.programSlider();
-statics.slideShow();
+  // index
+  statics.programSlider();
+  statics.slideShow();
 
-// contact-us
-statics.googleMap();
+  // contact-us
+  statics.googleMap();
 
-// show_event
-forms.handleDonateSubmit();
+  // show_event
+  forms.handleDonateSubmit();
 
-// donate
-forms.handleRegisterSubmit();
+  // donate
+  forms.handleRegisterSubmit();
+
+  // new_blog, new_event?
+  admins.tokenField('#new-blog-tokenfield');
+  admins.tokenField('#edit-blog-tokenfield');
+  admins.contentPreviewCount();
+// })
 
 
 
@@ -32,30 +40,10 @@ var App = App || {};
 
 
 // PAGE >>> new_blog, edit_blog
-App.tokenField = function(elem) {
-  $(elem).tokenfield({
-    // autocomplete: {
-    //   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-    //   delay: 100
-    // },
-    showAutocompleteOnFocus: true
-  })
-}
+
 
 // PAGE >>> new_blog, edit_blog
-App.contentPreviewCount = function() {
-  var currentNum;
-  var maxNum          = 600;
-  var $contentPreview = $('.content-preview-input');
-  var $currentCount   = $('.current-count');
-  var $maxNum         = $('.current-count__max');
-  var $currentNum     = $('.current-count__current');
 
-  $contentPreview.on('keyup', function() {
-    currentNum = $contentPreview.val().length;
-    $currentNum.text(currentNum);
-  })
-}
 
 // PAGE >>> admin_page
 App.handleAdminEventAttendees = function() {
@@ -105,27 +93,27 @@ App.handleAdminEventAttendeesMessage = function() {
 
 
 // PAGE >>> /gallery
-App.imageGallery = function() {
-  // once all the images are all loaded init masonry with options
-  var $grid = $('#galleries .grid').imagesLoaded(function() {
-    $grid.masonry({
-      itemSelector:    '.grid-item',
-      percentPosition: true,
-      columnWidth:     '.grid-sizer',
-      gutter:          5
-    });
-  });
+// App.imageGallery = function() {
+//   // once all the images are all loaded init masonry with options
+//   var $grid = $('#galleries .grid').imagesLoaded(function() {
+//     $grid.masonry({
+//       itemSelector:    '.grid-item',
+//       percentPosition: true,
+//       columnWidth:     '.grid-sizer',
+//       gutter:          5
+//     });
+//   });
 
-  $('.fancybox').fancybox({
-    fitToView: true,
-    closeBtn:  true,
-    padding:   '60px 0px 30px 0px',
-    // width:  '60%',
-    // height: '60%',
-    maxWidth:  1200,
-    maxHeight: 560
-  });
-}
+//   $('.fancybox').fancybox({
+//     fitToView: true,
+//     closeBtn:  true,
+//     padding:   '60px 0px 30px 0px',
+//     // width:  '60%',
+//     // height: '60%',
+//     maxWidth:  1200,
+//     maxHeight: 560
+//   });
+// }
 
 // PAGE >>> admin_page
 App.adminPageRenderer = function() {
@@ -187,16 +175,16 @@ App.adminPageRenderer = function() {
 }
 
 
-App.tokenField('#new-blog-tokenfield');
-App.tokenField('#edit-blog-tokenfield');
-App.contentPreviewCount();
+// App.tokenField('#new-blog-tokenfield');
+// App.tokenField('#edit-blog-tokenfield');
+// App.contentPreviewCount();
 
 App.adminPageRenderer();
 App.handleAdminEventAttendees();
 App.handleAdminEventAttendeesMessage();
 
 
-App.imageGallery();
+// App.imageGallery();
 
 
 
