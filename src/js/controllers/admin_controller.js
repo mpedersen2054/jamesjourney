@@ -1,7 +1,127 @@
 
 import $ from 'jquery';
+global.jQuery = $;
+window.jQuery = $;
+import 'bootstrap';
 import tokenfield from 'bootstrap-tokenfield';
 
+// for adminPageRenderer
+const $adminSections      = $('.admin-section');
+const $adminAll           = $('.admin-section__all');
+const $adminBlogs         = $('.admin-section__blogs');
+const $adminEvents        = $('.admin-section__events');
+const $adminSubs          = $('.admin-section__subscribers');
+const $adminImages        = $('.admin-section__gallery');
+const $adminDonations     = $('.admin-section__donations');
+const $adminLinks         = $('.admin-link');
+const $adminLinkAll       = $('.admin-link__all');
+const $adminLinkBlogs     = $('.admin-link__blogs');
+const $adminLinkEvents    = $('.admin-link__events');
+const $adminLinkSubs      = $('.admin-link__subscribers');
+const $adminLinkImages    = $('.admin-link__gallery');
+const $adminLinkDonations = $('.admin-link__donations');
+
+// for handleAdminEventAttendees && ...Messages
+const $createdAt = $('.attendee__created-at');
+const $attendeeMessage = $('.attendee__message');
+const $viewAttendeesBtn = $('.btn-attendees');
+const $attendeeRow = $('.attendee-row, .attendee-meta-row');
+
+
+/*
+/admin
+handles showing hbs for whichever link is selected,
+hides all other hbs tmpls, shows selected
+*/
+export function adminPageRenderer() {
+  // have the `all` be the initial state
+  $adminLinkAll.addClass('active');
+  $adminAll.addClass('show');
+
+
+  $adminLinks.on('click', function(e) {
+    e.preventDefault();
+
+    // .admin-link__XXX
+    var $clicked = $(this);
+
+    // remove all showed and add `active`
+    // to the clicked link
+    $adminSections.removeClass('show');
+    $adminLinks.removeClass('active');
+    $adminSections.removeClass('show');
+    $clicked.addClass('active')
+
+
+    if ($clicked[0] == $adminLinkAll[0]) {
+      $adminAll.addClass('show');
+    }
+    else if ($clicked[0] == $adminLinkBlogs[0]) {
+      $adminBlogs.addClass('show');
+    }
+    else if ($clicked[0] == $adminLinkEvents[0]) {
+      $adminEvents.addClass('show');
+    }
+    else if ($clicked[0] == $adminLinkSubs[0]) {
+      $adminSubs.addClass('show');
+    }
+    else if ($clicked[0] == $adminLinkImages[0]) {
+      $adminImages.addClass('show');
+    }
+    else if ($clicked[0] == $adminLinkDonations[0]) {
+      $adminDonations.addClass('show');
+    }
+  })
+}
+
+
+export function handleAdminEventAttendees() {
+  var attRowShowing = false;
+
+  // iterate over each attendee
+  // take each data-createdat, call toDateString
+  // then append back onto __created-at
+  $createdAt.each(function(caElem) {
+    var $this = $(this);
+    var dateData = $this.data('createdat');
+    console.log(dateData)
+    var dateString = new Date(dateData);
+    $this.append(dateString.toDateString());
+  });
+
+  // click event for view attendees
+  $viewAttendeesBtn.on('click', function(e) {
+    e.preventDefault();
+
+    if (!attRowShowing) {
+      // show attRow
+      attRowShowing = true;
+      $attendeeRow.show();
+    } else {
+      // hide attRow
+      attRowShowing = false;
+      $attendeeRow.hide();
+    }
+  });
+}
+
+export function handleAdminEventAttendeesMessages() {
+  var $popovers = $('[data-toggle="popover"]');
+  console.log($popovers)
+  $popovers.on('click', function(e) {
+    console.log()
+    $popovers.popover('hide');
+    var $this = $(this);
+    e.preventDefault();
+    $this.popover('show');
+  })
+}
+
+/*
+new_blog, edit_blog
+bootstrap-tokenfield allows you to add tags
+into input field
+*/
 export function tokenField(elem) {
   const $newBlogTokenField = $('#new-blog-tokenfield');
 
@@ -16,6 +136,10 @@ export function tokenField(elem) {
   // })
 }
 
+/*
+new_blog, edit_blog
+shows number of characters in blog.contentPreview
+*/
 export function contentPreviewCount() {
   var currentNum;
   var maxNum          = 600;
