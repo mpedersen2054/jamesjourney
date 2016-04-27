@@ -1,6 +1,9 @@
 
 import $ from 'jquery';
 
+global.jQuery = $;
+window.jQuery = $;
+
 const $pSlider  = $('#programs-slider');
 const $progAll  = $pSlider.find('a.program');
 const $prog1    = $pSlider.find('.program1');

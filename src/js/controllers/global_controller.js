@@ -1,6 +1,9 @@
 
 import $ from 'jquery';
 
+global.jQuery = $;
+window.jQuery = $;
+
 const $navbar     = $('header');
 const $window     = $(window);
 const $logo       = $('#header-logo-link');

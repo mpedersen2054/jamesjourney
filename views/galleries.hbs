@@ -29,11 +29,11 @@
   </div> --}}
 
   <div class="container-fluid no-padding">
-    <div class="grid" >
+    <div class="grid chocolat-parent" data-chocolat-title="hello parent title!">
       <div class="grid-sizer"></div>
       {{#each images}}
         <div class="grid-item">
-          <a href="#" class="">
+          <a href="{{image_url}}" class="chocolat-image" title="hello there indv title!">
             <img src="{{image_url}}" class="img" alt="">
           </a>
         </div>
