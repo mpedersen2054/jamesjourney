@@ -84,7 +84,7 @@ export function handleAdminEventAttendees() {
   $createdAt.each(function(caElem) {
     var $this = $(this);
     var dateData = $this.data('createdat');
-    console.log(dateData)
+    // console.log(dateData)
     var dateString = new Date(dateData);
     $this.append(dateString.toDateString());
   });
@@ -172,4 +172,21 @@ export function formatDate() {
       $this.text(localDateStr);
     }
   })
+}
+
+export function formatDonation() {
+  var $unformattedAmts = $('.jDonationAmt');
+  $unformattedAmts.each(function() {
+    var $this = $(this);
+    var amtOrigVal = $this.data('donationamt');
+    var amtFormatted = (amtOrigVal / 100).toFixed(2);
+
+    // handle when donationAmt == 0 ( this shouldnt happen )
+    if (amtFormatted[0] == 0) {
+      amtFormatted = 'None Specified';
+    }
+
+    $this.text(amtFormatted)
+  })
+
 }
