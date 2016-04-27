@@ -14,7 +14,8 @@
 #jumbotron {
   height: 56em;
   text-align: center;
-  background: url(http://dft010l2k5dxv.cloudfront.net/JumbotronBackgroundPattern.png);
+  // background: url(http://dft010l2k5dxv.cloudfront.net/JumbotronBackgroundPattern.png);
+  background: url(https://lh5.googleusercontent.com/-g_l9Md3A2sY/VyAbI1LuM_I/AAAAAAAAAR0/bvnTH_mHA-Yns7VgwhCZQgytIcMebkAKACL0B/w1025-h601-no/updated_splash_bkgd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -30,6 +31,11 @@
   background-size: cover;
   border: 6px solid #5d5d5d;
   overflow: hidden;
+}
+
+#jumbotron .jjlogo2 {
+  position: relative;
+  top: 200px;
 }
 
 #jumbotron .jjlogo img {
