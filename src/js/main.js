@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 
 global.jQuery = $;
 window.jQuery = $;
@@ -44,6 +44,7 @@ $(document).ready(function() {
   admins.adminPageRenderer();
   admins.handleAdminEventAttendees();
   admins.handleAdminEventAttendeesMessages();
+  admins.formatDate();
 
   // gallery
   galleries.imageGallery();

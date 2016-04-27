@@ -53,6 +53,8 @@ function queryAll(callback) {
               isAdminPage: true
             }
 
+            console.log(data.data)
+
             callback(null, adminData);
           });
         })

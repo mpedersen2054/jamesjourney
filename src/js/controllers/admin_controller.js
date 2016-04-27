@@ -153,3 +153,23 @@ export function contentPreviewCount() {
     $currentNum.text(currentNum);
   })
 }
+
+
+/*
+/admin
+grabs node date obj from data attr on element, formats the date
+*/
+
+export function formatDate() {
+  var $unformattedDates = $('.jdate');
+  $unformattedDates.each(function() {
+    var $this        = $(this);
+    var dateOrigVal  = $this.data('dateorig');
+    var newDate      = new Date(dateOrigVal);
+    var localDateStr = newDate.toLocaleDateString();
+
+    if (localDateStr && localDateStr.length) {
+      $this.text(localDateStr);
+    }
+  })
+}
