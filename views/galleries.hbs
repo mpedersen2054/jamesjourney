@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="container">
+  {{!-- <div class="container">
 
     <div class="all-images-container grid whitebg">
       <div class="grid-sizer"></div>
@@ -26,5 +26,18 @@
       {{/each}}
     </div>
 
+  </div> --}}
+
+  <div class="container-fluid no-padding">
+    <div class="grid" >
+      <div class="grid-sizer"></div>
+      {{#each images}}
+        <div class="grid-item">
+          <a href="#" class="">
+            <img src="{{image_url}}" class="img" alt="">
+          </a>
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>

@@ -22,19 +22,16 @@ a:visited {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-}
-
-.text-lblue {
-  color: #00aeef;
-}
+img { max-width: 100%;  }
+.no-padding { padding: 0 }
+.text-lblue { color: #00aeef; }
 
 .panel-heading {
   position: relative;
   clear: both;
   height: 40px;
 }
+
 
 input:required {
   border: 1px solid #C26464;
