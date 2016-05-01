@@ -10,7 +10,12 @@ var SubscriberSchema = new mongoose.Schema({
   tshirt:           { type: String, default: 'L' },
   added_on:         { type: Date, default: Date.now },
   updated_on:       { type: Date },
-  events_attending: [mongoose.Schema.Types.ObjectId],
+  events_attending: [
+    {
+      event_id: mongoose.Schema.Types.ObjectId,
+      stripeToken: String
+    }
+  ],
   donations:        [mongoose.Schema.Types.ObjectId]
 });
 

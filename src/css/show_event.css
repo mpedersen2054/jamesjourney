@@ -62,3 +62,40 @@
 #show-event .register-error {
   display: none;
 }
+
+#event-register-form .payment-description {
+  padding: 20px 0;
+  margin: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#event-register-form .payment-description h4 {
+  margin-bottom: 10px;
+}
+
+#event-register-form .payment-description p {
+  font-size: 14px;
+}
+
+#event-register-form .payment-info {
+  padding: 20px 0 40px 0;
+  margin: 0 0 40px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#event-register-form label {
+  color: #777;
+  font-weight: 400;
+}
+
+#event-register-form .exp-year-pull-left {
+  position: relative;
+  left: -25px;
+}
+
+@media (max-width: 62em) {
+  #event-register-form .exp-year-pull-left {
+    left: 0;
+  }
+}

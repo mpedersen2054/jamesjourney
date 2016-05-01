@@ -10,7 +10,8 @@ var AttendeeSchema = new mongoose.Schema({
   mcid:      String,
   tshirt:    { type: String, default: 'L' },
   added_on:  { type: Date, default: Date.now },
-  formattedDate: Date
+  formattedDate: Date,
+  stripeToken: String
 });
 
 var EventSchema = new mongoose.Schema({

@@ -65,17 +65,62 @@
               <textarea name="message" class="message form-control" rows="6" placeholder="Message (optional) ..."></textarea>
             </div>
 
+            <div class="payment-description">
+              <h4 class="text-muted">We require payment on registration</h4>
+              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque at quibusdam quas, esse architecto dolore error provident animi quae dolorem sunt vel sapiente minus eum, voluptatem harum! Porro voluptatibus assumenda autem adipisci. Quam, neque illum laudantium corporis eveniet error, ipsa.</p>
+            </div>
+
+            <div class="payment-info">
+
+              <div class="payment-errors"></div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="nameOnCard">Name on card</label>
+                    <input type="text" class="form-control" id="nameOnCard" name="nameOnCard" placeholder="John E Smith...">
+                  </div>
+                  <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="tel" id="cardNumber" name="cardNumber" class="form-control card-number cc-number" data-stripe="number" autocomplete="cc-number" placeholder="• • • •     • • • •     • • • •     • • • •">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cardNumber">Expiration Date</label>
+                        <div class="row">
+                          <div class="col-md-5">
+                            <input type="text" size="2" id="expMonth" name="expMonth" class="form-control" placeholder="MM" data-stripe="exp_month">
+                          </div>
+                          <div class="col-md-6 exp-year-pull-left">
+                            <input type="text" size="4" id="expYear" name="expYear" class="form-control" placeholder="YYYY" data-stripe="exp_year">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="cvcCode">Cvc Code</label>
+                        <input type="text" class="form-control" id="cvcCode" name="cvcCode" data-stripe="cvc" placeholder="XXXX">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {{!-- hidden slug --}}
             <input type="hidden" value="{{event.slug}}" name="slug" class="hidden-slug">
             <input type="hidden" value="{{event._id}}" name="event_id" class="hidden-slug">
 
-            <input type="submit" value="Register" class="btn btn-primary btn-lg">
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
           </form>
         </div>
       </div>
 
       <div class="col-md-4">
-        something goes here
+        Lorem ipsum dolor sit amet, consectetur.
       </div>
     </div>
   </div>

@@ -5,13 +5,13 @@ window.jQuery = $;
 import jQueryBridget from 'jquery-bridget';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
-import chocolat from 'chocolat';
+// import chocolat from 'chocolat';
 
 jQueryBridget( 'masonry', Masonry, $ );
 imagesLoaded.makeJQueryPlugin( $ );
 
 export function imageGallery() {
-  console.log(chocolat)
+  // console.log(chocolat)
   const $grid = $('#galleries .grid');
   $grid.imagesLoaded(function() {
     $grid.masonry({
