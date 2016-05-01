@@ -52,6 +52,7 @@ eventRouter.route('/:slug')
       });
     });
   })
+  // register subscriber to event, create donation
   .post(function(req, res) {
     var rb = req.body;
     if (!rb.f_name || !rb.l_name || !rb.email) {
@@ -83,7 +84,8 @@ eventRouter.route('/:slug')
       else {
         mailchimpWrapper.addUser({ f_name: rb.f_name, l_name: rb.l_name, email: rb.email }, function(err2, mcid) {
 
-          console.log(mcid)
+          console.log('mcid', mcid)
+          console.log('mcWrapper error', err2);
 
           if (err2) { console.log('mc errorrrr') } // handle error
 
@@ -107,8 +109,6 @@ eventRouter.route('/:slug')
                 ]
               })
             }
-
-
 
             console.log(subscriber)
 
