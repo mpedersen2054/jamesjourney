@@ -1,11 +1,6 @@
-import $ from 'jquery';
 
-global.jQuery = $;
-window.jQuery = $;
-
-import 'bootstrap';
-
-import tokenfield from 'bootstrap-tokenfield';
+// Normally would import $ here, but running into problems with
+// attaching other libraries onto the imported $
 
 import * as globals   from './controllers/global_controller';
 import * as statics   from './controllers/statics_controller';

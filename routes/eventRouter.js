@@ -87,14 +87,17 @@ eventRouter.route('/:slug')
           console.log('mcid', mcid)
           console.log('mcWrapper error', err2);
 
+          // NEED TO HANDLE CASE IF THE USER IS ALREADY ON MAILING LIST, BUT NOT SUBSCRIBER DOCUMENT
           if (err2) { console.log('mc errorrrr') } // handle error
 
           Subscriber.findOne({ email: rb.email }, function(err, sub) {
             var subscriber;
+            var newSubEvent = { event_id: event._id, stripeToken: rb.stripeToken }
+
             if (subscriber) {
               subscriber = sub;
               subscriber.mcid = mcid;
-              subscriber.events_attending.push({ event_id: event._id, stripeToken: rb.stripeToken });
+              subscriber.events_attending.push(newSubEvent);
             }
 
             else {
@@ -105,12 +108,12 @@ eventRouter.route('/:slug')
                 full_name: rb.f_name + ' ' + rb.l_name,
                 email: rb.email,
                 events_attending: [
-                  { event_id: event._id, stripeToken: rb.stripeToken }
+                  newSubEvent
                 ]
               })
             }
 
-            console.log(subscriber)
+            console.log('from eventRouter, found&modified new sub obj, or create new one',subscriber);
 
             event.attendees.push({
               _id:         subscriber._id,

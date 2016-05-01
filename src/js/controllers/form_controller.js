@@ -1,6 +1,4 @@
 
-import $ from 'jquery';
-
 // handleRegisterSubmit variables
 const $registerForm = $('#event-register-form');
 const $fName        = $registerForm.find('.first-name');

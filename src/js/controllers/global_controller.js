@@ -1,8 +1,6 @@
 
-import $ from 'jquery';
-
-global.jQuery = $;
-window.jQuery = $;
+// Normally would import $ here, but running into problems with
+// attaching other libraries onto the imported $
 
 const $navbar     = $('header');
 const $window     = $(window);

@@ -1,10 +1,4 @@
 
-import $ from 'jquery';
-global.jQuery = $;
-window.jQuery = $;
-import 'bootstrap';
-import tokenfield from 'bootstrap-tokenfield';
-
 // for adminPageRenderer
 const $adminSections      = $('.admin-section');
 const $adminAll           = $('.admin-section__all');
@@ -107,7 +101,7 @@ export function handleAdminEventAttendees() {
 
 export function handleAdminEventAttendeesMessages() {
   var $popovers = $('[data-toggle="popover"]');
-  console.log($popovers)
+  // console.log($popovers)
   $popovers.on('click', function(e) {
     console.log()
     $popovers.popover('hide');

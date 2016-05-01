@@ -45,14 +45,14 @@
 }
 
 .grid-item {
-  position: relative;
-  float: left;
+  // position: relative;
+  // float: left;
   // margin-bottom: 5px;
 
 }
 
-.grid-item img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
+// .grid-item img {
+//   display: block;
+//   height: auto;
+//   max-width: 100%;
+// }

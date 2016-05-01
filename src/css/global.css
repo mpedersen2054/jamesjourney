@@ -85,8 +85,14 @@ table a:not(.btn), .table a:not(.btn) {
   display: block;
 }
 
-.main-cont { position: relative; }
-
+#chocolat-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4000;
+}
 
 /*
 ===== for all new_xxx admin only forms

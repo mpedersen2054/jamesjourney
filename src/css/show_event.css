@@ -49,6 +49,10 @@
   margin: 60px 0;
 }
 
+#show-event .register {
+  padding-bottom: 120px;
+}
+
 #show-event #event-register-form {
   margin-bottom: 60px;
 }
@@ -92,6 +96,11 @@
 #event-register-form .exp-year-pull-left {
   position: relative;
   left: -25px;
+}
+
+.register-event-btn,
+.spinner-container {
+  float: left;
 }
 
 @media (max-width: 62em) {
