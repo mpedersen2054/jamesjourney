@@ -177,7 +177,9 @@ label {
 }
 
 @media (max-width: 62em) {
-  .select-col {
+  .select-col,
+  .selectpicker {
+    width: 100%;
     margin-top: 0;
   }
 }

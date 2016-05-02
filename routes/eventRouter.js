@@ -96,16 +96,18 @@ eventRouter.route('/:slug')
 
             if (sub) {
               subscriber = sub;
+              subscriber.tshirt = rb.tShirtSize;
               subscriber.events_attending.push(newSubEvent);
             }
 
             else {
               subscriber = new Subscriber({
-                mcid: mcid,
-                f_name: rb.f_name,
-                l_name: rb.l_name,
-                full_name: rb.f_name + ' ' + rb.l_name,
-                email: rb.email,
+                mcid:             mcid,
+                f_name:           rb.f_name,
+                l_name:           rb.l_name,
+                full_name:        rb.f_name + ' ' + rb.l_name,
+                email:            rb.email,
+                tshirt:           rb.tShirtSize,
                 events_attending: [
                   newSubEvent
                 ]
@@ -119,7 +121,7 @@ eventRouter.route('/:slug')
               email:       subscriber.email,
               message:     rb.message,
               full_name:   rb.f_name+' '+rb.l_name,
-              tShirtSize:  rb.tshirt,
+              tshirt:      rb.tShirtSize,
               stripeToken: rb.stripeToken
             })
 

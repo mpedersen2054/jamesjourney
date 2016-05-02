@@ -22,8 +22,6 @@
     </li>
   </ol>
 
-  <a href="mailto:patmedersen@yahoo.com">email me</a>
-
   {{#if events}}
     <table class="table">
       <thead>
@@ -91,7 +89,7 @@
             </div>
             {{#each attendees}}
               <div class="row">
-                <div class="col-md-3 attendee-col attendee__full-name">{{f_name}} {{l_name}}</div>
+                <div class="col-md-3 attendee-col attendee__full-name">{{full_name}}</div>
                 <div class="col-md-3 attendee-col attendee__email">{{email}}</div>
                 <div class="col-md-2 attendee-col attendee__created-at" data-createdat="{{added_on}}"></div>
                 <div class="col-md-2 attendee-col attendee__message">

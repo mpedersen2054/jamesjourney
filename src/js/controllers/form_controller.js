@@ -25,24 +25,7 @@ const $spinnerContainer = $('.spinner-container');
 
 Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 
-
 export function handleRegisterSubmit() {
-
-  function resetForm(result) {
-    if (result.success) {
-      $regSuccess.append('<div>'+result.message+'</div>');
-      $regSuccess.show();
-    }
-    else {
-      $regError.append('<div>'+result.message+'</div>');
-      $regError.show();
-    }
-    $fName.val('');
-    $lName.val('');
-    $email.val('');
-    $message.val('');
-    $slug.val('');
-  }
 
   $registerForm.on('submit', function(e) {
     e.preventDefault();
@@ -64,21 +47,6 @@ export function handleRegisterSubmit() {
         $form.get(0).submit();
       }
     });
-
-    // var data = {
-    //   f_name:    $fName.val(),
-    //   l_name:    $lName.val(),
-    //   full_name: $.trim($fName.val()) + ' ' + $.trim($lName.val()),
-    //   email:     $email.val(),
-    //   message:   $message.val(),
-    //   slug:      $slug.val(),
-    //   tshirt:    $tshirtSize.val()
-    // }
-
-    // $.post('/events/'+data.slug+'/register', data, function(result) {
-    //   // call func based on weather or not res.send(true)
-    //   result ? resetForm(result) : resetForm(result);
-    // });
 
   });
 }
@@ -118,4 +86,8 @@ export function handleDonateSubmit() {
       $form.get(0).submit();
     }
   };
+}
+
+export function bootstrapSelect() {
+  $('.selectpicker').selectpicker();
 }

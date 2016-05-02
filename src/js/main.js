@@ -26,6 +26,7 @@ $(document).ready(function() {
 
   // show_event
   forms.handleDonateSubmit();
+  forms.bootstrapSelect();
 
   // donate
   forms.handleRegisterSubmit();
