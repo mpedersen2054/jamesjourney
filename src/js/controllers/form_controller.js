@@ -22,7 +22,14 @@ const $srOnly           = $('<span/>', { class: 'sr-only' });
 const $donateForm       = $('#donate-form');
 const $spinnerContainer = $('.spinner-container');
 
+// bootstrapSelect
+const $selectPicker = $('.selectpicker');
+// showTotalFee
+const $totalAmt = $('.show-total-amt');
+const $radioRegisterOpts = $("input[name='registerOptions']");
 
+
+// set stripekey for all functions
 Stripe.setPublishableKey('pk_test_vdduCMCVf723Y1E0HpG43j32');
 
 export function handleRegisterSubmit() {
@@ -89,19 +96,18 @@ export function handleDonateSubmit() {
 }
 
 export function bootstrapSelect() {
-  $('.selectpicker').selectpicker();
+  $selectPicker.selectpicker();
 }
 
 export function showTotalFee() {
-  var $totalAmt = $('.show-total-amt');
   $totalAmt.text('$35.00');
 
-  $("input[name='registerOptions']").on('click', function(e) {
+  $radioRegisterOpts.on('click', function(e) {
     var radioVal = $(this).val();
-    if (radioVal === '20') {
+    if (radioVal === '2000') {
       $totalAmt.text('$20.00');
     }
-    if (radioVal === '35') {
+    if (radioVal === '3500') {
       $totalAmt.text('$35.00');
     }
   })

@@ -1,7 +1,9 @@
 var eventRouter      = require('express').Router();
 var EEvent           = require('../db/event');
 var mailchimpWrapper = require('../lib/mailchimpWrapper');
+var stripeWrapper    = require('../lib/stripeWrapper');
 var Subscriber       = require('../db/subscribers');
+var Donation         = require('../db/donation');
 
 eventRouter.route('/')
   .get(function(req, res) {
@@ -55,7 +57,6 @@ eventRouter.route('/:slug')
   // register subscriber to event, create donation
   .post(function(req, res) {
     console.log(req.body)
-    debugger;
     var rb = req.body;
     if (!rb.f_name || !rb.l_name || !rb.email) {
       res.send({
@@ -137,10 +138,54 @@ eventRouter.route('/:slug')
                   });
                 }
 
-                res.send({
-                  success: true,
-                  message: 'Successfully added registered for event'
-                });
+                var chargeInfo = {
+                  amount: +rb.registerOptions,
+                  currency: 'USD',
+                  card: rb.stripeToken,
+                  description: 'Event Registration Fee',
+                  metadata: {
+                    eventId: event.id,
+                    subscriberId: subscriber.id
+                  }
+                }
+
+                stripeWrapper.charges.create(chargeInfo, function(err, charge) {
+                  if (err || !charge) {
+                    res.send({
+                      success: false,
+                      message: 'There was an error submitting the Credit Card'
+                    });
+                  }
+
+                  console.log('charge success! evR', err, charge)
+                  var dbChargeInfo = {
+                    chid:      charge.id,
+                    uid:       subscriber._id,
+                    email:     rb.emailAddress,
+                    full_name: rb.nameOnCard,
+                    type:      charge.object,
+                    refundUrl: charge.refunds.url,
+                    status:    charge.status,
+                    amount:    +charge.amount
+                  }
+                  var newDonation = new Donation(dbChargeInfo);
+                  newDonation.save(function(err) {
+                    if (err) {
+                      res.send({
+                        success: false,
+                        message: 'There was an error submitting the Credit Card'
+                      })
+                    }
+                    else {
+                      subscriber.donations.push(newDonation._id);
+                      subscriber.save();
+                      res.send({
+                        success: true,
+                        message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.'
+                      })
+                    }
+                  })
+                })
               });
             });
           });

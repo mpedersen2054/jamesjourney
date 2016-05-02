@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var DonationSchema = new mongoose.Schema({
   uid:        { type: mongoose.Schema.Types.ObjectId},
+  chid:       String,
   type:       String,
   full_name:  String,
   amount:     Number,
