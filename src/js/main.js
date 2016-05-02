@@ -22,7 +22,7 @@ $(document).ready(function() {
   statics.slideShow();
 
   // contact-us
-  statics.googleMap();
+  // statics.googleMap();
 
   // show_event
   forms.handleDonateSubmit();
@@ -32,8 +32,8 @@ $(document).ready(function() {
   forms.handleRegisterSubmit();
 
   // new_blog, new_event?
-  admins.tokenField('#new-blog-tokenfield');
-  admins.tokenField('#edit-blog-tokenfield');
+  // admins.tokenField('#new-blog-tokenfield');
+  // admins.tokenField('#edit-blog-tokenfield');
   admins.contentPreviewCount();
 
   // admin_page

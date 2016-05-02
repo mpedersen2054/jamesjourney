@@ -220,6 +220,8 @@ export function slideShow() {
 /*
 Adds a custom google map to /contact-us
  */
+
+
 export function googleMap() {
   // required so error doesnt show, should eventually
   // put all calls to App inside .load
@@ -250,7 +252,7 @@ export function googleMap() {
     };
 
     // inizialize the map
-    var map = new google.maps.Map(document.getElementById('google-container'), map_options);
+    var map = new google.maps.Map(document.getElementById("google-container"), map_options);
 
     //add a custom marker to the map
     var marker = new google.maps.Marker({
