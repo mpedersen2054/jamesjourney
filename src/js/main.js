@@ -31,6 +31,9 @@ $(document).ready(function() {
   // donate
   forms.handleRegisterSubmit();
 
+  // show_event
+  forms.showTotalFee();
+
   // new_blog, new_event?
   // admins.tokenField('#new-blog-tokenfield');
   // admins.tokenField('#edit-blog-tokenfield');

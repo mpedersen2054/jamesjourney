@@ -91,3 +91,18 @@ export function handleDonateSubmit() {
 export function bootstrapSelect() {
   $('.selectpicker').selectpicker();
 }
+
+export function showTotalFee() {
+  var $totalAmt = $('.show-total-amt');
+  $totalAmt.text('$35.00');
+
+  $("input[name='registerOptions']").on('click', function(e) {
+    var radioVal = $(this).val();
+    if (radioVal === '20') {
+      $totalAmt.text('$20.00');
+    }
+    if (radioVal === '35') {
+      $totalAmt.text('$35.00');
+    }
+  })
+}

@@ -55,6 +55,10 @@ table a:not(.btn), .table a:not(.btn) {
   -webkit-transition: margin-left .3s ease-in-out,width .3s ease-in-out;
 }
 
+.margin-bot {
+  margin-bottom: 40px;
+}
+
 .btn.btn-primary {
   background-color: #00aeef;
   border: none;
