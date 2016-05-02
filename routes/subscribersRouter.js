@@ -1,5 +1,6 @@
 var config            = require('../config');
 var subscribersRouter = require('express').Router();
+var Subscriber        = require('../db/subscribers');
 var mailchimpWrapper  = require('../lib/mailchimpWrapper');
 
 subscribersRouter.route('/')
@@ -14,24 +15,43 @@ subscribersRouter.route('/new')
   })
 
   .post(function(req, res) {
-    var body = req.body;
+    var rb = req.body;
+
+    // if (!rb.email) { return res.send({ success: false, message: 'Email required.' }) }
+
     // use the mailchimpWrapper and pass in the body containing
     // the email, firstname and lastname, then render subscribed template
-    mailchimpWrapper.addUser(req.body, function(err, resp) {
-      if (err) {
-        res.render('subscribed', {
-          success: false,
-          name: body.f_name+' '+body.l_name,
-          email: body.email
-        })
-      }
-      else {
-        res.render('subscribed', {
-          success: true,
-          name: body.f_name+' '+body.l_name,
-          email: body.email
-        });
-      }
+    mailchimpWrapper.addUser(rb, function(err, resp) {
+
+      console.log('mcw err', err)
+      console.log('mcWrap response', resp)
+
+      Subscriber.findOne({ email: rb.email }, function(err, sub) {
+        if (!sub) {
+          rb.mcid = resp;
+          console.log('hasnt subscribed yet')
+          var newSub = new Subscriber(rb);
+          newSub.save();
+          res.render('subscribed', {
+            success: true,
+            name:    `${rb.f_name} ${rb.l_name}`,
+            email:   rb.email
+          });
+        }
+        else {
+          if (!sub.mcid) {
+            sub.mcid = resp;
+            sub.save();
+          }
+          console.log('already subscribed.')
+          res.render('subscribed', {
+            success: false,
+            name:    `${rb.f_name} ${rb.l_name}`,
+            email:   rb.email
+          })
+        }
+      })
+
     });
   });
 

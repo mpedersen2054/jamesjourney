@@ -10,7 +10,6 @@ var AttendeeSchema = new mongoose.Schema({
   mcid:          String,
   tshirt:        { type: String, default: 'L' },
   added_on:      { type: Date, default: Date.now },
-  formattedDate: Date,
   stripeToken:   String
 });
 
@@ -32,13 +31,6 @@ var EventSchema = new mongoose.Schema({
                   l: Number,
                   xl: Number
                  }
-});
-
-AttendeeSchema.pre('save', function(next) {
-  var attendee = this;
-  var formattedDate = attendee.added_on.toDateString();
-  attendee.formattedDate = formattedDate;
-  next();
 });
 
 EventSchema.pre('save', function(next) {

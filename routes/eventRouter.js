@@ -94,9 +94,8 @@ eventRouter.route('/:slug')
             var subscriber;
             var newSubEvent = { event_id: event._id, stripeToken: rb.stripeToken }
 
-            if (subscriber) {
+            if (sub) {
               subscriber = sub;
-              subscriber.mcid = mcid;
               subscriber.events_attending.push(newSubEvent);
             }
 
@@ -119,8 +118,6 @@ eventRouter.route('/:slug')
               _id:         subscriber._id,
               email:       subscriber.email,
               message:     rb.message,
-              f_name:      rb.f_name,
-              l_name:      rb.l_name,
               full_name:   rb.f_name+' '+rb.l_name,
               tShirtSize:  rb.tshirt,
               stripeToken: rb.stripeToken
