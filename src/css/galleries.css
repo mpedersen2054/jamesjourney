@@ -14,15 +14,6 @@
   background-color: #fff;
 }
 
-#galleries .loading {
-  /*position: relative;
-  // adding this class to the image that needs to be loaded
-  displays a loading spinner until image is loaded then it disappears
-  background: transparent url(http://i.forbesimg.com/assets/img/loading_spinners/43px_on_transparent.gif) no-repeat scroll center center;
-  width: 100%;
-  min-height: 100px;*/
-}
-
 .grid:after {
   content: '';
   display: block;
