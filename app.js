@@ -62,8 +62,7 @@ app.use('/admin',    adminRouter);
 
 app.use(function(req, res, next){
   res.status(404).render('404', {
-    message: 'Can\'t find this page.',
-    url: req.url
+    message: `Can\t find find the page ${req.url}`
   });
   // next();
 });

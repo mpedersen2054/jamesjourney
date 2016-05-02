@@ -82,7 +82,7 @@ blogRouter.route('/:slug')
     Blog.findOne({ 'slug': slug }, function(err, blog) {
       if (err) console.log(err);
       // error handle here
-      if (!blog) { return res.status(404).render('404'); }
+      if (!blog) { return res.status(404).render('404', { message: `Can\t find the blog ${req.params.slug}` }); }
 
       // find the featured
       Featured.findFeaturedBlogs(4, function(err, featured) {

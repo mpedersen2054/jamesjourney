@@ -32,7 +32,7 @@ eventRouter.route('/new')
 eventRouter.route('/:slug')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
-      if (err || !ev) { return res.status(404).render('404') };
+      if (err || !ev) { return res.status(404).render('404', { message: `Can\'t find the event ${req.params.slug}` }) };
       res.render('show_event', { event: ev });
     });
   })
