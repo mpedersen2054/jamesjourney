@@ -9,8 +9,8 @@ imagesLoaded.makeJQueryPlugin( $ );
 export function imageGallery() {
 
   $('#chocolat-parent').Chocolat({
-    imageSize: 'cover',
-    loop: true
+    loop: true,
+    imageSize: 'contain'
   });
 
   const $grid = $('#galleries .grid');

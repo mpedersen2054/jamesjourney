@@ -23,11 +23,6 @@
   min-height: 100px;*/
 }
 
-#galleries .container-fluid {
-  // max-width: 100%;
-  // margin-bottom: 100px;
-}
-
 .grid:after {
   content: '';
   display: block;
@@ -44,15 +39,33 @@
   height: auto;
 }
 
-.grid-item {
-  // position: relative;
-  // float: left;
-  // margin-bottom: 5px;
-
+@media (max-width: 72em) {
+  .grid-sizer,
+  .grid-item {
+    width: 33.33333%;
+  }
 }
 
-// .grid-item img {
-//   display: block;
-//   height: auto;
-//   max-width: 100%;
-// }
+@media (max-width: 52em) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 36em) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* override the chocolat defaults */
+.chocolat-wrapper {
+  z-index: 11000;
+}
+.chocolat-overlay {
+  opacity: 0.95;
+}
