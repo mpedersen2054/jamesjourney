@@ -129,9 +129,12 @@ galleryRouter.route('/multi-upload')
     });
   });
 
-galleryRouter.route('/:slug')
+galleryRouter.route('/:id')
   .get(function(req, res) {
     res.send('hello slug!')
+  })
+  .put(function(req, res) {
+    console.log('put /gallery/:id', req.body)
   })
 
 

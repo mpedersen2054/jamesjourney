@@ -45,6 +45,7 @@ $(document).ready(function() {
   admins.handleAdminEventAttendeesMessages();
   admins.formatDate();
   admins.formatDonation();
+  admins.editGalleryImageName();
 
   // gallery
   galleries.imageGallery();

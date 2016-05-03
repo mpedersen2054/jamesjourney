@@ -184,3 +184,17 @@ export function formatDonation() {
   })
 
 }
+
+export function editGalleryImageName() {
+  const $editImgBtn = $('.edit-img-btn');
+
+  $editImgBtn.on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var imgId = $this.data('imgref');
+    // var $imgNameTd = $this.parent().parent().find('.admin-img__name');
+    var $imgNameTd = $this.parent().parent().find('.admin-img__name');
+
+    console.log('clicked!!!', imgId, $imgNameTd.text())
+  })
+}
