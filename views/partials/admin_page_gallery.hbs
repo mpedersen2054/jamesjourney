@@ -37,13 +37,21 @@
       <tbody>
         {{#each images}}
         <tr class="image-row">
+          {{!-- img name --}}
           <td class="admin-img__name">{{name}} {{_id}}</td>
+
+          {{!-- img date --}}
           <td class="jdate" data-dateOrig="{{dateAdded}}"></td>
+
+          {{!-- view img link --}}
           <td>
-            <a href="#" class="btn btn-link admin-view-img" data-container="body" data-placement="top" data-toggle="popover" data-title="{{name}}" data-html="true" data-content="<img src='{{image_url}}'>">View</a>
+            <a href="#" class="btn btn-link admin-view-img" data-container="body" data-placement="left" data-toggle="popover" data-title="{{name}}" data-html="true" data-content="<img src='{{image_url}}'>" data-trigger="hover">View</a>
           </td>
           <td class="image-options">
+            {{!-- edit img btn --}}
             <button class="btn btn-default btn-xs edit-img-btn" data-imgref="{{_id}}"><i class="fa fa-pencil"></i></button>
+
+            {{!-- delete img btn --}}
             <button class="btn btn-danger btn-xs delete-img-btn" data-imgref="{{_id}}"><i class="fa fa-times"></i></button>
           </td>
         </tr>

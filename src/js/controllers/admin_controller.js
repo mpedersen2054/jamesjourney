@@ -102,8 +102,7 @@ export function handleAdminEventAttendees() {
 export function handleAdminEventAttendeesMessages() {
   var $popovers = $('[data-toggle="popover"]');
   // console.log($popovers)
-  $popovers.on('click', function(e) {
-    console.log()
+  $popovers.on('mouseenter', function(e) {
     $popovers.popover('hide');
     var $this = $(this);
     e.preventDefault();
@@ -186,15 +185,32 @@ export function formatDonation() {
 }
 
 export function editGalleryImageName() {
-  const $editImgBtn = $('.edit-img-btn');
+  var $editImgBtn = $('.edit-img-btn');
 
   $editImgBtn.on('click', function(e) {
     e.preventDefault();
-    var $this = $(this);
-    var imgId = $this.data('imgref');
-    // var $imgNameTd = $this.parent().parent().find('.admin-img__name');
-    var $imgNameTd = $this.parent().parent().find('.admin-img__name');
+    var $this        = $(this);
+    var imgId        = $this.data('imgref');
+    var $imgNameTd   = $this.parent().parent().find('.admin-img__name');
+    var imgNameTdTxt = $imgNameTd.text();
 
-    console.log('clicked!!!', imgId, $imgNameTd.text())
+    // when edit-img-btn is clicked, remove the text
+    // and place in am form/input whose value=<the text>
+    $imgNameTd
+      .text('')
+      .append(`
+        <form class="edit-img-form" method="POST">
+          <input value="${imgNameTdTxt}" data-imgref="${imgId}" class="edit-img-input" type="text" />
+        </form>
+      `)
+
+    //
+    $('.edit-img-form').on('submit', function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.find('.edit-img-input');
+
+      console.log($input.val())
+    })
   })
 }
