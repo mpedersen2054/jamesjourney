@@ -24,6 +24,8 @@
     </li>
   </ol>
 
+  <div id="admin-gallery-alerts"></div>
+
   {{#if images}}
     <table class="table table-hover table-striped">
       <thead>
@@ -38,7 +40,7 @@
         {{#each images}}
         <tr class="image-row">
           {{!-- img name --}}
-          <td class="admin-img__name">{{name}} {{_id}}</td>
+          <td class="admin-img__name">{{name}}</td>
 
           {{!-- img date --}}
           <td class="jdate" data-dateOrig="{{dateAdded}}"></td>

@@ -204,13 +204,37 @@ export function editGalleryImageName() {
         </form>
       `)
 
+    var alert = (status, message) => {
+      return `
+        <div class="alert alert-${status} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          ${message}
+        </div>
+      `
+    }
+
     //
     $('.edit-img-form').on('submit', function(e) {
       e.preventDefault();
       var $this = $(this);
       var $input = $this.find('.edit-img-input');
+      var imgref = $input.data('imgref');
+      var submitData = { imgref: imgref, newName: $input.val() }
 
-      console.log($input.val())
+      // need to change from localhost to james4eds
+      $.post(`/gallery/${imgref}`, submitData)
+        .done(data => {
+          console.log('success!', data)
+          $('#admin-gallery-alerts').append(alert('success', data.message))
+          alert(data.status, data.message);
+          $imgNameTd.empty().text(data.newName)
+          // create alert
+          // remove input and put the new title
+          //
+        })
+        .fail(error => {
+          console.log('fail...', error)
+        })
     })
   })
 }

@@ -133,8 +133,27 @@ galleryRouter.route('/:id')
   .get(function(req, res) {
     res.send('hello slug!')
   })
-  .put(function(req, res) {
-    console.log('put /gallery/:id', req.body)
+  // post from /admin#gallery, update img's name
+  .post(function(req, res) {
+    var rb = req.body;
+    console.log(rb)
+    if (!rb.newName || !rb.imgref) {
+      res.status(404).send({
+        success: false,
+        message: 'There was no new name submitted.'
+      });
+    }
+
+    Gallery.findById(rb.imgref, function(err, img) {
+      if (err || rb.newName === img.name) { console.log('error!!') }
+      img.name = rb.newName;
+      img.save();
+      res.status(200).send({
+        success: true,
+        message: 'Successfully saved new name.',
+        newName: rb.newName
+      });
+    })
   })
 
 
