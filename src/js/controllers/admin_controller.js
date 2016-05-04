@@ -188,17 +188,28 @@ export function editGalleryImageName() {
   var $editImgBtn = $('.edit-img-btn');
 
   // returns a bootstrap alert message
-  var alert = (status, message) => {
-    return `
+  function alert(status, message, imgName) {
+    var alertElem = `
       <div class="alert alert-${status} alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        ${message}
+        ${message} ${imgName}.
       </div>
     `
+    $('#admin-gallery-alerts').empty().append(alertElem)
   }
 
-  var emptyAndUpdateElement = (elem, newContent) => {
+  // calls empty on the element and appends the new content
+  function emptyAndUpdateElement(elem, newContent) {
     $(elem).empty().append(newContent);
+  }
+
+  // when input is created, focus last at end of string
+  // ex: |Matt   vs   Matt|
+  function focusLastCharacter(elem) {
+    elem.focus();
+    var val = elem.val();
+    elem.val('');
+    elem.val(val);
   }
 
   $editImgBtn.on('click', function(e) {
@@ -210,13 +221,15 @@ export function editGalleryImageName() {
 
     // when edit-img-btn is clicked, remove the text
     // and place in am form/input whose value=<the text>
-
     emptyAndUpdateElement($imgNameTd, `
       <form class="edit-img-form" method="POST">
         <input value="${imgNameTdTxt}" data-imgref="${imgId}" class="edit-img-input" type="text" />
       </form>
     `)
 
+    focusLastCharacter($('.edit-img-input'));
+
+    // if the user presses 'esc' while focus on input
     $('.edit-img-input').on('keyup', function(e) {
       (e.keyCode === 27) && emptyAndUpdateElement($imgNameTd, imgNameTdTxt);
     });
@@ -224,28 +237,29 @@ export function editGalleryImageName() {
     // has to be inside $editImgBtn.click()...
     // new title is submitted by pressing 'enter'
     // post to /gallery/:id, create alert based on result
-    // show new name once entered
+    // show new name once successful
     $('.edit-img-form').on('submit', function(e) {
       e.preventDefault();
-      var $this = $(this);
+      var $this  = $(this);
       var $input = $this.find('.edit-img-input');
       var imgref = $input.data('imgref');
-      var submitData = { imgref: imgref, newName: $input.val() }
 
+      // if the input didnt change or is blank
       if ($input.val() === imgNameTdTxt || $input.val() === '') {
         return console.log('nothing updated...');
       }
+
       else {
-        // need to change from localhost to james4eds
+        var submitData = { imgref: imgref, newName: $input.val() }
         $.post(`/gallery/${imgref}`, submitData)
           .done(data => {
-            console.log('success!', data)
-            $('#admin-gallery-alerts').append(alert('success', data.message))
-            alert(data.status, data.message);
+            // clear the #admin-gallery-alert
+            alert('success', data.message, data.newName);
+            // remove the input and place the new text
             emptyAndUpdateElement($imgNameTd, data.newName);
           })
           .fail(error => {
-            console.log('fail...', error)
+            console.log('fail...', error);
           })
       }
     })
