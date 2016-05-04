@@ -187,6 +187,20 @@ export function formatDonation() {
 export function editGalleryImageName() {
   var $editImgBtn = $('.edit-img-btn');
 
+  // returns a bootstrap alert message
+  var alert = (status, message) => {
+    return `
+      <div class="alert alert-${status} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        ${message}
+      </div>
+    `
+  }
+
+  var emptyAndUpdateElement = (elem, newContent) => {
+    $(elem).empty().append(newContent);
+  }
+
   $editImgBtn.on('click', function(e) {
     e.preventDefault();
     var $this        = $(this);
@@ -196,24 +210,21 @@ export function editGalleryImageName() {
 
     // when edit-img-btn is clicked, remove the text
     // and place in am form/input whose value=<the text>
-    $imgNameTd
-      .text('')
-      .append(`
-        <form class="edit-img-form" method="POST">
-          <input value="${imgNameTdTxt}" data-imgref="${imgId}" class="edit-img-input" type="text" />
-        </form>
-      `)
 
-    var alert = (status, message) => {
-      return `
-        <div class="alert alert-${status} alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          ${message}
-        </div>
-      `
-    }
+    emptyAndUpdateElement($imgNameTd, `
+      <form class="edit-img-form" method="POST">
+        <input value="${imgNameTdTxt}" data-imgref="${imgId}" class="edit-img-input" type="text" />
+      </form>
+    `)
 
-    //
+    $('.edit-img-input').on('keyup', function(e) {
+      (e.keyCode === 27) && emptyAndUpdateElement($imgNameTd, imgNameTdTxt);
+    });
+
+    // has to be inside $editImgBtn.click()...
+    // new title is submitted by pressing 'enter'
+    // post to /gallery/:id, create alert based on result
+    // show new name once entered
     $('.edit-img-form').on('submit', function(e) {
       e.preventDefault();
       var $this = $(this);
@@ -221,20 +232,22 @@ export function editGalleryImageName() {
       var imgref = $input.data('imgref');
       var submitData = { imgref: imgref, newName: $input.val() }
 
-      // need to change from localhost to james4eds
-      $.post(`/gallery/${imgref}`, submitData)
-        .done(data => {
-          console.log('success!', data)
-          $('#admin-gallery-alerts').append(alert('success', data.message))
-          alert(data.status, data.message);
-          $imgNameTd.empty().text(data.newName)
-          // create alert
-          // remove input and put the new title
-          //
-        })
-        .fail(error => {
-          console.log('fail...', error)
-        })
+      if ($input.val() === imgNameTdTxt || $input.val() === '') {
+        return console.log('nothing updated...');
+      }
+      else {
+        // need to change from localhost to james4eds
+        $.post(`/gallery/${imgref}`, submitData)
+          .done(data => {
+            console.log('success!', data)
+            $('#admin-gallery-alerts').append(alert('success', data.message))
+            alert(data.status, data.message);
+            emptyAndUpdateElement($imgNameTd, data.newName);
+          })
+          .fail(error => {
+            console.log('fail...', error)
+          })
+      }
     })
   })
 }
