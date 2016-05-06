@@ -2,19 +2,21 @@ var mongoose = require('mongoose');
 var slugify  = require('../lib/slugify.js');
 
 var BlogSchema = new mongoose.Schema({
-  coverImage:     { type: String },
-  title:          { type: String, unique: true },
-  isFeatured:     { type: Boolean, default: false },
-  dateAdded:      { type: Date, default: Date.now },
-  formattedDate:  { type: String },
-  slug:           { type: String },
-  author:         { type: String },
-  tags:           [ String ],
-  contentPreview: { type: String }, // 360 chars
-  hasReadMoreBtn: { type: Boolean, default: false },
-  content:        { type: String },
-  social:         [ String ],
-  pageViews:      { type: Number, default: 0 }
+  coverImage:         { type: String },
+  title:              { type: String, unique: true },
+  isFeatured:         { type: Boolean, default: false },
+  dateAdded:          { type: Date, default: Date.now },
+  formattedDate:      { type: String },
+  slug:               { type: String },
+  authorId:           mongoose.Schema.Types.ObjectId,
+  authorFullname:     String,
+  authorThumbnailUrl: String,
+  tags:               [ String ],
+  contentPreview:     { type: String }, // 360 chars
+  hasReadMoreBtn:     { type: Boolean, default: false },
+  content:            { type: String },
+  social:             [ String ],
+  pageViews:          { type: Number, default: 0 }
 });
 
 // adds formatted date

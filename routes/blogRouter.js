@@ -41,20 +41,20 @@ blogRouter.route('/')
 blogRouter.route('/new')
   .get(function(req, res) {
     if (req.user) {
-      res.render('new_blog');
+      res.render('new_blog', { user: req.user });
     } else {
       res.redirect('/login');
     }
   })
   .post(function(req, res) {
     if (req.user) {
+
       var data = req.body;
+
       // returns array of tags
       data.tags = data.tags.split(',').map(function(tag) {
         return tag.trim();
       });
-
-      data.author = req.user.username;
 
       // uses markdown module to turn the MD into html
       var content = markdown.toHTML(data.content);

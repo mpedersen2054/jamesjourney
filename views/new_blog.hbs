@@ -11,10 +11,10 @@
 
         <form id="blog-form" class="form well" action="" method="post">
           <div class="form-group">
-            <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off">
+            <input type="text" class="form-control" name="coverImage" placeholder="cover image url..." autocomplete="off" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off">
+            <input type="text" class="form-control" name="title" placeholder="title..." autocomplete="off" required>
           </div>
           <div class="form-group">
             <input type="text" name="tags" class="form-control" id="new-blog-tokenfield" value="red,green,blue" />
@@ -32,6 +32,11 @@
           <div class="form-group">
             <textarea name="content" class="form-control" placeholder="Enter content (markdown!) ..."></textarea>
           </div>
+
+          <input type="hidden" name="authorId" value={{user._id}}>
+          <input type="hidden" name="authorFullname" value={{user.fullname}}>
+          <input type="hidden" name="authorThumbnailUrl" value={{user.thumbnailUrl}}>
+
           <input type="submit" class="btn btn-primary" value="Submit">
         </form>
 
