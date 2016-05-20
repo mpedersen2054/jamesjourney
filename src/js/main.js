@@ -9,9 +9,27 @@ import * as admins    from './controllers/admin_controller';
 import * as blogs     from './controllers/blogs_controller';
 import * as galleries from './controllers/galleries_controller';
 
-const currentPath = window.location.pathname;
+const currentPath = window.location.pathname.split('/')[1];
 
 $(document).ready(function() {
+
+  if (currentPath === 'contact-us') {
+    console.log('contact-us page!');
+  } else if (currentPath === 'events') {
+    console.log('eventszzz page!!');
+  } else if (currentPath === 'donate') {
+    console.log('donate pagezz!!');
+  } else if (currentPath === 'admin') {
+    console.log('addddddmin page');
+  } else if (currentPath === 'gallery') {
+    console.log('gallery page!!!');
+  } else if (currentPath === 'blog') {
+    console.log('blog page!!')
+  } else if (currentPath === '') {
+    console.log('index page???')
+  } else {
+    console.log('no js to run')
+  }
 
   // all pages
   globals.navbar();
@@ -22,21 +40,17 @@ $(document).ready(function() {
   statics.slideShow();
 
   // contact-us
-  // statics.googleMap();
+  statics.googleMap();
 
   // show_event
-  forms.handleDonateSubmit();
-  forms.bootstrapSelect();
-
-  // donate
   forms.handleRegisterSubmit();
-
-  // show_event
+  forms.bootstrapSelect();
   forms.showTotalFee();
 
+  // donate
+  forms.handleDonateSubmit();
+
   // new_blog, new_event?
-  // admins.tokenField('#new-blog-tokenfield');
-  // admins.tokenField('#edit-blog-tokenfield');
   admins.contentPreviewCount();
 
   // admin_page
@@ -50,3 +64,4 @@ $(document).ready(function() {
   // gallery
   galleries.imageGallery();
 });
+

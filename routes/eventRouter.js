@@ -20,10 +20,10 @@ eventRouter.route('/new')
   })
   // ADD NEW EVENT
   .post(function(req, res) {
-    var data = req.body;
-    var date = new Date(data.date);
+    var data  = req.body;
+    var date  = new Date(data.date);
     data.date = date;
-    var ev = new EEvent(data);
+    var ev    = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
       return res.redirect('/admin')
@@ -43,9 +43,9 @@ eventRouter.route('/:slug')
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       var body = req.body;
       console.log(body)
-      ev.name = body.name;
-      ev.date = new Date(body.date);
-      ev.location = body.location;
+      ev.name        = body.name;
+      ev.date        = new Date(body.date);
+      ev.location    = body.location;
       ev.description = body.description;
 
       ev.save(function(err) {
@@ -95,7 +95,7 @@ eventRouter.route('/:slug')
 
           Subscriber.findOne({ email: rb.email }, function(err, sub) {
             var subscriber;
-            var newSubEvent = { event_id: event._id, stripeToken: rb.stripeToken }
+            var newSubEvent = { event_id: event._id, stripeToken: rb.stripeToken, amount: rb.registerOptions }
 
             if (sub) {
               subscriber = sub;

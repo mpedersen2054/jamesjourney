@@ -191,8 +191,9 @@ export function slideShow() {
     // then append li onto #slider
     for (var i=0; i < sliderArr.length; i++) {
       var img  = sliderArr[i].image;
+      var isFirst = i === 0 ? 'show' : ''
       var item = $('<li/>', {
-        'class': 'slider__item',
+        'class': `slider__item ${isFirst}`,
         'data-position': i
       })
 

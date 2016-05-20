@@ -14,7 +14,6 @@
 #jumbotron {
   height: 56em;
   text-align: center;
-  // background: url(http://dft010l2k5dxv.cloudfront.net/JumbotronBackgroundPattern.png);
   background: url(https://lh5.googleusercontent.com/-g_l9Md3A2sY/VyAbI1LuM_I/AAAAAAAAAR0/bvnTH_mHA-Yns7VgwhCZQgytIcMebkAKACL0B/w1025-h601-no/updated_splash_bkgd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -438,7 +437,7 @@ EVENTS PREVIEW
   transition-timing-function: ease;
   z-index: -20;
 
-  opacity: 0.1;
+  opacity: 0.25;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);

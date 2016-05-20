@@ -81,7 +81,7 @@
   border-right: 1px solid #eee;
   position: absolute;
   margin-right: 1px;
-  background: #000;
+  background-color: #000;
   color: #eee;
 
   // filter: grayscale(100%);

@@ -2,9 +2,10 @@ var Blog     = require('../db/blog');
 var EEvent   = require('../db/event');
 var Gallery  = require('../db/gallery');
 var Donation = require('../db/donation');
+var Subscriber = require('../db/subscribers');
 var mcapi    = require('mailchimp-api');
 var config   = require('../config');
-var mc       = new mcapi.Mailchimp(config.mailchimpApiKey);
+// var mc       = new mcapi.Mailchimp(config.mailchimpApiKey);
 
 function queryAll(callback) {
   Blog.find({}, function(err, blogs) {
@@ -43,18 +44,23 @@ function queryAll(callback) {
           if (err) return callback(err, null);
 
           // get mailchimp subscribers
-          mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
-            var adminData = {
-              blogs:       blogs,
-              events:      eventsWithTshirtMap,
-              images:      galleries,
-              mcd:         data.data,
-              donations:   donations,
-              isAdminPage: true
-            }
+          // mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
 
-            callback(null, adminData);
-          });
+          Subscriber.find({}, 'full_name email added_on', function(err, subs) {
+            console.log('subs', subs)
+          })
+
+          var adminData = {
+            blogs:       blogs,
+            events:      eventsWithTshirtMap,
+            images:      galleries,
+            // mcd:         data.data,
+            donations:   donations,
+            isAdminPage: true
+          }
+
+          callback(null, adminData);
+          // });
         })
       });
     });

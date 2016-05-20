@@ -23,8 +23,6 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-
-    <link rel="stylesheet" href="//dft010l2k5dxv.cloudfront.net/bootstrap-tokenfield.min.css">
     <link rel="stylesheet" href="//dft010l2k5dxv.cloudfront.net/tokenfield-typeahead.min.css">
     <link rel="stylesheet" href="//dft010l2k5dxv.cloudfront.net/bootstrap-select.min.css">
 
@@ -34,21 +32,6 @@
 
   </head>
   <body>
-
-    {{!-- <div id="fb-root"></div> --}}
-    <!-- <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script> -->
-
-    <!-- <script>
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    </script> -->
 
     <div class="main-cont">
       {{#if isAdminPage}}
@@ -65,16 +48,7 @@
     <script src="//dft010l2k5dxv.cloudfront.net/jquery.chocolat.min.js"></script>
     <script src="//dft010l2k5dxv.cloudfront.net/bootstrap-select.min.js"></script>
 
-    {{!--
-    <script src="//dft010l2k5dxv.cloudfront.net/bootstrap-tokenfield.min.js"></script>
-    --}}
-
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
-    {{!-- SHOW ONLY ON CONTACT_US
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8aGIj2g4IO0K2RpTb2tMp8Rs0towvaUE"></script>
-    <div id="google-container"></div>
-    --}}
 
     <script src="/js/app.bundle.js"></script>
 
@@ -87,17 +61,6 @@
       ga('create', 'UA-69440136-2', 'auto');
       ga('send', 'pageview');
     </script>
-
-
-
-    {{!--
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-
-
-    <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-    </script>
-     --}}
-
 
   </body>
 </html>

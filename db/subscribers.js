@@ -11,11 +11,12 @@ var SubscriberSchema = new mongoose.Schema({
   updated_on:       { type: Date },
   events_attending: [
     {
-      event_id: mongoose.Schema.Types.ObjectId,
-      stripeToken: String
+      event_id:    mongoose.Schema.Types.ObjectId,
+      stripeToken: String,
+      amount:      String
     }
   ],
-  donations:        [mongoose.Schema.Types.ObjectId]
+  donations: [mongoose.Schema.Types.ObjectId]
 });
 
 module.exports = mongoose.model('Subscriber', SubscriberSchema);

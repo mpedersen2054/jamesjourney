@@ -25,12 +25,12 @@ var EventSchema = new mongoose.Schema({
   category:      { type: String, default: 'event' },
   description:   { type: String },
   attendees:     [AttendeeSchema],
-  tshirtMap:     {
-                  s: Number,
-                  m: Number,
-                  l: Number,
-                  xl: Number
-                 }
+  tshirtMap: {
+    s: Number,
+    m: Number,
+    l: Number,
+    xl: Number
+  }
 });
 
 EventSchema.pre('save', function(next) {

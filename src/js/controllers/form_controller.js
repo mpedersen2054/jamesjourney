@@ -69,7 +69,7 @@ export function handleDonateSubmit() {
     $spinnerContainer.append($spinner).append($srOnly);
     $form.find('.btn').prop('disabled', true);
 
-    console.log($form)
+    // console.log($form)
 
     // create the stripeToken
     Stripe.card.createToken($form, stripeResponseHandler);

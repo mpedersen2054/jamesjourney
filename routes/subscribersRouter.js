@@ -68,13 +68,13 @@ subscribersRouter.route('/members')
       var formattedMembers = [];
 
       for (var i in members) {
-        var member = members[i];
-        var obj = {};
-        obj.id = member.id;
+        var member       = members[i];
+        var obj          = {};
+        obj.id           = member.id;
         obj.emailAddress = member.email_address;
-        obj.fName = decodeURI(member.merge_fields['FNAME']);
-        obj.lName = decodeURI(member.merge_fields['LNAME']);
-        obj.fullName = obj.fName + ' ' + obj.lName;
+        obj.fName        = decodeURI(member.merge_fields['FNAME']);
+        obj.lName        = decodeURI(member.merge_fields['LNAME']);
+        obj.fullName     = obj.fName + ' ' + obj.lName;
 
         formattedMembers.push(obj);
       }
