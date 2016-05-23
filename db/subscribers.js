@@ -16,7 +16,13 @@ var SubscriberSchema = new mongoose.Schema({
       amount:      String
     }
   ],
-  donations: [mongoose.Schema.Types.ObjectId]
+  donations: [
+    {
+      donate_id: mongoose.Schema.Types.ObjectId,
+      category:  String,
+      amount:    String
+    }
+  ]
 });
 
 module.exports = mongoose.model('Subscriber', SubscriberSchema);

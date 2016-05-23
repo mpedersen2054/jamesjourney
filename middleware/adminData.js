@@ -17,7 +17,7 @@ function queryAll(callback) {
       // return an event with a new tshirtMap
       // object property attached to it
       var eventsWithTshirtMap = events.map(function(event) {
-        var tshirtCounter = { s: 0, m: 0, l: 0, xl: 0 };
+        var tshirtCounter = { none: 0, s: 0, m: 0, l: 0, xl: 0 };
         // iterate over each attendee in event
         // and increment tshirtCounter accordingly
         event.attendees.forEach(function(attendee) {
@@ -30,7 +30,10 @@ function queryAll(callback) {
             tshirtCounter.l++;
           } else if (tshirtSize === 'xl') {
             tshirtCounter.xl++;
-          } else { return }
+          } else if (tshirtSize.toLowerCase() === 'none') {
+            tshirtCounter.none++;
+          }
+          else { return }
         });
 
         event.tshirtMap = tshirtCounter;
@@ -47,21 +50,18 @@ function queryAll(callback) {
           // mc.lists.members({id: 'cb90ef9f1e'}, function(data) {
 
           Subscriber.find({}, 'full_name email added_on', function(err, subs) {
-            console.log('subs', subs)
-          })
+            var adminData = {
+              blogs:       blogs,
+              events:      eventsWithTshirtMap,
+              images:      galleries,
+              subscribers: subs,
+              donations:   donations,
+              isAdminPage: true
+            }
 
-          var adminData = {
-            blogs:       blogs,
-            events:      eventsWithTshirtMap,
-            images:      galleries,
-            // mcd:         data.data,
-            donations:   donations,
-            isAdminPage: true
-          }
-
-          callback(null, adminData);
-          // });
-        })
+            callback(null, adminData);
+          });
+        });
       });
     });
   });

@@ -28,7 +28,7 @@
     </li>
 
   </ol>
-  {{#if mcd}}
+  {{#if subscribers}}
     <table class="table table-hover table-striped">
       <thead>
         <tr>
@@ -38,10 +38,10 @@
         </tr>
       </thead>
       <tbody>
-      {{#each mcd}}
+      {{#each subscribers}}
         <tr>
-          <td class="jdate" data-dateOrig="{{timestamp}}"></td>
-          <td>{{merges.FNAME}} {{merges.LNAME}}</td>
+          <td class="jdate" data-dateOrig="{{added_on}}"></td>
+          <td>{{full_name}}</td>
           <td>{{email}}</td>
         </tr>
       {{/each}}

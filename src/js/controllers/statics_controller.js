@@ -191,7 +191,7 @@ export function slideShow() {
     // then append li onto #slider
     for (var i=0; i < sliderArr.length; i++) {
       var img  = sliderArr[i].image;
-      var isFirst = i === 0 ? 'show' : ''
+      var isFirst = i === 0 ? 'show' : '';
       var item = $('<li/>', {
         'class': `slider__item ${isFirst}`,
         'data-position': i
@@ -241,15 +241,15 @@ export function googleMap() {
 
     // set google map options
     var map_options = {
-      center: new google.maps.LatLng($latitude, $longitude),
-      zoom: $map_zoom,
-      panControl: true,
-      zoomControl: true,
-      mapTypeControl: false,
+      center:            new google.maps.LatLng($latitude, $longitude),
+      zoom:              $map_zoom,
+      panControl:        true,
+      zoomControl:       true,
+      mapTypeControl:    false,
       streetViewControl: true,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      scrollwheel: false,
-      styles: style
+      mapTypeId:         google.maps.MapTypeId.ROADMAP,
+      scrollwheel:       false,
+      styles:            style
     };
 
     // inizialize the map
@@ -258,9 +258,9 @@ export function googleMap() {
     //add a custom marker to the map
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng($latitude, $longitude),
-      map: map,
-      visible: true,
-      icon: $marker_url
+      map:      map,
+      visible:  true,
+      icon:     $marker_url
     });
   })
 }

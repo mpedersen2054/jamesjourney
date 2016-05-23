@@ -42,7 +42,7 @@ eventRouter.route('/:slug')
   .put(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       var body = req.body;
-      console.log(body)
+      // console.log(body)
       ev.name        = body.name;
       ev.date        = new Date(body.date);
       ev.location    = body.location;
@@ -56,7 +56,7 @@ eventRouter.route('/:slug')
   })
   // register subscriber to event, create donation
   .post(function(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     var rb = req.body;
     if (!rb.f_name || !rb.l_name || !rb.email) {
       res.send({
@@ -86,8 +86,7 @@ eventRouter.route('/:slug')
       // the email is NOT in event.attendees
       else {
         mailchimpWrapper.addUser({ f_name: rb.f_name, l_name: rb.l_name, email: rb.email }, function(err2, mcid) {
-
-          console.log('mcid', mcid)
+          console.log('mcid', mcid);
           console.log('mcWrapper error', err2);
 
           // NEED TO HANDLE CASE IF THE USER IS ALREADY ON MAILING LIST, BUT NOT SUBSCRIBER DOCUMENT
@@ -117,11 +116,14 @@ eventRouter.route('/:slug')
               })
             }
 
-            console.log('from eventRouter, found&modified new sub obj, or create new one',subscriber);
+            // console.log('from eventRouter, found&modified new sub obj, or create new one',subscriber);
+
+            console.log('rb.email ', rb.email);
+            console.log('sub.email', subscriber.email)
 
             event.attendees.push({
               _id:         subscriber._id,
-              email:       subscriber.email,
+              email:       rb.email,
               message:     rb.message,
               full_name:   rb.f_name+' '+rb.l_name,
               tshirt:      rb.tShirtSize,
@@ -157,13 +159,14 @@ eventRouter.route('/:slug')
                     });
                   }
 
-                  console.log('charge success! evR', err, charge)
+                  // console.log('charge success! evR', err, charge)
                   var dbChargeInfo = {
                     chid:      charge.id,
                     uid:       subscriber._id,
-                    email:     rb.emailAddress,
+                    email:     rb.email,
                     full_name: rb.nameOnCard,
                     type:      charge.object,
+                    category:  'eventSubscription',
                     refundUrl: charge.refunds.url,
                     status:    charge.status,
                     amount:    +charge.amount
@@ -177,7 +180,8 @@ eventRouter.route('/:slug')
                       })
                     }
                     else {
-                      subscriber.donations.push(newDonation._id);
+                      // add the new donation obj to subscriber and save it
+                      subscriber.donations.push({ donate_id: newDonation._id, amount: +charge.amount, type: 'eventSubscription' });
                       subscriber.save();
                       res.send({
                         success: true,

@@ -28,12 +28,13 @@ donateRouter.route('/')
           email:     req.body.emailAddress,
           full_name: req.body.nameOnCard,
           type:      charge.object,
+          category:  'donation',
           refundUrl: charge.refunds.url,
           status:    charge.status,
           amount:    +charge.amount
         }
 
-        console.log(dbCharge)
+        // console.log(dbCharge)
 
         // sub found in db, create new donation & add to it
         if (sub) {
@@ -43,7 +44,7 @@ donateRouter.route('/')
             if (err) { console.log('error creating donation', err); }
             if (!err) {
               var donationAmtFloat = (dbCharge.amount/100).toFixed(2);
-              var msg = `Thank you <span class="text-lblue">${dbCharge.full_name} for your donation of <span class="text-lblue">${donationAmtFloat}</span>`
+              var msg = `Thank you <span class="text-lblue">${dbCharge.full_name}</span> for your donation of <span class="text-lblue">${donationAmtFloat}</span>`
 
               console.log('new donation created!', don);
               sub.donations.push(don._id);
@@ -65,18 +66,19 @@ donateRouter.route('/')
           var subObj = {
             f_name: fName,
             l_name: lName,
+            full_name: `${fName} ${lName}`,
             email: req.body.emailAddress
           }
           var newSub = new Subscriber(subObj);
           newSub.save(function(err) {
             if (err) { console.log('error creating sub', err); }
             if (!err) {
-              console.log('new sub created!', newSub);
+              // console.log('new sub created!', newSub);
               dbCharge.uid = newSub._id;
               var newDonation = new Donation(dbCharge);
               newDonation.save(function(err) {
                 if (err) { console.log(err); }
-                newSub.donations.push(newDonation._id);
+                newSub.donations.push({ donate_id: newDonation._id, amount: +charge.amount, category: 'donation' });
                 newSub.save(function(err) {
                   if (err) { console.log('error!', err); }
                   console.log('donation saved onto sub');
