@@ -112,3 +112,25 @@ export function showTotalFee() {
     }
   })
 }
+
+export function registerOptionsSelect() {
+  const $tshirtSelect = $("select[name=tShirtSize]");
+  const $registerOptions1 = $('#inlineRadio1');
+  const $registerOptions2 = $('#inlineRadio2');
+
+  $registerOptions2.on('click', function(e) {
+    $tshirtSelect.val('none');
+    $tshirtSelect.change();
+  });
+
+  $registerOptions1.on('click', function(e) {
+    if ($tshirtSelect.val('none')) {
+      $tshirtSelect.val('L');
+      $tshirtSelect.change();
+    }
+  });
+
+  // if () {
+  //   console.log('you selected the second option')
+  // }
+}

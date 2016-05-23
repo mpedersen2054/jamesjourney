@@ -17,19 +17,23 @@ function queryAll(callback) {
       // return an event with a new tshirtMap
       // object property attached to it
       var eventsWithTshirtMap = events.map(function(event) {
-        var tshirtCounter = { none: 0, s: 0, m: 0, l: 0, xl: 0 };
+        var tshirtCounter = { none: 0, s: 0, m: 0, l: 0, xl: 0, totalShirts: 0 };
         // iterate over each attendee in event
         // and increment tshirtCounter accordingly
         event.attendees.forEach(function(attendee) {
           var tshirtSize = attendee.tshirt.toLowerCase();
           if (tshirtSize === 's') {
             tshirtCounter.s++;
+            tshirtCounter.totalShirts++;
           } else if (tshirtSize === 'm') {
             tshirtCounter.m++;
+            tshirtCounter.totalShirts++;
           } else if (tshirtSize === 'l') {
             tshirtCounter.l++;
+            tshirtCounter.totalShirts++;
           } else if (tshirtSize === 'xl') {
             tshirtCounter.xl++;
+            tshirtCounter.totalShirts++;
           } else if (tshirtSize.toLowerCase() === 'none') {
             tshirtCounter.none++;
           }

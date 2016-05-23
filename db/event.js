@@ -26,10 +26,12 @@ var EventSchema = new mongoose.Schema({
   description:   { type: String },
   attendees:     [AttendeeSchema],
   tshirtMap: {
+    none: Number,
     s: Number,
     m: Number,
     l: Number,
-    xl: Number
+    xl: Number,
+    totalShirts: Number
   }
 });
 

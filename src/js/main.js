@@ -46,6 +46,7 @@ $(document).ready(function() {
   forms.handleRegisterSubmit();
   forms.bootstrapSelect();
   forms.showTotalFee();
+  forms.registerOptionsSelect();
 
   // donate
   forms.handleDonateSubmit();
