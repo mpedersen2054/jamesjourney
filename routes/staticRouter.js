@@ -76,4 +76,9 @@ staticRouter.route('/our-team')
     res.render('our_team');
   })
 
+staticRouter.route('/instructions')
+  .get(function(req, res) {
+    res.render('instructions');
+  })
+
 module.exports = staticRouter;

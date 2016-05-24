@@ -1,0 +1,35 @@
+#instructions,
+#inst-main {
+  position: relative;
+}
+
+.affix-top,.affix{
+ position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+    // margin-top:30px;
+    width:228px;
+  }
+
+  #sidebar.affix {
+    position: fixed;
+    top:90px;
+    width:228px;
+  }
+}
+
+#sidebar > li > a {
+  display: block;
+  padding: 4px 20px;
+  color: #767676;
+}
+
+#sidebar li.active {
+  color: #50B7EC;
+  text-decoration: none;
+  background-color: transparent;
+  border-right: 1px solid #50B7EC;
+}
