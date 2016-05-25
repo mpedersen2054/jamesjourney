@@ -10,7 +10,6 @@
 @media (min-width: 979px) {
   #sidebar.affix-top {
     position: static;
-    // margin-top:30px;
     width:228px;
   }
 
@@ -21,15 +20,50 @@
   }
 }
 
-#sidebar > li > a {
+#sidebar li a{
   display: block;
+  font-size: 14px;
   padding: 4px 20px;
   color: #767676;
+  font-weight: 600;
 }
 
-#sidebar li.active {
+#sidebar > li.active {
   color: #50B7EC;
   text-decoration: none;
   background-color: transparent;
   border-right: 1px solid #50B7EC;
+}
+
+#sidebar.nav .nav {
+  display: none;
+  font-size:12px;
+}
+#sidebar.nav>.active>ul {
+  display: block;
+}
+
+#sidebar .sub-li {
+  padding-left: 30px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#inst-main {}
+
+#inst-main > section {
+  line-height: 160%;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+#inst-main > section&first-child {}
+
+#inst-main > section h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 10px;
 }

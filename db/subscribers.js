@@ -25,4 +25,11 @@ var SubscriberSchema = new mongoose.Schema({
   ]
 });
 
+// adds slug
+SubscriberSchema.pre('save', function(next) {
+  var sub = this;
+  sub.full_name = this.f_name + ' ' + this.l_name;
+  next();
+});
+
 module.exports = mongoose.model('Subscriber', SubscriberSchema);

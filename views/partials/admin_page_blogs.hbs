@@ -1,51 +1,47 @@
 <section class="admin-page__blogs">
-  {{!-- <h3 class="title">Blog Posts</h3>
-  <div class="submenu clearfix">
-    <div class="item">
-      <a href="/blog/new" class="btn btn-default btn-xs">+ new</a>
-    </div>
-  </div> --}}
-  <h1 class="page-header">
-    Blogs
-    <small></small>
-  </h1>
-  <ol class="breadcrumb">
-    <li class="active">
-      <i class="fa fa-edit"></i> Blogs
-    </li>
-    <li>
-      <a href="/blog/new">
-        <i class="fa fa-plus"></i>
-        New
-      </a>
-    </li>
-  </ol>
-  {{#if blogs}}
-    {{!-- <div class="well"> --}}
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each blogs}}
+  <div class="container">
+    <h1 class="page-header">
+      Blogs
+      <small></small>
+    </h1>
+    <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-edit"></i> Blogs
+      </li>
+      <li>
+        <a href="/blog/new">
+          <i class="fa fa-plus"></i>
+          New
+        </a>
+      </li>
+    </ol>
+    {{#if blogs}}
+      {{!-- <div class="well"> --}}
+        <table class="table table-hover table-striped">
+          <thead>
             <tr>
-              <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
-              <td class="options">
-                {{!-- {{#if isFeatured}}
-
-                {{else}}
-
-                {{/if}} --}}
-                <a href="/blog/{{slug}}/edit" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
-                <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-              </td>
+              <th></th>
+              <th></th>
             </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    {{!-- </div> --}}
-  {{/if}}
+          </thead>
+          <tbody>
+            {{#each blogs}}
+              <tr>
+                <td class="blog-link"><a href="/blog/{{slug}}">{{title}}</a></td>
+                <td class="options">
+                  {{!-- {{#if isFeatured}}
+
+                  {{else}}
+
+                  {{/if}} --}}
+                  <a href="/blog/{{slug}}/edit" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></a>
+                  <a href="/blog/{{slug}}/delete" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="fa fa-times"></i></a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{!-- </div> --}}
+    {{/if}}
+  </div>
 </section>

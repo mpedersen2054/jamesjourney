@@ -1,52 +1,47 @@
-
 <section class="admin-page__donations">
-  {{!-- <h3 class="title">Gallery</h3>
-  <div class="submenu clearfix">
-    <div class="item">
-      <a href="/events/new" class="btn btn-default btn-xs">+ new</a>
-    </div>
-  </div> --}}
-  <h1 class="page-header">
-    Donations
-    <small></small>
-  </h1>
-  <ol class="breadcrumb">
-    <li>
-      <a href="#">
-        <i class="fa fa-dashboard"></i>
-        All
-      </a>
-    </li>
-    <li>
-      <a href="/gallery/multi-upload">
-        <i class="fa fa-plus"></i>
-        Stripe
-      </a>
-    </li>
-  </ol>
+  <div class="container">
+    <h1 class="page-header">
+      Donations
+      <small></small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard"></i>
+          All
+        </a>
+      </li>
+      <li>
+        <a href="/gallery/multi-upload">
+          <i class="fa fa-plus"></i>
+          Stripe
+        </a>
+      </li>
+    </ol>
 
-  {{#if donations}}
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each donations}}
-          <tr class="image-row">
-            <td class="jdate" data-dateOrig="{{added_on}}"></td>
-            <td>{{full_name}}</td>
-            <td>{{email}}</td>
-            <td class="jDonationAmt" data-donationAmt="{{amount}}"></td>
-            <td>{{category}}</td>
+    {{#if donations}}
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{/if}}
+        </thead>
+        <tbody>
+          {{#each donations}}
+            <tr class="image-row">
+              <td class="jdate" data-dateOrig="{{added_on}}"></td>
+              <td>{{full_name}}</td>
+              <td>{{email}}</td>
+              <td class="jDonationAmt" data-donationAmt="{{amount}}"></td>
+              <td>{{category}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+  </div>
 </section>
