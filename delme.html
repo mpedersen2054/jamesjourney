@@ -10,3 +10,30 @@
 / -- multi_upload, view_img, edit[x], delete[x]
 /donations
 / -- stripe_dashboard
+
+
+EXPOSED ROUTES:
+/
+
+static_routes:
+/our-work
+/our-team
+/contact-us
+/instructions
+/donate
+
+dynamic_routes:
+/blog
+/blog/:post_slug
+/events
+/events/:event_slug
+/gallery
+
+admin_routes:
+/login
+/admin
+/admin#subscribers
+/admin#blogs
+/admin#events
+/admin#gallery
+/admin#donations

@@ -271,6 +271,7 @@ export function scrollspyInstructions() {
     offset: { top: 350 }
   });
 
+
   $('body').scrollspy({
     target: '#instr-left-col',
     offset: 100

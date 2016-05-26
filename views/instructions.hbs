@@ -35,8 +35,17 @@
     <div class="row">
       <div class="col-md-3" id="instr-left-col">
         <ul class="nav" id="sidebar">
+          <li><a href="#general">General</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#admin">Admin</a></li>
+          <li>
+            <a href="#subscribers">Subscribers</a>
+            <ul class="nav">
+              <li><a href="#subscribers" class="sub-li">How a user subscribers</a></li>
+              <li><a href="#subscribers" class="sub-li">Adding someone to the mailing list manually</a></li>
+              <li><a href="#subscribers" class="sub-li">Using Mailchimp</a></li>
+            </ul>
+          </li>
           <li>
             <a href="#blog">Blog</a>
             <ul class="nav">
@@ -73,6 +82,90 @@
       </div>
 
       <div class="col-md-9" id="inst-main">
+
+        <section>
+          <h2 id="general">General - Exposed Routes</h2>
+          <h3>static routes</h3>
+          <ul>
+            <li>
+              <b>/our-work</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/our-team</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/contact-us</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/instructions</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/donate</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+          </ul>
+
+          <h3>dynamic routes</h3>
+          <ul>
+            <li>
+              <b>/blog</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/blog/:post_slug</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/events</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/events/:event_slug</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/gallery</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+          </ul>
+
+          <h3>admin routes</h3>
+          <ul>
+            <li>
+              <b>/login</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin#subscribers</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin#blogs</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin#events</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin#gallery</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
+              <b>/admin#donations</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+          </ul>
+        </section>
+
         <section>
           <h2 id="login">Logging in</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugiat quas, minus eveniet illo corporis dolore dicta nulla reprehenderit modi alias eaque veniam explicabo ratione officiis nihil debitis nobis quasi ab eligendi! Blanditiis nesciunt soluta qui! Suscipit nostrum, quia a enim quod unde. Nemo dolor, molestiae omnis reiciendis vero. Ab vitae ut suscipit doloribus optio alias quos veniam, minima earum.</p>
