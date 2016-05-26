@@ -88,6 +88,10 @@
           <h3>static routes</h3>
           <ul>
             <li>
+              <b>/</b>
+              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+            </li>
+            <li>
               <b>/our-work</b>
               <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
             </li>
@@ -140,40 +144,71 @@
               <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
             </li>
             <li>
-              <b>/admin</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <b>/admin#all</b>
+              <p>This hasn't been used yet, can show info/stats from all of the other admin#... pages</p>
             </li>
             <li>
               <b>/admin#subscribers</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <p>Shows a list of all current subscribers</p>
             </li>
             <li>
               <b>/admin#blogs</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <p>Will show you all of the current blog posts, create a new blog post, edit an existing blog post, or delete a blog post</p>
             </li>
             <li>
               <b>/admin#events</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <p>Will show you all of the current events. You can edit/delete an event. You can click on the button that says attendees and it will show a list of all of the people attending the event, the date they signed up, their email, a message (if they left one), and their t-shirt size (if they chose to when they signed up)</p>
             </li>
             <li>
               <b>/admin#gallery</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <p>Here you can view a list of all of the images in the gallery, the date it was uploaded, and a thumbnail of the image. The default name of an image will be untitled so it's a good idea to update each images name after you upload them. Recommended only updating 1 name at a time. You can also upload multiple images at a time here (recommended only ~10-20 images at a time.)</p>
             </li>
             <li>
               <b>/admin#donations</b>
-              <p>Lorb ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae labore, illum laboriosam ratione, at iste. Consequatur doloribus ratione minus dolorum asperiores, voluptatibus provident quasi. Tenetur, atque repellat repudiandae distinctio.</p>
+              <p>Here you will see a list of all of the donations, either from <b class="light-b">/donate</b> or the $20/$35 from subscribing to an event. If it is from a raw donation, it will be specified as 'donation', and if it was from an event subscription, it will be labeled 'eventSubscription'. Here you can also be linked to the Stripe Dashboard, which is the service used to process payments.</p>
             </li>
           </ul>
         </section>
 
         <section>
           <h2 id="login">Logging in</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat fugiat quas, minus eveniet illo corporis dolore dicta nulla reprehenderit modi alias eaque veniam explicabo ratione officiis nihil debitis nobis quasi ab eligendi! Blanditiis nesciunt soluta qui! Suscipit nostrum, quia a enim quod unde. Nemo dolor, molestiae omnis reiciendis vero. Ab vitae ut suscipit doloribus optio alias quos veniam, minima earum.</p>
+          <p>You must login to access the <b class="light-b">/admin</b> page. If you try to go to the <b class="light-b">/admin</b> page when you haven't already logged in, it will redirect you to the <b class="light-b">/login</b> page. Once you have logged in, it will grant you access to the <b class="light-b">/admin</b> page and if you navigate to another page and return to the <b class="light-b">/admin</b> page, you will still be allowed to access it. You will then have access to the <b class="light-b">/admin</b> page until you either logout, or until your session expires (~1 week ?).</p>
+
+          <img src="http://i.imgur.com/coP4lNO.png" class="instr-img">
         </section>
 
         <section>
           <h2 id="admin">Admin page</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ratione voluptatibus iusto at pariatur, distinctio mollitia provident ea autem laborum, assumenda ad, ipsam itaque sapiente cum. Neque natus possimus accusantium eaque, obcaecati eum officiis consequatur voluptatibus harum illum ipsum veritatis! Aperiam porro eum, tenetur aspernatur itaque fugit odit soluta blanditiis.</p>
+          <p>Here you will access all of the admin functionality. Look to the above section, <b class="light-b">GENERAL - EXPOSED ROUTES</b>, for a brief description of the functions, or see below for detailed instructions/screenshots showing you how to use them.</p>
+
+          <img src="http://i.imgur.com/XnmisjW.png" class="instr-img">
+        </section>
+
+        <section>
+          <h2 id="subscribers">Subscribers</h2>
+
+          <p>if someone tries to subscribe using the same email it will not allow them and ask them to try again. if they subscribe using the same name, but different email address it will allow them.</p>
+
+          <img src="http://imgur.com/XzUiaIe.png" class="instr-img">
+
+          <h3>How a user ends up on the Subscription List</h3>
+
+          <p>there are 4 ways a person can end up on the subscription list:</p>
+
+          <ol>
+            <li>click the 'Signup Now' button right above the footer, <b class="light-b">on most pages</b></li>
+            <li>signing up for an event @ <b class="light-b">/events/:event_slug</b></li>
+            <li>donating @ <b class="light-b">/donate</b></li>
+            <li>manually @ <b class="light-b">/subscribers/new</b></li>
+          </ol>
+
+          <img src="http://i.imgur.com/LPCPVNg.png" class="instr-img">
+          <img src="http://imgur.com/FvyoD9x.png" class="instr-img">
+          <img src="http://imgur.com/m8U0hlS.png" class="instr-img">
+          <img src="http://i.imgur.com/feGxVo9.png" class="instr-img">
+
+          <h3>Using Mailchimp</h3>
+
         </section>
 
         <section>

@@ -37,3 +37,73 @@ admin_routes:
 /admin#events
 /admin#gallery
 /admin#donations
+
+
+LOGGING IN
+You must login to access the <b class="light-b">/admin</b> page. If you try to go to the <b class="light-b">/admin</b> page when you haven't already logged in, it will redirect you to the <b class="light-b">/login</b> page. Once you have logged in, it will grant you access to the <b class="light-b">/admin</b> page and if you navigate to another page and return to the <b class="light-b">/admin</b> page, you will still be allowed to access it. You will then have access to the <b class="light-b">/admin</b> page until you either logout, or until your session expires (~1 week ?).
+
+ADMIN PAGE
+The <b class="light-b">/admin</b> page is where you will access all of your admin functionality, as shown below:
+
+<ul>
+  <li>
+    <b>#all</b>
+    <p>This hasn't been used yet, can show info/stats from all of the other admin#... pages</p>
+  </li>
+  <li>
+    <b>#subscribers</b>
+    <p>Shows a list of all current subscribers,</p>
+  </li>
+  <li>
+    <b>#blogs</b>
+    <p>Will show you all of the current blog posts, create a new blog post, edit an existing blog post, or delete a blog post</p>
+  </li>
+  <li>
+    <b>#events</b>
+    <p>Will show you all of the current events. You can edit/delete an event. You can click on the button that says attendees and it will show a list of all of the people attending the event, the date they signed up, their email, a message (if they left one), and their t-shirt size (if they chose to when they signed up)</p>
+  </li>
+  <li>
+    <b>#gallery</b>
+    <p>Here you can view a list of all of the images in the gallery, the date it was uploaded, and a thumbnail of the image. The default name of an image will be untitled so it's a good idea to update each images name after you upload them. Recommended only updating 1 name at a time. You can also upload multiple images at a time here (recommended only ~10-20 images at a time.)</p>
+  </li>
+  <li>
+    <b>#donations</b>
+    <p>Here you will see a list of all of the donations, either from <b class="light-b">/donate</b> or the $20/$35 from subscribing to an event. If it is from a raw donation, it will be specified as 'donation', and if it was from an event subscription, it will be labeled 'eventSubscription'. Here you can also be linked to the Stripe Dashboard, which is the service used to process payments.</p>
+  </li>
+</ul>
+
+
+SUBSCRIBERS
+
+<img src="http://imgur.com/XzUiaIe" class="instr-img">
+
+<p>there are 3 ways a person can end up on the subscription list:</p>
+
+<ul>
+  <li>click the 'Signup Now' button right above the footer ( on most pages )</li>
+  <li>signing up for an event</li>
+  <li>donating</li>
+</ul>
+
+<img src="http://i.imgur.com/LPCPVNg.png" class="instr-img">
+<img src="http://imgur.com/FvyoD9x" class="instr-img">
+<img src="http://imgur.com/FvyoD9x" class="instr-img">
+
+<p>if someone tries to subscribe using the same email it will not allow them and ask them to try again. if they subscribe using the same name, but different email address it will allow them.</p>
+
+USING MAILCHIMP
+
+
+
+BLOG POSTS
+
+<img src="#" class="instr-img">
+
+<h3>Creating a new blog post</h3>
+
+<p>blog posts are written in something called <b class="light-b">markdown</b></p>
+
+<a href="#">Markdown Documentation</a>
+
+<h3>Editing an existing blog post</h3>
+<h3>Deleting an existing blog post</h3>

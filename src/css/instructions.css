@@ -36,7 +36,7 @@
 }
 
 #sidebar.nav .nav {
-  // display: none;
+  display: none;
   // font-size:12px;
 }
 #sidebar.nav>.active>ul {
@@ -53,10 +53,12 @@
 
 #inst-main > section {
   line-height: 160%;
-  font-size: 18px;
-  font-weight: 300;
+  letter-spacing: 1.4px;
+  font-size: 16px;
+  font-weight: 400;
   margin: 20px 0;
   padding: 20px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 #inst-main > section:first-child {
@@ -68,15 +70,16 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #inst-main > section h3 {
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 18px;
   margin-bottom: 10px;
   margin-top: 40px;
+  text-decoration: underline;
 }
 #inst-main > section ul {
   list-style: none;
@@ -91,7 +94,19 @@
 }
 #inst-main > section ul > li b {
   font-weight: 400;
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 1);
   padding: 2px 4px;
 }
+
+#inst-main > section b.light-b {
+  font-weight: 400;
+  background-color: rgba(255, 255, 0, 0.15);
+  padding: 2px 4px;
+}
+
 #inst-main > section ul > li p {}
+
+#inst-main > section img.instr-img {
+  margin: 20px 0;
+  border-radius: 4px;
+}
