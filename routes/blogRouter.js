@@ -57,10 +57,10 @@ blogRouter.route('/new')
       });
 
       // uses markdown module to turn the MD into html
-      var content = markdown.toHTML(data.content);
-      var contentPreview = markdown.toHTML(data.contentPreview);
-      data.content = content;
-      data.contentPreview = contentPreview;
+      var contentz = markdown.toHTML(data.content);
+      var contentPreviewz = markdown.toHTML(data.contentPreview);
+      data.content = contentz;
+      data.contentPreview = contentPreviewz;
 
       var blog = new Blog(data);
 

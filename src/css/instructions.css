@@ -104,7 +104,9 @@
   padding: 2px 4px;
 }
 
-#inst-main > section ul > li p {}
+#inst-main > section ul > li p {
+  margin: 5px 0 10px;
+}
 
 #inst-main > section img.instr-img {
   margin: 20px 0;

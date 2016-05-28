@@ -187,8 +187,6 @@
         <section>
           <h2 id="subscribers">Subscribers</h2>
 
-          <p>if someone tries to subscribe using the same email it will not allow them and ask them to try again. if they subscribe using the same name, but different email address it will allow them.</p>
-
           <img src="http://imgur.com/XzUiaIe.png" class="instr-img">
 
           <h3>How a user ends up on the Subscription List</h3>
@@ -196,16 +194,28 @@
           <p>there are 4 ways a person can end up on the subscription list:</p>
 
           <ol>
-            <li>click the 'Signup Now' button right above the footer, <b class="light-b">on most pages</b></li>
+            <li>clicking the 'Signup Now' button right above the footer, <b class="light-b">on most pages</b></li>
             <li>signing up for an event @ <b class="light-b">/events/:event_slug</b></li>
             <li>donating @ <b class="light-b">/donate</b></li>
             <li>manually @ <b class="light-b">/subscribers/new</b></li>
           </ol>
 
-          <img src="http://i.imgur.com/LPCPVNg.png" class="instr-img">
-          <img src="http://imgur.com/FvyoD9x.png" class="instr-img">
-          <img src="http://imgur.com/m8U0hlS.png" class="instr-img">
-          <img src="http://i.imgur.com/feGxVo9.png" class="instr-img">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="http://i.imgur.com/LPCPVNg.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/FvyoD9x.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/m8U0hlS.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://i.imgur.com/feGxVo9.png" class="instr-img">
+            </div>
+          </div>
+
+          <p>If someone tries to subscribe using the same email it will not allow them and ask them to try again. If they subscribe using the same name, but different email address it will allow them.</p>
 
           <h3>Using Mailchimp</h3>
 
@@ -213,7 +223,98 @@
 
         <section>
           <h2 id="blog">Blog posts</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ratione voluptatibus iusto at pariatur, distinctio mollitia provident ea autem laborum, assumenda ad, ipsam itaque sapiente cum. Neque natus possimus accusantium eaque, obcaecati eum officiis consequatur voluptatibus harum illum ipsum veritatis! Aperiam porro eum, tenetur aspernatur itaque fugit odit soluta blanditiis.</p>
+          <img src="http://i.imgur.com/dNzMIJj.png" class="instr-img">
+
+          <h3>Creating a new blog post</h3>
+
+          <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a>
+          <br>
+          <a href="https://jbt.github.io/markdown-editor/#">Online Markdown Editor</a>
+
+          <br><br>
+
+          <p>Blog posts are written in something called <b class="light-b">markdown</b>. Markdown is something like a programming language, but is very easy to understand, and can be learned in an hour easily. All you really need to write markdown is the Cheatsheet listed above and if you want more in-depth instructions, a simple google search will help you. I will give a brief run-down on how to write markdown through writing an example blog post, and why it's being used instead of plain-text.</p>
+
+          <p>So, you create a blog post by clicked the '+New' button at the top of /admin#blog, and it will take you to a page that looks like this:</p>
+
+          <img src="http://i.imgur.com/JOi6Ik3.png" class="instr-img">
+
+          <p>There are 5 different input fields here:</p>
+
+          <ol>
+            <li><b class="light-b">Cover Image Url:</b>This will be the image that will show up as the background for the blog post on the index page, the background behind the posts' title on the /blog page, and the same for the /blog/:slug page.</li>
+            <li><b class="light-b">Title:</b>This will be the title of the blog post. I wouldn't make the title more than a sentence long.</li>
+            <li><b class="light-b">Tags:</b> Not being used yet.</li>
+            <li><b class="light-b">Content Preview:</b> This is pretty much only for the /blog page (list of all blog posts). There isn't a limit for how many characters long this should be, but I put a character counter here, which recommends you don't make this longer than 600 characters. <b class="light-b">This only accepts markdown!</b>.</li>
+            <li><b class="light-b">Content:</b> This will be the content of the blog post. <b class="light-b">Also only accepts markdown!</b>.</li>
+            <li>There is also a hidden field that will be added to the post after you click the 'Submit' button, which is the Date/Time of the posting.</li>
+          </ol>
+
+          <br>
+
+          <p>So starting with the Cover-Image Url, lets say we have an image on our computer. To get the image on the internet, you can use a number of Image Apps/Sites, I will use <a href="http://imgur.com/">imgur</a>.</p>
+
+          <p>On the imgur site, you will see a 'upload images' button at the top of the site, click it. Now click 'browse your computer' for the image, select the image and it will download the image and then direct you to a page that will show the uploaded image.</p>
+
+          <p>On the right, there should be a box titled <b class="light-b">share this image</b>. Here, you should see a field titled 'Direct Link' with a url underneath it.</p>
+
+          <p>You will be using this url for the 'Cover-Image Url', and if you try to put the url into your browser, you can see the image!</p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <img src="http://imgur.com/ykL3NoZ.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/j0mgfqM.png" class="instr-img">
+            </div>
+          </div>
+
+          <p>Enter the URL into the input field on the '/blog/new' page.</p>
+
+          <p>Lets now enter a title. Im going to use a random article on the web for this demonstration. We should now have this:</p>
+
+          <img src="http://i.imgur.com/WJFSYd7.png" class="instr-img">
+
+          <p>The 'Tags' field isn't used for anything yet, so you can just leave it at its' default 'red,blue,green'. Lets now add the Content-Preview and the Content.</p>
+
+          <p>The <b class="light-b">Content Preview</b> section takes markdown, but it really should just be text that uses line seperation. For this example im just going to copy/paste from the article im using for example, making sure it's ~600 characters.</p>
+
+          <img src="http://imgur.com/BaiPfqc.png" class="instr-img">
+
+          <p>Before I enter in the markdown for 'Content', im going to briefly explain what is markdown and why use it.</p>
+
+          <p>Lets think about a Microsoft Word document. In MS Word, you can enter in text, as well as the use of Headings, Lists, maybe Images and so on. Markdown basically lets you add in things like Headers, Lists, Links, Images... without having to use MS Word, instead you use characters such as '#' to represent things in markdown. For example: </p>
+
+          <p>As an example of markdown, I used the online Markdown Editor linked above, which allows you to enter Markdown on the left-side and it will show you what the Markdown will output on the right. Again, the best reference for Markdown is the Cheatsheet also linked above.</p>
+
+          <img src="http://imgur.com/CppWG8J.png" class="instr-img">
+
+          <p>So for our example blog post's content section, I am going to enter in some markdown that will contain some text, a sub-heading or 2 (## secondary header, ### third header), an image, and a link or 2.</p>
+
+          <p>Here is the new blog post, right before hitting submit:</p>
+
+          <img src="http://i.imgur.com/Hnua8u0.png" class="instr-img">
+
+          <p>Now if we view the '/admin#blog' page, we should see the new blog post in the list! Now that we have added a new blog post, it will now be shown on the index page (/) in the 'Recent Posts' section, the '/blog' page, and the individual post at '/blog/:slug_name'.</p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <img src="http://imgur.com/EempBOn.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/gGAA1If.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/xNMOkE0.png" class="instr-img">
+            </div>
+            <div class="col-md-6">
+              <img src="http://imgur.com/MgWEQVo.png" class="instr-img">
+            </div>
+          </div>
+
+
+          <h3>Editing an existing blog post</h3>
+          <h3>Deleting an existing blog post</h3>
         </section>
 
         <section>
