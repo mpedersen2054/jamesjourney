@@ -87,14 +87,22 @@ export function handleAdminEventAttendees() {
   $viewAttendeesBtn.on('click', function(e) {
     e.preventDefault();
 
+    var $this           = $(this);
+    var $closestMetaRow = $this.parent().parent().next();
+    var $closestRow     = $this.parent().parent().next().next();
+
+    // var $faSpan = ;
+
     if (!attRowShowing) {
       // show attRow
       attRowShowing = true;
-      $attendeeRow.show();
+      $closestMetaRow.show();
+      $closestRow.show();
     } else {
       // hide attRow
       attRowShowing = false;
-      $attendeeRow.hide();
+      $closestMetaRow.hide();
+      $closestRow.hide();
     }
   });
 }
@@ -102,7 +110,7 @@ export function handleAdminEventAttendees() {
 export function handleAdminEventAttendeesMessages() {
   var $popovers = $('[data-toggle="popover"]');
   // console.log($popovers)
-  $popovers.on('mouseenter', function(e) {
+  $popovers.on('click', function(e) {
     $popovers.popover('hide');
     var $this = $(this);
     e.preventDefault();

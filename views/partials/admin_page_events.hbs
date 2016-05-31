@@ -38,7 +38,7 @@
                 {{attendees.length}} Attendees
                 <span><i class="fa fa-sort-desc"></i></span>
               </a>
-              <a href="/events/{{slug}}/delete" class="btn btn-danger btn-xs delete-event-btn"><i class="fa fa-times"></i></a>
+              <a href="/events/{{slug}}/delete" class="btn btn-danger btn-xs delete-event-btn" onclick="return confirm('are you sure?')"><i class="fa fa-times"></i></a>
               <a href="/events/{{slug}}/edit" class="btn btn-default btn-xs edit-event-btn"><i class="fa fa-pencil"></i></a>
             </td>
           </tr>
@@ -93,7 +93,7 @@
                       {{!-- <a href="#" class="btn btn-link" class="view-message-btn" data-attendeeMessage="{{message}}">
                         View Message
                       </a> --}}
-                      <button type="button" class="btn btn-link" data-container="body" data-placement="top" data-toggle="popover" title="Message" data-content="{{message}}">view message</button>
+                      <button type="button" class="btn btn-link" data-container="body" data-placement="top" data-toggle="click" title="Message" data-content="{{message}}">view message</button>
                     {{else}}
                       No Message
                     {{/if}}

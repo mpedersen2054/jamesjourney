@@ -77,10 +77,16 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
-  margin-bottom: 10px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-decoration: underline;
 }
+
+#inst-main > section p {
+  margin: 15px 0;
+}
+
+
 #inst-main > section ul {
   list-style: none;
   margin: 0;
