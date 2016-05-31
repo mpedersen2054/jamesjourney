@@ -41,7 +41,8 @@
     "request": "^2.60.0",
     "s3fs": "git+https://github.com/RiptideElements/s3fs.git",
     "serve-favicon": "~2.2.0",
-    "stripe": "4.4.0"
+    "stripe": "4.4.0",
+    "to-markdown": "3.0.0"
   },
   "devDependencies": {
     "babel": "6.5.2",

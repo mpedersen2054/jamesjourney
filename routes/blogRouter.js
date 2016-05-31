@@ -2,6 +2,7 @@ var blogRouter = require('express').Router();
 var Blog       = require('../db/blog');
 var Featured   = require('../lib/queries');
 var markdown   = require('markdown').markdown;
+var toMarkdown = require('to-markdown');
 
 
 blogRouter.route('/')
@@ -111,17 +112,21 @@ blogRouter.route('/:slug')
     })
   })
   .put(function(req, res) {
+    var rb = req.body;
     if (req.user) {
       Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
         if(err) console.log(err);
         if(!blog) { return res.status(404).render('404'); }
 
-        blog.coverImage = req.body.coverImage;
-        blog.title      = req.body.title;
-        blog.tags       = req.body.tags.split(',').map(function(tag) {
-          return tag.trim();
-        });
-        blog.content    = req.body.content;
+        // if the key/val didnt change, return the blogs original val
+        blog.coverImage     = (rb.coverImage != = blog.coverImage) ? rb.coverImage : blog.coverImage;
+        blog.title          = (rb.title != = blog.title) ? rb.title : blog.title;
+        var contentz        = (rb.content != = blog.content) ? rb.content : blog.content;
+        var contentPreviewz = (rb.contentPreview != = blog.contentPreview) ? rb.contentPreview : blog.contentPreview;
+        // use markdown to transform the md into html
+        blog.contentPreview = markdown.toHTML(contentPreviewz);
+        blog.content        = markdown.toHTML(contentz);
+        // blog.tags        =
 
         blog.save(function(err) {
           if(err) console.log(err);
@@ -141,6 +146,13 @@ blogRouter.route('/:slug/edit')
         if(!blog) {
           return res.status(404).render('404');
         }
+
+        // use toMarkdown to take the html and convert it into md
+        var contentz = toMarkdown(blog.content);
+        var contentPreviewz = toMarkdown(blog.contentPreview);
+        blog.content = contentz;
+        blog.contentPreview = contentPreviewz;
+
         res.render('edit_blog', { blog: blog });
       })
     } else {
