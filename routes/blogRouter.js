@@ -119,10 +119,10 @@ blogRouter.route('/:slug')
         if(!blog) { return res.status(404).render('404'); }
 
         // if the key/val didnt change, return the blogs original val
-        blog.coverImage     = (rb.coverImage != = blog.coverImage) ? rb.coverImage : blog.coverImage;
-        blog.title          = (rb.title != = blog.title) ? rb.title : blog.title;
-        var contentz        = (rb.content != = blog.content) ? rb.content : blog.content;
-        var contentPreviewz = (rb.contentPreview != = blog.contentPreview) ? rb.contentPreview : blog.contentPreview;
+        blog.coverImage     = (rb.coverImage !== blog.coverImage) ? rb.coverImage : blog.coverImage;
+        blog.title          = (rb.title !== blog.title) ? rb.title : blog.title;
+        var contentz        = (rb.content !== blog.content) ? rb.content : blog.content;
+        var contentPreviewz = (rb.contentPreview !== blog.contentPreview) ? rb.contentPreview : blog.contentPreview;
         // use markdown to transform the md into html
         blog.contentPreview = markdown.toHTML(contentPreviewz);
         blog.content        = markdown.toHTML(contentz);
