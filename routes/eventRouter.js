@@ -174,22 +174,32 @@ eventRouter.route('/:slug')
                   var newDonation = new Donation(dbChargeInfo);
                   newDonation.save(function(err) {
                     if (err) {
-                      res.send({
+                      // res.send({
+                      //   success: false,
+                      //   message: 'There was an error submitting the Credit Card'
+                      // })
+                      res.render('event_subscribed', {
                         success: false,
-                        message: 'There was an error submitting the Credit Card'
-                      })
+                        message: 'There was an error submitting the Credit Card',
+                        full_name: dbChargeInfo.full_name
+                      });
                     }
                     else {
                       // add the new donation obj to subscriber and save it
                       subscriber.donations.push({ donate_id: newDonation._id, amount: +charge.amount, type: 'eventSubscription' });
                       subscriber.save();
-                      res.send({
+                      // res.send({
+                      //   success: true,
+                      //   message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.'
+                      // })
+                      res.render('event_subscribed', {
                         success: true,
-                        message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.'
-                      })
+                        message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.',
+                        full_name: dbChargeInfo.full_name
+                      });
                     }
-                  })
-                })
+                  });
+                });
               });
             });
           });

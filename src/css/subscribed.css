@@ -1,5 +1,6 @@
 
-#subscribed {
+#subscribed,
+#event-subscribed {
   position: relative;
   background-image: url(http://dft010l2k5dxv.cloudfront.net/BlogHeaderImage.jpg);
   height: 800px;
@@ -8,18 +9,21 @@
   background-size: cover;
 }
 
-#subscribed .content {
+#subscribed .content,
+#event-subscribed .content {
   position: relative;
   top: 300px;
 }
 
-#subscribed .content h1 {
+#subscribed .content h1,
+#event-subscribed .content h1 {
   color: #fff;
   font-size: 42px;
   margin-bottom: 40px;
 }
 
-#subscribed .overlay {
+#subscribed .overlay,
+#event-subscribed .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
