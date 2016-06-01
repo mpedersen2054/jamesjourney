@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "getMongolabInfo": "heroku config | grep MONGODB_URI"
   },
   "engines": {
     "node": "4.2.1",
