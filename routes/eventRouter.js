@@ -4,6 +4,7 @@ var mailchimpWrapper = require('../lib/mailchimpWrapper');
 var stripeWrapper    = require('../lib/stripeWrapper');
 var Subscriber       = require('../db/subscribers');
 var Donation         = require('../db/donation');
+var markdown         = require('markdown').markdown;
 
 eventRouter.route('/')
   .get(function(req, res) {
@@ -21,8 +22,13 @@ eventRouter.route('/new')
   // ADD NEW EVENT
   .post(function(req, res) {
     var data  = req.body;
+
+    var description = markdown.toHTML(data.description);
+    data.description = description;
+
     var date  = new Date(data.date);
     data.date = date;
+
     var ev    = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
@@ -45,6 +51,9 @@ eventRouter.route('/:slug')
       // console.log(body)
       ev.name        = body.name;
       ev.date        = new Date(body.date);
+
+
+
       ev.location    = body.location;
       ev.description = body.description;
 
