@@ -141,10 +141,21 @@
       </div>
 
       <div class="col-md-4">
-        Lorem ipsum dolor sit amet, consectetur.
+        <div id="event-sidebar">
+          <div id="event-google-map" data-lat="42.160477" data-lng="-88.13979"></div>
+          <div class="location">
+            <h3>Location</h3>
+            <div class="street-address">235 Lions Drive</div>
+            <div class="city-state">Barrington, IL</div>
+            <div class="zip">60010</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   {{> subscribe_block}}
 </div>
+
+{{!-- for google map with marker --}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8aGIj2g4IO0K2RpTb2tMp8Rs0towvaUE"></script>

@@ -8,6 +8,7 @@ import * as forms     from './controllers/form_controller';
 import * as admins    from './controllers/admin_controller';
 import * as blogs     from './controllers/blogs_controller';
 import * as galleries from './controllers/galleries_controller';
+import * as events    from './controllers/events_controller';
 
 const currentPath = window.location.pathname.split('/')[1];
 
@@ -40,7 +41,10 @@ $(document).ready(function() {
   statics.slideShow();
 
   // contact-us
-  statics.googleMap();
+  // statics.googleMap();
+
+  events.eventLocationMap();
+  events.eventAffix();
 
   // show_event
   forms.handleRegisterSubmit();

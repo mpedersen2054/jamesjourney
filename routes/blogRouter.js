@@ -142,15 +142,13 @@ blogRouter.route('/:slug/edit')
   .get(function(req, res) {
     if (req.user) {
       Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
-        if(err) console.log(err);
-        if(!blog) {
-          return res.status(404).render('404');
-        }
+        if (err)   console.log(err);
+        if (!blog) return res.status(404).render('404');
 
         // use toMarkdown to take the html and convert it into md
-        var contentz = toMarkdown(blog.content);
+        var contentz        = toMarkdown(blog.content);
         var contentPreviewz = toMarkdown(blog.contentPreview);
-        blog.content = contentz;
+        blog.content        = contentz;
         blog.contentPreview = contentPreviewz;
 
         res.render('edit_blog', { blog: blog });

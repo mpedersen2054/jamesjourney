@@ -229,8 +229,8 @@ export function googleMap() {
   $(window).load(function() {
 
     // set your google maps parameters
-    var $latitude = 42.090297,
-      $longitude = -88.07598200000001,
+    var $latitude = 42.113826,
+      $longitude = -87.878334,
       $map_zoom = 12; /* ZOOM SETTING */
 
     // custom marker
