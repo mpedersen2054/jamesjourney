@@ -6,7 +6,7 @@ export function eventLocationMap() {
     // set your google maps parameters
     const $latitude = parseInt($eventMap.data('lat')),
       $longitude = parseInt($eventMap.data('lng')),
-      $map_zoom = 14; /* ZOOM SETTING */
+      $map_zoom  = 14; /* ZOOM SETTING */
 
     console.log('kasmakmdaksdma')
     console.log($latitude, $longitude)
@@ -45,6 +45,6 @@ export function eventLocationMap() {
 
 export function eventAffix() {
   $('#event-sidebar').affix({
-    offset: { top: 360 }
+    offset: { top: 360, bottom: 600 }
   });
 }

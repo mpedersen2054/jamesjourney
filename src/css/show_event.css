@@ -1,5 +1,7 @@
 
-#show-event {}
+#show-event {
+  position: relative;
+}
 
 #show-event .jumbohead {
   background: url(http://dft010l2k5dxv.cloudfront.net/ShowEventHeaderImage.jpg);
@@ -118,9 +120,18 @@
 }
 
 @media (min-width: 979px) {
+  #event-sidebar {
+    position: relative;
+  }
   #event-sidebar.affix-top {
     position: static;
     width:400px;
+  }
+
+  #event-sidebar.affix-bottom {
+    position: absolute;
+    top: auto;
+    width: 400px;
   }
 
   #event-sidebar.affix {
