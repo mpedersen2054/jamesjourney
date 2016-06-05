@@ -51,6 +51,11 @@
   margin: 40px 0;
 }
 
+#show-event .description p {
+  font-size: 18px;
+  color: #444;
+}
+
 #show-event .register {
   padding-bottom: 120px;
 }
@@ -125,30 +130,37 @@
   }
   #event-sidebar.affix-top {
     position: static;
-    width:400px;
+    width: 360px;
   }
 
   #event-sidebar.affix-bottom {
     position: absolute;
     top: auto;
-    width: 400px;
+    width: 360px;
   }
 
   #event-sidebar.affix {
     position: fixed;
-    top:60px;
-    width:400px;
+    top: 60px;
+    width: 360px;
   }
 }
 
-#show-event .location {}
-#show-event .location h3 {
-  margin: 20px 0 10px;
-  text-transform: uppercase;
+.sidebar-info {
+  margin: 20px 0;
 }
 
-#show-event .location > div {
+.sidebar-info div {
+  color: #444;
   font-size: 18px;
+}
+
+.sidebar-info h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 2.5px;
+  padding-bottom: 2.5px;
+  text-decoration: underline;
 }
 
 @media (max-width: 62em) {
