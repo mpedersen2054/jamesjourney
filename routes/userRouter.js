@@ -21,4 +21,7 @@ userRouter.route('/new')
     });
   })
 
+
+userRouter.route('/:username')
+
 module.exports = userRouter;

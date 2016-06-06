@@ -162,6 +162,12 @@
   margin: 1.5px 0;
 }
 
+/*
+the time show be formatted as ul > li
+ */
+.sidebar-info .time ul { padding-left: 0; }
+.sidebar-info .time ul > li { list-style: none; }
+
 .sidebar-info h4 {
   font-size: 20px;
   color: #333;
