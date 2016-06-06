@@ -1,3 +1,4 @@
+// var _             = require('underscore');
 var eventRouter      = require('express').Router();
 var EEvent           = require('../db/event');
 var mailchimpWrapper = require('../lib/mailchimpWrapper');
@@ -5,6 +6,7 @@ var stripeWrapper    = require('../lib/stripeWrapper');
 var Subscriber       = require('../db/subscribers');
 var Donation         = require('../db/donation');
 var markdown         = require('markdown').markdown;
+var toMarkdown       = require('to-markdown');
 
 eventRouter.route('/')
   .get(function(req, res) {
@@ -21,18 +23,29 @@ eventRouter.route('/new')
   })
   // ADD NEW EVENT
   .post(function(req, res) {
+    // if (!req.user) { res.redirect('/login') }
     var data  = req.body;
 
-    var description = markdown.toHTML(data.description);
-    data.description = description;
+    // iterate over each k/v and trim the value
+    Object.keys(data).map(function(value, index) {
+      return data[value].trim();
+    });
 
+    // take the description & time textarea'a and
+    // treat them as markdown, turn the md into html string
+    var description  = markdown.toHTML(data.description);
+    var time         = markdown.toHTML(data.time);
+    data.description = description;
+    data.time        = time;
+
+    // format the date
     var date  = new Date(data.date);
     data.date = date;
 
-    var ev    = new EEvent(data);
+    var ev = new EEvent(data);
     ev.save(function(err) {
       if (err) return console.log(err);
-      return res.redirect('/admin')
+      return res.redirect('/admin');
     });
   })
 
@@ -41,21 +54,29 @@ eventRouter.route('/:slug')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       if (err || !ev) { return res.status(404).render('404', { message: `Can\'t find the event ${req.params.slug}` }) };
+
       res.render('show_event', { event: ev });
     });
   })
   // UPDATE EVENT // should be put into an admin route
   .put(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
-      var body = req.body;
-      // console.log(body)
-      ev.name        = body.name;
-      ev.date        = new Date(body.date);
+      var rb = req.body;
 
+      // take each input, if the req.body.xxx === event.xxx
+      // just return the event.xxx
+      ev.name          = (rb.name !== ev.name) ? rb.name : ev.name;
+      ev.date          = ev.date
+      var timez        = (rb.time !== ev.time) ? rb.time : ev.time; // need to turn it into html before attacting to obj
+      ev.locationName  = (rb.locationName !== ev.locationName) ? rb.locationName : ev.locationName;
+      ev.streetAddress = (rb.streetAddress !== ev.streetAddress) ? rb.streetAddress : ev.streetAddress;
+      ev.cityState     = (rb.cityState !== ev.cityState) ? rb.cityState : ev.cityState;
+      ev.zipCode       = (rb.zipCode !== ev.zipCode) ? rb.zipCode : ev.zipCode;
+      var descriptionz = (rb.description !== ev.description) ? rb.description : ev.description; // need to turn it into html before attacting to obj
 
-
-      ev.location    = body.location;
-      ev.description = body.description;
+      // turn them into html string, attach back onto obj
+      ev.time = markdown.toHTML(timez);
+      ev.description = markdown.toHTML(descriptionz);
 
       ev.save(function(err) {
         if (err) console.log(err);
@@ -223,7 +244,11 @@ eventRouter.route('/:slug/edit')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       if (err) console.log(err);
-      console.log(ev)
+      // take the html string and turn it into markdown
+      var description = toMarkdown(ev.description);
+      var time        = toMarkdown(ev.time);
+      ev.description  = description;
+      ev.time         = time;
       res.render('edit_event', { event: ev });
     });
   });

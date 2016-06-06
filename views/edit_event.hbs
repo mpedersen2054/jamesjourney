@@ -3,28 +3,46 @@
 
 <div id="edit-event">
   <div class="container admin-form">
-    <h2>Edit Event</h2>
-    <h4>{{event.name}}</h4>
-
-    <hr>
 
     <div class="row">
-      <div class="col-md-6">
-        <form id="edit-event-form" class="form" action="/events/{{event.slug}}/?_method=PUT" method="POST">
+      <div class="col-md-7">
+
+        <div class="page-header">
+          <h1>
+            Edit Event
+            <small>{{event.name}}</small>
+          </h1>
+        </div>
+
+        <form id="edit-event-form" class="form well" action="/events/{{event.slug}}/?_method=PUT" method="POST">
           <input type="hidden" name="_method" value="PUT">
+
           <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Name..." value="{{event.name}}">
+            <input type="text" name="name" class="form-control" placeholder="Event name... ex) 2016 Second Annual 5K Run/Walk" value="{{event.name}}">
+          </div>
+          {{!-- <div class="form-group">
+            <input type="date" name="date" class="form-control" placeholder="Date..." value="{{event.}}">
+          </div> --}}
+
+          <div class="form-group">
+            <textarea name="time" class="form-control" placeholder=" Walkers start @ 9:15 &#10;&#13; Runners start @ 9:30">{{event.time}}</textarea>
           </div>
           <div class="form-group">
-            <input type="date" name="date" class="form-control" placeholder="Date..." value="{{event.date}}">
+            <input type="text" name="locationName" class="form-control" placeholder="Location name... ex) Barrington Park District" value="{{event.locationName}}">
           </div>
           <div class="form-group">
-            <input type="text" name="location" class="form-control" placeholder="Location..." value="{{event.location}}">
+            <input type="text" name="streetAddress" class="form-control" placeholder="Street address... ex) 235 Lions Drive" value="{{event.streetAddress}}">
           </div>
           <div class="form-group">
-            <textarea name="description" class="form-control" placeholder="Description...">{{event.description}}</textarea>
+            <input type="text" name="cityState" class="form-control" placeholder="City, State initals... ex) Barrington, IL" value="{{event.cityState}}">
           </div>
-          <input type="submit" value="Submit" class="btn btn-default">
+          <div class="form-group">
+            <input type="text" name="zipCode" class="form-control" placeholder="Zipcode... ex) 60067" value="{{event.zipCode}}">
+          </div>
+          <div class="form-group">
+            <textarea name="description" class="form-control" placeholder="Message... (this message will be showed underneath the jumbotron and before the register form)">{{event.description}}</textarea>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-primary">
         </form>
       </div>
     </div>

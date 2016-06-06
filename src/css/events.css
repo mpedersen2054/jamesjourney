@@ -73,7 +73,7 @@
 }
 
 #events .event-list .event-listing .name {
-  width: 520px;
+  width: 500px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -84,7 +84,7 @@
 }
 
 #events .event-list .event-listing .location {
-  width: 200px;
+  width: 250px;
 }
 
 #events .event-list .event-listing .date {}

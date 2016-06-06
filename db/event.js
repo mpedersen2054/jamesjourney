@@ -17,15 +17,19 @@ var EventSchema = new mongoose.Schema({
   name:          { type: String },
   slug:          { type: String },
   date:          { type: Date, default: Date.now },
+  time:          { type: String }, // Markdown
   updated_at:    { type: Date },
   formattedDate: { type: String },
   month:         { type: String },
   day:           { type: String },
-  location:      { type: String },
+  locationName:  { type: String },
+  streetAddress: { type: String },
+  cityState:     { type: String },
+  zipCode:       { type: String },
   category:      { type: String, default: 'event' },
-  description:   { type: String },
+  description:   { type: String }, // Markdown
   attendees:     [AttendeeSchema],
-  tshirtMap: {
+  tshirtMap:     {
     none: Number,
     s: Number,
     m: Number,
@@ -68,6 +72,7 @@ EventSchema.pre('save', function(next) {
   ev.formattedDate = fd;
   ev.day           = day;
   ev.month         = monthStr;
+  ev.date = ev.date;
 
   next();
 });

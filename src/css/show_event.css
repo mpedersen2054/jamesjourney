@@ -43,7 +43,8 @@
   margin-top: 0;
   margin-bottom: 40px;
   font-size: 24px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  text-decoration: underline;
   color: #424242;
 }
 
@@ -51,7 +52,7 @@
   margin: 40px 0;
 }
 
-#show-event .description p {
+#show-event .description {
   font-size: 18px;
   color: #444;
 }
@@ -150,9 +151,15 @@
   margin: 20px 0;
 }
 
-.sidebar-info div {
+.sidebar-info div,
+.sidebar-info div p {
   color: #444;
   font-size: 18px;
+}
+
+.sidebar-info .time p,
+.location div {
+  margin: 1.5px 0;
 }
 
 .sidebar-info h4 {
@@ -166,5 +173,13 @@
 @media (max-width: 62em) {
   #event-register-form .exp-year-pull-left {
     left: 0;
+  }
+
+  #show-event .jumbohead .head {
+    top: 65px;
+  }
+
+  #show-event .register {
+    padding-bottom: 40px;
   }
 }

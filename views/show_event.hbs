@@ -24,7 +24,7 @@
         </div>
 
         <div class="register">
-          <h3>Your information</h3>
+          <h3>Your Information</h3>
 
           <div class="alert alert-success alert-dismissible register-success" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -146,18 +146,17 @@
           <div id="event-google-map" data-lat="42.160477" data-lng="-88.13979"></div>
           <div class="when sidebar-info">
             <h4>When?</h4>
-            <div class="date">Tue Jun 14 2016</div>
+            <div class="date">{{event.formattedDate}}</div>
             <div class="time">
-              <div>Runners start @ 9:15 A.M</div>
-              <div>Walkers start @ 9:30 A.M</div>
+              {{{event.time}}}
             </div>
           </div>
           <div class="location sidebar-info">
             <h4>Where?</h4>
-            <div class="place-name">Barrington Park District</div>
-            <div class="street-address">235 Lions Drive</div>
-            <div class="city-state">Barrington, IL</div>
-            <div class="zip">60010</div>
+            <div class="location-name">{{event.locationName}}</div>
+            <div class="street-address">{{event.streetAddress}}</div>
+            <div class="city-state">{{event.cityState}}</div>
+            <div class="zip">{{event.zipCode}}</div>
           </div>
         </div>
       </div>

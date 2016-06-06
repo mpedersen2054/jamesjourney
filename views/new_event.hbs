@@ -11,16 +11,28 @@
 
         <form id="new-event-form" class="form well" method="post">
           <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Name...">
+            <input type="text" name="name" class="form-control" placeholder="Event name... ex) 2016 Second Annual 5K Run/Walk">
           </div>
           <div class="form-group">
             <input type="date" name="date" class="form-control" placeholder="Date...">
           </div>
           <div class="form-group">
-            <input type="text" name="location" class="form-control" placeholder="Location...">
+            <textarea name="time" class="form-control" placeholder=" Walkers start @ 9:15 &#10;&#13; Runners start @ 9:30"></textarea>
           </div>
           <div class="form-group">
-            <textarea name="description" class="form-control" placeholder="Message..."></textarea>
+            <input type="text" name="locationName" class="form-control" placeholder="Location name... ex) Barrington Park District">
+          </div>
+          <div class="form-group">
+            <input type="text" name="streetAddress" class="form-control" placeholder="Street address... ex) 235 Lions Drive">
+          </div>
+          <div class="form-group">
+            <input type="text" name="cityState" class="form-control" placeholder="City, State initals... ex) Barrington, IL">
+          </div>
+          <div class="form-group">
+            <input type="text" name="zipCode" class="form-control" placeholder="Zipcode... ex) 60067">
+          </div>
+          <div class="form-group">
+            <textarea name="description" class="form-control" placeholder="Message... (this message will be showed underneath the jumbotron and before the register form)"></textarea>
           </div>
           <input type="submit" value="Submit" class="btn btn-primary">
         </form>
