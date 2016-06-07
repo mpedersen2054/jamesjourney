@@ -74,22 +74,22 @@
 
 #our-team .team-member .img-overlay .content {
   position: relative;
-  top: 110px;
+  top: 60px;
   display: inline-block;
   vertical-align: middle;
   padding: 0 5px;
 }
 
 #our-team .team-member .img-overlay .content h3 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 30px;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 #our-team .team-member .img-overlay .content span {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
 }
 
