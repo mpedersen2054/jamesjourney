@@ -244,11 +244,14 @@ eventRouter.route('/:slug/edit')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
       if (err) console.log(err);
+      console.log(ev)
       // take the html string and turn it into markdown
-      var description = toMarkdown(ev.description);
-      var time        = toMarkdown(ev.time);
-      ev.description  = description;
-      ev.time         = time;
+      var descriptionz = toMarkdown(ev.description);
+      var timez        = toMarkdown(ev.time);
+      ev.description   = descriptionz;
+      ev.time          = timez;
+
+      console.log(ev)
       res.render('edit_event', { event: ev });
     });
   });

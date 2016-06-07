@@ -72,7 +72,6 @@ EventSchema.pre('save', function(next) {
   ev.formattedDate = fd;
   ev.day           = day;
   ev.month         = monthStr;
-  ev.date = ev.date;
 
   next();
 });

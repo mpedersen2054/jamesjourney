@@ -66,6 +66,11 @@ staticRouter.route('/our-work')
     res.render('our_work');
   })
 
+staticRouter.route('/our-work2')
+  .get(function(req, res) {
+    res.render('our_work2');
+  })
+
 staticRouter.route('/contact-us')
   .get(function(req, res) {
     res.render('contact_us');

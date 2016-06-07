@@ -18,10 +18,10 @@ userRouter.route('/new')
     var user = new User(req.body);
     user.save(function(err, user) {
       res.redirect('/users');
-    });
+    })
   })
 
 
-userRouter.route('/:username')
+// userRouter.route('/:username')
 
 module.exports = userRouter;
