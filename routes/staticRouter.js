@@ -18,6 +18,15 @@ staticRouter.route('/')
     Featured.findFeaturedBlogs(6, function(err, blogs) {
       if (err) return next(err);
 
+      console.log(blogs)
+
+      for (var blog in blogs) {
+        console.log(blogs[blog])
+        console.log(' ')
+        console.log(' ')
+        console.log(' ')
+      }
+
       EEvent.find({}, function(err, events) {
         if (err) return next(err);
         var evsLen = events.length;

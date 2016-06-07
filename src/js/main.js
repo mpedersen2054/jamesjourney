@@ -41,7 +41,7 @@ $(document).ready(function() {
   statics.slideShow();
 
   // contact-us
-  // statics.googleMap();
+  statics.googleMap();
 
   events.eventLocationMap();
   events.eventAffix();
