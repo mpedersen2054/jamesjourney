@@ -100,15 +100,15 @@ export function bootstrapSelect() {
 }
 
 export function showTotalFee() {
-  $totalAmt.text('$35.00');
+  $totalAmt.text('$30.00');
 
   $radioRegisterOpts.on('click', function(e) {
     var radioVal = $(this).val();
-    if (radioVal === '2000') {
-      $totalAmt.text('$20.00');
+    if (radioVal === '1500') {
+      $totalAmt.text('$15.00');
     }
-    if (radioVal === '3500') {
-      $totalAmt.text('$35.00');
+    if (radioVal === '3000') {
+      $totalAmt.text('$30.00');
     }
   })
 }
