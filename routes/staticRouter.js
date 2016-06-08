@@ -17,15 +17,8 @@ staticRouter.route('/')
   .get(function(req, res) {
     Featured.findFeaturedBlogs(6, function(err, blogs) {
       if (err) return next(err);
-
-      console.log(blogs)
-
-      for (var blog in blogs) {
-        console.log(blogs[blog])
-        console.log(' ')
-        console.log(' ')
-        console.log(' ')
-      }
+      // var blogLen = blogs.length;
+      // var placeholders = 6 - blogsLen;
 
       EEvent.find({}, function(err, events) {
         if (err) return next(err);
@@ -52,6 +45,7 @@ staticRouter.route('/')
             events: events,
             galleries: galleries
           });
+
         });
       });
     });
