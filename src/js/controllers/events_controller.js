@@ -1,8 +1,7 @@
 
 export function eventLocationMap() {
-  // console.log('helelr,le,')
   $(window).load(function() {
-    const $eventMap = $('#event-google-map');
+    var $eventMap = $('#event-google-map');
     // set your google maps parameters
     const $latitude = parseInt($eventMap.data('lat')),
       $longitude = parseInt($eventMap.data('lng')),

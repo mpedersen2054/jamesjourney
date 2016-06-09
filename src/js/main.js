@@ -14,60 +14,45 @@ const currentPath = window.location.pathname.split('/')[1];
 
 $(document).ready(function() {
 
-  if (currentPath === 'contact-us') {
-    console.log('contact-us page!');
-  } else if (currentPath === 'events') {
-    console.log('eventszzz page!!');
-  } else if (currentPath === 'donate') {
-    console.log('donate pagezz!!');
-  } else if (currentPath === 'admin') {
-    console.log('addddddmin page');
-  } else if (currentPath === 'gallery') {
-    console.log('gallery page!!!');
-  } else if (currentPath === 'blog') {
-    console.log('blog page!!')
-  } else if (currentPath === '') {
-    console.log('index page???')
-  } else {
-    console.log('no js to run')
-  }
-
   // all pages
   globals.navbar();
   globals.pushMenu();
 
-  // index
-  statics.programSlider();
-  statics.slideShow();
-
-  // contact-us
-  statics.googleMap();
-
-  events.eventLocationMap();
-  events.eventAffix();
-
-  // show_event
-  forms.handleRegisterSubmit();
-  forms.bootstrapSelect();
-  forms.showTotalFee();
-  forms.registerOptionsSelect();
-
-  // donate
-  forms.handleDonateSubmit();
-
-  // new_blog, new_event?
-  admins.contentPreviewCount();
-
-  // admin_page
-  admins.adminPageRenderer();
-  admins.handleAdminEventAttendees();
-  admins.handleAdminEventAttendeesMessages();
-  admins.formatDate();
-  admins.formatDonation();
-  admins.editGalleryImageName();
-
-  // gallery
-  galleries.imageGallery();
+  if (currentPath === 'contact-us') {
+    console.log('loading js for /contact-us');
+    statics.googleMap();
+  } else if (currentPath === 'events') {
+    console.log('loading js for /events/*');
+    events.eventLocationMap();
+    events.eventAffix();
+    forms.handleRegisterSubmit();
+    forms.bootstrapSelect();
+    forms.showTotalFee();
+    forms.registerOptionsSelect();
+  } else if (currentPath === 'donate') {
+    console.log('loading js for /donate');
+    forms.handleDonateSubmit();
+  } else if (currentPath === 'admin') {
+    console.log('loading js for /admin');
+    admins.adminPageRenderer();
+    admins.handleAdminEventAttendees();
+    admins.handleAdminEventAttendeesMessages();
+    admins.formatDate();
+    admins.formatDonation();
+    admins.editGalleryImageName();
+  } else if (currentPath === 'gallery') {
+    console.log('loading js for /gallery');
+    galleries.imageGallery();
+  } else if (currentPath === 'blog') {
+    console.log('loading js for /blog');
+    admins.contentPreviewCount();
+  } else if (currentPath === '') {
+    console.log('loading js for /');
+    statics.programSlider();
+    statics.slideShow();
+  } else {
+    console.log('no js to run')
+  }
 
   statics.scrollspyInstructions();
 });
