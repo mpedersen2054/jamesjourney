@@ -7,7 +7,6 @@ export function eventLocationMap() {
       $longitude = parseInt($eventMap.data('lng')),
       $map_zoom  = 14; /* ZOOM SETTING */
 
-    console.log('kasmakmdaksdma')
     console.log($latitude, $longitude)
 
     // custom marker

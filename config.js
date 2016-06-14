@@ -9,5 +9,7 @@ module.exports = {
   mailchimpListUrl:    'https://us11.api.mailchimp.com/3.0/lists/cb90ef9f1e/members',
   mailchimpAuthHeader: 'apikey a6eec20e3398ba1010f1243598ee34cb-us11',
   stripeSkTest:        'sk_test_PPR8iCJxNTmdpRcLOkBReTE9',
-  stripePkTest:        'pk_test_vdduCMCVf723Y1E0HpG43j32'
+  stripePkTest:        'pk_test_vdduCMCVf723Y1E0HpG43j32',
+  stripeSkLive:        'sk_live_5NLkT5N2XAq706WFSOWhqdsP',
+  stripePkLive:        'pk_live_2dk81qWEapK2BJ8WrDi0uM8Z'
 }
