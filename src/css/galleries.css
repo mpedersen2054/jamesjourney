@@ -24,6 +24,11 @@
   margin-bottom: 100px;
 }
 
+.grid-item {
+  display: inline-block;
+  // float: left;
+}
+
 .grid-sizer,
 .grid-item {
   width: 25%;
