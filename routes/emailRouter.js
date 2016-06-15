@@ -35,7 +35,7 @@ emailRouter.route('/newEventOnly')
   })
   .post(function(req, res) {
     var rb = req.body;
-    var eventId = req.query.evid;
+    // var eventId = req.query.evid;
   })
 
 emailRouter.route('/newOnSub')
