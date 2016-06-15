@@ -135,3 +135,19 @@ export function registerOptionsSelect() {
   //   console.log('you selected the second option')
   // }
 }
+
+
+export function handleMassEmailSubsmit() {
+  var $form = $('#new-mass-email-form');
+
+  console.log('hello handlemassemailsub')
+  $form.on('submit', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $subject = $this.find('#subject');
+    var $content = $this.find('#content');
+
+    console.log('submitted!!!', $subject.val(), $content.val());
+    window.location = 'https://james4eds.com/emails/sent?success=true&recepsLen=3'
+  })
+}
