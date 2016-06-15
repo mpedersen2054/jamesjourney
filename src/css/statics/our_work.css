@@ -2,7 +2,7 @@
 #our-work {}
 
 #our-work .jumbohead {
-  background: url(http://dft010l2k5dxv.cloudfront.net/OurWork_Color.jpg);
+  background: url(https://dft010l2k5dxv.cloudfront.net/OurWork_Color.jpg);
   background-position: 90% 80%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +31,7 @@
   position: relative;
   color: #fff;
   padding: 6em 0;
-  background-image: url('http://demo.themeregion.com/arki/Arki-blue/images/about-us/achivement-bg.jpg')
+  background-image: url('https://demo.themeregion.com/arki/Arki-blue/images/about-us/achivement-bg.jpg')
 }
 
 #our-work .achivements .fun-heading {
