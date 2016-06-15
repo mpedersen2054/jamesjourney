@@ -2,7 +2,7 @@
 #events {}
 
 #events .jumbohead {
-  background: url(http://dft010l2k5dxv.cloudfront.net/GetInvolved_Color.jpg);
+  background: url(https://dft010l2k5dxv.cloudfront.net/GetInvolved_Color.jpg);
   background-position: 90% 80%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +45,7 @@
   max-width: 360px;
   float: right;
   /*from livestrong, DL locally*/
-  background: url(http://www.livestrong.org/static/images/5a2c54463f6005dc043a358303d7f9e2.png) 99% center no-repeat #fff;
+  background: url(https://www.livestrong.org/static/images/5a2c54463f6005dc043a358303d7f9e2.png) 99% center no-repeat #fff;
 }
 
 #events .event-list {

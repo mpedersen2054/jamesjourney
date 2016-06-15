@@ -4,3 +4,5 @@ config
 public/js
 public/css
 config.js
+server.*
+www_james4eds_com.*
