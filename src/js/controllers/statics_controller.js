@@ -129,10 +129,10 @@ export function slideShow() {
 
   // images for slideshow
   var imgLinks = [
-    'http://i.imgur.com/9aMTBwU.jpg',
-    'http://i.imgur.com/U4JfOrb.jpg',
-    'http://i.imgur.com/W30xBsL.jpg',
-    'http://i.imgur.com/x69A8GD.jpg'
+    'https://i.imgur.com/9aMTBwU.jpg',
+    'https://i.imgur.com/U4JfOrb.jpg',
+    'https://i.imgur.com/W30xBsL.jpg',
+    'https://i.imgur.com/x69A8GD.jpg'
   ];
 
   // build Eslider DOM, pass animateSlider as
