@@ -151,3 +151,16 @@ export function handleMassEmailSubsmit() {
     window.location = 'https://james4eds.com/emails/sent?success=true&recepsLen=3'
   })
 }
+
+
+export function handleEventEmailRadio() {
+  var $radios = $("input[name='eventId']");
+  var $hidden = $("input[name='checkedEvent']");
+
+  $radios.on('change', function(e) {
+    e.preventDefault();
+    console.log('clicked!!')
+  })
+
+  console.log($hidden.val())
+}

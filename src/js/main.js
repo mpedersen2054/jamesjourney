@@ -55,6 +55,7 @@ $(document).ready(function() {
   }
 
   // forms.handleMassEmailSubsmit();
+  forms.handleEventEmailRadio()
 
   statics.scrollspyInstructions();
 });

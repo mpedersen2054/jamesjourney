@@ -30,7 +30,8 @@ emailRouter.route('/newMass')
 
 emailRouter.route('/newEventOnly')
   .get(function(req, res) {
-    res.render('new_event_email')
+    var events = [{id: '1', name: 'first'}, {id: '2', name: 'hello second'}, {id: '3', name: 'hello this is 3rd!'}]
+    res.render('new_event_email', { events: events })
   })
   .post(function(req, res) {
     var rb = req.body;
