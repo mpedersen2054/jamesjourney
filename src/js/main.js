@@ -55,7 +55,7 @@ $(document).ready(function() {
   }
 
   // forms.handleMassEmailSubsmit();
-  forms.handleEventEmailRadio()
+  forms.handleEventEmailFunctionality()
 
   statics.scrollspyInstructions();
 });

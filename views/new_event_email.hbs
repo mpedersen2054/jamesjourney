@@ -8,11 +8,14 @@
 
           <form method="post" id="new-event-email-form" name="new-event-email-form" class="form well">
 
-            Which event would you like to send an email to?
-            <br>
-            {{#each events}}
-              <input type="radio" {{#if @first}}checked="checked"{{/if}} name="eventId" value="{{id}}"> {{name}} <br>
-            {{/each}}
+            <div class="panel panel-warning">
+              <div class="panel-heading">Choose the event to send email to all registered:</div>
+              <div class="panel-body">
+                {{#each events}}
+                  <input type="radio" {{#if @first}}checked=""{{/if}} name="eventId" value="{{id}}"> {{name}} <br>
+                {{/each}}
+              </div>
+            </div>
 
             <div class="form-group">
               <input name="subject" id="subject" type="text" class="form-control" placeholder="Subject...">
@@ -21,7 +24,7 @@
               <textarea name="content" id="content" class="form-control" placeholder="Body of email..."></textarea>
             </div>
 
-            <input type="hidden" name="checkedEvent" value="hi">
+            <input type="hidden" name="hiddenCheckedEventId" id="hiddenCheckedEventId" class="hidden-slug" value="">
 
             <input type="submit" class="btn btn-primary" value="Send">
 
