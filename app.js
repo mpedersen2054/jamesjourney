@@ -35,7 +35,8 @@ app.use(flash());
 var env = app.get('env');
 console.log(env);
 if (env !== 'development') {
-  app.use(enforce.HTTPS());
+  // app.use(enforce.HTTPS());
+  app.use(enforce.HTTPS({ trustProtoHeader: true }))
 }
 
 // PASSPORT CONFIG
