@@ -3,8 +3,16 @@ var EEvent      = require('../db/event');
 var Subscriber  = require('../db/subscribers');
 var sgWrapper   = require('../lib/sendgridWrapper');
 
+var requireAuth = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+}
+
 emailRouter.route('/')
-  .get(function(req, res) {
+  .get(requireAuth, function(req, res) {
     res.send('hello there email route')
   })
 
@@ -20,7 +28,7 @@ emailRouter.route('/sent')
   })
 
 emailRouter.route('/newMass')
-  .get(function(req, res) {
+  .get(requireAuth, function(req, res) {
     res.render('new_mass_email')
   })
   .post(function(req, res) {
@@ -44,7 +52,7 @@ emailRouter.route('/newMass')
   })
 
 emailRouter.route('/newEventOnly')
-  .get(function(req, res) {
+  .get(requireAuth, function(req, res) {
     EEvent
       .find({})
       .sort({ date: 1 })
@@ -56,7 +64,7 @@ emailRouter.route('/newEventOnly')
     })
 
   })
-  .post(function(req, res) {
+  .post(requireAuth, function(req, res) {
     var rb = req.body;
 
     EEvent
