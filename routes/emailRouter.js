@@ -1,5 +1,6 @@
 var emailRouter = require('express').Router();
 var EEvent      = require('../db/event');
+var Subscriber  = require('../db/subscribers');
 var sgWrapper   = require('../lib/sendgridWrapper');
 
 emailRouter.route('/')
@@ -24,15 +25,22 @@ emailRouter.route('/newMass')
   })
   .post(function(req, res) {
     var rb = req.body, subject = rb.subject, content = rb.content;
-    var emails = ['matthewnpedersen@gmail.com', 'patmedersen@yahoo.com'];
 
-    sgWrapper.sendEmail({ receps: emails, subject: subject, content: content }, function(err, data) {
-      if (err || !data)
-        { console.log('there was an error!', err, data)
-      } else {
-        res.redirect(`/emails/sent?success=true&recepsLen=${emails.length}`)
-      }
-    });
+    Subscriber
+      .find({})
+      .select({ email: 1 })
+      .exec(function(err, subs) {
+        if (!err && subs.length) {
+          var emails = subs.map((val, i) => { return val.email });
+          sgWrapper.sendEmail({ receps: emails, subject: subject, content: content }, function(err, data) {
+            if (err || !subs.length) {
+              console.log('there was an error!', err, subs);
+            } else {
+              res.redirect(`/emails/sent?success=true&recepsLen=${emails.length}`)
+            }
+          });
+        }
+      })
   })
 
 emailRouter.route('/newEventOnly')

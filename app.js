@@ -10,6 +10,7 @@ var bodyParser     = require('body-parser');
 var session        = require('express-session');
 var favicon        = require('serve-favicon');
 var flash          = require('connect-flash');
+var enforce        = require('express-sslify');
 
 require('./config/db')(mongoose);
 
@@ -30,6 +31,12 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use(flash());
+
+var env = app.get('env');
+console.log(env);
+if (env !== 'development') {
+  app.use(enforce.HTTPS());
+}
 
 // PASSPORT CONFIG
 require('./config/passport')(app, passport)
