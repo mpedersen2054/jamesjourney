@@ -29,6 +29,15 @@ userRouter.route('/new')
     })
   })
 
+userRouter.route('/logout')
+  .get(function(req, res, next) {
+    req.logout();
+    req.session.destroy(function(err) {
+      if (err) { return next(err); }
+      return res.render('login', { authenticated: req.isAuthenticated() })
+    });
+  })
+
 
 // userRouter.route('/:username')
 
