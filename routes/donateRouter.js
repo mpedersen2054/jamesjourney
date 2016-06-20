@@ -1,6 +1,6 @@
 var donateRouter  = require('express').Router();
 var stripeWrapper = require('../lib/stripeWrapper');
-var sgWrapper     = require('../sgWrapper');
+var sgWrapper     = require('../lib/sendgridWrapper');
 var Subscriber    = require('../db/subscribers');
 var Donation      = require('../db/donation');
 
