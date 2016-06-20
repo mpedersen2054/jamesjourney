@@ -9,6 +9,7 @@ import * as admins    from './controllers/admin_controller';
 import * as blogs     from './controllers/blogs_controller';
 import * as galleries from './controllers/galleries_controller';
 import * as events    from './controllers/events_controller';
+import * as emails    from './controllers/emails_controller';
 
 const currentPath = window.location.pathname.split('/')[1];
 
@@ -27,6 +28,7 @@ $(document).ready(function() {
     console.log('loading js for /events/*');
     events.eventLocationMap();
     events.eventAffix();
+    events.adjustHeight();
     forms.handleRegisterSubmit();
     forms.bootstrapSelect();
     forms.showTotalFee();
@@ -48,6 +50,10 @@ $(document).ready(function() {
   } else if (currentPath === 'blog') {
     console.log('loading js for /blog');
     admins.contentPreviewCount();
+  } else if (currentPath === 'emails') {
+    console.log('loading js for emails')
+    emails.handleMassEmailSubmit();
+    emails.handleEventEmailSubmit();
   } else if (currentPath === '') {
     console.log('loading js for /');
     statics.programSlider();
@@ -56,8 +62,7 @@ $(document).ready(function() {
     console.log('no js to run')
   }
 
-  // forms.handleMassEmailSubsmit();
-  forms.handleEventEmailFunctionality()
+
 
   statics.scrollspyInstructions();
 });

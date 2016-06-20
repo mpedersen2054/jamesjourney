@@ -47,3 +47,8 @@ export function eventAffix() {
     offset: { top: 360, bottom: 600 }
   });
 }
+
+
+export function adjustHeight() {
+  console.log('hello adjustheight')
+}
