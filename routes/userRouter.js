@@ -1,8 +1,16 @@
 var User = require('../db/user');
 var userRouter = require('express').Router();
 
+var requireAuth = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+}
+
 userRouter.route('/')
-  .get(function(req, res) {
+  .get(requireAuth, function(req, res) {
     User.find({}, function(err, users) {
       res.json(users);
     })
@@ -10,11 +18,11 @@ userRouter.route('/')
 
 
 userRouter.route('/new')
-  .get(function(req, res) {
+  .get(requireAuth, function(req, res) {
     res.render('new_user');
   })
 
-  .post(function(req, res) {
+  .post(requireAuth, function(req, res) {
     var user = new User(req.body);
     user.save(function(err, user) {
       res.redirect('/users');
