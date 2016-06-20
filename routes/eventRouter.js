@@ -236,7 +236,8 @@ eventRouter.route('/:slug')
                           success: true,
                           message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.',
                           full_name: dbChargeInfo.full_name,
-                          email: rb.email
+                          email: rb.email,
+                          eventName: event.name
                         });
                       })
                     }
