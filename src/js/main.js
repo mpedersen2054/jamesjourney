@@ -12,14 +12,9 @@ import * as events    from './controllers/events_controller';
 
 const currentPath = window.location.pathname.split('/')[1];
 
-// var wl = window.location;
-
-// console.log(window.location.protocol)
-// if (wl.protocol === 'http:') {
-//   window.location = 'https://'+wl.hostname;
-// }
-
 $(document).ready(function() {
+
+  $('.lazy').lazy();
 
   // all pages
   globals.navbar();

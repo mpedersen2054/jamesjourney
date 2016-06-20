@@ -193,7 +193,7 @@ export function slideShow() {
       var img  = sliderArr[i].image;
       var isFirst = i === 0 ? 'show' : '';
       var item = $('<li/>', {
-        'class': `slider__item ${isFirst}`,
+        'class':         `slider__item ${isFirst}`,
         'data-position': i
       })
 
@@ -208,12 +208,14 @@ export function slideShow() {
   // returns new img element with src=imgLink
   function newImage(imgLink, isThumbnail) {
     return $('<img/>', {
-      'src': imgLink,
-      'class': 's-img'
+      'data-src': imgLink,
+      // 'src':      imgLink,
+      'class':    's-img late-lazy'
     });
   }
 
   buildSliderDom(imgLinks, animateSlider);
+  $('.late-lazy').lazy();
 
 }
 

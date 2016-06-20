@@ -12,10 +12,12 @@
   */
 
 #jumbotron {
+  display: block;
   height: 56em;
+  width: 100%;
   text-align: center;
   // background: url(https://lh5.googleusercontent.com/-g_l9Md3A2sY/VyAbI1LuM_I/AAAAAAAAAR0/bvnTH_mHA-Yns7VgwhCZQgytIcMebkAKACL0B/w1025-h601-no/updated_splash_bkgd.jpg);
-  background: url(https://dft010l2k5dxv.cloudfront.net/jumbo-background-texture.jpg);
+  // background: url(https://dft010l2k5dxv.cloudfront.net/jumbo-background-texture.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -84,7 +86,10 @@
  */
 
 #eds-preview {
-  background: url(https://dft010l2k5dxv.cloudfront.net/EdsPreviewZebra.jpg);
+  // background: url(https://dft010l2k5dxv.cloudfront.net/EdsPreviewZebra.jpg);
+  display: block;
+  width: 100%;
+  height: auto;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
