@@ -125,11 +125,12 @@
 
 #show-blog .post-content {
   margin-top: 40px;
-  padding: 20px 40px 40px;
+  padding: 40px 80px 40px;
   background-color: #fff;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
-  color: #555;
+  line-height: 1.7;
+  color: #444;
 }
 
 #show-blog .post-content p { margin: 20px 0; }
