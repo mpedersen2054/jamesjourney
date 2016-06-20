@@ -3,6 +3,7 @@ var eventRouter      = require('express').Router();
 var EEvent           = require('../db/event');
 var mailchimpWrapper = require('../lib/mailchimpWrapper');
 var stripeWrapper    = require('../lib/stripeWrapper');
+var sgWrapper        = require('../lib/sgWrapper');
 var Subscriber       = require('../db/subscribers');
 var Donation         = require('../db/donation');
 var markdown         = require('markdown').markdown;
@@ -222,11 +223,21 @@ eventRouter.route('/:slug')
                       //   success: true,
                       //   message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.'
                       // })
-                      res.render('event_subscribed', {
-                        success: true,
-                        message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.',
-                        full_name: dbChargeInfo.full_name
-                      });
+
+                      sgWrapper.sendEmail({
+                        receps:  [rb.email],
+                        subject: '--- Event Registration ---',
+                        content: `
+                          You have successfully registered for ${event.name}! You will recieve emails for
+                          this specific event in your inbox @ ${rb.email}.
+                        `
+                      }, function(err, data) {
+                        res.render('event_subscribed', {
+                          success: true,
+                          message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.',
+                          full_name: dbChargeInfo.full_name
+                        });
+                      })
                     }
                   });
                 });

@@ -22,6 +22,12 @@
 #email-sent .content h1 {
   color: #fff;
   font-size: 42px;
+  margin-bottom: 20px;
+}
+
+#subscribed .content h3,
+#event-subscribed .content h3,
+#email-sent .content h3 {
   margin-bottom: 40px;
 }
 

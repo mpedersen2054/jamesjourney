@@ -9,6 +9,9 @@
           {{#if success}}
             {{!-- wasnt on list, show welcoem --}}
             <h1>Thanks {{name}}!, You are now subscribed to our mailing list!</h1>
+            <h3 class="text-muted">
+              You will now recieve emails in your mailbox @ <span style="color: #fff !important;">{{email}}</span>
+            </h3>
           {{else}}
             {{!-- already on list --}}
             <h1>Sorry, the email: {{email}} is already on our list</h1>

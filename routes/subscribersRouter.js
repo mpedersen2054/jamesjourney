@@ -2,6 +2,7 @@ var config            = require('../config');
 var subscribersRouter = require('express').Router();
 var Subscriber        = require('../db/subscribers');
 var mailchimpWrapper  = require('../lib/mailchimpWrapper');
+var sgWrapper         = require('../lib/sendgridWrapper');
 
 subscribersRouter.route('/')
   .get(function(req, res) {
@@ -32,11 +33,22 @@ subscribersRouter.route('/new')
           console.log('hasnt subscribed yet')
           var newSub = new Subscriber(rb);
           newSub.save();
-          res.render('subscribed', {
-            success: true,
-            name:    `${rb.f_name} ${rb.l_name}`,
-            email:   rb.email
-          });
+
+          sgWrapper.sendEmail({
+            receps:  [rb.email],
+            subject: '--- Newsletter Signup ---',
+            content: 'Thanks for subscribing to our email list! You will now recieve emails directly in your inbox.'
+          }, function(err, data) {
+            if (err) {
+              console.log('there was an error!', err, data);
+            } else {
+              res.render('subscribed', {
+                success: true,
+                name:    `${rb.f_name} ${rb.l_name}`,
+                email:   rb.email
+              });
+            }
+          })
         }
         else {
           if (!sub.mcid) {
