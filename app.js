@@ -53,6 +53,7 @@ var userRouter        = require('./routes/userRouter.js');
 var subscribersRouter = require('./routes/subscribersRouter');
 var donateRouter      = require('./routes/donateRouter');
 var emailRouter       = require('./routes/emailRouter');
+var utilsRouter       = require('./routes/utilsRouter');
 // middleware to attach all queries onto req.adminData
 var adminMiddleware   = require('./middleware/adminData')(adminRouter);
 
@@ -65,6 +66,7 @@ app.use('/users',       userRouter);
 app.use('/subscribers', subscribersRouter);
 app.use('/donate',      donateRouter);
 app.use('/emails',      emailRouter);
+app.use('/utils',       utilsRouter);
 
 
 // middleware then adminRouter
