@@ -34,6 +34,8 @@ emailRouter.route('/newMass')
   .post(function(req, res) {
     var rb = req.body, subject = rb.subject, content = rb.content;
 
+    // console.log(rb)
+
     Subscriber
       .find({})
       .select({ email: 1 })

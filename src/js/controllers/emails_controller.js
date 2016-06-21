@@ -1,5 +1,7 @@
+const markdown = require('markdown').markdown;
 
 export function handleMassEmailSubmit() {
+
   var $form = $('#new-mass-email-form');
 
   console.log('hello handlemassemailsub')
@@ -8,7 +10,11 @@ export function handleMassEmailSubmit() {
     var $this = $(this);
     var $subject = $this.find('#subject');
     var $content = $this.find('#content');
+    var content = markdown.toHTML($content.val().trim());
 
+    $content.val(content);
+
+    $this.get(0).submit();
     console.log('submitted!!!', $subject.val(), $content.val());
     window.location = 'https://james4eds.com/emails/sent?success=true&recepsLen=3'
   })
