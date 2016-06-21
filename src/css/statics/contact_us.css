@@ -8,27 +8,34 @@
   background-size: cover;
 }
 
-.addr-bullets {
-  padding: 5em 0;
+#contact-us .info {
+  padding: 2em 0 0.3em;
+  text-align: center;
+  font-size: 30px;
 }
 
-.addr-bullets .addr-bullet {
-  padding: 20px 10px;
-}
-
-.addr-bullets .addr-bullet h3 {
-  font-size: 26px;
+#contact-us .info h2 {
+  font-size: 42px;
+  font-weight: 700;
   text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 15px;
+  color: #00aeef;
+  margin-bottom: 50px;
 }
 
-.addr-bullets .addr-bullet .addr {
-  margin-bottom: 15px;
+#contact-us .info .address {
+  position: relative;
+  top: 30px;
+  font-size: 26px;
 }
 
-.addr-bullets .addr-bullet .addr p {
-  margin-bottom: 0;
+#contact-us .info .contact-user {
+  text-align: left;
+  padding: 0 5px;
+}
+
+#contact-us .info .contact-user .email,
+#contact-us .info .contact-user .phone {
+  font-size: 18px;
 }
 
 #google-container {
@@ -46,11 +53,12 @@
   margin-bottom: 60px;
 }
 
-.contact-form-container .head .small-header {
+#contact-us .small-header {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #222;
+  text-transform: uppercase;
 }
 
 .contact-form-container .head h2 {
