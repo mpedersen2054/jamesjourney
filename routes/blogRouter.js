@@ -115,7 +115,7 @@ blogRouter.route('/:slug')
     var rb = req.body;
     if (req.user) {
       Blog.findOne({ 'slug': req.params.slug }, function(err, blog) {
-        if(err) console.log(err);
+        if(err)   console.log(err);
         if(!blog) { return res.status(404).render('404'); }
 
         // if the key/val didnt change, return the blogs original val

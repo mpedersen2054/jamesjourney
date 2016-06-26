@@ -7,10 +7,10 @@ export function handleMassEmailSubmit() {
   console.log('hello handlemassemailsub')
   $form.on('submit', function(e) {
     e.preventDefault();
-    var $this = $(this);
+    var $this    = $(this);
     var $subject = $this.find('#subject');
     var $content = $this.find('#content');
-    var content = markdown.toHTML($content.val().trim());
+    var content  = markdown.toHTML($content.val().trim());
 
     $content.val(content);
 
@@ -41,9 +41,9 @@ export function handleEventEmailSubmit() {
 
   $form.on('submit', function(e) {
     e.preventDefault();
-    var $this = $(this);
-    var subject = $this.find('#subject').val().trim();
-    var content = $this.find('#content').val().trim();
+    var $this         = $(this);
+    var subject       = $this.find('#subject').val().trim();
+    var content       = $this.find('#content').val().trim();
     var hiddenChecked = $this.find('#hiddenCheckedEventId').val();
 
     $this.get(0).submit();
