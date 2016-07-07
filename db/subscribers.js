@@ -11,16 +11,16 @@ var SubscriberSchema = new mongoose.Schema({
   updated_on:       { type: Date },
   events_attending: [
     {
-      event_id:    mongoose.Schema.Types.ObjectId,
+      event_id: mongoose.Schema.Types.ObjectId,
       stripeToken: String,
-      amount:      String
+      amount: String
     }
   ],
   donations: [
     {
       donate_id: mongoose.Schema.Types.ObjectId,
-      category:  String,
-      amount:    String
+      category: String,
+      amount: String
     }
   ]
 });

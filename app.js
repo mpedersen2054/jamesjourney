@@ -33,9 +33,7 @@ app.use(session({
 app.use(flash());
 
 var env = app.get('env');
-console.log(env);
 if (env !== 'development') {
-  // app.use(enforce.HTTPS());
   app.use(enforce.HTTPS({ trustProtoHeader: true }))
 }
 
@@ -71,13 +69,12 @@ app.use('/utils',       utilsRouter);
 
 // middleware then adminRouter
 app.use(adminMiddleware);
-app.use('/admin',    adminRouter);
+app.use('/admin', adminRouter);
 
 app.use(function(req, res, next){
   res.status(404).render('404', {
     message: `Can\t find find the page ${req.url}`
   });
-  // next();
 });
 
 var port = process.env.PORT || 3000;

@@ -34,8 +34,6 @@ emailRouter.route('/newMass')
   .post(function(req, res) {
     var rb = req.body, subject = rb.subject, content = rb.content;
 
-    // console.log(rb)
-
     Subscriber
       .find({})
       .select({ email: 1 })
@@ -71,7 +69,6 @@ emailRouter.route('/newEventOnly')
 
     EEvent
       .findOne({ _id: rb.eventId })
-      // .select({ 'attendees.full_name': 1, 'attendees.email': 1 }) // dont need name idt
       .select({ 'attendees.email': 1, 'name': 1, 'slug': 1 })
       .exec(function(err, event) {
         console.log('err? ', err)
@@ -83,8 +80,6 @@ emailRouter.route('/newEventOnly')
             topic:   event.name,
             slug:    event.slug
           }
-
-          console.log('opts obj: ', opts)
 
           sgWrapper.sendEmail(opts, function(err2, data) {
             if (err2) {
@@ -100,8 +95,7 @@ emailRouter.route('/newEventOnly')
       });
   })
 
-emailRouter.route('/newOnSub')
-
-emailRouter.route('/newOnDonate')
+// emailRouter.route('/newOnSub')
+// emailRouter.route('/newOnDonate')
 
 module.exports = emailRouter;

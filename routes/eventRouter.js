@@ -1,4 +1,3 @@
-// var _             = require('underscore');
 var eventRouter      = require('express').Router();
 var EEvent           = require('../db/event');
 var mailchimpWrapper = require('../lib/mailchimpWrapper');
@@ -24,7 +23,6 @@ eventRouter.route('/new')
   })
   // ADD NEW EVENT
   .post(function(req, res) {
-    // if (!req.user) { res.redirect('/login') }
     var data  = req.body;
 
     // iterate over each k/v and trim the value
@@ -54,7 +52,7 @@ eventRouter.route('/new')
 eventRouter.route('/:slug')
   .get(function(req, res) {
     EEvent.findOne({ 'slug': req.params.slug }, function(err, ev) {
-      if (err || !ev) { return res.status(404).render('404', { message: `Can\'t find the event ${req.params.slug}` }) };
+      if (err || !ev) { return res.status(404).render('404', { message: `Cant find the event ${req.params.slug}` }) };
 
       res.render('show_event', { event: ev });
     });
@@ -87,7 +85,6 @@ eventRouter.route('/:slug')
   })
   // register subscriber to event, create donation
   .post(function(req, res) {
-    // console.log(req.body)
     var rb = req.body;
     if (!rb.f_name || !rb.l_name || !rb.email) {
       res.send({
@@ -147,11 +144,6 @@ eventRouter.route('/:slug')
               })
             }
 
-            // console.log('from eventRouter, found&modified new sub obj, or create new one',subscriber);
-
-            console.log('rb.email ', rb.email);
-            console.log('sub.email', subscriber.email)
-
             event.attendees.push({
               _id:         subscriber._id,
               email:       rb.email,
@@ -205,10 +197,6 @@ eventRouter.route('/:slug')
                   var newDonation = new Donation(dbChargeInfo);
                   newDonation.save(function(err) {
                     if (err) {
-                      // res.send({
-                      //   success: false,
-                      //   message: 'There was an error submitting the Credit Card'
-                      // })
                       res.render('event_subscribed', {
                         success: false,
                         message: 'There was an error submitting the Credit Card',
@@ -219,10 +207,6 @@ eventRouter.route('/:slug')
                       // add the new donation obj to subscriber and save it
                       subscriber.donations.push({ donate_id: newDonation._id, amount: +charge.amount, type: 'eventSubscription' });
                       subscriber.save();
-                      // res.send({
-                      //   success: true,
-                      //   message: 'successfully added new sub if doesnt exist, added it to event, charged card w/ stripe, create donation doc.'
-                      // })
 
                       sgWrapper.sendEmail({
                         receps:  [rb.email],

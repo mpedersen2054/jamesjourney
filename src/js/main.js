@@ -6,7 +6,6 @@ import * as globals   from './controllers/global_controller';
 import * as statics   from './controllers/statics_controller';
 import * as forms     from './controllers/form_controller';
 import * as admins    from './controllers/admin_controller';
-import * as blogs     from './controllers/blogs_controller';
 import * as galleries from './controllers/galleries_controller';
 import * as events    from './controllers/events_controller';
 import * as emails    from './controllers/emails_controller';

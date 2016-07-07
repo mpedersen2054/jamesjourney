@@ -1,8 +1,5 @@
 node_modules
 bower_components
 config
-public/js
-public/css
+public/**
 config.js
-server.*
-www_james4eds_com.*

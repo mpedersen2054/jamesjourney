@@ -18,8 +18,6 @@ subscribersRouter.route('/new')
   .post(function(req, res) {
     var rb = req.body;
 
-    // if (!rb.email) { return res.send({ success: false, message: 'Email required.' }) }
-
     // use the mailchimpWrapper and pass in the body containing
     // the email, firstname and lastname, then render subscribed template
     mailchimpWrapper.addUser(rb, function(err, resp) {
