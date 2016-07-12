@@ -85,15 +85,35 @@
                       <label for="donateAmt">Amount</label>
                       <select id="donateAmt" name="donateAmt" class="selectpicker" data-width="">
                         <option value="500">$5</option>
+                        <option value="1000">$10</option>
+                        <option value="1500">$15</option>
+                        <option value="2000">$20</option>
                         <option value="2500">$25</option>
+                        <option value="3000">$30</option>
+                        <option value="3500">$35</option>
+                        <option value="4000">$40</option>
+                        <option value="4500">$45</option>
                         <option value="5000">$50</option>
-                        <option value="10000">$100</option>
-                        <option value="25000">$250</option>
-                        <option value="50000">$500</option>
                       </select>
                     </div>
                   </div>
+                  <div class="col-md-4">
+                    <div id="selectDonateAmt">
+                      <div class="form-group">
+                        <span class="trailing-dollarsign">$</span>
+                        <label class="lighter-label" for="selectDonateAmtBtn">Choose Amount</label>
+                        <input type="number" min="0" value="0" step="5" class="form-control" id="selectDonateAmtBtn">
+                        <span class="trailing-cents">.00</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="show-total">
+                  Donating
+                  <b>$35.00</b>
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-lg donate-submit-btn">Donate</button>
                 <div class="spinner-container">
                   {{!-- <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>

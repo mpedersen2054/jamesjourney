@@ -40,6 +40,7 @@ $(document).ready(function() {
   else if (currentPath === 'donate') {
     console.log('loading js for /donate');
     forms.handleDonateSubmit();
+    forms.handleDonateSelectDifferentAmt()
   }
   else if (currentPath === 'admin') {
     console.log('loading js for /admin');

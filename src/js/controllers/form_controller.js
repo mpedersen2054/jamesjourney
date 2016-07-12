@@ -133,13 +133,11 @@ export function registerOptionsSelect() {
 }
 
 
-export function handleMassEmailSubsmit() {
-
-}
+export function handleMassEmailSubsmit() {}
 
 
-export function handleEventEmailFunctionality() {
+export function handleEventEmailFunctionality() {}
 
-
-
+export function handleDonateSelectDifferentAmt() {
+  console.log('handleDonateSelectDifferentAmt')
 }

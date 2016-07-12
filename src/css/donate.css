@@ -21,6 +21,39 @@
   top: -15px;
 }
 
+#selectDonateAmt {
+  position: relative;
+  left: 65px;
+  top: -10px;
+}
+
+#selectDonateAmt .trailing-dollarsign,
+#selectDonateAmt .trailing-cents {
+  float: left;
+  height: 34px;
+  font-size: 18px;
+}
+#selectDonateAmt .trailing-dollarsign {
+  position: relative;
+  top: 28px;
+  right: 5px;
+}
+#selectDonateAmt .trailing-cents {
+  position: relative;
+  top: 4px;
+  left: 5px;
+}
+
+#selectDonateAmt .form-group {
+  position: relative;
+}
+
+#selectDonateAmt input {
+  position: relative;
+  width: 80px;
+  float: left;
+}
+
 .exp-col {
   padding: 0 5px;
 }
@@ -58,9 +91,26 @@
   color: #a5a5a5;
 }
 
+#donate .lighter-label {
+  font-size: 12px;
+  color: #777;
+}
+
+#donate .show-total {
+  padding: 10px 0;
+  margin: 10px 0 30px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
 /* SMALL SCREEN */
 @media (max-width: 62em) {
   .exp-col {
     padding: 0 15px;
+  }
+
+  #selectDonateAmt {
+    left: 4px;
+    top: -20px;
   }
 }
