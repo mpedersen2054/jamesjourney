@@ -1,4 +1,4 @@
-
+#subscribe,
 #subscribed,
 #event-subscribed,
 #email-sent {
@@ -32,6 +32,7 @@
 }
 
 #subscribed .overlay,
+#subscribe .overlay,
 #event-subscribed .overlay,
 #email-sent .overlay {
   position: absolute;

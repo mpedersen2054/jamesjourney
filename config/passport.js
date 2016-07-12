@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
         return done(null, false, { message: 'Incorrect username' });
       }
       if (!user.comparePassword(password)) {
-        return done(null, false, { message: 'Incorrect password' })
+        return done(null, false, { message: 'Incorrect password' });
       }
       return done(null, user)
     });

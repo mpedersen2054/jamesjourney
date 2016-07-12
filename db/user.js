@@ -1,15 +1,14 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-
 var UserSchema = new mongoose.Schema({
-  username:  { type: 'String', required: true, index: { unique: true } },
-  password:  { type: 'String', required: true },
+  username: { type: 'String', required: true, index: { unique: true } },
+  password: { type: 'String', required: true },
   fullname: { type: 'String' },
   facebookUrl: { type: 'String' },
-  twitterUrl: { type: 'String' },
-  thumbnailUrl: { type: 'String' },
-  dateJoined: { type: Date, default: Date.now }
+  twitterUrl:  { type: 'String' },
+  thumbnailUrl:{ type: 'String' },
+  dateJoined:  { type: Date, default: Date.now }
 });
 
 UserSchema.pre('save', function(next) {
