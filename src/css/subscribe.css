@@ -1,6 +1,5 @@
 
-#subscribe {
-}
+#subscribe {}
 
 #subscribe .content {
   position: relative;
@@ -10,8 +9,7 @@
   border-radius: 4px;
 }
 
-#subscribe .translucent-well {
-}
+#subscribe .translucent-well {}
 
 #subscribe .page-header {
   margin: 10px 0;

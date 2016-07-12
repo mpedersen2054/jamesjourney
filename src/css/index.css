@@ -1,6 +1,13 @@
 
 .small-line { border: 2px solid #333; width: 16em; margin: 1em auto; }
 
+#fixed-buttons #fixed-donate .fa-heart {
+  margin-right: 5px;
+  font-size: 14px;
+  color: #E93C54;
+  font-weight: 700;
+}
+
 #cover h2 {
   font-size: 66px;
   font-weight: 400;
@@ -19,6 +26,7 @@
   // background: url(https://lh5.googleusercontent.com/-g_l9Md3A2sY/VyAbI1LuM_I/AAAAAAAAAR0/bvnTH_mHA-Yns7VgwhCZQgytIcMebkAKACL0B/w1025-h601-no/updated_splash_bkgd.jpg);
   // background: url(https://dft010l2k5dxv.cloudfront.net/jumbo-background-texture.jpg);
   background-repeat: no-repeat;
+  // background-attachment: fixed;
   background-size: cover;
 }
 

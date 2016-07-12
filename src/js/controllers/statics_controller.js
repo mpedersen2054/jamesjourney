@@ -233,7 +233,7 @@ export function googleMap() {
     // set your google maps parameters
     var $latitude = 42.113826,
       $longitude = -87.878334,
-      $map_zoom = 12; /* ZOOM SETTING */
+      $map_zoom = 15; /* ZOOM SETTING */
 
     // custom marker
     var $marker_url = '../img/google-map-marker.png';
