@@ -1,0 +1,14 @@
+{
+  "_id": {
+    "$oid": "576772afd2eab50f0034db11"
+  },
+  "image_url": "https://s3.amazonaws.com/jamesbucket123/DSC_4949.jpg",
+  "size": 861233,
+  "file_type": "image/jpeg",
+  "tags": [],
+  "dateAdded": {
+    "$date": "2016-06-20T04:35:59.240Z"
+  },
+  "name": "No Title Specified.",
+  "__v": 0
+}

@@ -1,0 +1,49 @@
+{
+  "_id": {
+    "$oid": "57561a4a2418810f000ea994"
+  },
+  "month": "August",
+  "day": "7",
+  "formattedDate": "Sun Aug 07 2016",
+  "slug": "2016-second-annual-5k-runwalk",
+  "name": "2016 Second Annual 5K Run/Walk",
+  "time": "<ul><li>Registration @ 8 AM</li><li>Walkers start @ 9:15 AM</li><li>Runners start @ 9:30 AM</li></ul>",
+  "locationName": "Citizens Park ( near route 14 )",
+  "streetAddress": "511 Lake Zurich Rd",
+  "cityState": "Barrington, IL",
+  "zipCode": "60010",
+  "description": "<p><strong>Please join us in our efforts to raise awareness and research for Ehlers-Danlos Syndrome (EDS). Our hope is to be one step closer to finding a cure for this rare genetic connective tissue disorder.</strong></p>\n\n<h3>REGISTER ONLINE TO SAVE $5 and RESERVE YOUR SPOT</h3>\n\n<p>$30 includes your registration fee and a James&#39; Journey t-shirt</p>\n\n<p>$15 includes your registration fee and no t-shirt -Children 10 and under are free</p>\n\n<p>*RAIN OR SHINE!</p>\n\n<p>-Runners start at 9:15AM -Walkers start at 9:30AM</p>\n\n<p>Following the race will be a balloon release at 11:45AM in remembrance of James Kayler and all others lost to Ehlers-Danlos Syndrome.</p>\n\n<p>*NO DOGS ALLOWED!</p>\n\n<p>Proceeds will be donated to the James Kayler Fund through The University of Texas Health Science Center towards their research efforts in Vascular Ehlers-Danlos Syndrome.</p>",
+  "attendees": [
+    {
+      "_id": {
+        "$oid": "576871577c5a420f0063aa7b"
+      },
+      "email": "sammmay.bah@gmail.com",
+      "message": "",
+      "full_name": "Mary Pat Resch",
+      "stripeToken": "tok_18Ob5pJ51iRzlfVBHSrm5MT6",
+      "added_on": {
+        "$date": "2016-06-20T22:42:31.786Z"
+      },
+      "tshirt": "XL"
+    },
+    {
+      "_id": {
+        "$oid": "576872867c5a420f0063aa7f"
+      },
+      "email": "charlieresch@gmail.com",
+      "message": "",
+      "full_name": "Kate Resch",
+      "stripeToken": "tok_18ObB2J51iRzlfVB5AovbzG4",
+      "added_on": {
+        "$date": "2016-06-20T22:47:34.127Z"
+      },
+      "tshirt": "none"
+    }
+  ],
+  "category": "event",
+  "date": {
+    "$date": "2016-08-07T00:00:00.000Z"
+  },
+  "__v": 2
+}

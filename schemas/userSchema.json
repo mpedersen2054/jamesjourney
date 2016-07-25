@@ -1,0 +1,15 @@
+{
+  "_id": {
+    "$oid": "575623c27ecae70f000f3f7b"
+  },
+  "username": "lkayler",
+  "fullname": "Laura Kayler",
+  "twitterUrl": "https://twitter.com/james4eds",
+  "facebookUrl": "https://www.facebook.com/james4eds/?fref=ts",
+  "thumbnailUrl": "http://imgur.com/cP9ftBk.png",
+  "password": "$2a$10$clnodgxp4lAjjgq9uFgc6uhy.lPQ4B1v8dh6u6.1P1C6Es9rQz/u2",
+  "dateJoined": {
+    "$date": "2016-06-07T01:30:42.254Z"
+  },
+  "__v": 0
+}

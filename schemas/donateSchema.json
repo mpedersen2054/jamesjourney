@@ -1,0 +1,20 @@
+{
+  "_id": {
+    "$oid": "576871617c5a420f0063aa7d"
+  },
+  "chid": "ch_18Ob6CJ51iRzlfVBgHQPaEie",
+  "uid": {
+    "$oid": "576871577c5a420f0063aa7b"
+  },
+  "email": "sammmay.bah@gmail.com",
+  "full_name": "Charles Resch",
+  "type": "charge",
+  "category": "eventSubscription",
+  "refundUrl": "/v1/charges/ch_18Ob6CJ51iRzlfVBgHQPaEie/refunds",
+  "status": "succeeded",
+  "amount": 3000,
+  "added_on": {
+    "$date": "2016-06-20T22:42:41.916Z"
+  },
+  "__v": 0
+}

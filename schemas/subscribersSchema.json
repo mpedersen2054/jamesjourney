@@ -1,0 +1,48 @@
+{
+  "_id": {
+    "$oid": "576871577c5a420f0063aa7b"
+  },
+  "mcid": "64ef58a1ae3dbf39f9be67dcfe3af3b9",
+  "f_name": "Mary Pat",
+  "l_name": "Resch",
+  "full_name": "Mary Pat Resch",
+  "email": "sammmay.bah@gmail.com",
+  "donations": [
+    {
+      "donate_id": {
+        "$oid": "576871617c5a420f0063aa7d"
+      },
+      "amount": "3000",
+      "_id": {
+        "$oid": "576871617c5a420f0063aa7e"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "576873237c5a420f0063aa83"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "576873237c5a420f0063aa83"
+      }
+    }
+  ],
+  "events_attending": [
+    {
+      "event_id": {
+        "$oid": "57561a4a2418810f000ea994"
+      },
+      "stripeToken": "tok_18Ob5pJ51iRzlfVBHSrm5MT6",
+      "amount": "3000",
+      "_id": {
+        "$oid": "576871577c5a420f0063aa7c"
+      }
+    }
+  ],
+  "added_on": {
+    "$date": "2016-06-20T22:42:31.775Z"
+  },
+  "tshirt": "XL",
+  "__v": 3
+}
