@@ -4,6 +4,7 @@ module.exports = {
   dbUrl:               process.env.MONGOLAB_URI || 'mongodb://localhost/james',
   sessionSecret:       process.env.SESSION_SECRET || 'secret',
 
+  // pls dont hax me
   s3AccessKey:         'AKIAI5RTSCA4OXAPD6RA',
   s3SecretAccessKey:   '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',
   s3BucketUrl:         'https://s3.amazonaws.com/jamesbucket123/',
