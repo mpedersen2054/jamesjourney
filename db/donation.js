@@ -13,4 +13,5 @@ var DonationSchema = new mongoose.Schema({
   added_on:  { type: Date, default: Date.now }
 });
 
+
 module.exports = mongoose.model('Donation', DonationSchema);
