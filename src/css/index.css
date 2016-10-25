@@ -411,7 +411,7 @@ EVENTS PREVIEW
   border: 1px solid #000;
   height: 479px;
   overflow: hidden;
-  background: #000;
+  // background: #000;
   color: #FFF;
   z-index: 5;
   margin-left: -1px;
