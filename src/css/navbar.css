@@ -26,7 +26,7 @@ header #header-logo-link {
   transition-timing-function: ease;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0;
-  background-image: url(https://dft010l2k5dxv.cloudfront.net/SmallLogoWhite.png);
+  background-image: url(/img/SmallLogoWhite.png);
   -moz-background-size: contain;
   -o-background-size: contain;
   -webkit-background-size: contain;

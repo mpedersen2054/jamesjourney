@@ -36,8 +36,8 @@
   border-radius: 50%;
   margin: 180px auto;
   background-color: #fff;
-
-  background-image: url(../img/JumbotronInnerBackground.png);
+  // ACTUALLY LOOKS BETTER WITH WHITE BACKGROUND
+  // background-image: url(../img/JumbotronInnerBackground.png);
   background-repeat: no-repeat;
   background-size: cover;
   border: 6px solid #5d5d5d;
