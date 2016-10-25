@@ -31,7 +31,7 @@ const $radioRegisterOpts = $("input[name='registerOptions']");
 
 // set stripekey for all functions
 // should eventually send the key from the server on the request
-Stripe.setPublishableKey('pk_live_2dk81qWEapK2BJ8WrDi0uM8Z');
+// Stripe.setPublishableKey('pk_live_2dk81qWEapK2BJ8WrDi0uM8Z');
 
 export function handleRegisterSubmit() {
 

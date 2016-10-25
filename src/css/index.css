@@ -36,7 +36,8 @@
   border-radius: 50%;
   margin: 180px auto;
   background-color: #fff;
-  background-image: url(https://dft010l2k5dxv.cloudfront.net/JumbotronInnerBackground.png);
+
+  background-image: url(../img/JumbotronInnerBackground.png);
   background-repeat: no-repeat;
   background-size: cover;
   border: 6px solid #5d5d5d;
