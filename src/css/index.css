@@ -457,7 +457,7 @@ EVENTS PREVIEW
   transition-timing-function: ease;
   z-index: -20;
 
-  opacity: 0.25;
+  opacity: 0.75;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
