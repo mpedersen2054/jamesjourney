@@ -1,7 +1,7 @@
-var config = require('../config');
+// var config = require('../config');
 
 module.exports = function(mongoose) {
-  mongoose.connect(config.dbUrl);
+  mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/james');
   var db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() { console.log('~~ connected to mongodb ~~') });

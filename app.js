@@ -1,7 +1,7 @@
 var express        = require('express');
 var mongoose       = require('mongoose');
 var hbs            = require('hbs');
-var config         = require('./config.js');
+// var config         = require('./config.js');
 var passport       = require('passport');
 var logger         = require('morgan');
 var methodOverride = require('method-override');
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: config.sessionSecret,
+  secret: 'secret123',
   resave: false,
   saveUninitialized: false
 }));
@@ -78,4 +78,4 @@ app.use(function(req, res, next){
 });
 
 var port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port, () => console.log(`listening on port ${port}`));
