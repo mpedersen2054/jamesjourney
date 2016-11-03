@@ -410,8 +410,8 @@ EVENTS PREVIEW
   overflow: hidden;
   border: 1px solid #000;
   height: 479px;
-  overflow: hidden;
-  // background: #000;
+  background: #000;
+  // position: relative;
   color: #FFF;
   z-index: 5;
   margin-left: -1px;
@@ -438,11 +438,11 @@ EVENTS PREVIEW
 }
 
 #recent-updates .update .bg img {
+  position: absolute;
   width: 100%;
   left: 0;
   top: 0;
   height: 100%;
-  position: absolute;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -457,7 +457,7 @@ EVENTS PREVIEW
   transition-timing-function: ease;
   z-index: -20;
 
-  opacity: 0.75;
+  opacity: 0.25;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);

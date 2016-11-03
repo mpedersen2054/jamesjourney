@@ -59,7 +59,7 @@ app.use('/',            staticRouter);
 app.use('/blog',        blogRouter);
 app.use('/gallery',     galleryRouter);
 app.use('/events',      eventRouter);
-app.use('/gallery',     galleryRouter);
+// app.use('/gallery',     galleryRouter);
 app.use('/users',       userRouter);
 app.use('/subscribers', subscribersRouter);
 app.use('/donate',      donateRouter);

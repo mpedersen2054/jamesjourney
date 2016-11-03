@@ -57,16 +57,22 @@ function uploadFile(files, finished) {
   }
 }
 
-
 galleryRouter.route('/')
   .get(function(req, res) {
-    Gallery
-      .find()
-      .sort({ dateAdded: -1 })
-      .exec(function(err, images) {
-        res.render('galleries', { images: images });
-      });
+    res.redirect('/')
   })
+
+// GALLERY ROUTER BUSTED BECAUSE OF AWS S3 GIVING ME DA BOOT
+
+// galleryRouter.route('/')
+//   .get(function(req, res) {
+//     Gallery
+//       .find()
+//       .sort({ dateAdded: -1 })
+//       .exec(function(err, images) {
+//         res.render('galleries', { images: images });
+//       });
+//   })
 
 
 galleryRouter.route('/single-upload')
